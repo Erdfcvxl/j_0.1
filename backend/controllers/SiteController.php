@@ -11,6 +11,7 @@ use yii\data\ActiveDataProvider;
 use common\models\User;
 use backend\models\Functions;
 use frontend\models\UserPack;
+use backend\models\Welcome;
 
 /**
  * Site controller
@@ -384,7 +385,6 @@ class SiteController extends Controller
     public function actionFmm()
     {
         $model = new \backend\models\CustomSearch;
-                var_dump('asdasd');
 
         @extract($_GET);
 
@@ -464,5 +464,53 @@ class SiteController extends Controller
 
     }
 
+    public function actionWelcome()
+    {
+        $model = new \backend\models\CustomSearch;
+        $welcome = new Welcome;
+
+        $post = (Yii::$app->request->post())? Yii::$app->request->post() : null;
+
+        $query['fakes'] = \frontend\models\UserPack::find()->where(['f' => 1]);
+        $DP_fakes = $model->CustomSearch($post, $query['fakes']);
+
+        $ids = $welcome::find()->all();
+        $query['in'] = \frontend\models\UserPack::find()->where(['id' => \frontend\models\Misc::getByu_id($ids)]);
+        $DP_players = $model->CustomSearch($post, $query['in']);
+
+        return $this->render('welcome', ['welcome' => $welcome, 'DP' => ['fakes' => $DP_fakes, 'players' => $DP_players]]);
+
+    }
+
+    public function actionTowelcome()
+    {
+        $model = new Welcome;
+
+        if($model->addToGame($_GET['id'])){
+            return $this->redirect(Yii::$app->request->referrer);
+        }else{
+
+            die('kazkas negerai');
+        }
+
+    }
+
+    public function actionUpdatemsg()
+    {
+        $model = \backend\models\Welcome::find()->where(['u_id' => $_POST['id']])->one();
+        $model->msg = $_POST['msg'];
+        $model->save();
+
+        return true;
+    }
+
+
+    public function actionRemovefromwelcome()
+    {
+        $model = \backend\models\Welcome::find()->where(['u_id' => $_GET['id']])->one();
+        $model->delete();
+
+        return $this->redirect(Yii::$app->request->referrer);
+    }
    
 }

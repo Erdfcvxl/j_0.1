@@ -7,6 +7,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\models\Parametres;
 use common\models\Mail;
+use frontend\widgets\Alert;
 
 $params = Parametres::find()->one();
 $mail = Mail::find()->all();
@@ -51,7 +52,8 @@ AppAsset::register($this);
                         ['label' => 'Nauji laikai', 'url' => ['/site/fakelikes'], 'linkOptions' => ['id' => 'fakelikes']],
                         ['label' => 'Nauji draugai', 'url' => ['/site/fakedrg'], 'linkOptions' => ['id' => 'fakedrg']],
                         '<li class="dropdown-header">Veiksmai su fake nariais</li>',
-                        ['label' => 'Rašyti masinę žinutę', 'url' => Url::to(['/site/fmm'])]
+                        ['label' => 'Rašyti masinę žinutę', 'url' => Url::to(['/site/fmm'])],
+                        ['label' => 'Automatinė žinutė', 'url' => Url::to(['/site/welcome'])],
                     ];
 
                 $vipLinks = [
@@ -106,7 +108,8 @@ AppAsset::register($this);
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            
+
+            <?= Alert::widget() ?>
             <?= $content ?>
 
         </div>

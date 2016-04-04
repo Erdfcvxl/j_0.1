@@ -86,6 +86,30 @@ Class Misc
 		}
 	}
 
+	static public function getAmzius($diena, $menuo, $metai)
+	{
+		$d1 = new \DateTime($diena.'.'.$menuo.'.'.$metai);
+		$d2 = new \DateTime();
+
+		$diff = $d2->diff($d1);
+
+		return $diff->y;
+	}
+
+
+    /**
+     * pagamina id masyvą, naudija $ids gautus iš all()
+     * @param $ids
+     * @return mixed
+     */
+    static public function getByu_id($ids)
+	{
+		foreach($ids as $v){
+			$id[] = $v->u_id;
+		}
+
+		return $id;
+	}
 }
 
 ?>

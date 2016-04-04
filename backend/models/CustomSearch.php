@@ -17,6 +17,9 @@ class CustomSearch extends UserPack
     {
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 24,
+            ]
         ]);
 
         $this->load($params);
