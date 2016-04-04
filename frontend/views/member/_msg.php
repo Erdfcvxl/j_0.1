@@ -42,13 +42,13 @@ if(isset($current)){
     $opacity = (isset($_GET['id']) && $user['id'] == $_GET['id'])? 1 : 0.6 ;
 }
 
-echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id'], 'del' => Url::to(['member/deletechat', 'id'=> Yii::$app->user->id, 'id2' => $user['id'], 'who' => 'both'])]);
+echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id'], 'del' => Url::current(['member/deletechat', 'id'=> Yii::$app->user->id, 'id2' => $user['id'], 'who' => 'both'])]);
 ?>
-<div class="row" id="chatterid<?= $user['id']; ?>" style="margin: 0; margin-top: 5px;">   
+<div class="row" id="chatterid<?= $user['id']; ?>" style="margin: 0; margin-top: 5px;">
     <div class="col-xs-6" style="padding: 0;">
         <div style="position: absolute; right: 1px; color: #fffeff;"><span class="glyphicon glyphicon-remove" onclick="trinti(<?= $user['id']; ?>)" id="trinti" style="cursor: pointer; z-index: 1;"></span></div>
-        <div class="aavatar2" style="background-color: black; position: relative; opacity: <?= $opacity; ?>" onclick='javascript:window.location.href="<?= Url::to(['member/msg', 'id' => $user['id']])?>"'>
-        
+        <div class="aavatar2" style="background-color: black; position: relative; opacity: <?= $opacity; ?>" onclick='javascript:window.location.href="<?= Url::current(['member/msg', 'id' => $user['id']])?>"'>
+
             <?php
                 if($online):
             ?>
@@ -85,6 +85,6 @@ echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id']
     });
 
     $(".aavatar2 img.centerMe").fakecrop({wrapperWidth: $('.aavatar2').width(),wrapperHeight: $('.aavatar2').width()});
-    
+
 
 </script>
