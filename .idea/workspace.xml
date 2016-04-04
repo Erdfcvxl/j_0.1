@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Auriuiadvanced.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_msg.php" afterPath="$PROJECT_DIR$/frontend/views/member/_msg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/msg.php" afterPath="$PROJECT_DIR$/frontend/views/member/msg.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/web/css/desktop.css" afterPath="$PROJECT_DIR$/frontend/web/css/desktop.css" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,14 +42,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_msg.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_msg.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/member/_msg.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="44" column="103" selection-start-line="44" selection-start-column="103" selection-end-line="44" selection-end-column="103" />
+            <state relative-caret-position="268">
+              <caret line="49" column="28" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="desktop.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/web/css/desktop.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="824">
+              <caret line="771" column="19" selection-start-line="771" selection-start-column="19" selection-end-line="771" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,6 +88,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -111,6 +118,7 @@
         <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/msg.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_msg.php" />
+        <option value="$PROJECT_DIR$/frontend/web/css/desktop.css" />
       </list>
     </option>
   </component>
@@ -160,6 +168,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="pzntsltaa" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pzntsltaa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pzntsltaa" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -241,12 +259,20 @@
       <workItem from="1459434404764" duration="16703000" />
       <workItem from="1459769927847" duration="628000" />
       <workItem from="1459776567777" duration="21000" />
-      <workItem from="1459776873824" duration="1352000" />
+      <workItem from="1459776873824" duration="1856000" />
     </task>
+    <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
+      <created>1459778243102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1459778243102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19494000" />
+    <option name="totallyTimeSpent" value="19998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -257,7 +283,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -317,7 +344,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
     <MESSAGE value="Susirašinėjimo pataisa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Susirašinėjimo pataisa" />
+    <MESSAGE value="Css pataisa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Css pataisa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,7 +356,7 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -634,11 +662,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/_msg.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="44" column="103" selection-start-line="44" selection-start-column="103" selection-end-line="44" selection-end-column="103" />
+        <state relative-caret-position="268">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/css/desktop.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="824">
+          <caret line="771" column="19" selection-start-line="771" selection-start-column="19" selection-end-line="771" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
