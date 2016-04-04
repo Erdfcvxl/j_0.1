@@ -1,0 +1,137 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 80px 15px 20px;
+}
+
+.navbar-fixed-top > .container {
+    width: 100%;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+.btn-function{
+    width: 100%;
+    color: #fff;
+    background-color: #5cb894;
+    border-color: #4cae4c;
+}
+
+.btn-function:hover{
+    color: #7ef1ff;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+.daterangepicker{
+    min-width: 500px;
+}
+
+.infoBox{
+    position: fixed;
+    top: 50px;
+    width: 300px;
+    background-color: #191919;
+    border-color: #000;
+    color: #9d9d9d;
+    margin-left: -150px;
+    left: 50%;
+    padding: 0 5px 2px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.monitorBtn{
+    position: fixed;
+    z-index: 90000;
+    width: 50px;
+    height: 10px;
+    top: 50px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #191919;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #9d9d9d;
+}
