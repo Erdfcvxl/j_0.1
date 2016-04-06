@@ -113,37 +113,37 @@ if(Yii::$app->session->hasFlash('error')): ?>
               var touch;
 
               function is_touch_device() {
-                return 'ontouchstart' in window // works on most browsers 
+                return 'ontouchstart' in window // works on most browsers
                     || 'onmsgesturechange' in window; // works on ie10
               };
 
               $(function(){
                 touch = is_touch_device();
 
-              
+                if(touch){
+                  $('#firstLog').click(function(){
+                    $('#preLog').css({"display" : "none"});
+                    $('#almost').css({"display" : "block"});
+                    $('#errorBox').css({'display':'none'});
+                  });
+                }else{
+                  $('#firstLog').mouseenter(function(){
+                    $('#preLog').css({"display" : "none"});
+                    $('#almost').css({"display" : "block"});
+                    $('#errorBox').css({'display':'none'});
+                  });
+
+                  $('#almost').mouseleave(function(){
+                    if(selected == 0){
+                      $('#preLog').css({"display" : "block"});
+                      $('#almost').css({"display" : "none"});
+                      $('#simpleL').css({"display" : "none"});
+                    }
+                  });
+                }
               });
 
-              if(touch){
-                $('#firstLog').click(function(){
-                  $('#preLog').css({"display" : "none"});
-                  $('#almost').css({"display" : "block"});
-                  $('#errorBox').css({'display':'none'});
-                });
-              }else{
-                $('#firstLog').mouseenter(function(){
-                  $('#preLog').css({"display" : "none"});
-                  $('#almost').css({"display" : "block"});
-                  $('#errorBox').css({'display':'none'});
-                });
-                
-                $('#almost').mouseleave(function(){
-                  if(selected == 0){
-                    $('#preLog').css({"display" : "block"});
-                    $('#almost').css({"display" : "none"});
-                    $('#simpleL').css({"display" : "none"});
-                  }
-                }); 
-              }
+
 
               $('#si').click(function(){ 
                   selected = 1;

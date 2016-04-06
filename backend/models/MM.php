@@ -22,6 +22,8 @@ class MM
 
     public function populate($params)
     {
+        require(__DIR__ . '/../../frontend/views/site/form/_list.php');
+
         $this->sender = $params['id'];
         $this->lytis = $params['lytis'];
         $this->method = $params['ivestis'];
@@ -33,9 +35,10 @@ class MM
             if(!isset($params['mass']))
                 return 'Nepasirinkti gavėjai';
 
+            $this->msg = $params['msg'];
             $publika = $params['mass'];
 
-            
+
 
             $Tlytis = ($this->lytis == 'm')? ['mm', 'mv'] : ['vv', 'vm'];
             $Plytis = ($this->lytis == 'm')? ['vv', 'vm'] : ['mm', 'mv'];
@@ -77,12 +80,114 @@ class MM
 
                         $this->publika = 'Tos pačios lyties Vip nariai';
                     }
-                }    
+                }
             }else {
-                $this->publika = 'Visi';
+                $this->publika = 'Visi pagal lyti ir Vip';
             }
 
-            $this->msg = $params['msg'];
+            //miesto filtrai
+            if(isset($publika['miestai'])){
+                if(isset($params['miestai'])) {
+
+                    $this->publika .= ' Miestai: ';
+
+                    $pasirinkimai = $params['miestai'];
+                    $pavieniai = null;
+                    $grupes = [];
+
+
+                    /*
+                     * $grupes          siame array'juje sedi tekstinis grupes pavadinimas
+                     * $pasirinkimai    siame array'juje sedi visi miestu id is saraso
+                     */
+                    foreach ($pasirinkimai as $k => $v) {
+                        if (!is_numeric($v)) {
+                            $this->publika .= ' ' . $v . ';';
+
+                            if($v == 'Anglija'){
+                                array_merge($grupes, $anglija);
+                            }
+
+                            if($v == 'Airija'){
+                                array_merge($grupes, $airija);
+                            }
+
+                        } else {
+                            $this->publika .= ' ' . $list[$v] . ';';
+                            $pavieniai[] = $v;
+                            unset($pasirinkimai[$k]);
+                        }
+                    }
+
+                    if (count($pavieniai) > 0)
+                        $query->andFilterWhere(['miestas' => $grupes]);
+
+                }
+
+            }
+
+            //amziaus filtrai
+            if(isset($publika['amzius'])){
+                $nuo = (isset($params['amzius']['nuo']))? $params['amzius']['nuo'] : 18;
+                $iki = (isset($params['amzius']['nuo']))? $params['amzius']['iki'] : 100;
+
+                //nuoTs > ikiTs
+                $nuoTs = time() - $nuo * 31556926;
+                $ikiTs = time() - ($iki + 1) * 31556926 - 1;
+
+                $query->andFilterWhere(['between', 'info.gimimoTS', $ikiTs, $nuoTs]);
+
+                $this->publika .= ' Amžiaus filtras: nuo '.$nuo.' iki '.$iki.' metų;';
+            }
+
+            //tikslo filtrai
+            if(isset($publika['tikslas'])) {
+                if(isset($params['tikslas'])) {
+
+                    $paruostukas = '';
+
+                    foreach ($params['tikslas'] as $k => $v) {
+                        $temp[] = $v;
+                        $paruostukas .= $tikslas[$k]." ";
+                    }
+
+                    $this->publika .= ' Tikslo filtras: '.$paruostukas.';';
+
+                    $query->andFilterWhere(['info.tikslas' => $temp]);
+                }
+            }
+
+            //orentacijos filtrai
+            if(isset($publika['orentacija'])) {
+                if(isset($params['orentacija'])) {
+
+                    $paruostukas = '';
+
+                    foreach ($params['orentacija'] as $k => $v){
+                        $temp[] = $k;
+                        $paruostukas .= $orentacija[$k]." ";
+                    }
+
+                    $this->publika .= ' Orentacijos filtras: '.$paruostukas.';';
+
+                    $query->andFilterWhere(['info.orentacija' => $temp]);
+                }
+            }
+
+            //foto filtrai
+            if(isset($publika['foto'])){
+                $query->andFilterWhere(['avatar'=>['jpg','png','gif']]);
+
+                $this->publika .= ' Nariai su nuotrauka;';
+            }
+
+            if(isset($publika['fake'])){
+                $query->andFilterWhere(['user.f' => 1]);
+
+                $this->publika .= ' Fake nariai;';
+            }
+
+
 
         }else{
             $recievers = explode(',', $params['recievers']);
@@ -97,6 +202,8 @@ class MM
             $this->publika = implode(',', $recievers)." <small>(viso: <b>".count($recievers)."</b>)</small>";
 
         }
+
+        $query->andFilterWhere(['not', ['user.id' => $_GET['id']]]);
 
         foreach ($query->all() as $v) {
             $this->recievers[] = $v->id;

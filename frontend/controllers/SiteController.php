@@ -98,7 +98,6 @@ class SiteController extends Controller
         $userAttributes = $client->getUserAttributes();
 
         $username = $userAttributes['name'];
-        $id = $userAttributes['id'];
         $email = $userAttributes["email"];
         $photoSrc = $userAttributes['picture']['data']['url'];        
 

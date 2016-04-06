@@ -1,9 +1,17 @@
 <?php
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use kartik\select2\Select2;
 use yii\widgets\ListView;
 
+
 require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
+
+$data = [
+	'Grupės' =>['Anglija' => 'Visa Anglija', 'Airija' => 'Visa Airija'],
+	'Pavieniai' => $list,
+];
+
 ?>
 
 <div class="container">
@@ -50,7 +58,7 @@ require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
 							
 							
 						</td>
-						<td>
+						<td width="400px;">
 
 							<p class="text-center">Naudoti automtinį įvedimą <?= Html::input('radio', 'ivestis', 'auto', ['style' => 'display: inline-block;', 'checked' => true]) ?></p>
 
@@ -58,7 +66,66 @@ require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
 							<p><?= Html::checkBox('mass[plaV]', false) ?> Priešingos lyties atstovams (VIP'ams)</p>
 							<p><?= Html::checkBox('mass[tpla]', false) ?> Tos pačios lyties atstovams (ne VIP'ams)</p>
 							<p><?= Html::checkBox('mass[tplaV]', false) ?> Tos pačios lyties atstovams (VIP'ams)</p>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[miestai]', false, ['id' => 'miestai', 'class' => 'prock']) ?> Miestai </label>
+							<div id="miestaiB" style="display: none;">
+								<?= Select2::widget([
+									'name' => 'miestai',
+									'data' => $data,
+									'options' => [
+										'placeholder' => 'Pasirinkite miestus ...',
+										'multiple' => true,
+										'style' => 'width: 100%;',
+									],
+								]);
+								?>
+							</div>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[amzius]', false, ['id' => 'amzius', 'class' => 'prock']) ?> Amžius</label>
+							<div id="amziusB" style="display: none;">
+								<?= Html::input('text', 'amzius[nuo]', '', ['class' => 'form-control', 'placeholder' => 'Nuo', 'style' => 'width: 75px; display: inline-block;']) ?>
+								<?= Html::input('text', 'amzius[iki]', '', ['class' => 'form-control', 'placeholder' => 'Iki', 'style' => 'width: 75px; display: inline-block;']) ?>
+							</div>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[tikslas]', false, ['id' => 'tikslas', 'class' => 'prock']) ?> Tikslas</label>
+							<div id="tikslasB" style="display: none;">
+								<?= Select2::widget([
+									'name' => 'tikslas',
+									'data' => $tikslas,
+									'options' => [
+										'placeholder' => 'Pasirinkite tikslus ...',
+										'multiple' => true,
+										'style' => 'width: 100%;',
+									],
+								]);
+								?>
+							</div>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[orentacija]', false, ['id' => 'orentacija', 'class' => 'prock']) ?> Orentacija</label>
+							<div id="orentacijaB" style="display: none;">
+								<?= Html::checkBox('orentacija[0]', false) ?> Biseksuali 		&nbsp; &nbsp; &nbsp;
+								<?= Html::checkBox('orentacija[1]', false) ?> Heteroseksuali 	&nbsp; &nbsp; &nbsp;
+								<?= Html::checkBox('orentacija[2]', false) ?> Homoseksuali  	&nbsp; &nbsp; &nbsp;
+							</div>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[foto]', false) ?> Tik su nuotrauka</label>
+
 						</td>
+					</tr>
+
+					<tr style="background-color: #eee">
+						<th style="vertical-align: middle; text-align: center;">Testavimui</th>
+						<td><?= Html::checkBox('mass[fake]', false) ?> Automatinius filtrus taikyti tik fake nariams</td>
 					</tr>
 
 					<tr>
@@ -68,16 +135,36 @@ require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
 					<tr>
 						<td colspan="2"><textarea name="msg" style="width: 100%;"></textarea></td>
 					</tr>
+
+					<tr>
+						<th colspan="2"><?= Html::submitButton('Ieškoti', ['class' => 'btn btn-primary', 'value'=>'Create & Add New', 'style' => 'width: 100%']) ?></th>
+					</tr>
 				</table>
 
 				
 				<br>
-				<?= Html::submitButton('Ieškoti', ['class' => 'btn btn-primary', 'value'=>'Create & Add New']) ?>
+
 
 			<?php ActiveForm::end() ?>
 		</div>
 
 	</div>
 
-
 </div>
+
+<script type="text/javascript">
+
+	$('.prock').change(function(){
+		var id = this.id;
+
+		if($(this).is(":checked"))
+			$('#'+id+'B').fadeIn();
+		else
+			$('#'+id+'B').fadeOut();
+
+	});
+
+
+
+
+</script>
