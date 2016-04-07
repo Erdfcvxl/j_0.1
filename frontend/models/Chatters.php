@@ -69,8 +69,21 @@ class Chatters extends \yii\db\ActiveRecord
 
         $this->load($params);
 
-        $query->filterWhere(['like', 'username1', $this->username])->orFilterWhere(['like', 'username2', $this->username]);
+        if($this->username){
+            $users = User::find()->select('id')->where(['like', 'username', $this->username])->all();
+            $ids = null;
 
+
+            foreach ($users as $user){
+                $ids[] = $user->id;
+            }
+
+            if($ids)
+                $query->andFilterWhere(['and', ['u1' => $ids, 'u2' => Yii::$app->user->id]])
+                    ->orFilterWhere(['and', ['u1' => Yii::$app->user->id, 'u2' => $ids]]);
+
+        }
+        
         return $dataProvider;
 
     }

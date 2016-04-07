@@ -1544,9 +1544,9 @@ class MemberController extends \yii\web\Controller
 
     public function actionChatchatterssearch()
     {
-        $searchModel = new \frontend\models\UserSearchP();
+        $searchModel = new \frontend\models\Chatters;
         $searchModel->username = $_GET['username'];
-        $dataProvider = $searchModel->searchPokalbiai();
+        $dataProvider = $searchModel->searchPokalbiai(Yii::$app->request->post());
 
         return $this->renderPartial('_pasnekovaiUpdate',[
             'dataProvider' => $dataProvider,

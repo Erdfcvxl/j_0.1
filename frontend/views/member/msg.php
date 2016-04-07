@@ -170,7 +170,7 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 
 
 
-    		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; min-height: 642px; text-align: left;">
+    		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; text-align: left;  margin-bottom: 70px;">
 
                 <?php if(\frontend\models\Functions::StepsNotCompleted($me) !== false): ?>
                     <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?= $notCompleteMsg; ?></div>
@@ -381,7 +381,7 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
             <?php endif; ?>
 
 
-            <div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; min-height: 642px; text-align: left;">
+            <div class="col-xs-9" style="padding: 7px 20px; background-color: #f4f4f4; min-height: 642px; text-align: left;">
 
                 <?php $form = ActiveForm::begin();?>
                     <?= $form->field($AllSearch, 'username')->textInput(['id' => 'ajaxSearch', 'class' => 'trans_input', 'style' => 'padding: 0 5px; margin-top: 5px; width: 200px; background-color: #ebebeb;', 'autocomplete' => 'off', 'placeholder' => 'Ieškoti tarp visų narių'])->label(false); ?>
@@ -463,53 +463,59 @@ function searchAll(username)
 function searchChatchatterssearch(username)
 {
     $.ajax({
-            type: "get",
-            url: "$url2",
-            global: false,
-            async: false,
-            cache: false,
-            data: {'username' : username, 'current' : $thisId},
-            dataType: 'html',
-            success: function(data){
-                //console.log(data);
-                $("#pasnekovai").css({"display" : "none"});
-                $("#pasnekovaiNew").css({"display" : "block"});
-                $("#pasnekovaiNew").html(data);
-            },
-            error:function(ts){
-                console.log(ts);
-               $("body").html(ts.responseText);
-               //alert('zopa');
-            },
-            complete: function (data) {
-               // alert('prasisukau');
-            }
+        type: "get",
+        url: "$url2",
+        global: false,
+        async: false,
+        cache: false,
+        data: {'username' : username, 'current' : $thisId},
+        dataType: 'html',
+        success: function(data){
+            //console.log(data);
+            $("#pasnekovai").css({"display" : "none"});
+            $("#pasnekovaiNew").css({"display" : "block"});
+            $("#pasnekovaiNew").html('');
+            $("#pasnekovaiNew").html(data);
+        },
+        error:function(ts){
+            console.log(ts);
+           $("body").html(ts.responseText);
+           //alert('zopa');
+        },
+        complete: function (data) {
+           // alert('prasisukau');
+        }
 
-        });
+    }); 
+    
 }
 
 
-var called = 0;
-var reset;
+///*var called = 0;
+//var reset;
+//
+//var delay = (function(){
+//var timer = 0;
+//  return function(callback, ms){
+//    clearTimeout (timer);
+//    timer = setTimeout(callback, ms);
+//  };
+//})();
+//*/
 
-var delay = (function(){
-var timer = 0;
-  return function(callback, ms){
-    clearTimeout (timer);
-    timer = setTimeout(callback, ms);
-  };
-})();
-
+var timer;
 
 $("#ajaxSearch2").keyup(function() {
-    delay(function(){
+    clearTimeout(timer);
+
+    timer = setTimeout(function(){
         if($("#ajaxSearch2").val()){
             searchChatchatterssearch($("#ajaxSearch2").val());
         }else{
             $("#pasnekovaiNew").css({"display" : "none"});
             $("#pasnekovai").css({"display" : "block"});
         }
-    }, 200 );
+    }, 500 );
 });
 
 
