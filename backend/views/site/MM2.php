@@ -3,6 +3,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use kartik\select2\Select2;
 use yii\widgets\ListView;
+use kartik\daterange\DateRangePicker;
 
 
 require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
@@ -11,6 +12,30 @@ $data = [
 	'Grupės' =>['Anglija' => 'Visa Anglija', 'Airija' => 'Visa Airija'],
 	'Pavieniai' => $list,
 ];
+
+
+$datepicker2 = DateRangePicker::widget([
+	'name'=>'created_at',
+	'convertFormat'=>true,
+	'pluginOptions'=>[
+		'locale'=>[
+			'format'=>'Y-m-d',
+			'separator'=>' - ',
+		],
+	],
+	'hideInput' => true,
+	'containerTemplate' => '
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+        <span class="form-control text-right">
+            <span class="pull-left">
+                <span class="range-value">{value}</span>
+            </span>
+            {input}
+        </span>
+    ',
+]);
 
 ?>
 
@@ -119,6 +144,15 @@ $data = [
 							<hr>
 
 							<label class="control-label"><?= Html::checkBox('mass[foto]', false) ?> Tik su nuotrauka</label>
+
+							<hr>
+
+							<label class="control-label"><?= Html::checkBox('mass[registracija]', false, ['id' => 'registracija', 'class' => 'prock']) ?> Registracijos laikas</label>
+							<div id="registracijaB" style="display: none;">
+								<?= $datepicker2; ?>
+							</div>
+
+
 
 						</td>
 					</tr>

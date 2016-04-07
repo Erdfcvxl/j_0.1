@@ -36,7 +36,7 @@ require(__DIR__ . '/../../../frontend/views/site/form/_list.php');
 					<th>Gavėjai</th>
 					<td><?= $model->publika; ?></td>
 					<th>Atitikmenų</td>
-					<td><?= count($model->recievers) ?></td>
+					<td><a href="<?= Url::to(['site/list', 'model' => $model->recievers]);?>" target="_blank"><?= count($model->recievers) ?></a></td>
 				</tr>
 				<tr>
 					<th>Žinutė</th>

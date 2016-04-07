@@ -512,5 +512,19 @@ class SiteController extends Controller
 
         return $this->redirect(Yii::$app->request->referrer);
     }
+
+    public function actionList()
+    {
+        @extract($_GET);
+        
+        $m = new \backend\models\CustomSearch;
+        $m->id = $model;
+
+
+        $query = \frontend\models\UserPack::find();
+        $dataProvider = $m->CustomSearch(null, $query);
+
+        return $this->render('list', ['dataProvider' => $dataProvider]);
+    }
    
 }

@@ -181,10 +181,23 @@ class MM
                 $this->publika .= ' Nariai su nuotrauka;';
             }
 
+            //fake filtrai
             if(isset($publika['fake'])){
                 $query->andFilterWhere(['user.f' => 1]);
 
                 $this->publika .= ' Fake nariai;';
+            }
+
+            //registracijos filtrai
+            if(isset($publika['registracija'])){
+                if(isset($params['created_at'])){
+                    $ca = $params['created_at'];
+                    $created_at = explode(" - ", $ca);
+                    $created_at_start = strtotime($created_at[0]);
+                    $created_at_end = strtotime($created_at[1]);
+
+                    $query->andFilterWhere(['between', 'created_at', $created_at_start, $created_at_end]);
+                }
             }
 
 

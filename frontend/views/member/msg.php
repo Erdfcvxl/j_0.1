@@ -170,7 +170,7 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 
 
 
-    		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; text-align: left;  margin-bottom: 70px;">
+    		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; text-align: left;  margin-bottom: 700px;">
 
                 <?php if(\frontend\models\Functions::StepsNotCompleted($me) !== false): ?>
                     <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?= $notCompleteMsg; ?></div>
