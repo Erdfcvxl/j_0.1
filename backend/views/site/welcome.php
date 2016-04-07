@@ -73,7 +73,7 @@ use yii\widgets\ListView;
         });
     });
 
-    $("textarea").change(function(){
+    $("textarea").keyup(function(){
         var id = $(this).attr('u_id');
 
         $('.submit[u_id="'+id+'"]').removeClass('btn-primary').addClass('btn-success');
