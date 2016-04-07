@@ -491,17 +491,17 @@ function searchChatchatterssearch(username)
 }
 
 
-///*var called = 0;
-//var reset;
-//
-//var delay = (function(){
-//var timer = 0;
-//  return function(callback, ms){
-//    clearTimeout (timer);
-//    timer = setTimeout(callback, ms);
-//  };
-//})();
-//*/
+var called = 0;
+var reset;
+
+var delay = (function(){
+var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
 
 var timer;
 

@@ -24,7 +24,7 @@ class CustomSearch extends UserPack
 
         $this->load($params);
 
-        $query->andFilterWhere(['username' => $this->username])
+        $query->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['id' => $this->id]);
 
 

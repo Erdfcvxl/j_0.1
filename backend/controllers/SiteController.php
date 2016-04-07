@@ -478,7 +478,7 @@ class SiteController extends Controller
         $query['in'] = \frontend\models\UserPack::find()->where(['id' => \frontend\models\Misc::getByu_id($ids)]);
         $DP_players = $model->CustomSearch($post, $query['in']);
 
-        return $this->render('welcome', ['welcome' => $welcome, 'DP' => ['fakes' => $DP_fakes, 'players' => $DP_players]]);
+        return $this->render('welcome', ['welcome' => $welcome, 'model' => $model, 'DP' => ['fakes' => $DP_fakes, 'players' => $DP_players]]);
 
     }
 

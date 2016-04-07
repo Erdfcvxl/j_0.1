@@ -28,6 +28,15 @@ use yii\widgets\ListView;
         <div class="col-xs-9">
             <h3>Pasirinkite narius kurie dalyvaus žinučių siuntime</h3>
 
+            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+
+                <div class="row">
+                    <div class="col-xs-6"><?= $form->field($model, 'username')->textInput(['placeholder' => 'Ieškoti pagal slapyvardį'])->label(false); ?></div>
+                    <div class="col-xs-6"><?= Html::submitButton('Ieškoti', ['class' => 'btn btn-primary', 'value'=>'Create & Add New']) ?></div>
+                </div>
+
+            <?php ActiveForm::end() ?>
+
             <?= ListView::widget( [
                 'layout' => '<div style="float: left; min-width: 877px; ">{items}</div><div class="row" style="padding-left: 15px; padding-right: 15px; text-align: right;">{pager}</div>',
                 'dataProvider' => $DP['fakes'],

@@ -3,6 +3,9 @@
 namespace backend\models;
 
 use Yii;
+use frontend\models\Chat;
+use frontend\models\Statistics;
+use frontend\models\Chatnot;
 
 /**
  * This is the model class for table "welcome".
@@ -74,4 +77,64 @@ class Welcome extends \yii\db\ActiveRecord
         return false;
 
     }
+
+    public function sendFfm($id, $msg, $gavejas)
+    {
+        if($id && $msg){
+            $sender = \frontend\models\UserPack::find()->where(['id' => $id])->one();
+
+            $chat = new Chat;
+            $chat->tryEmail($sender, $gavejas, true);
+            $chat->sendMsgGlobal($sender->id, $gavejas->id, $msg);
+
+            Statistics::addRecieved($gavejas->id);
+
+            $not = new Chatnot;
+            $not->insertNotGlobal($sender->id, $gavejas->id);
+
+            $gavejas->firstFakeMsg = 1;
+            $gavejas->save();
+        }
+
+
+
+    }
+
+    public function trySend()
+    {
+        $users = \frontend\models\UserPack::find()->where(['firstFakeMsg' => 0])->andWhere(['>=', 'created_at', 60 * 2])->all();
+        $models = self::find()->all();
+        $skirtumas = 10000;
+        $id = null;
+        $msg = null;
+        $issiusta = [];
+
+        foreach($users as $user){
+            $amzius = \frontend\models\Misc::getAmzius($user->info->diena, $user->info->menuo, $user->info->metai);
+            $iesko = substr($user->info->iesko, 1);
+
+            foreach ($models as $model)
+                if($model->lytis == $iesko)
+                    if(abs($model->amzius - $amzius) < $skirtumas){
+                        $skirtumas = abs($model->amzius - $amzius);
+                        $id = $model->u_id;
+                        $msg = $model->msg;
+                    }
+
+            $this->sendFfm($id, $msg, $user);
+            $issiusta[] = [
+                'siuntejas' => $id,
+                'gavejas' => $user->username,
+                'zinute' => $msg
+            ];
+        }
+
+        echo "issiusta: <br>";
+        foreach ($issiusta as $v){
+            echo "siuntejas: ".$v['siuntejas']."; gavejas: ".$v['gavejas']."; zinute: ".$v['zinute'];
+        }
+
+    }
+
+
 }

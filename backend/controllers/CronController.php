@@ -182,8 +182,16 @@ class CronController extends \yii\web\Controller
         $model = new \common\models\Mail;
 
         $model->sendEmails();
+    }
 
-        
+    /*
+     * Pirmoji žinutė iš fake nario (ffm == first fake message)
+     */
+    public function actionFfm()
+    {
+        $welcome = new \backend\models\Welcome;
+
+        $welcome->trySend();
     }
 
 
