@@ -127,7 +127,7 @@ class SiteController extends Controller
                     $mail->sender = $model->name;
                     $mail->reciever = $email;
                     $mail->subject = $model->subject;
-                    $mail->vars = 'logo=>css/img/icons/logoEmpty.jpg,avatars=>css/img/icons/avatarSectionEmail.jpg,link=>css/img/icons/link.jpg,body=>'.$model->body;
+                    $mail->vars = 'logo=>css/img/icons/logoEmpty.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|body=>'.$model->body;
                     $mail->view = '_sablonas';
                     $mail->timestamp = time();
                     $mail->trySend();

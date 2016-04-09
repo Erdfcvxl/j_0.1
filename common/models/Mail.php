@@ -55,7 +55,7 @@ class Mail extends \yii\db\ActiveRecord
 
     static public function makeVarsArray($string)
     {
-        $elements = explode(',', $string);
+        $elements = explode('|,|', $string);
 
         $result = [];
 
