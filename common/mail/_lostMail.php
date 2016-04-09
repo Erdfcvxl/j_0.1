@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 	<p style="font-size: 20px; color:#5a5a5a; font-family: OpenSans;">
 		Jūsų prisijungimo vardas: <b><span style="color: #000;"><?= $name; ?></span></b><br>
-		Jei norite gauti naują slaptažodį paspauskite šią nuorodą: <a href="<?= Url::to(['site/login', 'lost' => 1, 'name' => $name, 'psl' => 'proceed', 'token' => $token], true); ?>">Pažintyslietuviams.co.uk</a><br>
+		Jei norite gauti naują slaptažodį paspauskite šią nuorodą: <a href="https://pazintyslietuviams.co.uk/site/login?lost=1&name=<?= $name; ?>&psl=proceed&token=<?= $token; ?>">Pažintyslietuviams.co.uk</a><br>
 	</p>
 
 	<div style="padding: 80px 0; margin-top: 80px; position: relative;">
@@ -17,7 +17,7 @@ use yii\helpers\Url;
 		<img src="<?= $message->embed($avatars); ?>">
 
 		<div style="margin-top: -100px; ">
-			<a href="<?= Url::to(['site/login'], true);?>"><img src="<?= $message->embed($link); ?>"></a>
+			<a href="https://pazintyslietuviams.co.uk"><img src="<?= $message->embed($link); ?>"></a>
 		</div>
 
 	</div>

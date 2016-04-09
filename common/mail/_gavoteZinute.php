@@ -16,7 +16,7 @@ use yii\helpers\Url;
 		<img src="<?= $message->embed($avatars); ?>">
 
 		<div style="margin-top: -100px; ">
-			<a href="<?= Url::to(['site/login'], true);?>"><img src="<?= $message->embed($link); ?>"></a>
+			<a href="https://pazintyslietuviams.co.uk"><img src="<?= $message->embed($link); ?>"></a>
 		</div>
 
 	</div>

@@ -194,5 +194,11 @@ class CronController extends \yii\web\Controller
         $welcome->trySend();
     }
 
+    public function actionTest()
+    {
+        $users = \frontend\models\UserPack::find()->where(['firstFakeMsg' => 0])->andWhere(['>=', 'created_at', 60 * 2])->all();
+
+        var_dump($users);
+    }
 
 }

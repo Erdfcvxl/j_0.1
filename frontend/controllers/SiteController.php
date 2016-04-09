@@ -689,20 +689,18 @@ class SiteController extends Controller
                 $mail->sender = 'pazintys@pazintyslietuviams.co.uk';
                 $mail->reciever = $post['User']['email'];
                 $mail->subject = 'Prisijungimo duomenys';
-                $mail->vars = [
-                    'logo' => 'css/img/icons/logo2.jpg', 
-                    'avatars' => 'css/img/icons/avatarSectionEmail.jpg', 
-                    'link' => 'css/img/icons/link.jpg', 
-                    'name' => $user->username, 
-                    'token' => $token
-                    ];
+                $mail->vars = 'logo=>css/img/icons/logo2.jpg,avatars=>css/img/icons/avatarSectionEmail.jpg,link=>css/img/icons/link.jpg,name=>'.$user->username.',token=>'.$token;
                 $mail->view = '_lostMail';
-                $mail->save();
+                $mail->trySend();
+
+                //var_dump($mail->getErrors());
 
             }else{
                 Yii::$app->setFlash('danger', 'Toks el. paštas nėra registruotas.');
                 return $this->redirect(Url::to(['site/login', 'lost' => 1]));
             }
+        }else{
+            echo " ...";
         }
 
         return $this->redirect(Url::to(['site/login', 'lost' => 1, 'psl' => 'issiusta']));

@@ -31,9 +31,10 @@ class Mail extends \yii\db\ActiveRecord
     {
         return [
             [['sender', 'reciever', 'subject'], 'required'],
-            [['sender', 'reciever', 'subject', 'content', 'view', 'vars'], 'string'],
+            [['subject', 'content', 'vars'], 'string'],
             [['timestamp'], 'integer'],
-            [['timestamp', 'content'], 'safe']
+            [['reciever', 'sender'], 'email'],
+            [['timestamp', 'content', 'vars', 'view'], 'safe']
         ];
     }
 
@@ -90,25 +91,28 @@ class Mail extends \yii\db\ActiveRecord
 
     public function sendThis($params)
     {
-        if($this->content){
-            Yii::$app->mailer->compose()
-                ->setFrom($this->sender)
-                ->setTo($this->reciever)
-                ->setSubject($this->subject)
-                ->setHtmlBody($this->content)
-                ->send();
-        }else{
-            $vars = $this::makeVarsArray($this->vars);
+        if($this->validate()) {
+            if ($this->content) {
+                Yii::$app->mailer->compose()
+                    ->setFrom($this->sender)
+                    ->setTo($this->reciever)
+                    ->setSubject($this->subject)
+                    ->setHtmlBody($this->content)
+                    ->send();
+            } else {
+                $vars = $this::makeVarsArray($this->vars);
 
-            Yii::$app->mailer->compose($this->view, $vars)
-                ->setFrom($this->sender)
-                ->setTo($this->reciever)
-                ->setSubject($this->subject)
-                ->send();
+                Yii::$app->mailer->compose($this->view, $vars)
+                    ->setFrom($this->sender)
+                    ->setTo($this->reciever)
+                    ->setSubject($this->subject)
+                    ->send();
+            }
+
+
+            $params->MailLeft -= 1;
+            $params->save();
         }
-
-        $params->MailLeft -= 1;
-        $params->save();
 
         return true;
     }
@@ -133,19 +137,21 @@ class Mail extends \yii\db\ActiveRecord
                 if($params->MailLeft > 0) {
                     $vars = self::makeVarsArray($mail->vars);
 
-                    if ($mail->content) {
-                        Yii::$app->mailer->compose()
-                            ->setFrom($mail->sender)
-                            ->setTo($mail->reciever)
-                            ->setSubject($mail->subject)
-                            ->setHtmlBody($mail->content)
-                            ->send();
-                    } else {
-                        Yii::$app->mailer->compose($mail->view, $vars)
-                            ->setFrom($mail->sender)
-                            ->setTo($mail->reciever)
-                            ->setSubject($mail->subject)
-                            ->send();
+                    if($mail->validate()) {
+                        if ($mail->content) {
+                            Yii::$app->mailer->compose()
+                                ->setFrom($mail->sender)
+                                ->setTo($mail->reciever)
+                                ->setSubject($mail->subject)
+                                ->setHtmlBody($mail->content)
+                                ->send();
+                        } else {
+                            Yii::$app->mailer->compose($mail->view, $vars)
+                                ->setFrom($mail->sender)
+                                ->setTo($mail->reciever)
+                                ->setSubject($mail->subject)
+                                ->send();
+                        }
                     }
 
                     $mail->delete();
