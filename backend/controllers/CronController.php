@@ -1,8 +1,8 @@
 <?php
 
-set_time_limit(0);
-
 namespace backend\controllers;
+
+set_time_limit(0);
 
 use Yii;
 

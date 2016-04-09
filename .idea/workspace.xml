@@ -74,8 +74,8 @@
       <file leaf-file-name="CronController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="68">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding>
                 <element signature="e#210#428#0#PHP" expanded="false" />
                 <element signature="e#434#3224#0#PHP" expanded="false" />
@@ -521,7 +521,7 @@
       <workItem from="1459956361836" duration="7058000" />
       <workItem from="1460027741995" duration="41000" />
       <workItem from="1460054711026" duration="10660000" />
-      <workItem from="1460154925033" duration="6001000" />
+      <workItem from="1460154925033" duration="6271000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -614,11 +614,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460162049678</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="script execution time limit change">
+      <created>1460162438134</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1460162438134</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62405000" />
+    <option name="totallyTimeSpent" value="62675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -701,7 +708,8 @@
     <MESSAGE value="Automatinės žinutės. Baigta" />
     <MESSAGE value="Minorinis auto msg interfeiso pataisymas" />
     <MESSAGE value="mail" />
-    <option name="LAST_COMMIT_MESSAGE" value="mail" />
+    <MESSAGE value="script execution time limit change" />
+    <option name="LAST_COMMIT_MESSAGE" value="script execution time limit change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1142,8 +1150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding>
             <element signature="e#210#428#0#PHP" expanded="false" />
             <element signature="e#434#3224#0#PHP" expanded="false" />
