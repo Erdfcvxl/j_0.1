@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/models/Mail.php" afterPath="$PROJECT_DIR$/common/models/Mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Chat.php" afterPath="$PROJECT_DIR$/frontend/models/Chat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/CronController.php" afterPath="$PROJECT_DIR$/backend/controllers/CronController.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,6 +71,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CronController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <folding>
+                <element signature="e#210#428#0#PHP" expanded="false" />
+                <element signature="e#434#3224#0#PHP" expanded="false" />
+                <element signature="e#3230#3836#0#PHP" expanded="false" />
+                <element signature="e#3842#4190#0#PHP" expanded="false" />
+                <element signature="e#4196#5009#0#PHP" expanded="false" />
+                <element signature="e#5015#5133#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/site/login.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,10 +122,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/models/Mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="969">
               <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding>
                 <element signature="e#1440#1708#0#PHP" expanded="false" />
@@ -190,7 +204,6 @@
         <option value="$PROJECT_DIR$/frontend/views/member/msg.php" />
         <option value="$PROJECT_DIR$/backend/models/Welcome.php" />
         <option value="$PROJECT_DIR$/backend/views/site/welcome.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/CronController.php" />
         <option value="$PROJECT_DIR$/common/mail/_atsiprasome.php" />
         <option value="$PROJECT_DIR$/common/mail/_emailChange.php" />
         <option value="$PROJECT_DIR$/common/mail/_emailChangeToOld.php" />
@@ -203,6 +216,7 @@
         <option value="$PROJECT_DIR$/frontend/models/Chat.php" />
         <option value="$PROJECT_DIR$/backend/models/MM.php" />
         <option value="$PROJECT_DIR$/common/models/Mail.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/CronController.php" />
       </list>
     </option>
   </component>
@@ -507,7 +521,7 @@
       <workItem from="1459956361836" duration="7058000" />
       <workItem from="1460027741995" duration="41000" />
       <workItem from="1460054711026" duration="10660000" />
-      <workItem from="1460154925033" duration="5617000" />
+      <workItem from="1460154925033" duration="6001000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -593,11 +607,18 @@
       <option name="project" value="LOCAL" />
       <updated>1460161095551</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mail">
+      <created>1460162049678</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1460162049678</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62021000" />
+    <option name="totallyTimeSpent" value="62405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -918,21 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="200" column="25" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
-          <folding>
-            <element signature="e#190#408#0#PHP" expanded="false" />
-            <element signature="e#414#3204#0#PHP" expanded="false" />
-            <element signature="e#3210#3816#0#PHP" expanded="false" />
-            <element signature="e#3822#4170#0#PHP" expanded="false" />
-            <element signature="e#4176#4989#0#PHP" expanded="false" />
-            <element signature="e#4995#5113#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/site/msg.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1126,10 +1132,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/models/Mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="969">
           <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
           <folding>
             <element signature="e#1440#1708#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding>
+            <element signature="e#210#428#0#PHP" expanded="false" />
+            <element signature="e#434#3224#0#PHP" expanded="false" />
+            <element signature="e#3230#3836#0#PHP" expanded="false" />
+            <element signature="e#3842#4190#0#PHP" expanded="false" />
+            <element signature="e#4196#5009#0#PHP" expanded="false" />
+            <element signature="e#5015#5133#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
