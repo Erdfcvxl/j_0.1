@@ -42,7 +42,7 @@ if(isset($current)){
     $opacity = (isset($_GET['id']) && $user['id'] == $_GET['id'])? 1 : 0.6 ;
 }
 
-echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id'], 'del' => Url::current(['member/deletechat', 'id'=> Yii::$app->user->id, 'id2' => $user['id'], 'who' => 'both'])]);
+echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id'], 'del' => Url::to(['member/deletechat', 'id'=> Yii::$app->user->id, 'id2' => $user['id'], 'who' => 'both'])]);
 ?>
 <div class="row" id="chatterid<?= $user['id']; ?>" style="margin: 0; margin-top: 5px;">
     <div class="col-xs-6" style="padding: 0;">

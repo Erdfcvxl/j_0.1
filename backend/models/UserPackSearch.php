@@ -46,6 +46,7 @@ class UserPackSearch extends UserPack
             'pagination' => [
                 'pageSize' => (isset($_GET['ps']))? $_GET['ps'] : 30,
             ],
+            'sort'=> ['defaultOrder' => ['expires'=>SORT_ASC]],
         ]);
 
         return $dataProvider;

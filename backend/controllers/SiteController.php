@@ -503,8 +503,7 @@ class SiteController extends Controller
 
         return true;
     }
-
-
+    
     public function actionRemovefromwelcome()
     {
         $model = \backend\models\Welcome::find()->where(['u_id' => $_GET['id']])->one();

@@ -267,7 +267,7 @@ class MemberController extends \yii\web\Controller
 
         foreach(Chat::isNew() as $chatterId){
             $user = User::find('username')->where(['id' => $chatterId])->one();
-            $lastMsg = Chat::find('message')->where(['sender' => $chatterId])->orderBy(['timestamp' => SORT_DESC])->one();
+            $lastMsg = Chat::find('message')->where(['sender' => $chatterId])->andWhere(['reciever' => Yii::$app->user->id])->orderBy(['timestamp' => SORT_DESC])->one();
         
             $username[] = $user->username;
             $message[] = $lastMsg->message;
@@ -957,7 +957,7 @@ class MemberController extends \yii\web\Controller
                 $chat->delete();
             }
         }
-        
+
         return $this->redirect(Yii::$app->request->referrer);
     }
 
@@ -1352,6 +1352,9 @@ class MemberController extends \yii\web\Controller
             $model->gimimoTS = $date->getTimestamp();
 
             $post = Yii::$app->request->post();
+
+            $at = $post['age_from']."-".$post['age_to'];
+            $model->amzius_tarp = $at;
 
             if(Yii::$app->user->identity['username'] != $post['username']){
                 $user = User::find()->where(['id' => Yii::$app->user->id])->one();

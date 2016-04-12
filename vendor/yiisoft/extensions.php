@@ -66,15 +66,6 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '1.8.2.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
-    ),
-  ),
   'kartik-v/yii2-date-range' => 
   array (
     'name' => 'kartik-v/yii2-date-range',
@@ -120,6 +111,24 @@ return array (
       '@kartik/popover' => $vendorDir . '/kartik-v/yii2-popover-x',
     ),
   ),
+  'kartik-v/yii2-editable' => 
+  array (
+    'name' => 'kartik-v/yii2-editable',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.3.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
   'kartik-v/yii2-mpdf' => 
   array (
     'name' => 'kartik-v/yii2-mpdf',
@@ -136,15 +145,6 @@ return array (
     'alias' => 
     array (
       '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
-    ),
-  ),
-  'kartik-v/yii2-editable' => 
-  array (
-    'name' => 'kartik-v/yii2-editable',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
     ),
   ),
 );

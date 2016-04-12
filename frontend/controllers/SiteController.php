@@ -689,7 +689,7 @@ class SiteController extends Controller
                 $mail->sender = 'pazintys@pazintyslietuviams.co.uk';
                 $mail->reciever = $post['User']['email'];
                 $mail->subject = 'Prisijungimo duomenys';
-                $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg,name=>'.$user->username.'|,|token=>'.$token;
+                $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|name=>'.$user->username.'|,|token=>'.$token;
                 $mail->view = '_lostMail';
                 $mail->trySend();
 

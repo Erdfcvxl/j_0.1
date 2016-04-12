@@ -181,7 +181,7 @@ class CronController extends \yii\web\Controller
 
     public function actionSendmails()
     {
-        $model = new \common\models\Mail;
+        $model = new \backend\models\Mail;
 
         $model->sendEmails();
     }
@@ -198,7 +198,7 @@ class CronController extends \yii\web\Controller
 
     public function actionTest()
     {
-        $users = \frontend\models\UserPack::find()->where(['firstFakeMsg' => 0])->andWhere(['>=', 'created_at', 60 * 2])->all();
+        $users = \frontend\models\Misc::getAmzius('', '', '');
 
         var_dump($users);
     }

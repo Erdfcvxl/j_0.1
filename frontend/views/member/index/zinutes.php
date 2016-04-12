@@ -44,13 +44,13 @@ if(Chat::isNew()){
     ?>
 </div> 
 
-<div id="quickMsgPreview" class="col-xs-10">
-    <?php 
+<div id="quickMsgPreview" class="col-xs-10 col-xs-offset-2">
+    <?php
     $newIds = Chat::isNew();
 
     for($i = count($newIds)-1; $i >= 0; $i--):
         $user = User::find('username')->where(['id' => $newIds[$i]])->one();
-        $lastMsg = Chat::find('message')->where(['sender' => $newIds[$i]])->orderBy(['timestamp' => SORT_DESC])->one();
+        $lastMsg = Chat::find('message')->where(['sender' => $newIds[$i]])->andWhere(['reciever' => Yii::$app->user->id])->orderBy(['timestamp' => SORT_DESC])->one();
     ?>
 
         <div class="col-xs-10 trans_box" style="padding: 2px 15px; margin: 1px 0;">
@@ -70,7 +70,7 @@ if(Chat::isNew()){
 
         </div>
 
-            
+
     <?php endfor; ?>
 
 </div>

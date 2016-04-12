@@ -18,6 +18,14 @@ use frontend\models\Chatnot;
  */
 class Welcome extends \yii\db\ActiveRecord
 {
+
+    public $players;
+    public $run = [
+        'tryFirst',
+        //trySecond',
+    ];
+    public $ataskaita;
+
     /**
      * @inheritdoc
      */
@@ -92,47 +100,125 @@ class Welcome extends \yii\db\ActiveRecord
             $not = new Chatnot;
             $not->insertNotGlobal($sender->id, $gavejas->id);
 
-            $gavejas->firstFakeMsg = 1;
+            $gavejas->firstFakeMsg += 1;
+            if(empty($gavejas->ffmSenders)){
+                $gavejas->ffmSenders = $sender->id;
+            }else{
+                $gavejas->ffmSenders .= ",".$sender->id;
+            }
+
             $gavejas->save();
         }
 
+    }
 
+    public function getMsg($model)
+    {
+        $msgs = explode('||', $model->msg);
 
+        $key = rand(0, count($msgs)-1);
+
+        return $msgs[$key];
+    }
+
+    public function getSender($user)
+    {
+        $id = null;
+        $msg = null;
+        $skirtumas = 3000;
+
+        //jei nera info table tam zmogui
+        if(!$user->info)
+            return null;
+
+        $iesko = substr($user->info->iesko, 1);
+        $used = explode(',',$user->ffmSenders);
+
+        $amzius = \frontend\models\Misc::getAmzius($user->info->diena, $user->info->menuo, $user->info->metai);
+
+        //jeigu dar neuzpilde anketos ir nenustate gimimo datos, zinutes jam nesius
+        if($amzius < 18)
+            return null;
+
+        //isrenka labiausiai atitinkanti siunteja
+        foreach ($this->players as $model)
+            if($model->lytis == $iesko && array_search($model->u_id, $used) === false)
+                if (abs($model->amzius - $amzius) < $skirtumas) {
+                    $skirtumas = abs($model->amzius - $amzius);
+                    $id = $model->u_id;
+                    $msg = $this->getMsg($model);
+                }
+
+        //viskas gerai -> returnina siuntja
+        if($id && $msg){
+            $sender = [
+                'id' => $id,
+                'msg' => $msg
+            ];
+
+            return $sender;
+        }
+
+        return null;
+
+    }
+
+    public function proceedWithQuery($users, $name)
+    {
+        foreach($users as $user){
+            if($s = $this->getSender($user)) {
+                $this->sendFfm($s['id'], $s['msg'], $user);
+                $this->ataskaita[$name][] = ['siuntejas' => $s['id'], 'gavejas' => $user->username, 'msg' => $s['msg']];
+            }
+        }
+    }
+
+    public function tryFirst()
+    {
+        //pasirenka publika
+        $users = \frontend\models\UserPack::find()
+            ->where(['firstFakeMsg' => 0])
+            ->andWhere(['>=', 'created_at', 60 * 2])
+            ->all();
+
+        $this->proceedWithQuery($users, 'tryFirst');
+
+    }
+
+    public function trySecond()
+    {
+        //pasirenka publika
+        $users = \frontend\models\UserPack::find()
+            ->where(['firstFakeMsg' => 1])
+            ->andWhere(['>=', 'created_at', 60 * 20])
+            ->all();
+
+        $this->proceedWithQuery($users, 'trySecond');
+    }
+
+    public function tryThird()
+    {
+        //pasirenka publika
+        $users = \frontend\models\UserPack::find()
+            ->where(['firstFakeMsg' => 1])
+            ->andWhere(['>=', 'created_at', 60 * 60])
+            ->andWhere(['>=', 'expires', time()])
+            ->all();
+
+        $this->proceedWithQuery($users, 'tryThird');
     }
 
     public function trySend()
     {
-        $users = \frontend\models\UserPack::find()->where(['firstFakeMsg' => 0])->andWhere(['>=', 'created_at', 60 * 2])->all();
-        $models = self::find()->all();
-        $skirtumas = 10000;
-        $id = null;
-        $msg = null;
-        $issiusta = [];
+        //pupulates players
+        $this->players = self::find()->all();
 
-        foreach($users as $user){
-            $amzius = \frontend\models\Misc::getAmzius($user->info->diena, $user->info->menuo, $user->info->metai);
-            $iesko = substr($user->info->iesko, 1);
+        foreach ($this->run as $v){
+            $this->$v();
 
-            foreach ($models as $model)
-                if($model->lytis == $iesko)
-                    if(abs($model->amzius - $amzius) < $skirtumas){
-                        $skirtumas = abs($model->amzius - $amzius);
-                        $id = $model->u_id;
-                        $msg = $model->msg;
-                    }
-
-            $this->sendFfm($id, $msg, $user);
-            $issiusta[] = [
-                'siuntejas' => $id,
-                'gavejas' => $user->username,
-                'zinute' => $msg
-            ];
         }
 
-        echo "issiusta: <br>";
-        foreach ($issiusta as $v){
-            echo "siuntejas: ".$v['siuntejas']."; gavejas: ".$v['gavejas']."; zinute: ".$v['zinute'];
-        }
+        var_dump($this->ataskaita);
 
     }
 

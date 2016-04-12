@@ -17,6 +17,12 @@ for($i = 1; $i < 32; $i++){
   $day[$i] = $i;
 }
 
+for($i = 18; $i < 90; $i++){
+	$agech[$i] = $i;
+}
+
+
+
 $lytis = [
 	'vm' => 'Vyras ieškantis moters',
 	'mv' => 'Moteris ieškanti vyro',
@@ -24,7 +30,10 @@ $lytis = [
 	'vv' => 'Vyras ieškantis vyro',
 ];
 
-$user = \frontend\models\User::find()->where(['id' => Yii::$app->user->id])->one();
+$user = Yii::$app->user->identity;
+
+if(!empty($user->info->amzius_tarp))
+	$at = explode('-', $user->info->amzius_tarp);
 
 ?>
 <?php $form = ActiveForm::begin();?>
@@ -34,6 +43,17 @@ $user = \frontend\models\User::find()->where(['id' => Yii::$app->user->id])->one
     	<div class="row" style="margin-bottom: 10px;">
 		    <div class="col-xs-12 greenTitle">Bendra informacija</div>
 		    <div class="col-xs-12 greenHr"></div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-xs-2 vcenter top" style="padding-right: 0px;">Vardas</div>
+			<div class="col-xs-4 vcenter top">
+				<input type="text" name="username" class="form-control" value="<?= $user->username; ?>">
+
+				<p style="color: #a94442;"><?= isset($error['username']) ? $error['username'] : ''; ?></p>
+
+			</div>
 		</div>
 
 		<div class="row">
@@ -51,16 +71,32 @@ $user = \frontend\models\User::find()->where(['id' => Yii::$app->user->id])->one
 	      	</div>
 
 	      	<div class="col-xs-6">
+				<div class="col-xs-4 vcenter top" style="padding-left: 0px;">Amžius tarp:</div>
+				<div class="col-xs-8 vcenter top" style="padding-left: 0px; padding-right: 0px;">
+					<div class="row">
+						<div class="col-xs-5 vcenter top" style="padding-left: 0px;">
+							<?= Select2::widget([
+								'name' => 'age_from',
+								'value' => (isset($at[0]))? $at[0] : '',
+								'data' => $agech,
+								'options' => ['placeholder' => 'Nuo']
+							]); ?>
+						</div>
+						<div class="col-xs-2 vcenter top" style="padding-left: 0px; text-align: center;">
+							ir
+						</div>
+						<div class="col-xs-5 vcenter top" style="padding-left: 0px; text-align: right;">
+							<?= Select2::widget([
+								'name' => 'age_to',
+								'value' => (isset($at[1]))? $at[1] : '',
+								'data' => $agech,
+								'options' => ['placeholder' => 'Iki']
+							]); ?>
+						</div>
+					</div>
 
-		        <div class="row">
-		          	<div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Vardas</div>
-		          	<div class="col-xs-8 col-sm-8 vcenter top">
-		          		<input type="text" name="username" class="form-control" value="<?= $user->username; ?>">
+				</div>
 
-		          		<p style="color: #a94442;"><?= isset($error['username']) ? $error['username'] : ''; ?></p>
-		          		<?php ?>
-		          	</div>
-		        </div>
 	      	</div>
 	    </div>
 

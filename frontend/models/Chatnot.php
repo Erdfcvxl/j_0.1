@@ -72,7 +72,7 @@ class Chatnot extends \yii\db\ActiveRecord
 
     static public function remove($sender)
     {
-        Chatnot::deleteAll('newID = :me AND sender = :sender', [':me' => Yii::$app->user->id, ':sender' => $sender]);
+        self::deleteAll('newID = :me AND sender = :sender', [':me' => Yii::$app->user->id, ':sender' => $sender]);
 
     }
 

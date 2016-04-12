@@ -2,8 +2,861 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/CHANGE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/CHANGELOG.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/CREDITS.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/barcode.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/bmp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/cssmgr.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/desktop.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/directw.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/gif.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/grad.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/indic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/meter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/mpdfform.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/myanmar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/otl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/otl_dump.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/sea.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/svg.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/tocontents.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/ttfontsuni.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/ttfontsuni_analysis.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/ucdn.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/classes/wmf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Afrikaans_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Albanian_Albania.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Alsatian_France.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Algeria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Bahrain.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Egypt.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Iraq.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Jordan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Kuwait.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Lebanon.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Libya.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Morocco.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Oman.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Pseudo_RTL.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Qatar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Saudi_Arabia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Syria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Tunisia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Arabic_Yemen.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Azeri_(Cyrillic)_Azerbaijan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Azeri_(Latin)_Azerbaijan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Bashkir_Russia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Basque_Spain.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Belarusian_Belarus.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Bosnian_(Cyrillic)_Bosnia_and_Herzegovina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Bosnian_(Latin)_Bosnia_and_Herzegovina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Breton_France.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Bulgarian_Bulgaria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Catalan_Spain.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Corsican_France.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Croatian_(Latin)_Bosnia_and_Herzegovina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Croatian_Croatia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Czech_Czech_Republic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Danish_Denmark.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Dari_Afghanistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Dutch_Belgium.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Dutch_Netherlands.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Australia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Belize.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Canada.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Caribbean.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_India.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Ireland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Jamaica.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Malaysia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_New_Zealand.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Republic_of_the_Philippines.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Singapore.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Trinidad_and_Tobago.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_United_Kingdom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_United_States.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/English_Zimbabwe.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Estonian_Estonia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Faroese_Faroe_Islands.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Filipino_Philippines.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Finnish_Finland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_Belgium.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_Canada.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_France.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_Luxembourg.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_Principality_of_Monaco.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/French_Switzerland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Frisian_Netherlands.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Galician_Spain.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/German_Austria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/German_Germany.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/German_Liechtenstein.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/German_Luxembourg.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/German_Switzerland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Greek_Greece.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Greenlandic_Greenland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Hausa_(Latin)_Nigeria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Hebrew_Israel.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Hungarian_Hungary.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Icelandic_Iceland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Igbo_Nigeria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Indonesian_Indonesia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Inuktitut_(Latin)_Canada.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Invariant_Language_Invariant_Country.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Irish_Ireland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Italian_Italy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Italian_Switzerland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Kinyarwanda_Rwanda.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Kiswahili_Kenya.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Kyrgyz_Kyrgyzstan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Latvian_Latvia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Lithuanian_Lithuania.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Lower_Sorbian_Germany.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Luxembourgish_Luxembourg.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Macedonian_(FYROM)_Macedonia_(FYROM).php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Malay_Brunei_Darussalam.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Malay_Malaysia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Mapudungun_Chile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Mohawk_Canada.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Mongolian_(Cyrillic)_Mongolia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Norwegian_(Nynorsk)_Norway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Occitan_France.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Persian_Iran.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Polish_Poland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Portuguese_Brazil.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Portuguese_Portugal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Quechua_Bolivia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Quechua_Ecuador.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Quechua_Peru.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Romanian_Romania.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Romansh_Switzerland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Russian_Russia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Inari)_Finland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Lule)_Norway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Lule)_Sweden.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Northern)_Finland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Northern)_Norway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Northern)_Sweden.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Skolt)_Finland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Southern)_Norway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sami_(Southern)_Sweden.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Serbian_(Cyrillic)_Bosnia_and_Herzegovina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Serbian_(Cyrillic)_Serbia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Serbian_(Latin)_Bosnia_and_Herzegovina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Serbian_(Latin)_Serbia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Sesotho_sa_Leboa_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Setswana_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Slovak_Slovakia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Slovenian_Slovenia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Argentina.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Bolivia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Chile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Colombia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Costa_Rica.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Dominican_Republic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Ecuador.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_El_Salvador.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Guatemala.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Honduras.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Mexico.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Nicaragua.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Panama.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Paraguay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Peru.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Puerto_Rico.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Spain.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_United_States.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Uruguay.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Spanish_Venezuela.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Swedish_Finland.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Swedish_Sweden.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Tajik_(Cyrillic)_Tajikistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Tamazight_(Latin)_Algeria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Tatar_Russia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Turkish_Turkey.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Turkmen_Turkmenistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Ukrainian_Ukraine.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Upper_Sorbian_Germany.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Urdu_Islamic_Republic_of_Pakistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Uzbek_(Cyrillic)_Uzbekistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Uzbek_(Latin)_Uzbekistan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Vietnamese_Vietnam.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Welsh_United_Kingdom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Wolof_Senegal.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Yakut_Russia.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/Yoruba_Nigeria.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/isiXhosa_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/collations/isiZulu_South_Africa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/compress.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/config_fonts-distr-without-OTL.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/config_fonts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/config_lang2fonts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/config_script2lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/BGR-Red-Ducati_WCS-Test-TriState.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/ColorGammaGradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/Lower_Left.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/Lower_Right.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/MathJaxProcess.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/MathJaxSample.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/Upper_Left.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/Upper_Right.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/alpha09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/alpha3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/alpha36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bach1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bayeux1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bayeux2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bgan6a16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bgan6a162.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bgbarcode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bgrock.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders2FF.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders2IE.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders3FF.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders3IE.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders4FF.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/borders4IE.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bordersFF.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/bordersIE.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/butterfly_ProPhoto.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/butterfly_ProPhoto.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900_002.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900_003.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900_004.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/cc9900_005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/clematis.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/colourTestFakeBRG.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example01_basic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example02_CSS_styles.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example03_backgrounds_and_borders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example04_images.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example05_tables.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example06_tables_nested.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example07_tables_borders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example08_lists.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example09_forms.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example10_floating_and_fixed_position_elements.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example11_overflow_auto.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example12_paging_html.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example13_paging_css.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example14_page_numbers_ToC_Index_Bookmarks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example16_headers_method_2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example18_headers_method_4.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example19_page_sizes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example20_justify.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example21_hyphenation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example22_columns.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example23_orientation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example24_orientation_2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example26_RTL.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example27_CJK_using_Adobe_fonts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example28_CJK_using_embedded_fonts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example29_multilingual_autofont.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example32_indic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example33_unicode_supplementary_planes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example34_invoice_example.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example35_watermarks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example36_annotations_and_Attached_files.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example37_barcodes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example38_dot_tab.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example39_PDFA_compliance.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example40_MPDFI_thumbnails.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example41_MPDFI_template.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example42_MPDFI_templatedoc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example43_MPDFI_booklet.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example44_MPDFI_yearbook.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example46_progress_bars_simple.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example47_progress_bars_simple_custom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example48_progress_bars_advanced.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example52_lineheight.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example52_new_mPDF_4-2_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example54_new_mPDF_v5-1_features_gradients_and_images.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example55_new_mPDF_v5-1_color_and_other_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example56_new_mPDF_v5-1_features_grayscale.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example57_new_mPDF_v5-3_active_forms.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example58_new_mPDF_v5-4_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example59_new_mPDF_v5-6_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example60_new_mPDF_v5-7_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example61_new_mPDF_v6-0_features.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example62_new_mPDF_v6-0_features Multilingual.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example63_new_mPDF_v6-0_features Images.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/example_test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/flowers-pattern.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/fonts-elem-01-t.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/formsubmit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/goto.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/goto2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/goto2rtl.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/img1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/img2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/img3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/img4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/img5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/klematis.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/layers_tab.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/mpdfstyleA4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/mpdfstylePaged.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/mpdfstyletables.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/sample_basic.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/sample_logoheader2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/sample_orientation2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/sample_orientation3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/sunset.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/test.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger.wmf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger2.wmf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger24trns.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger300px300dpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger300px96dpi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tiger8trns.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tigercmyk.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/tux.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/examples/windmill.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ccourier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ccourierb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ccourierbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ccourieri.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/chelvetica.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/chelveticab.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/chelveticabi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/chelveticai.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/csymbol.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ctimes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ctimesb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ctimesbi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/ctimesi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/font/czapfdingbats.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/graph.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/graph_cache/dummy.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/iccprofiles/SWOP2006_Coated5v2.icc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/iccprofiles/sRGB_IEC61966-2-1.icc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/CJKdata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/functions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/linebrdictK.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/linebrdictL.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/linebrdictT.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/no_image.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/out.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/subs_core.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/subs_win-1252.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/includes/upperCase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/lang2fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdf.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdfi/filters/FilterASCII85.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdfi/filters/FilterLZW.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdfi/fpdi_pdf_parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdfi/pdf_context.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/mpdfi/pdf_parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/NOTES.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/de.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/dictionary.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/en.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/es.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/fi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/fr.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/it.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/nl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/pl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/ru.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/patterns/sv.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/progbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/_LGPL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/_lisez_moi.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele10.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele11.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele12.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele13.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele14.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele15.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele16.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele17.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele18.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele19.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele20.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele21.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele22.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele23.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele24.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele25.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele26.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele27.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele28.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele29.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele30.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele31.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele32.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele33.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele34.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele35.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele36.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele37.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele38.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele39.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele4.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele40.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele5.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele6.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele7.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele8.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/modele9.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv10_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv10_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv10_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv10_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv11_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv11_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv11_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv11_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv12_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv12_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv12_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv12_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv13_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv13_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv13_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv13_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv14_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv14_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv14_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv14_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv15_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv15_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv15_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv15_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv16_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv16_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv16_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv16_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv17_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv17_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv17_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv17_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv18_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv18_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv18_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv18_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv19_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv19_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv19_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv19_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv1_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv1_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv1_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv1_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv20_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv20_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv20_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv20_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv21_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv21_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv21_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv21_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv22_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv22_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv22_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv22_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv23_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv23_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv23_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv23_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv24_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv24_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv24_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv24_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv25_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv25_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv25_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv25_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv26_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv26_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv26_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv26_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv27_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv27_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv27_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv27_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv28_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv28_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv28_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv28_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv29_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv29_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv29_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv29_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv2_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv2_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv2_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv2_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv30_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv30_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv30_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv30_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv31_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv31_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv31_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv31_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv32_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv32_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv32_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv32_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv33_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv33_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv33_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv33_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv34_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv34_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv34_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv34_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv35_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv35_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv35_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv35_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv36_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv36_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv36_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv36_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv37_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv37_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv37_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv37_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv38_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv38_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv38_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv38_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv39_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv39_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv39_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv39_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv3_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv3_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv3_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv3_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv40_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv40_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv40_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv40_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv4_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv4_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv4_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv4_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv5_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv5_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv5_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv5_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv6_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv6_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv6_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv6_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv7_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv7_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv7_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv7_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv8_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv8_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv8_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv8_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv9_0.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv9_1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv9_2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrv9_3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr1.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr10.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr11.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr12.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr13.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr14.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr15.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr16.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr17.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr18.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr19.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr2.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr20.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr21.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr22.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr23.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr24.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr25.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr26.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr27.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr28.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr29.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr3.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr30.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr31.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr32.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr33.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr34.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr35.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr36.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr37.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr38.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr39.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr4.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr40.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr5.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr6.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr7.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr8.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/qrvfr9.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc10.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc13.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc15.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc16.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc17.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc18.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc20.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc22.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc24.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc26.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc28.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc30.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc32.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc34.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc36.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc40.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc42.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc44.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc46.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc48.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc50.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc52.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc54.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc56.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc58.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc60.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc62.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc64.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc66.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc68.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/data/rsc7.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/image.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/qrcode/qrcode.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/tmp/dummy.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfontdata/dummy.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/AboriginalSansREGULAR.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Abyssinica_SIL.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Aegean.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Aegyptus.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Akkadian.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DBSILBR.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSans-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSans-BoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSans-Oblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSans.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansCondensed-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansCondensed-BoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansCondensed-Oblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansCondensed.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansMono-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansMono-BoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansMono-Oblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSansMono.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerif-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerif-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerif-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerif.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerifCondensed-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerifCondensed-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerifCondensed-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuSerifCondensed.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DejaVuinfo.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Dhyana-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Dhyana-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/DhyanaOFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeMono.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeMonoBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeMonoBoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeMonoOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSans.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSansBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSansBoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSansOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSerif.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSerifBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSerifBoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/FreeSerifItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/GNUFreeFontinfo.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Garuda-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Garuda-BoldOblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Garuda-Oblique.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Garuda.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Jomolhari-OFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Jomolhari.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/KhmerOFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/KhmerOS.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Lateef font OFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/LateefRegOT.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Lohit-Kannada.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/LohitKannadaOFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Padauk-book.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Pothana2000.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Quivira.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Sun-ExtA.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Sun-ExtB.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/SundaneseUnicode-1.0.5.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/SyrCOMEdessa.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/SyrCOMEdessa_license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/TaameyDavidCLM-LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/TaameyDavidCLM-Medium.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/TaiHeritagePro.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Tharlon-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/TharlonOFL.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/UnBatang_0613.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/Uthman.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/XB Riyaz.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/XB RiyazBd.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/XB RiyazBdIt.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/XB RiyazIt.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/XW Zar Font Info.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/ZawgyiOne.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/ayar.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/damase_v.2.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/kaputaunicode.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/lannaalif-v1-03.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/ocrb10.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/ttfonts/ocrbinfo.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/UnicodeData.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/UnicodeRanges.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/font_collections.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/font_coverage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/font_dump.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/font_dump_OTL.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/font_names.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/image_details.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/kartik-v/mpdf/utils/index.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/CronController.php" afterPath="$PROJECT_DIR$/backend/controllers/CronController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/UserPackSearch.php" afterPath="$PROJECT_DIR$/backend/models/UserPackSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Welcome.php" afterPath="$PROJECT_DIR$/backend/models/Welcome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/MemberController.php" afterPath="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Chatnot.php" afterPath="$PROJECT_DIR$/frontend/models/Chatnot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_msg.php" afterPath="$PROJECT_DIR$/frontend/views/member/_msg.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/index/_forum.php" afterPath="$PROJECT_DIR$/frontend/views/member/index/_forum.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/index/zinutes.php" afterPath="$PROJECT_DIR$/frontend/views/member/index/zinutes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/manoAnketa.php" afterPath="$PROJECT_DIR$/frontend/views/member/manoAnketa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/web/.htaccess" afterPath="$PROJECT_DIR$/frontend/web/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/.gitignore" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/AnimateAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/AnimateAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/AssetBundle.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/AssetBundle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/CHANGE.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/CHANGE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Config.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Html5Input.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Html5Input.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Html5InputAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Html5InputAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/InputWidget.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/InputWidget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Module.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/PluginAssetBundle.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/PluginAssetBundle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/README.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/TranslationTrait.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/TranslationTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Widget.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/Widget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/WidgetAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/WidgetAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/WidgetTrait.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/WidgetTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/animate.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/animate.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/animate.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/html5input.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/html5input.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/html5input.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/html5input.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/kv-widgets.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/kv-widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/kv-widgets.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/assets/css/kv-widgets.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/composer.json" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ar/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ar/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/az/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/az/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/bg/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/bg/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/bs/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/bs/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ca/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ca/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/config.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/cs/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/cs/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/da/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/da/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/de/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/de/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/el/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/el/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/es/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/es/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/et/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/et/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fa/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fa/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fi/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fi/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fr/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/fr/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/he/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/he/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/hr/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/hr/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/hu/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/hu/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/id/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/id/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/it/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/it/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ja/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ja/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ka/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ka/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/kk/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/kk/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ko/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ko/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/lt/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/lt/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/lv/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/lv/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ms/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ms/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/nb-NO/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/nb-NO/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/nl/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/nl/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pl/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pl/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pt-BR/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pt-BR/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pt/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/pt/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ro/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ro/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ru/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/ru/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sk/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sk/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sl/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sl/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sr-Latn/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sr-Latn/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sr/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sr/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sv/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/sv/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/th/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/th/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/tj/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/tj/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/uk/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/uk/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/vi/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/vi/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/zh-CN/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/zh-CN/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/zh-TW/kvbase.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base/messages/zh-TW/kvbase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/README" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/composer.json" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/a.txt" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/b.txt" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/example.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/example.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/styles.css" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/example/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Abstract.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Abstract.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/Array.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/Array.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/Inline.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/Inline.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/SideBySide.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Html/SideBySide.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Text/Context.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Text/Context.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Text/Unified.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/Renderer/Text/Unified.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/SequenceMatcher.php" afterPath="$PROJECT_DIR$/vendor/phpspec/php-diff/lib/Diff/SequenceMatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,57 +885,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <file leaf-file-name="zinutes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/index/zinutes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="691" column="168" selection-start-line="691" selection-start-column="168" selection-end-line="691" selection-end-column="168" />
+            <state relative-caret-position="629">
+              <caret line="52" column="121" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="121" />
               <folding>
-                <element signature="e#9968#19492#0#PHP" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="131" column="43" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
-              <folding>
-                <element signature="e#11320#11825#0#PHP" expanded="false" />
-                <element signature="e#11831#12068#0#PHP" expanded="false" />
-                <element signature="e#12074#12351#0#PHP" expanded="false" />
-                <element signature="e#13084#13332#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="336" column="15" selection-start-line="336" selection-start-column="15" selection-end-line="336" selection-end-column="15" />
+            <state relative-caret-position="355">
+              <caret line="1366" column="22" selection-start-line="1366" selection-start-column="22" selection-end-line="1366" selection-end-column="22" />
               <folding>
-                <marker date="1460061639629" expanded="true" signature="47564:47578" placeholder="..." />
+                <marker date="1460461282678" expanded="true" signature="47700:47714" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CronController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
+      <file leaf-file-name="manoAnketa.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/manoAnketa.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="391">
+              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
               <folding>
-                <element signature="e#210#428#0#PHP" expanded="false" />
-                <element signature="e#434#3224#0#PHP" expanded="false" />
-                <element signature="e#3230#3836#0#PHP" expanded="false" />
-                <element signature="e#3842#4190#0#PHP" expanded="false" />
-                <element signature="e#4196#5009#0#PHP" expanded="false" />
-                <element signature="e#5015#5133#0#PHP" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,72 +931,12 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/site/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2888">
-              <caret line="189" column="77" selection-start-line="189" selection-start-column="73" selection-end-line="189" selection-end-column="77" />
+            <state relative-caret-position="136">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#div#4;n#div#1;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <marker date="1459880185715" expanded="true" signature="6647:6702" placeholder="..." />
-                <marker date="1459880185715" expanded="true" signature="12609:12691" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MM.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/MM.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-              <folding>
-                <element signature="e#34#42#0#PHP" expanded="true" />
-                <element signature="e#1045#2957#0#PHP" expanded="false" />
-                <element signature="e#2878#2957#0#PHP" expanded="false" />
-                <element signature="e#3000#4348#0#PHP" expanded="false" />
-                <element signature="e#4392#4935#0#PHP" expanded="false" />
-                <element signature="e#4978#5461#0#PHP" expanded="false" />
-                <element signature="e#5509#6011#0#PHP" expanded="false" />
-                <element signature="e#6052#6227#0#PHP" expanded="false" />
-                <element signature="e#6268#6419#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/models/Mail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-              <folding>
-                <element signature="e#1440#1708#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_lost.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/site/_lost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="85" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chat.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="68" column="142" selection-start-line="68" selection-start-column="142" selection-end-line="68" selection-end-column="142" />
-              <folding>
-                <element signature="e#2203#2692#0#PHP" expanded="false" />
-                <element signature="e#2698#3185#0#PHP" expanded="false" />
-                <element signature="e#3191#3504#0#PHP" expanded="false" />
-                <element signature="e#3510#4058#0#PHP" expanded="false" />
-                <element signature="e#4064#4429#0#PHP" expanded="false" />
-                <element signature="e#4435#5106#0#PHP" expanded="false" />
-                <element signature="e#5112#5732#0#PHP" expanded="false" />
+                <marker date="1460287998200" expanded="true" signature="6647:6702" placeholder="..." />
+                <marker date="1460287998200" expanded="true" signature="12609:12691" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -165,6 +945,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PUSH_TAGS">
       <GitPushTagMode />
@@ -184,7 +965,6 @@
         <option value="$PROJECT_DIR$/backend/web/css/site.css" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
         <option value="$PROJECT_DIR$/frontend/models/SignupForm.php" />
-        <option value="$PROJECT_DIR$/frontend/views/member/_msg.php" />
         <option value="$PROJECT_DIR$/frontend/web/css/desktop.css" />
         <option value="$PROJECT_DIR$/backend/views/site/includes/LWtoWelcome" />
         <option value="$PROJECT_DIR$/backend/views/site/includes/LWtoWelcome.php" />
@@ -193,30 +973,41 @@
         <option value="$PROJECT_DIR$/backend/views/site/MM.php" />
         <option value="$PROJECT_DIR$/backend/config/main.php" />
         <option value="$PROJECT_DIR$/backend/views/site/includes/welcome.php" />
-        <option value="$PROJECT_DIR$/frontend/views/site/login.php" />
         <option value="$PROJECT_DIR$/frontend/views/site/form/_list.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/models/Chatters.php" />
         <option value="$PROJECT_DIR$/backend/views/site/MM2.php" />
         <option value="$PROJECT_DIR$/backend/views/site/MM_confirm.php" />
         <option value="$PROJECT_DIR$/backend/views/site/list.php" />
         <option value="$PROJECT_DIR$/backend/models/CustomSearch.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/msg.php" />
-        <option value="$PROJECT_DIR$/backend/models/Welcome.php" />
         <option value="$PROJECT_DIR$/backend/views/site/welcome.php" />
         <option value="$PROJECT_DIR$/common/mail/_atsiprasome.php" />
         <option value="$PROJECT_DIR$/common/mail/_emailChange.php" />
         <option value="$PROJECT_DIR$/common/mail/_emailChangeToOld.php" />
-        <option value="$PROJECT_DIR$/common/mail/_gavoteZinute.php" />
         <option value="$PROJECT_DIR$/common/mail/_pass.php" />
         <option value="$PROJECT_DIR$/common/mail/_passChange.php" />
         <option value="$PROJECT_DIR$/common/mail/_lostMail.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/frontend/models/Chat.php" />
         <option value="$PROJECT_DIR$/backend/models/MM.php" />
         <option value="$PROJECT_DIR$/common/models/Mail.php" />
+        <option value="$PROJECT_DIR$/backend/models/UserPackSearch.php" />
+        <option value="$PROJECT_DIR$/common/mail/_gavoteZinute.php" />
+        <option value="$PROJECT_DIR$/backend/models/Mail.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/../.htaccess" />
+        <option value="$PROJECT_DIR$/frontend/web/index.php" />
+        <option value="$PROJECT_DIR$/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/index/_forum.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/backend/controllers/CronController.php" />
+        <option value="$PROJECT_DIR$/backend/models/Welcome.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/_msg.php" />
+        <option value="$PROJECT_DIR$/frontend/models/Chatnot.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/index/zinutes.php" />
+        <option value="$PROJECT_DIR$/frontend/views/site/login.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/manoAnketa.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
       </list>
     </option>
   </component>
@@ -350,7 +1141,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
+              <option name="myItemId" value="member" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,71 +1159,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
+              <option name="myItemId" value="member" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mail" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pzntsltaa" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="index" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,7 +1180,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tautviui" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\nodejs\node.exe" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="282" />
@@ -465,6 +1200,8 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="979" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/wamp/www/pzntsltaa/frontend/views/member/user.php" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -522,6 +1259,9 @@
       <workItem from="1460027741995" duration="41000" />
       <workItem from="1460054711026" duration="10660000" />
       <workItem from="1460154925033" duration="6271000" />
+      <workItem from="1460318813491" duration="1921000" />
+      <workItem from="1460373071899" duration="12161000" />
+      <workItem from="1460455781488" duration="4202000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -625,63 +1365,38 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62675000" />
+    <option name="totallyTimeSpent" value="80959000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123958334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -725,131 +1440,11 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/includes/LWtoWelcome" />
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/includes/LWtoWelcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/includes/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/cron/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/RecommendedSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="291" column="66" selection-start-line="291" selection-start-column="35" selection-end-line="291" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="269" column="14" selection-start-line="269" selection-start-column="14" selection-end-line="269" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/_msg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="49" column="79" selection-start-line="49" selection-start-column="79" selection-end-line="49" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/_pasnekovaiUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/UserSearchP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Chatters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/site/users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -861,14 +1456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/UserSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="161" column="8" selection-start-line="161" selection-start-column="8" selection-end-line="167" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,41 +1495,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/msg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8143">
-          <caret line="493" column="0" selection-start-line="493" selection-start-column="0" selection-end-line="503" selection-end-column="0" />
-          <folding>
-            <marker date="1460070248547" expanded="true" signature="9593:9633" placeholder="..." />
-            <marker date="1460070248547" expanded="true" signature="9672:9731" placeholder="..." />
-            <marker date="1460070248547" expanded="true" signature="12894:12934" placeholder="..." />
-            <marker date="1460070248547" expanded="true" signature="12973:13032" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/site/welcome.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-          <folding>
-            <element signature="e#6#33#0#PHP" expanded="true" />
-            <marker date="1460071055289" expanded="true" signature="547:572" placeholder="..." />
-            <marker date="1460071055289" expanded="true" signature="611:670" placeholder="..." />
-            <marker date="1460071055289" expanded="true" signature="1529:1560" placeholder="..." />
-            <marker date="1460071055289" expanded="true" signature="1599:1658" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="104" column="128" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="128" />
-          <folding>
-            <element signature="e#34#42#0#PHP" expanded="false" />
-            <element signature="e#1162#1880#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,7 +1506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -959,7 +1513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +1520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -983,7 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +1555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,19 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="179" selection-start-line="11" selection-start-column="179" selection-end-line="11" selection-end-column="179" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/site/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2888">
-          <caret line="189" column="77" selection-start-line="189" selection-start-column="73" selection-end-line="189" selection-end-column="77" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#div#4;n#div#1;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <marker date="1459880185715" expanded="true" signature="6647:6702" placeholder="..." />
-            <marker date="1459880185715" expanded="true" signature="12609:12691" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,27 +1573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/SignupForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/mail/_passChange.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/mail/_gavoteZinute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,74 +1584,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="336" column="15" selection-start-line="336" selection-start-column="15" selection-end-line="336" selection-end-column="15" />
-          <folding>
-            <marker date="1460061639629" expanded="true" signature="47564:47578" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="691" column="168" selection-start-line="691" selection-start-column="168" selection-end-line="691" selection-end-column="168" />
-          <folding>
-            <element signature="e#9968#19492#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="68" column="142" selection-start-line="68" selection-start-column="142" selection-end-line="68" selection-end-column="142" />
-          <folding>
-            <element signature="e#2203#2692#0#PHP" expanded="false" />
-            <element signature="e#2698#3185#0#PHP" expanded="false" />
-            <element signature="e#3191#3504#0#PHP" expanded="false" />
-            <element signature="e#3510#4058#0#PHP" expanded="false" />
-            <element signature="e#4064#4429#0#PHP" expanded="false" />
-            <element signature="e#4435#5106#0#PHP" expanded="false" />
-            <element signature="e#5112#5732#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="131" column="43" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
-          <folding>
-            <element signature="e#11320#11825#0#PHP" expanded="false" />
-            <element signature="e#11831#12068#0#PHP" expanded="false" />
-            <element signature="e#12074#12351#0#PHP" expanded="false" />
-            <element signature="e#13084#13332#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/MM.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="493">
           <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <element signature="e#34#42#0#PHP" expanded="true" />
-            <element signature="e#1045#2957#0#PHP" expanded="false" />
-            <element signature="e#2878#2957#0#PHP" expanded="false" />
-            <element signature="e#3000#4348#0#PHP" expanded="false" />
-            <element signature="e#4392#4935#0#PHP" expanded="false" />
-            <element signature="e#4978#5461#0#PHP" expanded="false" />
-            <element signature="e#5509#6011#0#PHP" expanded="false" />
-            <element signature="e#6052#6227#0#PHP" expanded="false" />
-            <element signature="e#6268#6419#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,17 +1604,292 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="691" column="140" selection-start-line="691" selection-start-column="140" selection-end-line="691" selection-end-column="140" />
+          <folding>
+            <element signature="e#9968#19492#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/mail/_gavoteZinute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="90" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/SignupForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="73" column="34" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="34" />
+          <folding>
+            <element signature="e#2203#2692#0#PHP" expanded="false" />
+            <element signature="e#2698#3185#0#PHP" expanded="false" />
+            <element signature="e#3191#3504#0#PHP" expanded="false" />
+            <element signature="e#3510#4058#0#PHP" expanded="false" />
+            <element signature="e#4064#4429#0#PHP" expanded="false" />
+            <element signature="e#4435#5106#0#PHP" expanded="false" />
+            <element signature="e#5112#5732#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/menubar/_forum.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/index/_forum.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="48" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+          <folding>
+            <element signature="e#435#1093#0#PHP" expanded="false" />
+            <element signature="e#1099#1305#0#PHP" expanded="false" />
+            <element signature="e#1346#1501#0#PHP" expanded="false" />
+            <element signature="e#1507#1833#0#PHP" expanded="false" />
+            <element signature="e#1839#1927#0#PHP" expanded="false" />
+            <element signature="e#1933#2455#0#PHP" expanded="false" />
+            <element signature="e#2461#2559#0#PHP" expanded="false" />
+            <element signature="e#2565#3856#0#PHP" expanded="false" />
+            <element signature="e#3862#4181#0#PHP" expanded="false" />
+            <element signature="e#4187#5102#0#PHP" expanded="false" />
+            <element signature="e#5108#5224#0#PHP" expanded="false" />
+            <element signature="e#5230#5965#0#PHP" expanded="false" />
+            <element signature="e#5971#6338#0#PHP" expanded="false" />
+            <element signature="e#6344#6709#0#PHP" expanded="false" />
+            <element signature="e#6715#7051#0#PHP" expanded="false" />
+            <element signature="e#7057#7423#0#PHP" expanded="false" />
+            <element signature="e#7429#7797#0#PHP" expanded="false" />
+            <element signature="e#7803#7887#0#PHP" expanded="false" />
+            <element signature="e#7893#8290#0#PHP" expanded="false" />
+            <element signature="e#8296#8765#0#PHP" expanded="false" />
+            <element signature="e#8771#9040#0#PHP" expanded="false" />
+            <element signature="e#9046#9975#0#PHP" expanded="false" />
+            <element signature="e#9981#10394#0#PHP" expanded="false" />
+            <element signature="e#10400#11267#0#PHP" expanded="false" />
+            <element signature="e#11273#11314#0#PHP" expanded="false" />
+            <element signature="e#11320#11825#0#PHP" expanded="false" />
+            <element signature="e#11831#12068#0#PHP" expanded="false" />
+            <element signature="e#12074#12351#0#PHP" expanded="false" />
+            <element signature="e#12357#13078#0#PHP" expanded="false" />
+            <element signature="e#13084#13332#0#PHP" expanded="false" />
+            <element signature="e#13338#13556#0#PHP" expanded="false" />
+            <element signature="e#13566#13797#0#PHP" expanded="false" />
+            <element signature="e#13803#14133#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/UserSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="63" column="22" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/UserPack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/UserPackSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/CronController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="663">
+          <caret line="195" column="25" selection-start-line="195" selection-start-column="18" selection-end-line="195" selection-end-column="25" />
           <folding>
             <element signature="e#210#428#0#PHP" expanded="false" />
             <element signature="e#434#3224#0#PHP" expanded="false" />
             <element signature="e#3230#3836#0#PHP" expanded="false" />
             <element signature="e#3842#4190#0#PHP" expanded="false" />
             <element signature="e#4196#5009#0#PHP" expanded="false" />
-            <element signature="e#5015#5133#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
+          <folding>
+            <element signature="e#1277#1995#0#PHP" expanded="false" />
+            <element signature="e#2001#2738#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/_alert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/_msg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="114" selection-start-line="44" selection-start-column="108" selection-end-line="44" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/msg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="299" column="57" selection-start-line="299" selection-start-column="51" selection-end-line="299" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Chatnot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="74" column="23" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/index/zinutes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="52" column="121" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="121" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#div#4;n#div#1;n#div#0;n#div#2;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <marker date="1460287998200" expanded="true" signature="6647:6702" placeholder="..." />
+            <marker date="1460287998200" expanded="true" signature="12609:12691" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/manoAnketa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="1366" column="22" selection-start-line="1366" selection-start-column="22" selection-end-line="1366" selection-end-column="22" />
+          <folding>
+            <marker date="1460461282678" expanded="true" signature="47700:47714" placeholder="..." />
           </folding>
         </state>
       </provider>
