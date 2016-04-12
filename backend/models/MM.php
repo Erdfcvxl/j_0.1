@@ -20,6 +20,21 @@ class MM
     public $msg;//
     public $publika;
 
+    public function convertToKeys($n, $list)
+    {
+        $newGroup = null;
+
+        foreach ($n as $name)
+            foreach ($list as $k => $v)
+                if($name == $v){
+                    $newGroup[] = $k;
+                    break;
+                }
+
+        return $newGroup;
+
+    }
+
     public function populate($params)
     {
         require(__DIR__ . '/../../frontend/views/site/form/_list.php');
@@ -92,24 +107,24 @@ class MM
                     $this->publika .= ' Miestai: ';
 
                     $pasirinkimai = $params['miestai'];
-                    $pavieniai = null;
+                    $pavieniai = [];
                     $grupes = [];
-
-
+                    
                     /*
                      * $grupes          siame array'juje sedi tekstinis grupes pavadinimas
                      * $pasirinkimai    siame array'juje sedi visi miestu id is saraso
                      */
                     foreach ($pasirinkimai as $k => $v) {
+
                         if (!is_numeric($v)) {
                             $this->publika .= ' ' . $v . ';';
 
                             if($v == 'Anglija'){
-                                array_merge($grupes, $anglija);
+                                $grupes = array_merge($grupes, $anglija);
                             }
 
                             if($v == 'Airija'){
-                                array_merge($grupes, $airija);
+                                $grupes = array_merge($grupes, $airija);
                             }
 
                         } else {
@@ -119,8 +134,11 @@ class MM
                         }
                     }
 
-                    if (count($pavieniai) > 0)
-                        $query->andFilterWhere(['miestas' => $grupes]);
+                    $grupesComplete = $this->convertToKeys($grupes, $list);
+                    $filter = array_merge($grupesComplete, $pavieniai);
+
+                    if (count($filter) > 0)
+                        $query->andFilterWhere(['miestas' => $filter]);
 
                 }
 

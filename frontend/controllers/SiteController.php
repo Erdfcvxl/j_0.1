@@ -97,10 +97,11 @@ class SiteController extends Controller
     public function actionOauthsuccess($client) {
         $userAttributes = $client->getUserAttributes();
 
+        $id = $userAttributes['id'];
         $username = $userAttributes['name'];
         $email = $userAttributes["email"];
-        $photoSrc = $userAttributes['picture']['data']['url'];        
-
+        $photoSrc = $userAttributes['picture']['data']['url'];
+        
         $fb = new \frontend\models\Facebook;
         $fb->id = $id;
         $fb->username = $username;
