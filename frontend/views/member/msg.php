@@ -287,6 +287,9 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
                     <?= $form->field($searchModel, 'username')->textInput(['id' => 'ajaxSearch2', 'class' => 'trans_input', 'style' => 'padding: 0 5px; margin-top: 5px; background-color: #ebebeb;', 'autocomplete' => 'off', 'placeholder' => 'Ieškoti tarp visų pašnekovų'])->label(false); ?>
                 <?php ActiveForm::end() ?>
 
+                <a href="<?= Url::to(['member/msg', 'f' => null]);?>">Visos</a> &nbsp; &nbsp; &nbsp;
+                <a href="<?= Url::to(['member/msg', 'f' => 'new']);?>">Naujos žinutės <span id="newBadge" style="background-color: #93c501;" class="badge"><?= \frontend\models\Notifications::countNewMessages(Yii::$app->user->id); ?></span></a>
+
     	        <?php Pjax::begin(); ?>
                     <div class="row"  id="pasnekovaiNew" style="display: none; padding-left: 15px; padding-right: 15px;"></div>
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Pažintys lietuviams" uploadOnCheckin="b7a5c723-47d8-41a5-bf65-78d40cf06ef2">
+    <serverData>
+      <paths name="Pažintys lietuviams">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/domains/pazintyslietuviams.co.uk/public_html" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="Pažintys lietuviams" />
+  </component>
+</project>

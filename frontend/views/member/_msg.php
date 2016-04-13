@@ -47,7 +47,10 @@ echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id']
 <div class="row" id="chatterid<?= $user['id']; ?>" style="margin: 0; margin-top: 5px;">
     <div class="col-xs-6" style="padding: 0;">
         <div style="position: absolute; right: 1px; color: #fffeff;"><span class="glyphicon glyphicon-remove" onclick="trinti(<?= $user['id']; ?>)" id="trinti" style="cursor: pointer; z-index: 1;"></span></div>
-        <div class="aavatar2" style="background-color: black; cursor: pointer; position: relative; opacity: <?= $opacity; ?>" onclick='javascript:window.location.href="<?= Url::current(['member/msg', 'id' => $user['id']])?>"'>
+        <div class="aavatar2" style="background-color: black; cursor: pointer; position: relative; opacity: <?= $opacity; ?>" onclick='javascript:window.location.href="<?= Url::to(['member/msg', 'id' => $user['id'],
+                                                                                                                    'page' => (isset($_GET['page']))? $_GET['page'] : '',
+                                                                                                                    'per-page' => (isset($_GET['per-page']))? $_GET['per-page'] : '',
+                                                                                                                    ])?>"'>
 
             <?php
                 if($online):

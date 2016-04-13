@@ -259,6 +259,7 @@ class MemberController extends \yii\web\Controller
         $friends = new \frontend\models\Friends;
         $favs = new \frontend\models\Favourites;
         $forum = new \frontend\models\Forum;
+        $not_model = new \frontend\models\Notifications;
 
         $newMsg = $chat->isNew();
 
@@ -274,7 +275,7 @@ class MemberController extends \yii\web\Controller
         }
 
         if(isset($user) && $user->firstMsg){
-            $newMsg += 1;  
+            $newMsg[] = 0;
         }
 
         $newDrg = ($newDrg = $friends::find()->where(['u_id' => Yii::$app->user->id])->one())? $newDrg->new : 0;
@@ -289,15 +290,27 @@ class MemberController extends \yii\web\Controller
 
         $forumNew = 0;
 
-        $me = User::find('adminChat')->where(['id' => Yii::$app->user->id])->one();
-
         foreach ($forumas as $forumasVienetas) {
             $forumNew = $forumNew + $forumasVienetas->new;
         }
 
+
+
+        if(count($newMsg) > 1) {
+            $newMsg = array_reverse($newMsg, true);
+        }
+
+        //var_dump($newMsg);
+
+        /*if(count($username > 1))
+            $username = array_reverse($username, true);
+
+        if(count($message > 1))
+            $message = array_reverse($message, true);*/
+
         $complete = [
-            'newMsg' => count($newMsg) + $me->adminChat,
-            'newMsgId' => isset($newMsg[0]) ? $newMsg[0] : null,
+            'newMsg' => $not_model::countNewMessages(Yii::$app->user->id),
+            'newMsgId' => $newMsg,
             'usernames' =>  $username, 
             'messages' => $message, 
             'newDrg' => $newDrg,

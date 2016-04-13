@@ -87,7 +87,9 @@ function msgTopIndicator()
 	        }
 
 	        if(puslapis == "msg"){
-	        	for(var i = 0; i < newMsgId.length; i++){
+				$('#newBadge').text(newMsg);
+
+	        	for(var i = 0; i < Object.keys(newMsgId).length; i++){
 	        		if(newMsgId[i] != chatterId){
 	        			//console.log($('#chatterid'+newMsgId[i]));
 
@@ -97,17 +99,17 @@ function msgTopIndicator()
 	        	}
 
 	        	if(newMsg > 0){
-	        	for(var i = 0; i < newMsgId.length; i++){
-	        		if(newMsgId[i] == chatterId){
-	        			if(newMsg-1 > 0){
-	    					$('#msgNewIndicator').text(newMsg-1);
-	    					$('#msgNewIndicator').css({"display" : "inline-block"});
-	    				}
-	    			}else{
-	    				$('#msgNewIndicator').text(newMsg);
-	    				$('#msgNewIndicator').css({"display" : "inline-block"});
-	    			}
-    			}
+					for(var i = 0; i < newMsgId.length; i++){
+						if(newMsgId[i] == chatterId){
+							if(newMsg-1 > 0){
+								$('#msgNewIndicator').text(newMsg-1);
+								$('#msgNewIndicator').css({"display" : "inline-block"});
+							}
+						}else{
+							$('#msgNewIndicator').text(newMsg);
+							$('#msgNewIndicator').css({"display" : "inline-block"});
+						}
+					}
 		        }else{
 		        		$('#msgNewIndicator').css({"display" : "none"});
 		        }
@@ -143,16 +145,18 @@ function msgTopIndicator()
 
 	        }
 
+			setTimeout(function (){
+				msgTopIndicator();
+			}, 3000);
+
 	    },
 	    error:function(ts){
 	    	console.log(ts.responseText);
+
+			setTimeout(function (){
+				msgTopIndicator();
+			}, 5000);
 	    },
-	    complete: function (data) {
-	    	//console.log('mane issauke complete funkcija');
-	    	setTimeout(function (){
-	    		msgTopIndicator();
-	    	}, 3000);
-	    }
 
 	});	
 }

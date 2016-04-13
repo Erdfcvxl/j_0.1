@@ -22,7 +22,6 @@ use yii\widgets\Pjax;
 
 
 $user = Yii::$app->user->identity;
-$chatNew = count(Chat::isNew());
 
 $pakvietimaiKiti = \frontend\models\Pakvietimai::find()->where(['reciever' => Yii::$app->user->identity->id])->all();
 
@@ -39,13 +38,7 @@ $forumNew = 0;
 
 
 
-if($user->adminChat > 0){
-    $chatNew += 1;
-}
-
-if($user->firstMsg){
-    $chatNew += 1;
-}
+$chatNew = \frontend\models\Notifications::countNewMessages(Yii::$app->user->id);
 
 foreach ($forumas as $forumasVienetas) {
     $forumNew = $forumNew + $forumasVienetas->new;
@@ -202,7 +195,7 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                                     <div class="pick msg_top <?php echo($puslapis == 'msg')? 'msg_top_active' : '' ?>">
                                         Žinutės
                                         <span class="msgCount btn btn-circle" id="msgTopIndicator" style="<?= ($chatNew > 0)? 'display: block' : 'display: none;' ?>">
-                                            <?= ($chatNew > 0)? $chatNew : "" ?>
+                                            <?= $chatNew ?>
                                         </span>
                                     </div>
                                 </a>

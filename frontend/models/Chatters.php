@@ -68,21 +68,41 @@ class Chatters extends \yii\db\ActiveRecord
         ]);
 
         $this->load($params);
+        $ids = null;
 
         if($this->username){
             $users = User::find()->select('id')->where(['like', 'username', $this->username])->all();
-            $ids = null;
-
 
             foreach ($users as $user){
-                $ids[] = $user->id;
+                $ids['user'][] = $user->id;
             }
 
-            if($ids)
-                $query->andFilterWhere(['and', ['u1' => $ids, 'u2' => Yii::$app->user->id]])
-                    ->orFilterWhere(['and', ['u1' => Yii::$app->user->id, 'u2' => $ids]]);
+            $array_diff = $ids['user'];
 
         }
+
+        if(isset($_GET['f']) && isset($_GET['f']) == 'new' ){
+            $chatnot = Chatnot::find()->where(['reciever' => Yii::$app->user->id])->andWhere(['newID' => Yii::$app->user->id])->all();
+
+            foreach ($chatnot as $v){
+                $ids['chatnot'][] = $v->sender;
+
+                $array_diff = $ids['chatnot'];
+            }
+        }
+
+        if(isset($ids['chatnot']) && isset($ids['user'])){
+            $full_array = array_merge($ids['user'], $ids['chatnot']);
+            $array_unique = array_unique($full_array);
+            $array_diff = array_diff_assoc($full_array, $array_unique);
+        }
+
+
+
+
+        if($ids)
+            $query->andFilterWhere(['and', ['u1' => $array_diff, 'u2' => Yii::$app->user->id]])
+                ->orFilterWhere(['and', ['u1' => Yii::$app->user->id, 'u2' => $array_diff]]);
         
         return $dataProvider;
 

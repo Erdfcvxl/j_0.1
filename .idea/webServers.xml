@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b7a5c723-47d8-41a5-bf65-78d40cf06ef2" name="Pažintys lietuviams" url="http://pazintyslietuviams.co.uk">
+        <fileTransfer host="pazintyslietuviams.co.uk" port="21" password="dff8dfc3dfc4dfdedfdfdfc5dfdedfcbdfd9dfe3dfd9dfd9dfc3dfd8dfcbdfc4dfcddfc6dfc3dfc4dfdedfc3" username="pazintys">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
