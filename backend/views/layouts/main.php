@@ -53,6 +53,7 @@ AppAsset::register($this);
                         ['label' => 'Nauji draugai', 'url' => ['/site/fakedrg'], 'linkOptions' => ['id' => 'fakedrg']],
                         '<li class="dropdown-header">Veiksmai su fake nariais</li>',
                         ['label' => 'Rašyti masinę žinutę', 'url' => Url::to(['/site/fmm'])],
+                        ['label' => 'Masinis kvietimas į draugus', 'url' => Url::to(['/site/faf'])],
                         ['label' => 'Automatinė žinutė', 'url' => Url::to(['/site/welcome'])],
                     ];
 

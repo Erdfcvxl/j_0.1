@@ -14,36 +14,37 @@ function ratioFixing(){
 
 }; 
 
+//padaro kad navigacijos juosta butu apacioj
 function ajustToScreen()
 {
-	var screenH = $(window).height(),
-		screenW = $(window).width(),
-		firstFlatH = $('.first_flat').outerHeight();
-
-
+	var screenH = $(window).height();
+	
 	var padding = ((screenH - 413.2) / 2) -25;
 
-	if(screenH >= 609){
+	if(screenH >= 609)
 		$(".first_flat").css({
 			'padding-top' : padding + 'px',
 			'padding-bottom' : padding + 'px'
 		});
-	}
+	
 }
 
 
 
 
-$(document).ready(function(){ratioFixing(); ajustToScreen();});
-$('#log_bg1').ready(function(){
-	$(".first_flat#copy").backstretch("/css/img/mm.jpg");
-	$(".first_flat#original").backstretch("/css/img/pazintys_lietuviams.jpg");
-	$(".first_flat#original").on("backstretch.show", function () {$("#log_bg2").css({"display" : "none"});});
-	
+$(document).ready(function(){
+	ratioFixing();
+	ajustToScreen();
+	$(".first_flat#original").backstretch("/css/img/pazintys_lietuviams.jpg?t="+Date.now);
 });
-$(window).resize(function(){ratioFixing();});
+
+$(window).resize(function(){
+	ratioFixing();
+});
+
 $('.first_flat_right').resize(ratioFixing);
 $('#expand_end_btn').click(ratioFixing);
+
 setTimeout( function(){
 	ratioFixing();
 },50);

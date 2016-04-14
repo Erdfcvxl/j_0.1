@@ -141,13 +141,17 @@ class Welcome extends \yii\db\ActiveRecord
             return null;
 
         //isrenka labiausiai atitinkanti siunteja
-        foreach ($this->players as $model)
-            if($model->lytis == $iesko && array_search($model->u_id, $used) === false)
-                if (abs($model->amzius - $amzius) < $skirtumas) {
-                    $skirtumas = abs($model->amzius - $amzius);
-                    $id = $model->u_id;
-                    $msg = $this->getMsg($model);
+        foreach ($this->players as $model) {
+            if ($model->lytis == $iesko) {
+                if (array_search($model->u_id, $used) === false) {
+                    if (abs($model->amzius - $amzius) < $skirtumas) {
+                        $skirtumas = abs($model->amzius - $amzius);
+                        $id = $model->u_id;
+                        $msg = $this->getMsg($model);
+                    }
                 }
+            }
+        }
 
         //viskas gerai -> returnina siuntja
         if($id && $msg){

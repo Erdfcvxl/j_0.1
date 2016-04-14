@@ -11,15 +11,15 @@ function getUrlParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
+    for (var i = 0; i < sURLVariables.length; i++)
     {
         var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
+        if (sParameterName[0] == sParam)
         {
             return sParameterName[1];
         }
     }
-} 
+}
 
 function msgTopIndicator()
 {
@@ -39,7 +39,7 @@ function msgTopIndicator()
 	        	newForum = data['forumNew'],
 	        	notification = data['notification'],
 	        	messages = data['messages'];
-	    
+
 	        if(newMsg > 0){
 
 	        	if(puslapis != "msg"){
@@ -135,7 +135,7 @@ function msgTopIndicator()
 	        		var full = '';
 
 	        		for(var i = 0; i < usernames.length; i++){
-	        			full = '<div class="col-xs-10 trans_box" style="padding: 2px 15px; margin: 1px 0;"><a href="'+data['url']+newMsgId[i]+'"">'+usernames[i]+': '+htmlEncode(messages[i])+'</a></div>'+full; 
+	        			full = '<div class="col-xs-10 trans_box" style="padding: 2px 15px; margin: 1px 0;"><a href="'+data['url']+newMsgId[i]+'"">'+usernames[i]+': '+htmlEncode(messages[i])+'</a></div>'+full;
 	        		}
 
 	        		if(full){
@@ -158,7 +158,7 @@ function msgTopIndicator()
 			}, 5000);
 	    },
 
-	});	
+	});
 }
 
 $(function ()

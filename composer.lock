@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "36b66d9b0366c0107c706cfe22991442",
-    "content-hash": "1334e59263253f67977838b9ff4cfb04",
+    "hash": "fbf72190a135e2cb65fb404ad950a283",
+    "content-hash": "b267fa1f945eab33dcfb16f0fac759d8",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -495,7 +495,7 @@
         },
         {
             "name": "kartik-v/yii2-grid",
-            "version": "dev-master",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
@@ -544,16 +544,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.8.3",
+            "version": "v1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "2d74f0102272189d5e3f672a2549485fae77b7e8"
+                "reference": "3115b09aeb15a5e06f38dc16860baf153d9bf70e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/2d74f0102272189d5e3f672a2549485fae77b7e8",
-                "reference": "2d74f0102272189d5e3f672a2549485fae77b7e8",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/3115b09aeb15a5e06f38dc16860baf153d9bf70e",
+                "reference": "3115b09aeb15a5e06f38dc16860baf153d9bf70e",
                 "shasum": ""
             },
             "require": {
@@ -591,7 +591,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-04-09 18:21:14"
+            "time": "2016-04-11 09:07:40"
         },
         {
             "name": "kartik-v/yii2-mpdf",
@@ -1585,7 +1585,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-editable": 20,
         "kartik-v/yii2-mpdf": 20,
         "kartik-v/yii2-widget-spinner": 20

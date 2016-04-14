@@ -7,7 +7,7 @@ use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
-use yii\data\ActiveDataProvider;
+use frontend\models\Pakvietimai;
 use common\models\User;
 use backend\models\Functions;
 use frontend\models\UserPack;
@@ -283,6 +283,49 @@ class SiteController extends Controller
 
 
         return $this->render('fakefriends', ['dataProvider' => $dataProvider, 'searchModel' => $searchModel]);
+    }
+
+    public function actionFaf()
+    {
+        $model = new \backend\models\CustomSearch;
+
+        @extract($_GET);
+
+        if(!isset($id)){
+
+            $query = \frontend\models\UserPack::find()->where(['f' => 1]);
+
+            $post = (Yii::$app->request->post())? Yii::$app->request->post() : null;
+
+            $dataProvider = $model->CustomSearch($post, $query);
+
+            return $this->render('faf', ['model' => $model, 'dataProvider' => $dataProvider]);
+        }else{
+            $user = UserPack::find()->where(['id' => $id])->one();
+
+            if($post = Yii::$app->request->post()){
+                $model = new \backend\models\Mass;
+                $model->populate($post);
+
+                return $this->render('faf_confirm', ['user' => $user, 'model' => $model]);
+            }
+
+            return $this->render('faf2', ['user' => $user]);
+        }
+    }
+
+    public function actionFafinvite()
+    {
+        @extract($_POST);
+
+        foreach ($model['recievers'] as $v) {
+            $model = new Pakvietimai;
+            $model->sender = $id;
+            $model->reciever = (int)$v;
+            $model->timestamp = time();
+            $model->save();
+        }
+
     }
 
     public function actionControl()

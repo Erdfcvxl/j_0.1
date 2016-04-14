@@ -29,7 +29,24 @@ $gridColumns = [
         'label' => 'El. paštas', 
         'format'=>'email',
     ],
-
+	[
+		'class' => 'kartik\grid\DataColumn',
+		'attribute'=>'expires',
+		'label' => 'Galiojimo baigimosi data',
+		'value' => function ($model){
+			return date('o-m-d G:i', $model->expires);
+		},
+		'format'=>'raw',
+	],
+	[
+		'class' => 'kartik\grid\DataColumn',
+		'attribute'=>'info.gimimoTS',
+		'label' => 'Amžius',
+		'value' => function ($model){
+			return \frontend\models\Misc::getAmzius($model->info->diena,$model->info->menuo,$model->info->metai);
+		},
+		'format'=>'raw',
+	],
     [
         'class' => 'kartik\grid\DataColumn',
         'attribute'=>'lastOnline',
@@ -41,7 +58,7 @@ $gridColumns = [
             return $ago->timeAgo($model->lastOnline);
         },
         'format'=>'raw',
-        'filter' => '<center><span style="color: grey">-</span></center>'
+        'filter' => '<span style="color: grey">-</span>'
     ],
     [
         'class' => 'kartik\grid\DataColumn',

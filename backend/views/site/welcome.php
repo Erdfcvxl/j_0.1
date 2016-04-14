@@ -18,6 +18,8 @@ use yii\widgets\ListView;
         <div class="col-xs-3">
             <h3>Dalyvauja žinučių siuntime</h3>
 
+            <div class="alert alert-info">Atskiras žinutes, kurias pasirinks atsitiktinai atskirti simboliais || <br> <b>Pavyzdys:</b> Labas||Sveikas||Graži nuotrauka ;)||Labutis, kaip sekasi?</div>
+
             <?= ListView::widget( [
                 'layout' => '<div style="float: left; width: 100%;">{items}</div><div class="row" style="padding-left: 15px; padding-right: 15px; text-align: right;">{pager}</div>',
                 'dataProvider' => $DP['players'],
