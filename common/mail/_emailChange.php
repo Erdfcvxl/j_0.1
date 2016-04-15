@@ -9,7 +9,9 @@ use yii\helpers\Url;
 
 	<p style="font-size: 20px; color:#000; font-family: OpenSans;" >
 		<b>
-			Jūs sėkmingai pakeitėte el. paštą!
+			Jūs sėkmingai pakeitėte el. paštą! <br>
+
+			Prašome patvirtinti naująjį el. paštą paspaudžiant <a href="https://pazintyslietuviams.co.uk/site/cne?fl=<?= Yii::$app->security->generateRandomString();?>&id=<?= $id; ?>&prt=<?= $prt; ?>">čia</a>.
 		</b>
 	</p>
 

@@ -136,6 +136,30 @@ class SiteController extends Controller
         // do some thing with user data. for example with $userAttributes['email']
     }
 
+    public function actionCne()
+    {
+        $id = (isset($_GET['id'])) ? $_GET['id'] : null;
+        $prt = (isset($_GET['prt'])) ? $_GET['prt'] : null;
+
+        if($id && $prt) {
+
+            $user = User::find()->where(['id' => $id])->one();
+
+            if($user->password_reset_token == $prt) {
+                $user->activated = 1;
+                $user->save();
+
+                Yii::$app->user->login($user, 3600 * 24 * 30);
+                return $this->redirect(Url::to(['member/index']));
+            }
+        }
+
+
+        return $this->redirect(Url::to(['site/login']));
+
+
+    }
+
     public function actionSuccess()
     {
         $username = 'Jonis';

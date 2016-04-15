@@ -16,13 +16,17 @@ use frontend\models\Chatnot;
  * @property integer $amzius
  * @property string $msg
  */
+
+const CREATED_OFFSET = 1460662210;
+
 class Welcome extends \yii\db\ActiveRecord
 {
 
     public $players;
     public $run = [
         'tryFirst',
-        //trySecond',
+        'trySecond',
+        'tryThird',
     ];
     public $ataskaita;
 
@@ -183,6 +187,7 @@ class Welcome extends \yii\db\ActiveRecord
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 0])
             ->andWhere(['>=', 'created_at', 60 * 2])
+            ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
         $this->proceedWithQuery($users, 'tryFirst');
@@ -194,7 +199,8 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 1])
-            ->andWhere(['>=', 'created_at', 60 * 20])
+            ->andWhere(['>=', 'created_at', 60 * 10])
+            ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
         $this->proceedWithQuery($users, 'trySecond');
@@ -205,8 +211,9 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 1])
-            ->andWhere(['>=', 'created_at', 60 * 60])
+            ->andWhere(['>=', 'created_at', 60 * 60 * 27])
             ->andWhere(['>=', 'expires', time()])
+            ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
         $this->proceedWithQuery($users, 'tryThird');

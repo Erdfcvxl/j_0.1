@@ -154,10 +154,11 @@ class MemberController extends \yii\web\Controller
     public function actionTest()
     {
 
-        $model = new \frontend\models\Chat;
-        $otherUser = User::find()->one();
+        $ar = ['logo' => 'css/img/icons/logo2.jpg', 'avatars' => 'css/img/icons/avatarSectionEmail.jpg', 'link' => 'css/img/icons/link.jpg'];
 
-        $model->tryEmail(Yii::$app->user, $otherUser);
+        foreach ($ar as $k => $v){
+            echo $k."=>".$v."|,|";
+        }
     }
        
 

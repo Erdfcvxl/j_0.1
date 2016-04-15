@@ -5,6 +5,7 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use common\models\Mail;
 
 /**
  * This is the model class for table "user".
@@ -64,7 +65,8 @@ class UserChange extends \yii\db\ActiveRecord
             [['emailNew', 'emailNew2'], 'email', 'message'=> 'Tai nėra tinkamas el. paštas'],
             [['emailOld' , 'emailNew', 'emailNew2'],'required', 'message'=> 'Šis laukelis negali būti tuščias'],
             ['emailOld', 'elpatikra'],
-            [['emailNew', 'emailNew2'], 'ellygus']
+            [['emailNew', 'emailNew2'], 'ellygus'],
+            [['emailNew'], 'elunique']
         ];
     }
 
@@ -97,6 +99,13 @@ class UserChange extends \yii\db\ActiveRecord
     {
         if($this->emailNew != $this->emailNew2){
             $this->addError('passwordNew2', 'El. paštai nesutampa');
+        }
+    }
+
+    public function elunique()
+    {
+        if($user = User::find()->where(['email' => $this->emailNew])->one()){
+            $this->addError('emailNew2', 'Toks el. paštas jau naudojamas');
         }
     }
 
@@ -160,22 +169,31 @@ class UserChange extends \yii\db\ActiveRecord
 
         if($this->validate()){
 
-            Yii::$app->mailer->compose('_emailChangeToOld', ['logo' => 'css/img/icons/logo2.jpg', 'avatars' => 'css/img/icons/avatarSectionEmail.jpg', 'link' => 'css/img/icons/link.jpg'])
-                    ->setFrom('admin@pazintyslietuviams.co.uk')
-                    ->setTo($user->email)
-                    ->setSubject('El. pašto keitimas')
-                    ->send();
+            $mail = new Mail;
+            $mail->sender = 'admin@pazintyslietuviams.co.uk';
+            $mail->reciever = $user->email;
+            $mail->subject = 'El. pašto keitimas';
+            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg';
+            $mail->view = '_emailChangeToOld';
+            $mail->timestamp = time();
+            $mail->trySend();
 
             $user->email = $this->emailNew;
+            $user->activated = 0;
+            $user->password_reset_token = Yii::$app->security->generateRandomString();
+            //kai paspaudzia ant email linko tuomet tikrina prt id ir pora random stringu tada aktyvina ir nunulina prt
             $user->save();
 
             Yii::$app->getSession()->setFlash('success', 'El paštas pakeistas sėkmingai');
 
-            Yii::$app->mailer->compose('_emailChange', ['logo' => 'css/img/icons/logo2.jpg', 'avatars' => 'css/img/icons/avatarSectionEmail.jpg', 'link' => 'css/img/icons/link.jpg'])
-                    ->setFrom('admin@pazintyslietuviams.co.uk')
-                    ->setTo($user->email)
-                    ->setSubject('El. pašto keitimas')
-                    ->send();
+            $mail = new Mail;
+            $mail->sender = 'admin@pazintyslietuviams.co.uk';
+            $mail->reciever = $user->email;
+            $mail->subject = 'El. pašto keitimas';
+            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|id=>'.$user->id."|,|prt=>".$user->password_reset_token;
+            $mail->view = '_emailChange';
+            $mail->timestamp = time();
+            $mail->trySend();
 
             return true;
         }else{

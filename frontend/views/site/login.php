@@ -1,8 +1,6 @@
 <?php
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+
 use frontend\models\SignupForm;
-use yii\helpers\Url;
 use yii\authclient\widgets\AuthChoice;
 use kartik\spinner\Spinner;
 
@@ -79,8 +77,8 @@ if(Yii::$app->session->hasFlash('error')): ?>
 
 <div class="first_flat" id="original" style="z-index: 1;">
   <div class="first_flat" id="copy" style="position: absolute; z-index: -999998;">
-    <img src="/css/img/pazintys_lietuviams.jpg?t=<?/*/*= time(); */*/?>" class="bg_img" id="log_bg1" style="display: none; z-index: -1; top: 0;"alt="Pažintys lietuviams Anglijoje" title="Pažintys lietuviams Anglijoje"/>
-    <img src="/css/img/pazintys_lietuviams.jpg?t=<?/*/*= time(); */*/?>" class="bg_img" id="log_bg2" style="display: block; z-index: -2; top: 0;"alt="Pažintys lietuviams Anglijoje" title="Pažintys lietuviams Anglijoje"/>
+    <img src="/css/img/pazintys_lietuviams.jpg?t=<?= time();?>" class="bg_img" id="log_bg1" style="display: none; z-index: -1; top: 0;"alt="Pažintys lietuviams Anglijoje" title="Pažintys lietuviams Anglijoje"/>
+    <img src="/css/img/pazintys_lietuviams.jpg?t=<?= time(); ?>" class="bg_img" id="log_bg2" style="display: block; z-index: -2; top: 0;"alt="Pažintys lietuviams Anglijoje" title="Pažintys lietuviams Anglijoje"/>
   </div>
 
   <?= $this->render('//site/includes/header', ['modelis' => $modelis]); ?>
