@@ -81,7 +81,7 @@ class Chatters extends \yii\db\ActiveRecord
 
         }
 
-        if(isset($_GET['f']) && isset($_GET['f']) == 'new' ){
+        if(isset($_GET['f']) && $_GET['f'] == 'new' ){
             $chatnot = Chatnot::find()->where(['reciever' => Yii::$app->user->id])->andWhere(['newID' => Yii::$app->user->id])->all();
 
             foreach ($chatnot as $v){

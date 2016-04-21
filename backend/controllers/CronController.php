@@ -217,7 +217,7 @@ class CronController extends \yii\web\Controller
         $model = new \backend\models\Functions;
 
         $array = [
-
+            782
         ];
 
         foreach ($array as $id){

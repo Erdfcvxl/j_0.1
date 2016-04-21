@@ -164,6 +164,8 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
         <?php endif; ?>
 
         <div class="header">
+            <?php if($user->f){ echo $this->render('//layouts/includes/toAdmin'); } ?>
+
             <div class="container">
                 <div class="row">
                     <!-- <div class="col-xs-3" style="text-align: center; margin-top: 5px;">

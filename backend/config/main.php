@@ -38,6 +38,12 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManagerFrontend' => [
+            'class' => 'yii\web\urlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'baseUrl' => '/',
+        ],
         /*'urlManager' => [
             'baseUrl' => '/',
             'enablePrettyUrl' => true,

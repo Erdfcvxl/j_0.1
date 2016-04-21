@@ -6,7 +6,7 @@ use frontend\models\UserPack;
 
 class Functions 
 {
-    public $deletedIDS;
+    public $deletedIDS = [];
 
     static public function CleanAvatar()
     {
@@ -112,7 +112,7 @@ class Functions
     public function CleanTrashTalk()
     {
         $o = (isset($_GET['o']))? time() - $_GET['o'] * 3600 * 24 : 0;
-        $l = (isset($_GET['l']))? $o + $_GET['l'] * 3600 : time();
+        $l = (isset($_GET['l']))? $o + $_GET['l'] * 3600 * 6 : time();
         $tso = (isset($_GET['tso']))? $o + $_GET['tso'] : 0;
         $tsl = (isset($_GET['tsl']))? $o + $_GET['tsl'] : 0;
         $between = ($tso && $tsl)? true : false;
@@ -124,7 +124,7 @@ class Functions
 
         session_write_close();
 
-
+        $g = 0;
         $i = 0;
         while(true){
             if($between) {
@@ -150,6 +150,12 @@ class Functions
                 $i++;
             }
 
+            $g++;
+
+            if($g == 10000) {
+                echo "breakinau su globaliu";
+                break;
+            }
         }
 
         echo "done";

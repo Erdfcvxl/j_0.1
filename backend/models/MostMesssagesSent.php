@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\db\Query;
 
 /**
  * This is the model class for table "most_messsages_sent".
@@ -45,7 +46,17 @@ class MostMesssagesSent extends \yii\db\ActiveRecord
 
     public function search($params)
     {
-        $query = MostMesssagesSent::find();
+        $select = ['c.sender', 'u.username', 'count(u.id) as sent_messages'];
+
+        $query = new Query;
+        $query->select($select)
+            ->from('chat AS c')
+            ->join('LEFT JOIN', 'user AS u', 'c.sender = u.id')
+            ->orderBy(['c.sender'=>SORT_DESC])
+            ->groupBy(['c.sender'])
+        ;
+
+        //$query = MostMesssagesSent::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -65,6 +76,14 @@ class MostMesssagesSent extends \yii\db\ActiveRecord
         ]);
 
         $query->andFilterWhere([">=", 'sent_messages', $this->sent_messages]);
+
+        if(isset($_GET['sent'])) {
+            $created_at = explode(" - ", $_GET['sent']);
+            $created_at_start = strtotime($created_at[0]);
+            $created_at_end = strtotime($created_at[1]);
+
+            $query->andFilterWhere(['between', 'c.timestamp', $created_at_start, $created_at_end]);
+        }
 
         return $dataProvider;
 

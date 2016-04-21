@@ -135,6 +135,7 @@ function msgTopIndicator()
 	        		var full = '';
 
 	        		for(var i = 0; i < usernames.length; i++){
+						//console.log(data);
 	        			full = '<div class="col-xs-10 trans_box" style="padding: 2px 15px; margin: 1px 0;"><a href="'+data['url']+newMsgId[i]+'"">'+usernames[i]+': '+htmlEncode(messages[i])+'</a></div>'+full;
 	        		}
 

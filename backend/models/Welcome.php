@@ -18,7 +18,7 @@ use frontend\models\Chatnot;
  * @property string $msg
  */
 
-const CREATED_OFFSET = 1460917550;
+const CREATED_OFFSET = 1461259693;
 
 class Welcome extends \yii\db\ActiveRecord
 {
@@ -136,14 +136,12 @@ class Welcome extends \yii\db\ActiveRecord
         if(!$user->info)
             return null;
 
+
+
         $iesko = substr($user->info->iesko, 1);
         $used = explode(',',$user->ffmSenders);
 
         $amzius = \frontend\models\Misc::getAmzius($user->info->diena, $user->info->menuo, $user->info->metai);
-
-        //jeigu dar neuzpilde anketos ir nenustate gimimo datos, zinutes jam nesius
-        if($amzius < 18)
-            return null;
 
         //isrenka labiausiai atitinkanti siunteja
         foreach ($this->players as $model) {
@@ -168,6 +166,8 @@ class Welcome extends \yii\db\ActiveRecord
             return $sender;
         }
 
+
+
         return null;
 
     }
@@ -180,7 +180,10 @@ class Welcome extends \yii\db\ActiveRecord
         $i = 0;
 
         foreach($users as $user){
+
             if($s = $this->getSender($user)) {
+
+
                 $this->sendFfm($s['id'], $s['msg'], $user);
                 $this->ataskaita[$name][] = ['siuntejas' => $s['id'], 'gavejas' => $user->username, 'msg' => $s['msg']];
             }
@@ -212,7 +215,7 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 1])
-            ->andWhere(['<=', 'created_at', time() + 60 * 10])
+            ->andWhere(['<=', 'created_at', time() - 60 * 10])
             ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
@@ -223,8 +226,8 @@ class Welcome extends \yii\db\ActiveRecord
     {
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
-            ->where(['firstFakeMsg' => 1])
-            ->andWhere(['<=', 'created_at', time() + 60 * 60 * 27])
+            ->where(['firstFakeMsg' => 2])
+            ->andWhere(['<=', 'created_at', time() - 60 * 60 * 27])
             ->andWhere(['>=', 'expires', time()])
             ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
@@ -237,10 +240,9 @@ class Welcome extends \yii\db\ActiveRecord
         //pupulates players
         $this->players = self::find()->all();
 
-        foreach ($this->run as $v){
+        foreach ($this->run as $v)
             $this->$v();
 
-        }
 
         var_dump($this->ataskaita);
 

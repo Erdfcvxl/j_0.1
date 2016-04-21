@@ -50,7 +50,7 @@ echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id']
         <div class="aavatar2" style="background-color: black; cursor: pointer; position: relative; opacity: <?= $opacity; ?>" onclick='javascript:window.location.href="<?= Url::to(['member/msg', 'id' => $user['id'],
                                                                                                                     'page' => (isset($_GET['page']))? $_GET['page'] : '',
                                                                                                                     'per-page' => (isset($_GET['per-page']))? $_GET['per-page'] : '',
-                                                                                                                    'f' => (isset($_GET['f']))? $_GET['f'] : '',
+                                                                                                                    'f' => (isset($_GET['f']))? $_GET['f'] : 'n',
                                                                                                                     ])?>"'>
 
             <?php

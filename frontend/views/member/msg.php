@@ -27,6 +27,9 @@ $thisId = (isset($_GET['id']))? $_GET['id'] : "";
 $additional = (isset($_GET['additional']))? $_GET['additional'] : "";
 $me = Yii::$app->user->identity;
 
+$urlToComplete = Url::to(['member/backtoreg', 'id' => $me->id, 're' => \frontend\models\Functions::StepsNotCompleted($me), 'ra' => $me->auth_key]);
+$notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami baigti pildyti anketa spauskite <b><a href="'.$urlToComplete.'">čia</a></b>.</p>';
+
 $AllSearch = new UserSearch();
 $adchats = AdminChat::find()->where(['u_id' => Yii::$app->user->id])->all();
 
@@ -53,8 +56,7 @@ if(!$user)
 
 
 
-$urlToComplete = Url::to(['member/backtoreg', 'id' => $me->id, 're' => \frontend\models\Functions::StepsNotCompleted($me), 'ra' => $me->auth_key]);
-$notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami baigti pildyti anketa spauskite <b><a href="'.$urlToComplete.'">čia</a></b>.</p>';
+
 
 $arFavoritas = Favourites::arFavoritas($thisId);
 
