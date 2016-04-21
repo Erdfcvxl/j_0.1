@@ -567,7 +567,7 @@ class SiteController extends Controller
                     $mail->sender = 'pazintys@pazintyslietuviams.co.uk';
                     $mail->reciever = $user->email;
                     $mail->subject = 'Slaptažodis';
-                    $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg,pass=>'.$newPass;
+                    $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|pass=>'.$newPass;
                     $mail->view = '_pass';
                     $mail->timestamp = time();
                     $mail->trySend();

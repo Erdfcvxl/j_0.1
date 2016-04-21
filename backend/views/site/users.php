@@ -175,16 +175,6 @@ $gridColumns = [
 
 ?>
 
-<?php if(Yii::$app->session->hasFlash('success')): ?>
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="alert alert-success"><?=Yii::$app->session->getFlash('success')?></div>
-        </div>
-    </div>
-
-<?php endif; ?>
-
 <div class="row">
     <div class="col-xs-2">
         <a href="<?= Url::to(['site/users'])?>" class="btn btn-info" style="margin-bottom: 10px;">Išvalyti filtrus</a>

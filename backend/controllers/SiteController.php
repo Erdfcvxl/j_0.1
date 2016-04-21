@@ -371,11 +371,18 @@ class SiteController extends Controller
 
     public function actionUserdelete()
     {
-        $model = User::find()->where(['id' => $_GET['id']])->one();
+        $id = $_GET['id'];
 
+        $model = new \backend\models\Functions;
+        $model->deleteChat($id);
+        $model->deleteChatters($id);
+        $model->deleteChatnot($id);
+        $model->deletePakvietimai($id);
+
+        $model = User::find()->where(['id' => $_GET['id']])->one();
         $model->delete();
 
-        Yii::$app->session->setFlash('success', 'Narys ištrintas'); 
+        Yii::$app->session->setFlash('success', 'Narys ištrintas');
 
         return $this->redirect(Url::to(['site/users']));
     }

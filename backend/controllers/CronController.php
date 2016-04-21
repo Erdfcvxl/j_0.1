@@ -2,7 +2,8 @@
 
 namespace backend\controllers;
 
-set_time_limit(0);
+//set_time_limit(0);
+//ini_set('memory_limit', '128M');
 
 use Yii;
 
@@ -186,9 +187,6 @@ class CronController extends \yii\web\Controller
         $model->sendEmails();
     }
 
-    /*
-     * Pirmoji žinutė iš fake nario (ffm == first fake message)
-     */
     public function actionFfm()
     {
         $welcome = new \backend\models\Welcome;
@@ -201,6 +199,37 @@ class CronController extends \yii\web\Controller
         $users = \frontend\models\Misc::getAmzius('', '', '');
 
         var_dump($users);
+    }
+
+    /*
+     *Išvalo pokalbius su neegzistuojančiais nariais
+     */
+    public function actionClear()
+    {
+        $model = new \backend\models\Functions;
+        $model->CleanTrashTalk();
+        //$model->CleanTrashNot();
+    }
+
+    public  function actionFuck()
+    {
+
+        $model = new \backend\models\Functions;
+
+        $array = [
+
+        ];
+
+        foreach ($array as $id){
+            $nots = \frontend\models\Chatnot::find()->where(['sender' => $id])->orWhere(['reciever' => $id])->all();
+            $model->deleteAll($nots);
+
+            $chatters = \frontend\models\Chatters::find()->where(['u1' => $id])->orWhere(['u2' => $id])->all();
+            $model->deleteAll($chatters);
+
+            $invites = \frontend\models\Pakvietimai::find()->where(['sender' => $id])->orWhere(['reciever' => $id])->all();
+            $model->deleteAll($invites);
+        }
     }
 
 }

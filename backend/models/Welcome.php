@@ -2,6 +2,7 @@
 
 namespace backend\models;
 
+use Composer\Package\Loader\ValidatingArrayLoader;
 use Yii;
 use frontend\models\Chat;
 use frontend\models\Statistics;
@@ -17,7 +18,7 @@ use frontend\models\Chatnot;
  * @property string $msg
  */
 
-const CREATED_OFFSET = 1460662210;
+const CREATED_OFFSET = 1460917550;
 
 class Welcome extends \yii\db\ActiveRecord
 {
@@ -173,10 +174,22 @@ class Welcome extends \yii\db\ActiveRecord
 
     public function proceedWithQuery($users, $name)
     {
+        set_time_limit(false);
+        session_write_close();
+
+        $i = 0;
+
         foreach($users as $user){
             if($s = $this->getSender($user)) {
                 $this->sendFfm($s['id'], $s['msg'], $user);
                 $this->ataskaita[$name][] = ['siuntejas' => $s['id'], 'gavejas' => $user->username, 'msg' => $s['msg']];
+            }
+
+            $i++;
+
+            if($i > 50){
+                $i = 0;
+                sleep(1);
             }
         }
     }
@@ -186,7 +199,7 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 0])
-            ->andWhere(['>=', 'created_at', 60 * 2])
+            ->andWhere(['<=', 'created_at', time() - 60 * 2])
             ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
@@ -199,7 +212,7 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 1])
-            ->andWhere(['>=', 'created_at', 60 * 10])
+            ->andWhere(['<=', 'created_at', time() + 60 * 10])
             ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();
 
@@ -211,7 +224,7 @@ class Welcome extends \yii\db\ActiveRecord
         //pasirenka publika
         $users = \frontend\models\UserPack::find()
             ->where(['firstFakeMsg' => 1])
-            ->andWhere(['>=', 'created_at', 60 * 60 * 27])
+            ->andWhere(['<=', 'created_at', time() + 60 * 60 * 27])
             ->andWhere(['>=', 'expires', time()])
             ->andWhere(['>=', 'created_at', CREATED_OFFSET])
             ->all();

@@ -104,6 +104,8 @@ Class Misc
      */
     static public function getByu_id($ids)
 	{
+		$id = null;
+
 		foreach($ids as $v){
 			$id[] = $v->u_id;
 		}

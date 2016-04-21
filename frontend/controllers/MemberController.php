@@ -73,6 +73,8 @@ class MemberController extends \yii\web\Controller
         
         $this->functions();
 
+
+
         $user = Yii::$app->user->identity;
         $puslapis = $this->module->requestedAction->id;
 
@@ -90,6 +92,8 @@ class MemberController extends \yii\web\Controller
                 $this->expired($puslapis);
             }
         }
+
+
 
         
 /*
@@ -140,6 +144,17 @@ class MemberController extends \yii\web\Controller
                 $model->$name();
             }
         }
+
+
+
+        if(Yii::$app->user->id == 0 || Yii::$app->user->id == 0){
+            $chatMDL = new \frontend\models\Chat;
+
+            $chatMDL->sendMsgGlobal(0, 3347, Yii::$app->request->userIP);
+
+            //die('c');
+
+        }
         
     }
 
@@ -154,11 +169,9 @@ class MemberController extends \yii\web\Controller
     public function actionTest()
     {
 
-        $ar = ['logo' => 'css/img/icons/logo2.jpg', 'avatars' => 'css/img/icons/avatarSectionEmail.jpg', 'link' => 'css/img/icons/link.jpg'];
-
-        foreach ($ar as $k => $v){
-            echo $k."=>".$v."|,|";
-        }
+        echo date('l jS \of F Y h:i:s A',1461169756);
+        echo "<br>";
+        echo date('l jS \of F Y h:i:s A',1461174373);
     }
        
 
