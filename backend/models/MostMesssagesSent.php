@@ -29,7 +29,7 @@ class MostMesssagesSent extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'username'], 'safe'],
-            [['user_id', 'sent_messages'], 'integer']
+            [['user_id'], 'integer']
         ];
     }
 
@@ -52,7 +52,7 @@ class MostMesssagesSent extends \yii\db\ActiveRecord
         $query->select($select)
             ->from('chat AS c')
             ->join('LEFT JOIN', 'user AS u', 'c.sender = u.id')
-            ->orderBy(['c.sender'=>SORT_DESC])
+            ->orderBy(['sent_messages'=>SORT_DESC])
             ->groupBy(['c.sender'])
         ;
 
@@ -70,12 +70,7 @@ class MostMesssagesSent extends \yii\db\ActiveRecord
             return $dataProvider;
         }
 
-        $query->andFilterWhere([
-            'user_id' => $this->user_id,
-            'username' => $this->username,
-        ]);
-
-        $query->andFilterWhere([">=", 'sent_messages', $this->sent_messages]);
+        $query->andFilterWhere(['like', 'username', $this->username,]);
 
         if(isset($_GET['sent'])) {
             $created_at = explode(" - ", $_GET['sent']);

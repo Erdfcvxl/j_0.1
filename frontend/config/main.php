@@ -61,7 +61,7 @@ return [
 
         'urlManagerBackend' => [
             'class' => 'yii\web\urlManager',
-            'baseUrl' => '/pzntsltaa/backend/web',
+            'baseUrl' => '/backend/web',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],

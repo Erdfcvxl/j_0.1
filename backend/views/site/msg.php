@@ -49,7 +49,6 @@ $gridColumns = [
 		'format' => 'raw'
     ],
 	['class' => 'kartik\grid\DataColumn',
-		'attribute'=> 'username',
 		'label' => 'Į žinutes',
 		'format' => 'html',
 		'value' => function($model){

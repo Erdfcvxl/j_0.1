@@ -128,6 +128,7 @@ class Chat extends \yii\db\ActiveRecord
         $this->reciever = $reciever;
         $this->message = $content;
         $this->timestamp = time();
+        $this->sVip = Yii::$app->user->identity->vip;
         $this->newID = $reciever;
         $this->save(false);
     }

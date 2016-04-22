@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\db\Query;
 
 /**
  * This is the model class for table "fake_msg".
@@ -14,6 +15,8 @@ use yii\data\ActiveDataProvider;
  */
 class FakeMsg extends \yii\db\ActiveRecord
 {
+
+    public $username;
     /**
      * @inheritdoc
      */
@@ -46,9 +49,26 @@ class FakeMsg extends \yii\db\ActiveRecord
         ];
     }
 
+    public function populate()
+    {
+        if(isset($_GET['username']))
+            $this->username = $_GET['username'];
+    }
+
     public function search($params)
     {
-        $query = FakeMsg::find();
+        $this->populate();
+
+        $select = ['c.reciever as gavejas', 'c.sVip' ,'u.username as username', 'count(u.id) as sent_messages'];
+
+        $query = new Query;
+        $query->select($select)
+            ->from('chat AS c')
+            ->join('LEFT JOIN', 'user AS u', 'c.reciever = u.id')
+            ->where(['u.f' => 1])
+            ->orderBy(['sent_messages'=>SORT_DESC])
+            ->groupBy(['u.id'])
+        ;
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -62,7 +82,24 @@ class FakeMsg extends \yii\db\ActiveRecord
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['like', 'gavejas', $this->gavejas]);
+        $query->andFilterWhere(['like', 'u.username', $this->username]);
+
+        if(isset($_GET['svip'])) {
+            $query->andFilterWhere(['c.sVip' => 1]);
+        }else{
+            $query->andFilterWhere(['c.sVip' => 0]);
+        }
+
+        if(isset($_GET['sent'])) {
+            $created_at = explode(" - ", $_GET['sent']);
+
+            if(count($created_at) == 2) {
+                $created_at_start = strtotime($created_at[0]);
+                $created_at_end = strtotime($created_at[1]);
+
+                $query->andFilterWhere(['between', 'c.timestamp', $created_at_start, $created_at_end]);
+            }
+        }
 
         return $dataProvider;
     }

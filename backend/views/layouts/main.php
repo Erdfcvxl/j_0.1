@@ -12,6 +12,8 @@ use frontend\widgets\Alert;
 $params = Parametres::find()->one();
 $mail = Mail::find()->all();
 
+$sentInerval = date('Y-m-d', time())." - ".date('Y-m-d', time() + 3600 * 24);
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -48,7 +50,7 @@ AppAsset::register($this);
                 $fakeLinks = [
                         '<li class="dropdown-header">Informacija apie fake narius</li>',
                         ['label' => 'Susirašinėjimai', 'url' => ['/site/msg']],
-                        ['label' => 'Naujos žinutės', 'url' => ['/site/fakemsg'], 'linkOptions' => ['id' => 'fakemsg']],
+                        ['label' => 'Naujos žinutės', 'url' => Url::to(['/site/fakemsg', 'sent' => $sentInerval]), 'linkOptions' => ['id' => 'fakemsg']],
                         ['label' => 'Nauji laikai', 'url' => ['/site/fakelikes'], 'linkOptions' => ['id' => 'fakelikes']],
                         ['label' => 'Nauji draugai', 'url' => ['/site/fakedrg'], 'linkOptions' => ['id' => 'fakedrg']],
                         '<li class="dropdown-header">Veiksmai su fake nariais</li>',
