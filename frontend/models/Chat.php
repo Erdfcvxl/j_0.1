@@ -122,15 +122,17 @@ class Chat extends \yii\db\ActiveRecord
 
     public function sendMsg($reciever, $content)
     {
-        $this->updateChatters($reciever);
+        if($content != '') {
+            $this->updateChatters($reciever);
 
-        $this->sender = Yii::$app->user->id;
-        $this->reciever = $reciever;
-        $this->message = $content;
-        $this->timestamp = time();
-        $this->sVip = Yii::$app->user->identity->vip;
-        $this->newID = $reciever;
-        $this->save(false);
+            $this->sender = Yii::$app->user->id;
+            $this->reciever = $reciever;
+            $this->message = $content;
+            $this->timestamp = time();
+            $this->sVip = Yii::$app->user->identity->vip;
+            $this->newID = $reciever;
+            $this->save(false);
+        }
     }
 
     public function updateChattersGlobal($s, $r)

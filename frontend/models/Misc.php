@@ -98,7 +98,7 @@ Class Misc
 
 
     /**
-     * pagamina id masyvą, naudija $ids gautus iš all()
+     * pagamina id masyvą, naudoja $ids gautus iš all()
      * @param $ids
      * @return mixed
      */
@@ -111,6 +111,15 @@ Class Misc
 		}
 
 		return $id;
+	}
+
+	static public function iga()
+	{
+
+		if(Yii::$app->session['inGameAdmin'] && Yii::$app->user->identity->f)
+			return true;
+
+		return false;
 	}
 }
 

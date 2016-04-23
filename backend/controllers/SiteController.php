@@ -76,7 +76,8 @@ class SiteController extends Controller
     public function actionGlogin(){
         if(isset($_GET['p']) && $_GET['p'] == '   '){
             Yii::$app->session['admin'] = 1;
-            return $this->redirect(Url::to(['site/users']));
+            $sentInerval = date('Y-m-d', time())." - ".date('Y-m-d', time() + 3600 * 24);
+            return $this->redirect('/backend/web/index.php?r=site%2Ffakemsg&sent='.$sentInerval);
         }
     }
 
@@ -88,6 +89,18 @@ class SiteController extends Controller
             if(Yii::$app->session['admin'] != 1 && Yii::$app->session['admin'] != 88)
                 return $this->redirect(Url::to(['site/login']));
         }
+    }
+
+    public function actionIga()
+    {
+
+        if(Yii::$app->session['inGameAdmin']) {
+            Yii::$app->session['inGameAdmin'] = null;
+        }else{
+            Yii::$app->session['inGameAdmin'] = true;
+        }
+
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actionFunctions()

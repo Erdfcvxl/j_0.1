@@ -5,9 +5,10 @@ use frontend\models\User;
 use frontend\models\Info;
 use frontend\models\Ago;
 use yii\helpers\Url;
+use frontend\models\Misc;
 
 
-$user = User::find()->where(['id' => $model->u_id])->one();
+if($user = User::find()->where(['id' => $model->u_id])->one()):
 
 $color = (isset($_GET['color']))? $_GET['color'] : '#90C3D4'; 
 
@@ -55,7 +56,9 @@ require(__DIR__ ."/../site/form/_list.php");
 	</div>
 	<div class="col-xs-9" style="font-weight: normal;">
 		<div class="row" style="margin: 5px 0; font-size: 10px; text-align: right;">
-			<div class="col-xs-3 col-xs-offset-9"><?= Ago::timeAgo($model->timestamp); ?></div>
+
+			<div class="col-xs-3 col-xs-offset-8" style="padding: 0; margin-right: -10px;"><?= Ago::timeAgo($model->timestamp); ?></div>
+			<div class="col-xs-1" style="padding: 0;"><?= $this->render('//member/iga/_forumPost', ['id' => $model->id]); ?></div>
 			
 		</div>
 		<div class="row" style="background-color: white; padding: 5px;">
@@ -66,3 +69,5 @@ require(__DIR__ ."/../site/form/_list.php");
 	</div>
 	
 </div>
+
+<?php endif; ?>

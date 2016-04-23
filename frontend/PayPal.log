@@ -3727,3 +3727,15 @@
 
 ================================================================================================================================
 
+[23-04-2016 09:43:00] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-04-2016 09:43:00] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[23-04-2016 09:43:01] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-04-2016 09:43:03] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[23-04-2016 09:43:03] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-04-2016 09:43:03] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[23-04-2016 09:43:03] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-04-2016 09:43:04] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[23-04-2016 09:43:14] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-04-2016 09:43:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[23-04-2016 09:43:15] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[23-04-2016 09:43:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201

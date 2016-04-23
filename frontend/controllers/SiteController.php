@@ -105,7 +105,11 @@ class SiteController extends Controller
         $fb = new \frontend\models\Facebook;
         $fb->id = $id;
         $fb->username = $username;
-        $fb->email = $email;
+        if(User::find()->where(['email' => $email])->one()){
+            $fb->email = '';
+        }else{
+            $fb->email = $email;
+        }
         $fb->picture = $photoSrc;
 
         if($user = $fb->login()){

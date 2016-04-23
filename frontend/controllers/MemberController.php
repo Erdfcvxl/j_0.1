@@ -165,16 +165,6 @@ class MemberController extends \yii\web\Controller
         }
     }
 
-
-    public function actionTest()
-    {
-
-        echo date('l jS \of F Y h:i:s A',1461169756);
-        echo "<br>";
-        echo date('l jS \of F Y h:i:s A',1461174373);
-    }
-       
-
     public function expired($psl)
     {
         $other = [
@@ -984,6 +974,21 @@ class MemberController extends \yii\web\Controller
                 $chat->delete();
             }
         }
+
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionDelete()
+    {
+        if(\frontend\models\Misc::iga()){
+            @extract($_GET);
+
+            $model = $class::find()->where([$k => $v])->one();
+            $model->delete();
+        }else{
+            throw new \yii\web\HttpException(403, 'Jūs neturite prieigos prie šio puslapio.');
+        }
+        
 
         return $this->redirect(Yii::$app->request->referrer);
     }
@@ -1829,6 +1834,9 @@ class MemberController extends \yii\web\Controller
             $modelForum = new \frontend\models\Forum;
 
             $forum = $modelForum::find()->where(['id' => $id])->one();
+
+            if(!$forum)
+                return $this->redirect(['member/forum']);
             $forum->addView();
 
             if($forum->new > 0){
@@ -2016,6 +2024,15 @@ class MemberController extends \yii\web\Controller
             $chat->newID = $id;
             $chat->save(false);
 
+            $chat = new Chat;
+            $chat->sender = Yii::$app->user->id;
+            $chat->reciever = $id;
+            $chat->message = "-%necd%%<span style='color: #7A7A7A'>Jūs padovanojote paveikslėlį!</span>";
+            $chat->dontShow = $id;
+            $chat->timestamp = time();
+            $chat->newID = 0;
+            $chat->save(false);
+
             $user->valiuta -= $kaina;
             $user->save(false);
 
@@ -2075,6 +2092,15 @@ class MemberController extends \yii\web\Controller
             $chat->newID = $id;
             $chat->save(false);
 
+            $chat = new Chat;
+            $chat->sender = Yii::$app->user->id;
+            $chat->reciever = $id;
+            $chat->message = "-%necd%%<span style='color: #7A7A7A'>Jūs padovanojote nuotraukų talpinimą!</span>";
+            $chat->dontShow = $id;
+            $chat->timestamp = time();
+            $chat->newID = 0;
+            $chat->save(false);
+
             $user->valiuta -= $kaina;
             $user->save(false);
 
@@ -2125,6 +2151,15 @@ class MemberController extends \yii\web\Controller
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->newID = $id;
+            $chat->save(false);
+
+            $chat = new Chat;
+            $chat->sender = Yii::$app->user->id;
+            $chat->reciever = $id;
+            $chat->message = "-%necd%%<span style='color: #7A7A7A'>Jūs padovanojote abonimentą!</span>";
+            $chat->dontShow = $id;
+            $chat->timestamp = time();
+            $chat->newID = 0;
             $chat->save(false);
 
             $user->valiuta -= $kaina;

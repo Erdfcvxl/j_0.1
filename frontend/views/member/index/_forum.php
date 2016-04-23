@@ -85,6 +85,10 @@ $sections = Forum::getSections('new');
         foreach ($sections['right'] as $forum) {
             $user = User::find()->where(['id' => $forum->u_id])->one();
 
+            if(!$user) {
+                continue;
+            }
+
             if($user->avatar){
                 $avataras = "/uploads/531B".$user->id."Iav.".$user->avatar;
             }else{

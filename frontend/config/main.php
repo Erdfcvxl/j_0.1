@@ -65,6 +65,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],
+        'session' => [
+            'name' => 'PHPSSID',
+            'savePath' => __DIR__ . '/../../tmp',
+        ],
         
 
     ],

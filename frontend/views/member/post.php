@@ -9,6 +9,7 @@ $color = (isset($_GET['color']))? $_GET['color'] : '#90C3D4';
 
 $forum = Forum::find()->where(['id' => $id])->one();
 
+
 ?>
 
 <div class="container-fluid" style="background-color: #e8e8e8; text-align: left; padding: 5px;">
@@ -27,6 +28,10 @@ $forum = Forum::find()->where(['id' => $id])->one();
 
 			<?php if(!\frontend\models\Expired::prevent()): ?>
 				<a href="<?= Url::to(['member/forumats', 'id' => $id, 'color' => $color ]); ?>" class="btn btn-success">Atsakyti</a>		
+			<?php endif; ?>
+
+			<?php if(frontend\models\Misc::iga()): ?>
+				<a href="<?= Url::to(['member/delete', 'class' => '\frontend\models\Forum', 'k' => 'id', 'v' => $forum->id]); ?>" class="btn btn-danger"><span style="color: black" class="glyphicon glyphicon-trash"></span></a>
 			<?php endif; ?>
 			
 		</div>

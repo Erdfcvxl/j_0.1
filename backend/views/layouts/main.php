@@ -14,6 +14,19 @@ $mail = Mail::find()->all();
 
 $sentInerval = date('Y-m-d', time())." - ".date('Y-m-d', time() + 3600 * 24);
 
+
+
+$iga = Yii::$app->session['inGameAdmin'];
+
+$color = (!$iga)? "D64747" : "47D674";
+$class = (!$iga)? "glyphicon glyphicon-off" : "glyphicon glyphicon-record";
+$info = ($iga)? "Išjungti" : "Įjungti";
+
+$toggle =
+'<a href="'.Url::to(["site/iga"]).'" style="color: #'.$color.'; display: inline-block; margin-top: 16px;" data-toggle="tooltip" data-placement="bottom" title="'.$info.' administravimo galimybes portale">
+    <span class="'.$class.'"></span>
+</a>';
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -35,7 +48,7 @@ AppAsset::register($this);
         <?php
             if(!Yii::$app->user->isGuest){
                 NavBar::begin([
-                    'brandLabel' => '<span>Administravimas</span>',
+                    'brandLabel' => 'Administravimas'.$toggle,
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
@@ -160,7 +173,10 @@ AppAsset::register($this);
     $(function() {
       checkMsg();
       console.log('called');
+        $('[data-toggle="tooltip"]').tooltip();
     });
+
+
     
     </script>
 

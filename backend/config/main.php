@@ -44,6 +44,10 @@ return [
             'showScriptName' => false,
             'baseUrl' => '/',
         ],
+        'session' => [
+            'name' => 'PHPSSID',
+            'savePath' => __DIR__ . '/../../tmp',
+        ],
         /*'urlManager' => [
             'baseUrl' => '/',
             'enablePrettyUrl' => true,

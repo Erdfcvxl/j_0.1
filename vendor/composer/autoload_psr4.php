@@ -27,4 +27,5 @@ return array(
     'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
+    'PayPal\\Api\\' => array($vendorDir . '/paypal/rest-api-sdk-php/lib/PayPal/Api'),
 );
