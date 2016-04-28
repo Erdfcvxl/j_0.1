@@ -94,7 +94,7 @@ function msgTopIndicator()
 	        			//console.log($('#chatterid'+newMsgId[i]));
 
 		        		$('#infoPart'+newMsgId[i]).css({"border-top" : "2px solid #94c500", "border-right" : "2px solid #94c500", "border-bottom" : "2px solid #94c500"});
-		        		$('#chatterid'+newMsgId[i]).prependTo("#pasnekovai");
+		        		//$('#chatterid'+newMsgId[i]).prependTo("#pasnekovai");
 		        	}
 	        	}
 

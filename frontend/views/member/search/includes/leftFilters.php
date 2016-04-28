@@ -35,7 +35,7 @@ include('../views/site/form/_list.php');
 </div>
 <div class="row searchRow" style="background-color: #e7e7e7; margin-top: 100px;">
     <?php $searchModel->svoris1 = ($searchModel->svoris1 || $searchModel->svoris1 == '0') ? $searchModel->svoris1 : 0; ?>
-    <?php $searchModel->svoris2 = ($searchModel->svoris2 || $searchModel->svoris2 == '0') ? $searchModel->svoris2 : 142; ?>
+    <?php $searchModel->svoris2 = ($searchModel->svoris2 || $searchModel->svoris2 == '0') ? $searchModel->svoris2 : 143; ?>
     <div class="col-xs-4 paddingFix fixHelp"><?= $form->field($searchModel, 'svoris1')->dropDownList($svoris, $options = ['style' => ' height: 18px;', 'class' => 'trans_input arrow'])->label(false); ?></div>
     <div class="col-xs-2 paddingFix fixHelp"><center>iki</center></div>
     <div class="col-xs-4 paddingFix fixHelp"><?= $form->field($searchModel, 'svoris2')->dropDownList($svoris, $options = ['style' => ' height: 18px;', 'class' => 'trans_input arrow'])->label(false); ?></div>

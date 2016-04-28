@@ -73,8 +73,6 @@ class MemberController extends \yii\web\Controller
         
         $this->functions();
 
-
-
         $user = Yii::$app->user->identity;
         $puslapis = $this->module->requestedAction->id;
 
@@ -82,6 +80,10 @@ class MemberController extends \yii\web\Controller
         $fModel->EmailMsgNotification($user);
         $fModel->StepsNotCompleted($user);
         $prevent = $fModel->Expired($puslapis);
+
+        if(!$user->vip){
+            $this->restrictNotVip($action->id);
+        }
 
         if(!$user->activated && $user->created_at > 1451952160){
             if($puslapis != 'notactivated' && $puslapis != 'casualcheck'){
@@ -93,37 +95,7 @@ class MemberController extends \yii\web\Controller
             }
         }
 
-
-
-        
-/*
-        $noRedirect = array('', 'index' , 'blocked', 'casualcheck', 'settings', 'getppapplink', 'executepayment', 'duk', 'help');
-        $noRedirectBlocked = array('' , 'casualcheck', 'settings', 'duk', 'help');
-
-        
-
-        if($expired === 'pratesk'){
-    
-            $this->naujokas();
-            
-        }elseif($expired){
-            $this->adminExMsg();
-        }
-
-        if(array_search($puslapis, $noRedirect) != true){
-            if($expired){
-                $this->expired();
-            }
-        }
-
-        if(array_search($puslapis, $noRedirectBlocked) != true){
-            if($action->id != 'blocked'){
-                $this->blocked();
-            }
-        }*/
-
         $profilioPsl = ['user', 'fotos', 'fotosalbumview', 'iesko'];
-
         if(array_search($puslapis, $profilioPsl) !== false){
             $this->addOneViewOnProfile();
         }
@@ -131,6 +103,27 @@ class MemberController extends \yii\web\Controller
         $this->updateOnline();
 
         return true; // or false to not run the action
+    }
+
+    private function restrictNotVip($a)
+    {
+        $onlyVIP = [
+            'search',
+            'forum',
+            'comment'
+        ];
+
+
+
+        if(array_search($a, $onlyVIP) !== false){
+            return $this->redirect(Url::to(['member/onlyvip']));
+        }
+
+    }
+
+    public function actionOnlyvip()
+    {
+        return $this->render('onlyvip');
     }
 
     private function functions()
@@ -554,7 +547,7 @@ class MemberController extends \yii\web\Controller
         $searchModel->ugis1 = 0;
         $searchModel->ugis2 = 122;
         $searchModel->svoris1 = 0;
-        $searchModel->svoris2 = 142;
+        $searchModel->svoris2 = 143;
        /*$searchModel->rs = 1;
         $searchModel->ts = 1;
         $searchModel->se = 1;
@@ -1534,35 +1527,40 @@ class MemberController extends \yii\web\Controller
 
     public function actionComment()
     {
-        $model = new \frontend\models\Comments;
-        $modelNot = new \frontend\models\LikesNot;
 
-        $object = (isset($_GET['object']))? $_GET['object'] : "";
-        $name = (isset($_GET['name']))? $_GET['name'] : "";
-        $u_id = (isset($_GET['u_id']))? $_GET['u_id'] : "";
-        $comment = Yii::$app->request->post()['Comments']['comment'];
-        
-        $model->u_id = $u_id;
-        $model->object = $object;
-        $model->commented_on = $name;
-        $model->commented_by = Yii::$app->user->id;
-        $model->comment = $comment;
-        $model->timestamp = time();
-        $model->save();
+        if(!Yii::$app->user->identity->vip){
+            $this->restrictNotVip('comment');
+        }else {
 
-        if($u_id != Yii::$app->user->id){
-            $modelNot->u_id = $u_id;
-            $modelNot->giver_id = Yii::$app->user->id;
-            $modelNot->object = 'comment';
-            $modelNot->o_info = $name;
-            $modelNot->timestamp = time();
-            $modelNot->new = 1;
-            $modelNot->insert();
+            $model = new \frontend\models\Comments;
+            $modelNot = new \frontend\models\LikesNot;
+
+            $object = (isset($_GET['object'])) ? $_GET['object'] : "";
+            $name = (isset($_GET['name'])) ? $_GET['name'] : "";
+            $u_id = (isset($_GET['u_id'])) ? $_GET['u_id'] : "";
+            $comment = Yii::$app->request->post()['Comments']['comment'];
+
+            $model->u_id = $u_id;
+            $model->object = $object;
+            $model->commented_on = $name;
+            $model->commented_by = Yii::$app->user->id;
+            $model->comment = $comment;
+            $model->timestamp = time();
+            $model->save();
+
+            if ($u_id != Yii::$app->user->id) {
+                $modelNot->u_id = $u_id;
+                $modelNot->giver_id = Yii::$app->user->id;
+                $modelNot->object = 'comment';
+                $modelNot->o_info = $name;
+                $modelNot->timestamp = time();
+                $modelNot->new = 1;
+                $modelNot->insert();
+            }
+
+
+            return $this->redirect(Url::to(Yii::$app->request->referrer) . "&phover=1");
         }
-
-
-
-        return $this->redirect(Url::to(Yii::$app->request->referrer)."&phover=1");
     }
 
     public function actionChatallsearch()
@@ -1612,6 +1610,7 @@ class MemberController extends \yii\web\Controller
                     $model->dontShow = Yii::$app->user->id;
                     $model->newID = $_GET['to'];
                     $model->extra = "mirkt 1";
+                    $model->sVip = Yii::$app->user->identity->vip;
                     $model->save(false);
 
                     $model = new Chat;
@@ -1970,11 +1969,18 @@ class MemberController extends \yii\web\Controller
         if($post = Yii::$app->request->post()){
             $model->load($post);
 
+            $additional = '';
+
+            if(isset($_GET['id'])){
+                if($user = User::find()->where(['id' => $_GET['id']])->one())
+                    $additional = "<br><br><small>Pranešimas gautas paspaudus <i>Pranešti apie profilį</i>. Vartotojas: ".$user->username." (".$user->email.")</small>";
+            }
+
             $mail = new Mail;
             $mail->sender = $user->email;
             $mail->reciever = 'pagalba@pazintyslietuviams.co.uk';
             $mail->subject = $model->subject;
-            $mail->content = $model->body;
+            $mail->content = $model->body.$additional;
             $mail->timestamp = time();
             $mail->trySend();
 
@@ -2021,6 +2027,7 @@ class MemberController extends \yii\web\Controller
             $chat->message = "-%necd%% ".$user->username." jums padovanojo dovaną! <a href='".Url::to(['member/msg', 'dopen' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
+            $chat->sVip = Yii::$app->user->identity->vip;
             $chat->newID = $id;
             $chat->save(false);
 
@@ -2090,6 +2097,7 @@ class MemberController extends \yii\web\Controller
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->newID = $id;
+            $chat->sVip = Yii::$app->user->identity->vip;
             $chat->save(false);
 
             $chat = new Chat;
@@ -2150,6 +2158,7 @@ class MemberController extends \yii\web\Controller
             $chat->message = "-%necd%% ".$user->username." jums padovanojo dovaną! <a href='".Url::to(['member/msg', 'dopen' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
+            $chat->sVip = Yii::$app->user->identity->vip;
             $chat->newID = $id;
             $chat->save(false);
 

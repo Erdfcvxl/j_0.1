@@ -95,7 +95,7 @@ class TopFotos extends User
         $this->ugis1 = 51;
         $this->ugis2 = 91;
         $this->svoris1 = 11;
-        $this->svoris2 = 81;
+        $this->svoris2 = 143;
     }
 
     public function getTikslas()

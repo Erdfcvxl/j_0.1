@@ -66,6 +66,7 @@ class FakeMsg extends \yii\db\ActiveRecord
             ->from('chat AS c')
             ->join('LEFT JOIN', 'user AS u', 'c.reciever = u.id')
             ->where(['u.f' => 1])
+            ->andWhere(['not', ['newID' => 0]])
             ->orderBy(['sent_messages'=>SORT_DESC])
             ->groupBy(['u.id'])
         ;

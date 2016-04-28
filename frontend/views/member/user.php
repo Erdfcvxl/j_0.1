@@ -284,7 +284,7 @@ if(!empty($files)){
 
                 	<a href="<?= Url::to(['member/help']); ?>">Blokuoti naudotoją</a><br>
 
-                	<a href="<?= Url::to(['member/help']); ?>">Pranešti apie profilį</a>
+                	<a href="<?= Url::to(['member/help', 'id' => $_GET['id']]); ?>">Pranešti apie profilį</a>
 
                 </div>
 
