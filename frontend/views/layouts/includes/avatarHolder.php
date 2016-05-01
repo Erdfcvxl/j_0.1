@@ -26,7 +26,7 @@ use frontend\models\Info2;
                     $diff = $d2->diff($d1);
                     require(__DIR__ ."/../../site/form/_list.php");
 
-                    $miestas = (!empty($info->miestas))? $list[$info->miestas] : 'nenustatyta';
+                    $miestas = ($info->miestas !== '')? $list[$info->miestas] : 'nenustatyta';
                 ?>
                 <span class="ProfInfo" style="color: #5b5b5b; position: relative; top: -3px;"><?= $diff->y; ?> metai, <?= $miestas ?></span>
 

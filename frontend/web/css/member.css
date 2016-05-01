@@ -1069,13 +1069,32 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 	margin: 3px 2px 2px;
 	font-size: 11px;
 	text-align: center;
+	color: #2f3539;
 }
 
 .frame{
 	width: 100%;
-	min-height: 90px;
+	min-height: 30px;
 	padding: 5px;
 	border: 1px solid #95c501;
+}
+
+.arrow-left {
+	width: 0;
+	height: 0;
+	border-top: 17px solid transparent;
+	border-bottom: 17px solid transparent;
+
+	border-right:17px solid #95c501;
+}
+
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 17px solid transparent;
+	border-right: 17px solid transparent;
+
+	border-top: 17px solid #95c501;
 }
 
 .list-view > div > div:first-child > div, .list-view > div > div:nth-child(2) > div{
@@ -1084,6 +1103,10 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 
 .list-view > div > div > div{
 	margin-top: 5px;
+}
+
+.a-primary {
+	color: #95c501;
 }
 
 .Ldeco{

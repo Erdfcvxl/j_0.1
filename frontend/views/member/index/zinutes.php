@@ -52,8 +52,9 @@ if(Chat::isNew()){
         $user = User::find('username')->where(['id' => $newIds[$i]])->one();
         $lastMsg = Chat::find()->where(['sender' => $newIds[$i]])->andWhere(['reciever' => Yii::$app->user->id])->orderBy(['timestamp' => SORT_DESC])->one();
 
-        if(!User::find()->where(['id' => $lastMsg->sender])->one() && $lastMsg){
-            $lastMsg->delete();
+        if(!isset($lastMsg) || !User::find()->where(['id' => $lastMsg->sender])->one()){
+            if($lastMsg)
+                $lastMsg->delete();
 
             continue;
         }

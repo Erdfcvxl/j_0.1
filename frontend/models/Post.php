@@ -15,6 +15,8 @@ use Yii;
  */
 class Post extends \yii\db\ActiveRecord
 {
+
+    public $count;
     /**
      * @inheritdoc
      */

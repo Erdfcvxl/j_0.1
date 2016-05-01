@@ -1461,14 +1461,17 @@ class MemberController extends \yii\web\Controller
     public function actionStatistika()
     {
         $psl = (isset($_GET['psl']))? $_GET['psl'] : '';
+        
+        $model = new \frontend\models\Statistics;
+        $model->setID();
 
         if($psl){
             $dataProfider = $this->{'Statistika'.$psl}();
 
-            return $this->render('statistika', ['dataProvider' => $dataProfider]);
+            return $this->render('statistika', ['dataProvider' => $dataProfider, 'model' => $model]);
         }
 
-        return $this->render('statistika');
+        return $this->render('statistika', ['model' => $model]);
     }
 
     public function StatistikaViews()
@@ -1476,6 +1479,28 @@ class MemberController extends \yii\web\Controller
         $model = new \frontend\models\Profileview;
 
         return $model->getViewers();
+    }
+
+    public function StatistikaPop()
+    {
+        //$model = new \frontend\models\Pop;
+
+        return [];
+    }
+
+    public function StatistikaForum()
+    {
+        $model = new \frontend\models\Statistics;
+        $model->setID();
+
+        return [$model->openedForums(), $model->atsForums()];
+    }
+
+    public function StatistikaMsg()
+    {
+        //$model = new \frontend\models\Pop;
+
+        return [];
     }
 
     public function actionAnketa()
@@ -1871,6 +1896,8 @@ class MemberController extends \yii\web\Controller
             if($id){
                 $model->load(Yii::$app->request->post());
                 $model->atsakyti();
+
+                \frontend\models\Statistics::addForum();
             }
         }
 
@@ -1884,6 +1911,8 @@ class MemberController extends \yii\web\Controller
         if(Yii::$app->request->post()){
             $model->load(Yii::$app->request->post());
             $save = $model->kurti();
+
+            \frontend\models\Statistics::addForum();
 
             if($save){
                 return $this->redirect(['member/post', 'id' => $save]);

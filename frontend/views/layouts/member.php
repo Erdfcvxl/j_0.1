@@ -46,6 +46,9 @@ foreach ($forumas as $forumasVienetas) {
 
 $kitas = array('1' => 'search', 'user', 'msg', 'fotos', 'fotosalbumview', 'iesko', 'anketa');
 
+if($puslapis == 'statistika' && isset($_GET['id']))
+    $kitas[] = 'statistika';
+
 $urlToComplete = Url::to(['member/backtoreg', 'id' => $user->id, 're' => \frontend\models\Functions::StepsNotCompleted($user), 'ra' => $user->auth_key]);
 
 $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami baigti pildyti anketa spauskite <b><a href="'.$urlToComplete.'">čia</a></b>.</p>';

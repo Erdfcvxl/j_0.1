@@ -57,7 +57,7 @@ if($pakvietimaiKiti):
 
                 <div class="col-xs-5" style="">
 
-                    <span class="ProfName" style="font-size: 20px; color: #93c501;"><?= $user->username; ?></span><br>
+                    <span class="ProfName" style="font-size: 20px; color: #93c501;"><?= $user->username; ?> <?= \frontend\models\Misc::vip($user); ?></span><br>
                     <span class="ProfInfo" style="color: #262626; font-size: 11px; position: relative; top: -3px;"><?= $diff->y; ?> metai, <?= $list[$dataInfo->miestas]; ?></span>
 
                     <div>

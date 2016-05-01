@@ -232,4 +232,19 @@ class CronController extends \yii\web\Controller
         }
     }
 
+    public function actionForumpopulate()
+    {
+        $forum = new \frontend\models\Forum();
+        $posts = new \frontend\models\Post();
+        $stats = new \frontend\models\Statistics();
+
+        foreach ($forum->find()->all() as $model){
+            \frontend\models\Statistics::addForum($model->u_id);
+        }
+
+        foreach ($posts->find()->all() as $model){
+            \frontend\models\Statistics::addForum($model->u_id);
+        }
+    }
+
 }

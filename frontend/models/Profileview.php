@@ -21,6 +21,7 @@ class Profileview extends \yii\db\ActiveRecord
     public $lastOnline;
     public $gimimoTS;
     public $miestas;
+    public $vip;
 
     /**
      * @inheritdoc
@@ -91,7 +92,7 @@ class Profileview extends \yii\db\ActiveRecord
     public function getViewers()
     {
         $query = Profileview::find()
-            ->select('profileview.ziuretojas, profileview.timestamp, user.username, user.id, user.avatar, user.lastOnline, info.gimimoTS, info.miestas')
+            ->select('profileview.ziuretojas, profileview.timestamp, user.username, user.id, user.avatar, user.lastOnline, user.vip as vip, info.gimimoTS, info.miestas')
             ->joinWith('user')
             ->joinWith('info2')
             ->where(['ziurimasis' => Yii::$app->user->id])

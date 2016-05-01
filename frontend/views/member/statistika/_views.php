@@ -9,11 +9,7 @@ require(__DIR__ ."/../../site/form/_list.php");
 
 $diff = $d2->diff($d1);
 
-if($model->avatar){
-	$avatar = "/uploads/531B".$model->id."Iav.".$model->avatar;
-}else{
-	$avatar = "/css/img/icons/no_avatar.png";
-}
+$avatar = \frontend\models\Misc::getAvatar($model);
 
 if(isset(Yii::$app->params['close'])){
     Yii::$app->params['close']++;
@@ -31,8 +27,8 @@ if(isset(Yii::$app->params['close'])){
 		</div>
 
 		<div class="col-xs-8"style="padding: 0 5px;">
-			<span style="font-size: 16px;"><?= $model->username ?></span><br>
-			<?= $diff->y; ?>, <?= $list[$model->miestas]; ?><br>
+			<span style="font-size: 16px;"><?= $model->username ?><?= \frontend\models\Misc::vip($model); ?></span><br>
+			<?= $diff->y; ?>, <?= (!empty($model->miestas))? $list[$model->miestas] : 'nenustatyta'; ?><br>
 			<span style="color: #95c501;"><?= Ago::TimeAgo($model->timestamp); ?></span>
 		</div>
 

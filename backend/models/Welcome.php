@@ -91,28 +91,37 @@ class Welcome extends \yii\db\ActiveRecord
 
     }
 
-    public function sendFfm($id, $msg, $gavejas)
+    public function sendFfm($sender, $msg, $gavejas)
     {
-        if($id && $msg){
-            $sender = \frontend\models\UserPack::find()->where(['id' => $id])->one();
+        if($sender && $msg){
 
-            $chat = new Chat;
-            $chat->tryEmail($sender, $gavejas, true);
-            $chat->sendMsgGlobal($sender->id, $gavejas->id, $msg);
-
-            Statistics::addRecieved($gavejas->id);
-
-            $not = new Chatnot;
-            $not->insertNotGlobal($sender->id, $gavejas->id);
-
-            $gavejas->firstFakeMsg += 1;
-            if(empty($gavejas->ffmSenders)){
+            $gavejas->ffmSenders += 1;
+            if($gavejas->ffmSenders === ''){
                 $gavejas->ffmSenders = $sender->id;
             }else{
-                $gavejas->ffmSenders .= ",".$sender->id;
+                $gavejas->ffmSenders = $gavejas->ffmSenders.",".$sender->id;
             }
 
-            $gavejas->save();
+            if($gavejas->save()) {
+
+
+                $chat = new Chat;
+                $chat->tryEmail($sender, $gavejas, true);
+                $chat->sendMsgGlobal($sender->id, $gavejas->id, $msg);
+
+                Statistics::addRecieved($gavejas->id);
+
+                $not = new Chatnot;
+                $not->insertNotGlobal($sender->id, $gavejas->id);
+            }else{
+                Yii::$app->mailer->compose()
+                    ->setFrom('cronjob@pazintyslietuviams.co.uk')
+                    ->setTo('rokasr788@gmail.com')
+                    ->setSubject('Klaida: sendFFM')
+                    ->setHtmlBody('Neišsaugojo $gavejo Welcome->sendFfm(). UserPack modelio vardumpas: <br>'.var_dump($gavejas->getErrors()))
+                    ->send();
+            }
+
         }
 
     }
@@ -149,8 +158,12 @@ class Welcome extends \yii\db\ActiveRecord
                 if (array_search($model->u_id, $used) === false) {
                     if (abs($model->amzius - $amzius) < $skirtumas) {
                         $skirtumas = abs($model->amzius - $amzius);
-                        $id = $model->u_id;
-                        $msg = $this->getMsg($model);
+                        if($sender = \frontend\models\UserPack::find()->where(['id' => $model->u_id])->one()) {
+                            $id = $sender;
+                            $msg = $this->getMsg($model);
+                        }else{
+                            $model->delete();
+                        }
                     }
                 }
             }
@@ -182,8 +195,6 @@ class Welcome extends \yii\db\ActiveRecord
         foreach($users as $user){
 
             if($s = $this->getSender($user)) {
-
-
                 $this->sendFfm($s['id'], $s['msg'], $user);
                 $this->ataskaita[$name][] = ['siuntejas' => $s['id'], 'gavejas' => $user->username, 'msg' => $s['msg']];
             }
