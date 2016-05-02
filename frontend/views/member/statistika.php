@@ -22,22 +22,26 @@ $model->ratings();
     	<div class="row">
 
     		<div class="col-xs-7" id="pickerHolder">
-    			<a class="col-xs-3 <?= ($psl == "views")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'views']); ?>">
-    				<div class="gSquare"><?= $model->viewsRating ?></div>
-    				<span style="margin-top: 3px; display: block;">Peržiūras</span>
-    			</a>
-    			<a class="col-xs-3 <?= ($psl == "pop")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'pop']); ?>">
-    				<div class="gSquare" ><?= $model->popRating ?></div>
-    				<span style="margin-top: 3px; display: block;">Populiarumą</span>
-    			</a>
-    			<a class="col-xs-3 <?= ($psl == "forum")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'forum']); ?>">
-    				<div class="gSquare"><?= $model->forumRating ?></div>
-    				<span style="margin-top: 3px; display: block;">Forumą</span>
-    			</a>
-    			<a class="col-xs-3 <?= ($psl == "msg")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'msg']); ?>">
-    				<div class="gSquare"><?= $model->msgRating ?></div>
-    				<span style="margin-top: 3px; display: block;">Žinutes</span>
-    			</a>
+				<a class="col-xs-3 <?= ($psl == "views")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'views']); ?>">
+					<div class="gSquare"><?= $model->viewsRating ?></div>
+					<span style="margin-top: 3px; display: block;">Peržiūras</span>
+				</a>
+				<a class="col-xs-3 <?= ($psl == "msg")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'msg']); ?>">
+					<div class="gSquare"><?= $model->msgRating ?></div>
+					<span style="margin-top: 3px; display: block;">Žinutes</span>
+				</a>
+				<a class="col-xs-3 <?= ($psl == "like")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'like']); ?>">
+					<div class="gSquare"><?= $model->likeRating ?></div>
+					<span style="margin-top: 3px; display: block;">Laikai</span>
+				</a>
+				<a class="col-xs-3 <?= ($psl == "pop")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'pop']); ?>">
+					<div class="gSquare" ><?= $model->popRating ?></div>
+					<span style="margin-top: 3px; display: block;">Populiarumą</span>
+				</a>
+				<a class="col-xs-3 <?= ($psl == "forum")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'forum']); ?>">
+					<div class="gSquare"><?= $model->forumRating ?></div>
+					<span style="margin-top: 3px; display: block;">Forumą</span>
+				</a>
     		
     		</div>
     		<div class="col-xs-5">
@@ -50,7 +54,7 @@ $model->ratings();
 
     	<script type="text/javascript">
     		var items = 4,
-    			width = ($('#pickerHolder').width() / 4) - 20;
+    			width = ($('#pickerHolder').width() / 5) - 20;
     		$('.gSquare').css({
     			'width' : width + "px",
     			'height' : width + "px",

@@ -25,6 +25,9 @@ class Statistics extends \yii\db\ActiveRecord
     public $popRating;
     public $forumRating;
     public $msgRating;
+    public $likeRating;
+    public $rank;
+    public $msg;
     /**
      * @inheritdoc
      */
@@ -176,80 +179,74 @@ class Statistics extends \yii\db\ActiveRecord
     public function ratings()
     {
 
-
-        $select = [
-            'u_id',
-            'profile_visits',
-            'FIND_IN_SET( profile_visits, (
-                SELECT GROUP_CONCAT( profile_visits ORDER BY profile_visits DESC ) 
-                FROM statistics )
-            ) AS rank'
-        ];
-
         $query = new Query;
-        $query->select($select)
+        $query->select(['profile_visits'])
             ->from('statistics AS s')
             ->where(['u_id' => $this->id]);
 
-        $this->viewsRating = ($query->one()['rank'] == 0)? '-' : $query->one()['rank'];
+
+        $temp = $query->one()['profile_visits'];
+
+        if($temp > 0)
+            $this->viewsRating = self::find()->select(['profile_visits'])->where(['>', 'profile_visits', $temp])->count() + 1;
+        else
+            $this->viewsRating = '-';
 
         //////////////////////////////////////////////////////////////
 
-        $select = [
-            'u_id',
-            'p',
-            'FIND_IN_SET( p, (
-                SELECT GROUP_CONCAT( p ORDER BY p DESC ) 
-                FROM statistics )
-            ) AS rank'
-        ];
-
         $query = new Query;
-        $query->select($select)
+        $query->select(['likes'])
             ->from('statistics AS s')
             ->where(['u_id' => $this->id]);
 
-        $this->popRating = ($query->one()['rank'] == 0)? '-' : $query->one()['rank'];
+
+        $temp = $query->one()['likes'];
+
+        if($temp > 0)
+            $this->likeRating = self::find()->select(['likes'])->where(['>', 'likes', $temp])->count() + 1;
+        else
+            $this->likeRating = '-';
+
+        //////////////////////////////////////////////////////////////
+
+        $query = new Query;
+        $query->select(['p'])
+            ->from('statistics AS s')
+            ->where(['u_id' => $this->id]);
+
+
+        $temp = $query->one()['p'];
+
+        if($temp > 0)
+            $this->popRating = self::find()->select(['p'])->where(['>', 'p', $temp])->count() + 1;
+        else
+            $this->popRating = '-';
 
         ///////////////////////////////////////////////////////////////
 
-        $select = [
-            'u_id',
-            'forum',
-            'FIND_IN_SET( forum, (
-                SELECT GROUP_CONCAT( forum ORDER BY forum DESC ) 
-                FROM statistics )
-            ) AS rank'
-        ];
-
         $query = new Query;
-        $query->select($select)
+        $query->select(['forum'])
             ->from('statistics AS s')
-            ->andWhere(['u_id' => $this->id]);
+            ->where(['u_id' => $this->id]);
 
-        $this->forumRating = ($query->one()['forum'] == 0)? '-' : $query->one()['rank'];
+
+        $temp = $query->one()['forum'];
+
+        if($temp > 0)
+            $this->forumRating = self::find()->select(['forum'])->where(['>', 'forum', $temp])->count() + 1;
+        else
+            $this->forumRating = '-';
 
         ///////////////////////////////////////////////////////////////
 
-        $select = [
-            'u_id',
-            '(msg_sent + msg_recieved) as msg',
-            'FIND_IN_SET( (msg_sent + msg_recieved), (
-                SELECT GROUP_CONCAT( (msg_sent + msg_recieved) ORDER BY (msg_sent + msg_recieved) DESC ) 
-                FROM statistics AS s
-                LEFT JOIN user AS u
-                ON s.u_id = u.id
-                WHERE u.f = 0)
-            ) AS rank'
-        ];
-
         $query = new Query;
-        $query->select($select)
+        $query->select(['u_id', '(msg_sent + msg_recieved) as msg'])
             ->from('statistics AS s')
-            ->join('LEFT JOIN', 'user AS u', 's.u_id = u.id')
-            ->andWhere(['u_id' => $this->id]);
+            ->where(['u_id' => $this->id]);
 
-        $this->msgRating = ($query->one()['rank'] == 0)? '-' : $query->one()['rank'];
+
+        $msg = $query->one()['msg'];
+        $this->msgRating = self::find()->select(['(msg_sent + msg_recieved) as msg'])->where(['>', '(msg_sent + msg_recieved)', $msg])->count() + 1;
     }
 
     public function viewsToday()
@@ -416,6 +413,35 @@ class Statistics extends \yii\db\ActiveRecord
             ->where(['u.f' => 0])
             ->limit(3);
 
+
         return $query->all();
+    }
+
+    public function overalllike()
+    {
+        $select = [
+            'u_id as id',
+            'likes',
+            'u.avatar',
+            'u.id'
+        ];
+
+        $query = new Query;
+        $query->select($select)
+            ->from('statistics AS s')
+            ->join('LEFT JOIN', 'user AS u', 's.u_id = u.id')
+            ->orderBy(['likes'=>SORT_DESC])
+            ->where(['u.f' => 0])
+            ->limit(3);
+
+
+        return $query->all();
+    }
+
+    public function msgStats()
+    {
+        $stats = self::find()->where(['u_id' => $this->id])->one();
+
+        return $stats;
     }
 }

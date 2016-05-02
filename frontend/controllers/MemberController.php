@@ -1503,6 +1503,13 @@ class MemberController extends \yii\web\Controller
         return [];
     }
 
+    public function StatistikaLike()
+    {
+        //$model = new \frontend\models\Pop;
+
+        return [];
+    }
+
     public function actionAnketa()
     {
         $model = new \frontend\models\InfoClear;

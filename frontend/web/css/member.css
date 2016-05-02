@@ -1054,8 +1054,9 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 }
 
 #pickerHolder{
-	padding-left: 30px;
+	padding-left: 5px;
 	padding-right: 0px;
+
 }
 
 #pickerHolder > .col-xs-3.active{
@@ -1064,7 +1065,7 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 }
 
 #pickerHolder > .col-xs-3{
-	width: 23%;
+	width: 18%;
 	padding: 5px 2px 2px 3px;
 	margin: 3px 2px 2px;
 	font-size: 11px;
