@@ -89,7 +89,7 @@ elseif($re == 4){$heading = "Tavo žodis"; $sub_txt = "Anketos pateika daug info
         </h2> 
         <br>
         <span class="reg_detailed_desc" style=" ">
-          <a href="<?= Url::to(['site/skip', 'e' => $user->id, 'ak' => $user->auth_key ]); ?>" class="btn" style="position: relative; top: -20px; font-size: 14px; padding: 0 20px 0 20px; margin-top:25px; font-family: OpenSansLight;text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);">Praleisti ir prisijungti</a>
+          <a href="<?= Url::to(['site/skip', 'e' => $user->id, 'ak' => $user->auth_key ]); ?>" class="btn btn-success" style="position: relative; top: -20px; font-size: 14px; padding: 0 15px 0 22px; margin-top:25px; font-family: OpenSansLight;text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);">Praleisti ir prisijungti &nbsp; &#187;</a>
         </span>
       </div>
     </div>

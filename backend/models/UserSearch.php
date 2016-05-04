@@ -68,6 +68,12 @@ class UserSearch extends User
             'pagination' => [
                 'pageSize' => (isset($_GET['ps']))? $_GET['ps'] : 30,
             ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC,
+                    'username' => SORT_ASC,
+                ]
+            ],
         ]);
 
         $this->load($params);

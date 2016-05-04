@@ -71,6 +71,17 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(\frontend\models\InfoClear::className(), ['u_id' => 'id']);
     }
 
+    public function getParams()
+    {
+        if(!\frontend\models\UserParams::find()->where(['u_id' => $this->id])->one()){
+            $model = new \frontend\models\UserParams;
+            $model->u_id = $this->id;
+            $model->save();
+        }
+
+        return $this->hasOne(\frontend\models\UserParams::className(), ['u_id' => 'id']);
+    }
+
     public function getInfo2()
     {
         return $this->hasOne(\frontend\models\Info2::className(), ['u_id' => 'id']);

@@ -43,7 +43,7 @@ if($rating):
     </div>
 
     <div class="col-xs-6" style="font-size: 16px; padding-left: 5px; margin-top: 9px;">
-        <b>...<span style="font-size: 24px;"><?= $rating; ?></span></b> iš <?= User::find()->count()?>
+        <b>...<span style="font-size: 24px;"><?= $rating; ?></span></b> iš <?= User::find()->count() * 3?>
     </div>
 </div>
 

@@ -32,7 +32,7 @@ $model->ratings();
 				</a>
 				<a class="col-xs-3 <?= ($psl == "like")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'like']); ?>">
 					<div class="gSquare"><?= $model->likeRating ?></div>
-					<span style="margin-top: 3px; display: block;">Laikai</span>
+					<span style="margin-top: 3px; display: block;">Laikus</span>
 				</a>
 				<a class="col-xs-3 <?= ($psl == "pop")? 'active' : ''; ?>" href="<?= Url::current(['psl' => 'pop']); ?>">
 					<div class="gSquare" ><?= $model->popRating ?></div>

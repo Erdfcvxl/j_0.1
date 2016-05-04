@@ -18,7 +18,7 @@ use frontend\models\Chatnot;
  * @property string $msg
  */
 
-const CREATED_OFFSET = 1461259693;
+const CREATED_OFFSET = 1462210061;
 
 class Welcome extends \yii\db\ActiveRecord
 {
@@ -95,7 +95,7 @@ class Welcome extends \yii\db\ActiveRecord
     {
         if($sender && $msg){
 
-            $gavejas->ffmSenders += 1;
+            $gavejas->firstFakeMsg += 1;
             if($gavejas->ffmSenders === ''){
                 $gavejas->ffmSenders = $sender->id;
             }else{
@@ -159,8 +159,10 @@ class Welcome extends \yii\db\ActiveRecord
                     if (abs($model->amzius - $amzius) < $skirtumas) {
                         $skirtumas = abs($model->amzius - $amzius);
                         if($sender = \frontend\models\UserPack::find()->where(['id' => $model->u_id])->one()) {
-                            $id = $sender;
-                            $msg = $this->getMsg($model);
+                            if(!\frontend\models\Chat::find()->where(['and',['sender' => $model->u_id, 'reciever' => $user->id]])->orWhere(['and',['reciever' => $model->u_id, 'sender' => $user->id]])->one()){
+                                $id = $sender;
+                                $msg = $this->getMsg($model);
+                            }
                         }else{
                             $model->delete();
                         }

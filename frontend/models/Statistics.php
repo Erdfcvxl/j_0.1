@@ -246,7 +246,12 @@ class Statistics extends \yii\db\ActiveRecord
 
 
         $msg = $query->one()['msg'];
-        $this->msgRating = self::find()->select(['(msg_sent + msg_recieved) as msg'])->where(['>', '(msg_sent + msg_recieved)', $msg])->count() + 1;
+        $this->msgRating = self::find()
+                ->select(['(msg_sent + msg_recieved) as msg'])
+                ->join('LEFT JOIN', 'user AS u', 'u_id = u.id')
+                ->where(['>', '(msg_sent + msg_recieved)', $msg])
+                ->andWhere(['u.f' => 0])
+                ->count() + 1;
     }
 
     public function viewsToday()
@@ -431,7 +436,6 @@ class Statistics extends \yii\db\ActiveRecord
             ->from('statistics AS s')
             ->join('LEFT JOIN', 'user AS u', 's.u_id = u.id')
             ->orderBy(['likes'=>SORT_DESC])
-            ->where(['u.f' => 0])
             ->limit(3);
 
 

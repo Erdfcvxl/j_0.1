@@ -56,8 +56,12 @@ use yii\widgets\ListView;
 		?>
 	</div>
 
+	<script type="text/javascript">
+		$(".avatarHolder img.cntrm").fakecrop({wrapperWidth: $('.avatarHolder').width(),wrapperHeight: $('.avatarHolder').width(), center: true });
+	</script>
+
 	<br>
-	<br>
+
 
 </div>
 

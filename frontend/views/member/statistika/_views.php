@@ -1,5 +1,6 @@
 <?php
 use frontend\models\Ago;
+use yii\helpers\Url;
 
 $d1 = new DateTime();
 $d1->setTimestamp($model->gimimoTS);
@@ -20,11 +21,13 @@ if(isset(Yii::$app->params['close'])){
 <div class="col-xs-6">
 	<div class="row">
 
-		<div class="col-xs-4" style="padding: 0;">
-			<div class="avatarHolder">
-				<img src="<?= $avatar ?>" width="100%">
+		<a href="<?= Url::to(['member/user', 'id' => $model->id]); ?>">
+			<div class="col-xs-4" style="padding: 0;">
+				<div class="avatarHolder">
+					<img src="<?= $avatar ?>" class="cntrm" width="100%">
+				</div>
 			</div>
-		</div>
+		</a>
 
 		<div class="col-xs-8"style="padding: 0 5px;">
 			<span style="font-size: 16px;"><?= $model->username ?><?= \frontend\models\Misc::vip($model); ?></span><br>

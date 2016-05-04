@@ -36,7 +36,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup', 'success', 'afterfb', 'verifyemail'],
+                'only' => ['signup', 'success', 'afterfb', 'verifyemail'],
                 'rules' => [
                     [
                         'actions' => ['signup', 'success', 'afterfb', 'verifyemail'],
@@ -188,6 +188,14 @@ class SiteController extends Controller
             }
         
         }elseif($user = $fb->signup()){
+            $feed = new \frontend\models\Feed;
+
+            if(!$feed->find()->where(['u_id' => $user->id, 'action' =>"newUser"])->one()){
+                $feed->u_id = $user->id;
+                $feed->action = "newUser";
+                $feed->timestamp = time();
+                $feed->insert();
+            }
             
         }
 
@@ -612,7 +620,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->redirect(Url::to(['site/login']));
+        return $this->redirect(Url::to(['member/index']));
     }
 
     public function actionContact()

@@ -34,6 +34,51 @@ body{
 	height: 70px;
 }
 
+.GmenuBar{
+	margin-top: 10px;
+}
+
+.GmenuBar > a {
+	border-left: 1px solid #d7d7d7;
+	padding: 5px 13px;
+	float: left;
+	font-size: 12px;
+	position: relative;
+}
+
+.GmenuBar > a.last{
+	border-right: 1px solid #d7d7d7;
+}
+
+
+.GmenuBar > .dropdown {
+	border-left: 1px solid #d7d7d7;
+	padding: 5px 13px;
+	float: left;
+	font-size: 12px;
+	position: relative;
+	border-left: none;
+	float: left;
+}
+
+.kumpliaratis {
+	display: inline-block;
+	font-weight: normal;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
 .topMenu{
 	margin-top: 15px;
 }
@@ -67,10 +112,17 @@ body{
 	background-color: #67c0ba;
 	color: white;
 }
+
+.index_top:hover{
+	background-color: #67c0ba;
+	color: white;
+}
+
 .index_top_active{
 	background-color: #67c0ba;
 	color: white;
 }
+
 .search_top_active{
 	background-color: #B6EDCD;
 	color: white;
@@ -149,12 +201,33 @@ body{
 	background-color: #ff97a6;
 	color: white;
 }
+.date_top{
+	background-color: none;
+}
+.date_top:hover{
+	background-color: #adc472;
+	color: white;
+}
+.date_top_active{
+	background-color: #adc472;
+	color: white;
+}
 .settings_top:hover{
 	background-color: #a79ca2;
 	color: white;
 }
 .settings_top_active{
 	background-color: #a79ca2;
+	color: white;
+}
+
+.pviews_top:hover{
+	background-color: #8383a7;
+	color: white;
+}
+
+.pviews_top_active{
+	background-color: #8383a7;
 	color: white;
 }
 

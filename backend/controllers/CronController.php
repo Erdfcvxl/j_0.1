@@ -211,6 +211,42 @@ class CronController extends \yii\web\Controller
         //$model->CleanTrashNot();
     }
 
+    public function actionCleardeleted()
+    {
+
+
+        @extract($_GET);
+
+        if(isset($id))
+            $chatters = \frontend\models\Chatters::find()->where(['u1' => $id])->orWhere(['u2' => $id])->all();
+        else
+            $chatters = \frontend\models\Chatters::find()->all();
+
+        $i = 0;
+
+        session_write_close();
+        foreach($chatters as $chatter){
+
+            if(!\frontend\models\User::find()->where(['id' => $chatter->u1])->one())
+                \frontend\models\Chatters::deleteAll('u1 = :id OR u2 = :id', [':id' => $chatter->u1]);
+
+
+            if(!\frontend\models\User::find()->where(['id' => $chatter->u2])->one())
+                \frontend\models\Chatters::deleteAll('u1 = :id OR u2 = :id', [':id' =>  $chatter->u2]);
+
+
+
+            $i++;
+
+            if($i > 500){
+                $i = 0;
+                sleep(1);
+            }
+        }
+
+
+    }
+
     public  function actionFuck()
     {
 

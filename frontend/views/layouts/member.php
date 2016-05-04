@@ -15,8 +15,7 @@ use yii\widgets\ActiveField;
 
 use frontend\models\Chat;
 use frontend\models\Forum;
-use frontend\models\Friends;
-use frontend\models\Favourites;
+
 use frontend\models\LikesNot;
 use yii\widgets\Pjax;
 
@@ -35,8 +34,6 @@ $puslapis = $this->context->module->controller->module->requestedAction->id;
 $forumas = Forum::find()->where(['u_id' => Yii::$app->user->id])->all();
 
 $forumNew = 0;
-
-
 
 $chatNew = \frontend\models\Notifications::countNewMessages(Yii::$app->user->id);
 
@@ -186,36 +183,21 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                         </div>
                     </div>
                     <div class="col-xs-9" >
-                        <div class="container" style="width:100%;">
-                            <div class="row topMenu">
-                                <a href="<?= Url::to(['member/index'])?>" class="selection">
-                                    <div class="pick index_top <?php echo($puslapis == 'index')? 'index_top_active' : '' ?>">
-                                        Pagrindinis
-                                        <span class="msgCount btn btn-circle" id="pgrTopIndicator" style="<?= ($newNot > 0)? 'display: block' : 'display: none;' ?>">
-                                            <?= ($newNot > 0)? $newNot : ""; ?>
-                                        </span>
-                                    </div>
-                                </a>
-                                <a href="<?= Url::to(['member/msg'])?>" class="selection">
-                                    <div class="pick msg_top <?php echo($puslapis == 'msg')? 'msg_top_active' : '' ?>">
-                                        Žinutės
-                                        <span class="msgCount btn btn-circle" id="msgTopIndicator" style="<?= ($chatNew > 0)? 'display: block' : 'display: none;' ?>">
-                                            <?= $chatNew ?>
-                                        </span>
-                                    </div>
-                                </a>
-                                <a href="<?= Url::to(['member/search', 'psl' => 'index'])?>" class="selection"><div class="pick search_top <?php echo($puslapis == 'search')? 'search_top_active' : '' ?>">Ieškoti<span class="msgCount btn btn-circle" id="srcTopIndicator" style="<?= ($user->new > 0)? 'display: block' : 'display: none;' ?>"><?= ($user->new > 0)? $user->new : "" ?></span></div></a>
-                                <a href="<?= Url::to(['member/forum'])?>" class="selection"><div class="pick forum_top <?php echo($puslapis == "forum" || $puslapis == "post" || $puslapis == "forumnewru" || $puslapis == "forumats")? "forum_top_active" : "" ?>">Forumas<span class="msgCount btn btn-circle" id="forumTopIndicator" style="<?= ($forumNew > 0)? 'display: block' : 'display: none;' ?>"><?= ($forumNew > 0)? $forumNew : ""; ?></span></div></a>
-                                <a href="<?= Url::to(['member/friends'])?>" class="selection"><div class="pick friends_top <?php echo($puslapis == "friends")? "friends_top_active" : "" ?>">Draugai<span class="msgCount btn btn-circle" id="drgTopIndicator" style="<?= (Friends::isNew() > 0)? 'display: block' : 'display: none;' ?>"><?= (Friends::isNew() > 0)? Friends::isNew() : "" ?></span></div></a>
-                                <a href="<?= Url::to(['member/favs'])?>" class="selection"><div class="pick favs_top <?php echo($puslapis == "favs")? "favs_top_active" : "" ?>">Mėgstamiausi<span class="msgCount btn btn-circle" id="megTopIndicator" style="<?= (Favourites::isNew() > 0)? 'display: block' : 'display: none;' ?>"><?= (Favourites::isNew() > 0)? Favourites::isNew() : "" ?></span></div></a>
-                                <a href="<?= Url::to(['member/settings'])?>" class="selection"><div class="pick settings_top <?php echo($puslapis == "settings")? "settings_top_active" : "" ?>">Nustatymai</div></a>
-                                <a href="<?= Url::to(['site/logout'])?>" class="selection"><div class="pick">Atsijungti</div></a>
-                            </div>
-                        </div>
+
+                        <?= $this->render('includes/GmenuBar', [
+                            'puslapis' => $puslapis,
+                            'newNot' => $newNot,
+                            'chatNew' => $chatNew,
+                            'user' => $user,
+                            'forumNew' => $forumNew
+                        ]); ?>
+
                     </div>
                 </div>
             </div> 
         </div>
+
+
 
 
         <?php //$this->render('//events/dekoCh'); // Kaledine dekoracija ?>

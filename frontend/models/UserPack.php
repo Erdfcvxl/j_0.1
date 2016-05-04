@@ -53,4 +53,15 @@ class UserPack extends \yii\db\ActiveRecord
     {
         return $this->hasOne(InfoClear::className(), ['u_id' => 'id']);
     }
+
+    public function getParams()
+    {
+        if(!\frontend\models\UserParams::find()->where(['u_id' => $this->id])->one()){
+            $model = new \frontend\models\UserParams;
+            $model->u_id = $this->id;
+            $model->save();
+        }
+
+        return $this->hasOne(\frontend\models\UserParams::className(), ['u_id' => 'id']);
+    }
 }

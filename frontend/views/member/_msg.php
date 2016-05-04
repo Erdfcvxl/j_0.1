@@ -1,12 +1,16 @@
 <?php
 
 use yii\helpers\Url;
+use frontend\models\Misc;
 
 require(__DIR__ ."/../site/form/_list.php");
 
 $id = ($model->u1 == Yii::$app->user->id)? $model->u2 : $model->u1;
 
-$user = \frontend\models\UserPack::find()->where(['id' => $id])->one();
+$user = \frontend\models\UserPack::find()->where(['user.id' => $id])->one();
+//$user = Misc::arrayToObject($user);
+
+if($user):
 
 $dataInfo = $user->info;
 
@@ -16,7 +20,6 @@ $d2 = new DateTime();
 $diff = $d2->diff($d1);
 
 $chat = new \frontend\models\Chat;
-
 
 $new = 0;
 
@@ -70,7 +73,7 @@ echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id']
     </div>
 </div>
 
-<?php $src = \frontend\models\Misc::getAvatarADP($model); ?>
+<?php  $src = \frontend\models\Misc::getAvatarADP($model); ?>
 
 <script type="text/javascript">
     function trinti(id){
@@ -92,3 +95,5 @@ echo $this->render('_alert', ['model' => 'susirasinejimas', 'id' =>  $user['id']
 
 
 </script>
+
+<?php endif; ?>

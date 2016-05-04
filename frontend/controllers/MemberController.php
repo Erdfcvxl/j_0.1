@@ -287,6 +287,8 @@ class MemberController extends \yii\web\Controller
 
         $forumNew = 0;
 
+        $taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => Yii::$app->user->id])->andWhere(['>=', 'timestamp', Yii::$app->user->identity->params->profileview_check])->count();
+
         foreach ($forumas as $forumasVienetas) {
             $forumNew = $forumNew + $forumasVienetas->new;
         }
@@ -313,7 +315,8 @@ class MemberController extends \yii\web\Controller
             'newDrg' => $newDrg,
             'newMeg' => $newMeg,  
             'forumNew' => $forumNew, 
-            'notification' => $notification,  
+            'notification' => $notification,
+            'newtaziu' => $taveziurejo,
             'url' => Url::to(['member/msg', 'id' => '']) 
         ];
 
@@ -2428,6 +2431,28 @@ class MemberController extends \yii\web\Controller
             if (isset($url) && $url != '')
                 echo $url;
         }
+    }
+
+    public function actionPviews()
+    {
+        $model = new \frontend\models\Profileview;
+        $dataProvider = $model->getViewers(12);
+
+        $model = new \frontend\models\Statistics;
+        $model->setID();
+
+        return $this->render('pviews', ['dataProvider' => $dataProvider, 'model' => $model]);
+    }
+
+    public function actionDate()
+    {
+        return $this->render('date');
+    }
+
+    public function actionLogout()
+    {
+
+        Yii::$app->user->logout();
     }
 
 }

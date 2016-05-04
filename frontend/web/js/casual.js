@@ -38,6 +38,7 @@ function msgTopIndicator()
 	        	newMeg = data['newMeg'],
 	        	newForum = data['forumNew'],
 	        	notification = data['notification'],
+				newtaziu = data['newtaziu'],
 	        	messages = data['messages'];
 
 	        if(newMsg > 0){
@@ -78,6 +79,12 @@ function msgTopIndicator()
 	        	$('#forumTopIndicator').css({"display" : "block"});
 
 	        }
+
+			if(newtaziu > 0){
+				$('#taziuTopIndicator').text(newtaziu);
+				$('#taziuTopIndicator').css({"display" : "block"});
+
+			}
 
 	        if(notification > 0){
 	        	$('#pgrTopIndicator').text(notification);
