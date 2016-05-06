@@ -35,36 +35,38 @@ $(".row").on('click', '.xas', function(e) {
 });
 
 $(function(){
-	if(tauta == '01keisti'){
-		$('#tautybes2').css({"display" : "none"});
-		$('#tautybes').css({"display" : "block"});
-	}else if(tauta != null){
-		$("#info-tautybe2").val(tauta);
-	}
-	if((pareiga !== null && pareiga !== "")){
-		$('#pareigoss').css({"display" : "none"});
-		$('#pareigoss2').css({"display" : "block"});
-		$("#info-pareigos2").val(pareiga);
-	}
-	if((religija !== null && religija !== "")){
-		$('#religijos').css({"display" : "none"});
-		$('#religijos2').css({"display" : "block"});
-		$("#info-religija2").val(religija);
-	}
-	if((akys !== null && akys !== "")){
-		$('#aspalva').css({"display" : "none"});
-		$('#aspalva2').css({"display" : "block"});
-		$("#info-akys2").val(akys);
-	}
-	if((plaukai !== null && plaukai !== "")){
-		$('#pspalva').css({"display" : "none"});
-		$('#pspalva2').css({"display" : "block"});
-		$("#info-plaukai2").val(plaukai);
-	}
-	if((stilius !== null && stilius !== "")){
-		$('#stilius').css({"display" : "none"});
-		$('#stilius2').css({"display" : "block"});
-		$("#info-stilius2").val(stilius);
+	if(typeof dont == 'undefined') {
+		if (tauta == '01keisti') {
+			$('#tautybes2').css({"display": "none"});
+			$('#tautybes').css({"display": "block"});
+		} else if (tauta != null) {
+			$("#info-tautybe2").val(tauta);
+		}
+		if ((pareiga !== null && pareiga !== "")) {
+			$('#pareigoss').css({"display": "none"});
+			$('#pareigoss2').css({"display": "block"});
+			$("#info-pareigos2").val(pareiga);
+		}
+		if ((religija !== null && religija !== "")) {
+			$('#religijos').css({"display": "none"});
+			$('#religijos2').css({"display": "block"});
+			$("#info-religija2").val(religija);
+		}
+		if ((akys !== null && akys !== "")) {
+			$('#aspalva').css({"display": "none"});
+			$('#aspalva2').css({"display": "block"});
+			$("#info-akys2").val(akys);
+		}
+		if ((plaukai !== null && plaukai !== "")) {
+			$('#pspalva').css({"display": "none"});
+			$('#pspalva2').css({"display": "block"});
+			$("#info-plaukai2").val(plaukai);
+		}
+		if ((stilius !== null && stilius !== "")) {
+			$('#stilius').css({"display": "none"});
+			$('#stilius2').css({"display": "block"});
+			$("#info-stilius2").val(stilius);
+		}
 	}
 });
 

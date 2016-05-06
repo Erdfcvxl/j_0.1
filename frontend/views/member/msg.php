@@ -170,6 +170,9 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 
     	<div class="col-xs-9" style="padding: 0px 9px;">
 
+            <div style="margin-top: 7px; padding: 0 1px;">
+                <?= $this->render('//member/index/progress'); ?>
+            </div>
 
 
     		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; text-align: left;  margin-bottom: 700px;">

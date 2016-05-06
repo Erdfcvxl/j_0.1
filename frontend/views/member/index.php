@@ -13,9 +13,10 @@ use frontend\models\User;
 
 
 ?>
+
+
 <div class="container index-container">
     <div class="container-fluid rowme">
-
 
         <div class="row" style="padding: 15px 0">
             <?= $this->render('//member/index/zinutes'); ?>

@@ -2455,4 +2455,52 @@ class MemberController extends \yii\web\Controller
         Yii::$app->user->logout();
     }
 
+    public function actionQuestions()
+    {
+        @extract($_POST);
+
+        if(isset($attr) && isset($val)){
+            $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+            
+            if($attr == 'metai'){
+                $model->$attr = substr($val, 1);
+            }else{
+                $model->$attr = $val;
+            }
+
+            $model->save(false);
+
+            $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+            $percent = $model->getPercent();
+
+            if($percent == 100){
+                $part = "Jūs užpildėte savo anketą!";
+            }else{
+                $part = $this->renderAjax('//member/index/_question', ['model' => $model]);
+            }
+
+            $result = [
+                'percent' => $percent,
+                'part' => $part
+            ];
+
+            return json_encode($result);
+
+
+        }
+    }
+
+    public function actionTest()
+    {
+
+            //$model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+            //$model->$attr = $val;
+            //4$model->save(false);
+
+            $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+            $percent = $model->getPercent();
+            return $this->renderPartial('//member/index/_question', ['model' => $model]);
+
+    }
+
 }

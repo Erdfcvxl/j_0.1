@@ -238,10 +238,17 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                             echo $this->render('menubar/_else.php', ['puslapis' => $puslapis]);
                         }
                         ?>
+
+
+
                                             
                         <?php if(!array_search($puslapis , $kitas)): ?>
 
                             <div class="row" style="margin-top: 5px;">
+
+                                <?= $this->render('//member/index/progress'); ?>
+
+
                                 <?php if(\frontend\models\Functions::StepsNotCompleted($user) !== false): ?>
                                     <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?= $notCompleteMsg; ?></div>
                                 <?php endif; ?>
@@ -261,6 +268,8 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                 <div id="ats">
                     <?= $content ?>
                 </div>
+                <?= $this->render('//member/index/progress'); ?>
+
                 <?php if(\frontend\models\Functions::StepsNotCompleted($user) !== false): ?>
                     <?php if($puslapis == 'search' && $_GET['psl'] == 'detail'): ?>
                         <script type="text/javascript">

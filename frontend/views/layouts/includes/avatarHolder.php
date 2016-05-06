@@ -21,7 +21,12 @@ use frontend\models\Info2;
 
                 <?php 
                     $info = Info2::find()->where(['u_id' => Yii::$app->user->identity->id])->one();
-                    $d1 = new DateTime($info->diena.'.'.$info->menuo.'.'.$info->metai);
+
+                    if($info->diena != '' && $info->menuo != '' && $info->metai != ''){
+                        $d1 = new DateTime($info->diena.'.'.$info->menuo.'.'.$info->metai);
+                    }else{
+                        $d1 = new DateTime();
+                    }
                     $d2 = new DateTime();
                     $diff = $d2->diff($d1);
                     require(__DIR__ ."/../../site/form/_list.php");

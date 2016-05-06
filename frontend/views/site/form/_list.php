@@ -1123,5 +1123,18 @@ $stilius = array(
     'Kita',
 );
 
+for($i = date('Y')-18; $i > date('Y') - 80; $i--){
+    $year['a'.$i] = $i;
+}
+for($i = 1; $i <= 12; $i++){
+    $month[$i] = $i;
+}
+for($i = 1; $i < 32; $i++){
+    $day[$i] = $i;
+}
+
+for($i = 18; $i < 99; $i++)
+    $amzius_tarp[] = $i;
+
 
 ?>
