@@ -28,6 +28,8 @@ $form = ActiveForm::begin([
         </div>
 
         <div class="col-xs-9" >
+            <?= $this->render('//member/index/progress'); ?>
+
             <?= $this->render('includes/topFilters', [
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,

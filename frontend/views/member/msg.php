@@ -177,9 +177,9 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 
     		<div class="col-xs-9" id="col1" style="padding: 7px 20px; background-color: #f4f4f4; text-align: left;  margin-bottom: 700px;">
 
-                <?php if(\frontend\models\Functions::StepsNotCompleted($me) !== false): ?>
-                    <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?= $notCompleteMsg; ?></div>
-                <?php endif; ?>
+               <!-- <?php /*if(\frontend\models\Functions::StepsNotCompleted($me) !== false): */?>
+                    <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?/*= $notCompleteMsg; */?></div>
+                --><?php /*endif; */?>
 
                 <?php $form = ActiveForm::begin();?>
                     <?= $form->field($AllSearch, 'username')->textInput(['id' => 'ajaxSearch', 'class' => 'trans_input', 'style' => 'padding: 0 5px; margin-top: 5px; width: 200px; background-color: #ebebeb;', 'autocomplete' => 'off', 'placeholder' => 'Ieškoti tarp visų narių'])->label(false); ?>

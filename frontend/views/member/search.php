@@ -18,9 +18,6 @@ if($psl == "index"){
 ?>
 
 <div style="height: 40px;"></div>
-   
-
-
 
 <?php
 //$command = $dataProvider->createCommand();

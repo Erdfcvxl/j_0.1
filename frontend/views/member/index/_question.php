@@ -3,7 +3,7 @@ use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
 use frontend\assets\AppAsset;
 
-require('/../../site/form/_list.php');
+require('_list.php');
 
 $question = $model->getQuestion();
 

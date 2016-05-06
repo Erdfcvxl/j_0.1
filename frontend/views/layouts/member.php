@@ -249,9 +249,9 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                                 <?= $this->render('//member/index/progress'); ?>
 
 
-                                <?php if(\frontend\models\Functions::StepsNotCompleted($user) !== false): ?>
-                                    <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?= $notCompleteMsg; ?></div>
-                                <?php endif; ?>
+                                <?php /*if(\frontend\models\Functions::StepsNotCompleted($user) !== false): */?><!--
+                                    <div class="alert alert-info" style="text-align: left; margin-bottom: 0;" ><?/*= $notCompleteMsg; */?></div>
+                                --><?php /*endif; */?>
 
                                 <?= $content ?>
                              </div>
@@ -265,22 +265,13 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
 
 
             <?php if(array_search($puslapis , $kitas)): ?>
+
+
                 <div id="ats">
                     <?= $content ?>
                 </div>
-                <?= $this->render('//member/index/progress'); ?>
+                
 
-                <?php if(\frontend\models\Functions::StepsNotCompleted($user) !== false): ?>
-                    <?php if($puslapis == 'search' && $_GET['psl'] == 'detail'): ?>
-                        <script type="text/javascript">
-                            $('#ats').children('.row').children('form').children('.col-xs-9').first().prepend('<div class="alert alert-info" style="margin-top: 2px; margin-bottom: 0"><?= $notCompleteMsg; ?></div>');
-                        </script>
-                    <?php else: ?>
-                        <script type="text/javascript">
-                            $('#ats').children('.row').children('.col-xs-9').first().prepend('<div class="alert alert-info" style="margin-top: 2px; margin-bottom: 0"><?= $notCompleteMsg; ?></div>');
-                        </script>
-                    <?php endif; ?>
-                <?php endif; ?>
             <?php endif ?>
         </div>
 
