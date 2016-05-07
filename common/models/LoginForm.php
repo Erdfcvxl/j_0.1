@@ -72,6 +72,9 @@ class LoginForm extends Model
     {
         $model = \common\models\User::find()->where(['username' => $this['username']])->all();
 
+        if(!$model)
+            $model = \common\models\User::find()->where(['email' => $this['username']])->all();
+
         return $model;
     }
 

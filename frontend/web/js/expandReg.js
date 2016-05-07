@@ -1,5 +1,19 @@
 var interval;
 
+function ajustToScreen()
+{
+	var screenH = $(window).height();
+
+	var padding = ((screenH - 413.2) / 2) -25;
+
+	if(screenH >= 609)
+		$(".first_flat").css({
+			'padding-top' : padding + 'px',
+			'padding-bottom' : padding + 'px'
+		});
+
+}
+
 function reg_ex(){
 	
 
@@ -22,7 +36,7 @@ function reg_ex(){
 	//$('#offR').velocity("fadeOut", { duration: 400 });
 
 	setTimeout(function() {
-		///$('.login_box').velocity({"height" : "200px"}, 300);
+		$('.login_box').velocity({"min-height" : "400px"}, 300);
 
 		$('#first').velocity({"top" : "-15px"}, 300);
 
@@ -37,7 +51,8 @@ function reg_ex(){
 	},500);
 
 	interval = setInterval(function(){
-	    $(window).trigger('resize');
+	    //$(window).trigger('resize');
+		//ajustToScreen();
 	},10);
 
 	setTimeout(function(){

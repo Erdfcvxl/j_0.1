@@ -15,10 +15,11 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $pilnametis;
+    public $password2;
     public function scenarios()
     {
         return [
-            'default'=>['username', 'email', 'password', 'pilnametis'],
+            'default'=>['username', 'email', 'password', 'password2', 'pilnametis'],
         ];
     }
     /**
@@ -40,8 +41,16 @@ class SignupForm extends Model
             ['password', 'required', 'message' => 'Slaptažodžio laukelis yra privalomas.'],
             ['password', 'string', 'min' => 6],
 
+            [['password2'], 'validateSame', 'skipOnEmpty' => false],
+
             ['pilnametis', 'required', 'requiredValue' => 1, 'message' => 'Registruotis gali tik pilnamečiai'],
         ];
+    }
+
+    public function validateSame($attribute, $params)
+    {
+        if($this->password != $this->password2)
+            return $this->addError('password2', 'Slaptažodžiai nesutampa');
     }
     public function attributeLabels()
     {
@@ -58,7 +67,7 @@ class SignupForm extends Model
      * @return User|null the saved model or null if saving fails
      */
     public function signup()
-    { 
+    {
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
@@ -92,6 +101,7 @@ class SignupForm extends Model
                 ->send();
 
             return $user;
+
         }
         Yii::$app->session->setFlash('error', '1');
         return null;

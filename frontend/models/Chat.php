@@ -67,7 +67,7 @@ class Chat extends \yii\db\ActiveRecord
                 $mail->reciever = $gavejoUser->email;
                 $mail->subject = 'Gavote asmeninę žinutę';
                 $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>'.$user->username;
-                $mail->view = '_gavoteZinute';
+                $mail->f = '_gavoteZinute';
                 $mail->timestamp = time();
 
                 if($send) {

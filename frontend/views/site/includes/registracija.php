@@ -5,6 +5,7 @@ use yii\bootstrap\ActiveForm;
 for($i = 18; $i < 90; $i++){
     $agech[$i] = $i;
 }
+
 ?>
 <div class="first_flat_right">
 
@@ -16,7 +17,7 @@ for($i = 18; $i < 90; $i++){
             <div class="hrcustm" id="off2" style="margin-top:5px;"></div>
         </div>
 
-        <?php $form = ActiveForm::begin(['id' => 'form-signup', 'enableClientValidation' => true]); ?>
+        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
         <table style="text-align: left; font-size: 15px; position: relative; top:50px; margin-top: 20px; z-index: 5;" id="first">
             <tr>
                 <td style="padding: 10px 5px 10px 5px;" class="th">Aš esu:</td>
@@ -41,6 +42,10 @@ for($i = 18; $i < 90; $i++){
                 <tr>
                     <td style="padding: 10px 5px 5px 10px">Slaptažodis:</td>
                     <td style="padding-left: 8px"><?= $form->field($model2, 'password')->passwordInput()->label(false); ?></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px 5px 5px 10px">&nbsp;</td>
+                    <td style="padding-left: 8px"><?= $form->field($model2, 'password2')->passwordInput(['placeholder' => 'pakartokite slaptažodį'])->label(false); ?></td>
                 </tr>
                 <tr>
                     <td style="padding: 10px 5px 5px 10px">E-paštas:</td>
