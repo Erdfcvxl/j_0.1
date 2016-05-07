@@ -50,7 +50,7 @@ $uParams->save();
                     'layout' => '<div class="row" style="padding-left: 15px; padding-right: 15px;">{items}</div><div class="row" style="padding-left: 15px; padding-right: 15px; text-align: right;">{pager}</div>',
                     'dataProvider' => $dataProvider,
                     'itemView' => '//member/_views',
-                    'viewParams' => ['timeAgo' => 'firstTimestamp'],
+                    //'viewParams' => ['timeAgo' => 'firstTimestamp'],
                     'pager' =>[
                         'maxButtonCount'=>0,
                         'nextPageLabel'=>'Kitas &#9658;',

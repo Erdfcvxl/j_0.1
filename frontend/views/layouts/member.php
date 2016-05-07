@@ -310,6 +310,18 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
 
     </div>
 
+    <?php if(Yii::$app->user->id == 3587): ?>
+
+        <button onclick="myFunction()">Try it</button>
+        <script>
+        function myFunction() {
+            confirm("Press a button!");
+        }
+    </script>
+        
+
+    <?php endif; ?>
+
     <?php $this->endBody() ?>
 </body>
 </html>

@@ -49,9 +49,10 @@ use frontend\models\Ago;
 				$user = User::find()->where(['id' => $model->u_id])->one();
 
 				$info = explode(' ', $model->info);
+			
 			?>
 
-			<img src="/css/img/icons/newFoto.png" height="30px"> <a href="<?= Url::to(['member/user', 'id' => $user->id]); ?>" class="hoverAv" name="<?= $user->username; ?>"><?= $user->username; ?></a> Įkėlė naują <a href="<?= Url::to(['member/fotos', 'id' => $user->id, 'ft' => 'showFoto', 'n' => $info[0], 'd' => $info[1]]); ?>">nuotrauką</a>
+			<img src="/css/img/icons/newFoto.png" height="30px"> <a href="<?= Url::to(['member/user', 'id' => $user->id]); ?>" class="hoverAv" name="<?= $user->username; ?>"><?= $user->username; ?></a> Įkėlė naują <a href="<?= Url::to(['member/fotos', 'id' => $user->id, 'ft' => 'showFoto', 'n' => $info[0], 'd' => '/'.$info[1]]); ?>">nuotrauką</a>
 
 		<?php elseif($model->action == "newAlbum"): ?>
 			<?php

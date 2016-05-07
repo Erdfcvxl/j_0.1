@@ -101,12 +101,16 @@ class Profileview extends \yii\db\ActiveRecord
             ->joinWith('user')
             ->joinWith('info2')
             ->where(['ziurimasis' => Yii::$app->user->id])
+            ->groupBy('profileview.ziuretojas')
             ->andWhere(['not', ['ziuretojas' => Yii::$app->user->id]]);
 
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => [$sort=>SORT_DESC]],
+            'sort'=> ['defaultOrder' => [
+                $sort=>SORT_DESC,
+                'timestamp' => SORT_DESC
+            ]],
             'pagination' => [
                 'pageSize' => $ps,
             ],

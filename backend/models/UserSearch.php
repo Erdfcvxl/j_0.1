@@ -69,6 +69,7 @@ class UserSearch extends User
             ],
             'sort' => [
                 'defaultOrder' => [
+                    'created_at' => SORT_DESC,
                     'username' => SORT_ASC,
                 ]
             ],
