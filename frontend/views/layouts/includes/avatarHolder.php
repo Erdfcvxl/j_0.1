@@ -22,6 +22,11 @@ use frontend\models\Info2;
                 <?php 
                     $info = Info2::find()->where(['u_id' => Yii::$app->user->identity->id])->one();
 
+                    if(substr($info->metai, 0, 1) == 'a'){
+                        $info->metai = substr($info->metai, 1);
+                        $info->save(false);
+                    }
+
                     if($info->diena != '' && $info->menuo != '' && $info->metai != ''){
                         $d1 = new DateTime($info->diena.'.'.$info->menuo.'.'.$info->metai);
                     }else{

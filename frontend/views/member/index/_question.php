@@ -46,7 +46,7 @@ $info = [
         ],
     ])->label($info[$question][2]);?>
 
-    <a class="btn-reg" id="submitQuestions" style="font-size: 12px;padding: 0px 8px;border-radius: 0px; position: relative; top: -8px; cursor: pointer;">Kitas klausimas</a>
+    <a class="btn-reg" id="submitQuestions" style="font-size: 14px;padding: 2px 20px;border-radius: 0px; position: relative; top: -8px; cursor: pointer;">Kitas klausimas</a>
 
 <?php ActiveForm::end(); ?>
 

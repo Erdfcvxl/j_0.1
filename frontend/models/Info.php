@@ -202,7 +202,7 @@ class Info extends \yii\db\ActiveRecord
             $info->metai = $this->metai;
             $info->menuo = $this->menuo;
             $info->diena = $this->diena;
-            $info->gimimoTS = mktime(0, 0, 0, $this->menuo, $this->diena, $this->metai);
+            $info->gimimoTS = mktime(0, 0, 0, (int) $this->menuo, (int) $this->diena, (int) $this->metai);
             $info->issilavinimas = $this->issilavinimas;
             $info->gimtine = $this->gimtine;
             $info->tautybe = $this->tautybe;
