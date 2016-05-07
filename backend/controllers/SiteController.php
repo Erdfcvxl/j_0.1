@@ -137,31 +137,34 @@ class SiteController extends Controller
         $model = new \backend\models\ContactForm;
         $model->name = 'pazintys@pazintyslietuviams.co.uk';
 
-        if($post = Yii::$app->request->post())
+        if($post = Yii::$app->request->post()) {
+
             $emails = explode(',', $post['ContactForm']['email']);
             $model->email = null;
-    
-            if($model->load($post)){
+
+            if ($model->load($post)) {
                 $i = 0;
                 $gavejai = null;
                 foreach ($emails as $email) {
-                    $gavejai .= $email."<br>";
+                    $gavejai .= $email . "<br>";
 
                     $mail = new \common\models\Mail;
                     $mail->sender = $model->name;
                     $mail->reciever = $email;
                     $mail->subject = $model->subject;
-                    $mail->vars = 'logo=>css/img/icons/logoEmpty.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|body=>'.$model->body;
+                    $mail->vars = 'logo=>css/img/icons/logoEmpty.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|body=>' . $model->body;
                     $mail->view = '_sablonas';
                     $mail->timestamp = time();
                     $mail->trySend();
 
                     $i++;
                 }
-            
-            Yii::$app->session->setFlash('success', 'Sėkmingai išsiųstas(-i) <b>'.$i.'</b> laiškas(-ai) <br><br> <b>Gavėjai</b>: <br>'.$gavejai); 
+
+                Yii::$app->session->setFlash('success', 'Sėkmingai išsiųstas(-i) <b>' . $i . '</b> laiškas(-ai) <br><br> <b>Gavėjai</b>: <br>' . $gavejai);
 
             }
+
+        }
 
         
 
@@ -614,6 +617,25 @@ class SiteController extends Controller
         $url = Yii::$app->urlManagerFrontend->createUrl([$_GET['redirectTo']]);
 
         return $this->redirect($url);
+
+    }
+
+    public function actionGetusers()
+    {
+        $_GET['ps'] = 99999999999999;
+
+        $model = new \backend\models\UserSearch();
+        $dp = $model->search(Yii::$app->request->post());
+
+        foreach ($dp->getModels() as $v)
+            $result[] = $v->username;
+
+        if(isset($result))
+            $result = ['gavejai' => implode(',',$result), 'count' => count($result)];
+        else
+            $result = ['gavejai' => 'Nieko nerasta', 'count' => 0];
+
+        return json_encode($result);
 
     }
    

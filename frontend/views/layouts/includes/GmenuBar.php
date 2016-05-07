@@ -3,7 +3,7 @@ use yii\helpers\Url;
 use frontend\models\Friends;
 use frontend\models\Favourites;
 
-$taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => $user->id])->andWhere(['>=', 'timestamp', $user->params->profileview_check])->count();
+$taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => $user->id])->andWhere(['>=', 'firstTimestamp', $user->params->profileview_check])->count();
 
 ?>
 

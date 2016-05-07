@@ -37,7 +37,7 @@ class Profileview extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp'], 'required'],
+            [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp', 'firstTimestamp'], 'safe'],
             [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp'], 'integer']
         ];
     }
@@ -83,6 +83,7 @@ class Profileview extends \yii\db\ActiveRecord
             $model->ziurimasis = $u;
             $model->kartas = 1;
             $model->timestamp = time();
+            $model->firstTimestamp = time();
             $model->insert();
 
             Statistics::addView($u);

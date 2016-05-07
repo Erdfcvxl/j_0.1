@@ -12,7 +12,6 @@ use common\models\User;
  */
 class UserSearch extends User
 {
-
     /**
      * @inheritdoc
      */
@@ -60,7 +59,7 @@ class UserSearch extends User
 
         require(__DIR__ ."/../../frontend/views/site/form/_list.php");
         $query = User::find()
-            ->select('user.*, info.miestas, info.gimimoTS, info.orentacija, info.iesko')
+            ->select('user.*, info.*')
             ->joinWith('info2');
 
         $dataProvider = new ActiveDataProvider([
@@ -70,13 +69,13 @@ class UserSearch extends User
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'id' => SORT_DESC,
                     'username' => SORT_ASC,
                 ]
             ],
         ]);
 
         $this->load($params);
+        
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to any records when validation fails
@@ -85,7 +84,7 @@ class UserSearch extends User
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
+            'user.id' => $this->id,
             'valiuta' => $this->valiuta,
             'role' => $this->role,
             'status' => $this->status,
@@ -94,6 +93,7 @@ class UserSearch extends User
             'updated_at' => $this->updated_at,
             'lastOnline' => $this->lastOnline,
             'new' => $this->new,
+            'vip' => $this->vip,
             'newDone' => $this->newDone,
             'adminChat' => $this->adminChat,
             'facebook' => $this->facebook,
@@ -122,15 +122,21 @@ class UserSearch extends User
             'vyras' => ['vv', 'vm'],
             'Moteris' => ['mm', 'mv'],
             'Vyras' => ['vv', 'vm'],
+            'all' => ['vv', 'vm', 'mm', 'mv']
         ];
 
-        $lytis = array_key_exists($this->iesko, $array);
-
-        if(array_key_exists($this->iesko, $array)){
-            $query->andFilterWhere(['iesko' => $array[$this->iesko]]);
+        if(is_array($this->iesko)){
+            if(count($this->iesko) == 1) {
+                $query->andFilterWhere(['iesko' => $array[$this->iesko[0]]]);
+            }else{
+                $query->andFilterWhere(['iesko' => $array['all']]);
+            }
         }else{
-            $this->iesko = null;
+            if($lytis = array_key_exists($this->iesko, $array))
+                $query->andFilterWhere(['iesko' => $array[$this->iesko]]);
         }
+
+
 
         //Orentacija filtras
         if(array_search($this->orentacija, $orentacija) !== false){

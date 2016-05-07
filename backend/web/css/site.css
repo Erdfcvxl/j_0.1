@@ -35,6 +35,24 @@ body {
     padding: 14px 24px;
 }
 
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+
+    border-right:17px solid #95c501;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+
+    border-top: 17px solid #95c501;
+}
+
 .not-set {
     color: #c55;
     font-style: italic;

@@ -12,6 +12,8 @@ use frontend\models\UserPack;
  */
 class UserPackSearch extends UserPack
 {
+    public $lytis;
+
 
     /**
      * @inheritdoc
@@ -51,5 +53,10 @@ class UserPackSearch extends UserPack
 
         return $dataProvider;
 ;    }
+    
+    public function getUsers($params)
+    {
+        var_dump($params);
+    }
 
 }

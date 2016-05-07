@@ -110,7 +110,8 @@ class MemberController extends \yii\web\Controller
         $onlyVIP = [
             'search',
             'forum',
-            'comment'
+            'comment',
+            'statistika'
         ];
 
 
@@ -287,7 +288,7 @@ class MemberController extends \yii\web\Controller
 
         $forumNew = 0;
 
-        $taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => Yii::$app->user->id])->andWhere(['>=', 'timestamp', Yii::$app->user->identity->params->profileview_check])->count();
+        $taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => Yii::$app->user->id])->andWhere(['>=', 'firstTimestamp', Yii::$app->user->identity->params->profileview_check])->count();
 
         foreach ($forumas as $forumasVienetas) {
             $forumNew = $forumNew + $forumasVienetas->new;
