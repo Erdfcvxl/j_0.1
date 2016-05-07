@@ -73,6 +73,10 @@ class Profileview extends \yii\db\ActiveRecord
             if(time() - $record->timestamp > 600){
                 $record->kartas += 1;
                 $record->timestamp = time();
+                if($record->firstTimestamp == 0){
+                    $record->firstTimestamp = time();
+                }
+
                 $record->save();
                 Statistics::addView($u);
             }
@@ -93,7 +97,7 @@ class Profileview extends \yii\db\ActiveRecord
     public function getViewers($ps = 10, $sort = 'timestamp')
     {
         $query = Profileview::find()
-            ->select('profileview.ziuretojas, profileview.timestamp, user.username, user.id, user.avatar, user.lastOnline, user.vip as vip, info.gimimoTS, info.miestas')
+            ->select('profileview.ziuretojas, profileview.timestamp, profileview.firstTimestamp, user.username, user.id, user.avatar, user.lastOnline, user.vip as vip, info.gimimoTS, info.miestas')
             ->joinWith('user')
             ->joinWith('info2')
             ->where(['ziurimasis' => Yii::$app->user->id])

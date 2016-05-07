@@ -16,8 +16,10 @@ if(isset(Yii::$app->params['close'])){
     Yii::$app->params['close']++;
 }
 
-if(isset($timeAgo)){
+if(isset($timeAgo) && $model->$timeAgo != 0){
     $model->timestamp = $model->$timeAgo;
+
+
 }
 ?>
 
