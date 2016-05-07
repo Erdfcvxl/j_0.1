@@ -2437,7 +2437,7 @@ class MemberController extends \yii\web\Controller
     public function actionPviews()
     {
         $model = new \frontend\models\Profileview;
-        $dataProvider = $model->getViewers(12);
+        $dataProvider = $model->getViewers(12, 'firstTimestamp');
 
         $model = new \frontend\models\Statistics;
         $model->setID();

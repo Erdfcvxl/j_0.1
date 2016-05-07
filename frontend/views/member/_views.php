@@ -15,6 +15,10 @@ $avatar = \frontend\models\Misc::getAvatar($model);
 if(isset(Yii::$app->params['close'])){
     Yii::$app->params['close']++;
 }
+
+if(isset($timeAgo)){
+    $model->timestamp = $model->$timeAgo;
+}
 ?>
 
 

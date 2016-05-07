@@ -90,7 +90,7 @@ class Profileview extends \yii\db\ActiveRecord
         }
     }
 
-    public function getViewers($ps = 10)
+    public function getViewers($ps = 10, $sort = 'timestamp')
     {
         $query = Profileview::find()
             ->select('profileview.ziuretojas, profileview.timestamp, user.username, user.id, user.avatar, user.lastOnline, user.vip as vip, info.gimimoTS, info.miestas')
@@ -102,7 +102,7 @@ class Profileview extends \yii\db\ActiveRecord
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['timestamp'=>SORT_DESC]],
+            'sort'=> ['defaultOrder' => [$sort=>SORT_DESC]],
             'pagination' => [
                 'pageSize' => $ps,
             ],
