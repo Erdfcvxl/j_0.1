@@ -142,8 +142,6 @@ class AjaxController extends \yii\web\Controller
             $data['reciever'] = '';
         }
 
-            //$data['gavejo_email'] = 'evaldas.alcauskis@gmail.com';
-
         if ($data['reciever'] != '')
         {
             $user = Yii::$app->user->identity;

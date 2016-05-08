@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="Pusiau veikiantys pakvietimai">
+    <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/mail/_pakvietimas.php" afterPath="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+            <state relative-caret-position="249">
+              <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
               <folding>
                 <element signature="e#126#3535#0#PHP" expanded="false" />
                 <element signature="e#176#3529#0#PHP" expanded="false" />
@@ -518,7 +517,7 @@
       <workItem from="1462377073066" duration="3785000" />
       <workItem from="1462695293092" duration="2284000" />
       <workItem from="1462697857196" duration="15643000" />
-      <workItem from="1462719576775" duration="4894000" />
+      <workItem from="1462719576775" duration="5186000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -744,11 +743,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462723853627</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Pusiau veikiantys pakvietimai">
+      <created>1462724511522</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1462724511522</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242729000" />
+    <option name="totallyTimeSpent" value="243021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -1245,8 +1251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="156" column="23" selection-start-line="156" selection-start-column="23" selection-end-line="156" selection-end-column="23" />
+        <state relative-caret-position="249">
+          <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
           <folding>
             <element signature="e#126#3535#0#PHP" expanded="false" />
             <element signature="e#176#3529#0#PHP" expanded="false" />
