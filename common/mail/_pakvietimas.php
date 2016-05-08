@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 $url = Url::to([
     'site/invite',
-    'id' => $message->embed($invite_code),
+    'id' => $message->embed($invitecode),
 ], true);
 
 ?>
@@ -19,7 +19,7 @@ $url = Url::to([
 
         <b>
 
-            Prisijungti prie pazintyslietuviams.co.uk puslapio pakvietė <b><?= $message->user ?></b><br>
+            Prisijungti prie pazintyslietuviams.co.uk puslapio pakvietė <b><?= $message->embed($user); ?></b><br>
 
             Kad užsiregistuotumėte spauskite šią nuorodą:
             <a href='<?= $url; ?>'>Spausti čia</a>

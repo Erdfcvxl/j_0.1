@@ -149,17 +149,12 @@ class AjaxController extends \yii\web\Controller
             $user = Yii::$app->user->identity;
 
             $mail = new \common\models\Mail;
-
             $mail->sender = 'no-reply@pazintyslietuviams.co.uk';
-
             $mail->reciever = $data['reciever'];
-
             $mail->subject = 'Pakvietimas';
-
-            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username .',|invite_code=>'.\frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code;
-
+            //$mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username;
+            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username .'|,|invitecode=>' . \frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code;
             $mail->view = '_pakvietimas';
-
             $mail->timestamp = time();
 
             if ($mail->trySend())
