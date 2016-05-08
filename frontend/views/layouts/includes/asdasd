@@ -1,0 +1,82 @@
+<?php
+
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+$mail = new \common\models\Mail;
+
+
+
+
+if (\frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->andWhere(['points_added' => 0])->orderBy('id DESC')->one()) {
+    ?>
+
+    <div class="row" style="background-color: #fff; padding: 10px 10px 10px;">
+
+        <div class="col-xs-12" style="text-align: center; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px;">Užregistruokite
+            draugą ir gaukite 10 širdelių:
+        </div>
+
+        <div class="col-xs-12">
+            <img src="/css/img/mail_green.png" id="pakvietimai-mail" style="display: block; margin: 0 auto;"/>
+        </div>
+
+        <div class="col-xs-12" style="margin-top: 10px;">
+            <?php $form = ActiveForm::begin([
+                'id' => 'pakvietimai',
+                //'action' =>  Url::to(['ajax/pakvietimai']),
+            ]);
+            ?>
+
+            <?= $form->field($mail, 'reciever')->label('DRAUGO EL.PAŠTAS:') ?>
+
+            <?= Html::submitButton('Siųsti pakvietimą') ?>
+
+            <?php ActiveForm::end(); ?>
+        </div>
+
+    </div>
+
+    <?php
+
+} else {
+
+    $invite = new \frontend\models\Invite;
+    $invite->code = md5(time());
+    $invite->sender = Yii::$app->user->id;
+    $invite->created_timestamp = time();
+    $invite->points_added = 0;
+    $invite->points_spent = 0;
+    $invite->save();
+
+}
+
+
+?>
+
+<script type="text/javascript">
+    $('body').on('beforeSubmit', '#pakvietimai', function () {
+        alert('aa');
+
+        var form = $(this);
+        // return false if form still have some validation errors
+        if (form.find('.has-error').length) {
+            return false;
+        }
+        // submit form
+        $.ajax({
+                url: form.attr('action'),
+                type: 'post',
+                data: {
+                    form.serialize(),
+                _csrf : '".Yii::$app->request->getCsrfToken()."',
+            },
+            success: function (r) {
+            console.log(r);
+            // do something with response
+        }
+    });
+        return false;
+    });
+</script>

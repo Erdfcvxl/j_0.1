@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/asdasd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_dovana.php" afterPath="$PROJECT_DIR$/frontend/views/member/_dovana.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,6 +32,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="referalai.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="45" column="151" selection-start-line="45" selection-start-column="151" selection-end-line="45" selection-end-column="151" />
+              <folding>
+                <element signature="e#7#27#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="pasimatymai.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avatarHolder.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="avatarHolder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
               <folding>
                 <marker date="1462723174365" expanded="true" signature="2400:2412" placeholder="..." />
                 <marker date="1462723174365" expanded="true" signature="2696:2728" placeholder="..." />
@@ -247,9 +254,9 @@
         <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/models/SignupForm.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_dovana.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
+        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
       </list>
     </option>
   </component>
@@ -686,7 +693,7 @@
       <workItem from="1462377073066" duration="3785000" />
       <workItem from="1462695293092" duration="2284000" />
       <workItem from="1462697857196" duration="15643000" />
-      <workItem from="1462719576775" duration="3581000" />
+      <workItem from="1462719576775" duration="3835000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -891,11 +898,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462719869567</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Pusiau veikiantys pakvietimai">
+      <created>1462723208457</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1462723208457</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241416000" />
+    <option name="totallyTimeSpent" value="241670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -940,7 +954,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Css pataisa" />
     <MESSAGE value="Dar sykį" />
     <MESSAGE value="Automatinių žinučių interfeisas" />
     <MESSAGE value="Pasimetę du failai" />
@@ -965,7 +978,8 @@
     <MESSAGE value="Maži tweakai ir ffm'as" />
     <MESSAGE value="Statistika" />
     <MESSAGE value="Search update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search update" />
+    <MESSAGE value="Pusiau veikiantys pakvietimai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pusiau veikiantys pakvietimai" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1328,16 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#27#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/fotos/_dovanos.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1393,12 +1397,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        <state relative-caret-position="374">
+          <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
           <folding>
             <marker date="1462723174365" expanded="true" signature="2400:2412" placeholder="..." />
             <marker date="1462723174365" expanded="true" signature="2696:2728" placeholder="..." />
             <marker date="1462723174365" expanded="true" signature="2884:2916" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="151" selection-start-line="45" selection-start-column="151" selection-end-line="45" selection-end-column="151" />
+          <folding>
+            <element signature="e#7#27#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
