@@ -46,7 +46,7 @@ class Mail extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'sender' => 'Sender',
-            'reciever' => 'Reciever',
+            'reciever' => 'Gavėjas',
             'subject' => 'Subject',
             'content' => 'Content',
             'timestamp' => 'Timestamp',

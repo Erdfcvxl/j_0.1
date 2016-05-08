@@ -70,6 +70,9 @@ $form = ActiveForm::begin([
                                 'layout' => '<div class="row" style="padding-left: 15px; padding-right: 15px;"><div class="row" style="padding-left: 15px; padding-right: 15px;">{items}</div></div><div class="row" style="padding-left: 15px; padding-right: 15px; text-align: right;">{pager}</div>',
                                 'dataProvider' => $dataProvider,
                                 'itemView' => '//member/_searchResult',
+                                'viewParams' => [
+                                  'rodyti_kilometrus' => 1,
+                                ],
                                 'pager' =>[
                                     'maxButtonCount'=>0,
                                     'nextPageLabel'=>'Kitas &#9658;',
@@ -93,6 +96,10 @@ $form = ActiveForm::begin([
 
                 <?php endif; ?>
                 <!-- Rezultatai end-->
+
+                <!-- Paieska pagal rengionus begin -->
+                <?= $this->render('includes/paieskaPagalSpinduli.php', ['searchModel' => $searchModel, 'form' => $form]); ?>
+                <!-- Paieska pagal regionus end -->
                 
                 <div class="row">
                 <br>
