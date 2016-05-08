@@ -156,20 +156,7 @@ class AjaxController extends \yii\web\Controller
 
             $mail->subject = 'Pakvietimas';
 
-            $url = Url::to([
-
-                'site/invite',
-
-                'id' => \frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code,
-
-            ], true);
-
-            $message = "Kad užsiregistuotumėte spauskite šią nuorodą:
-                        <a href='" . $url . "'>Spausti čia</a>";
-
-            $mail->content = $message;
-
-            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username;
+            $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username .',|invite_code=>'.\frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code;
 
             $mail->view = '_pakvietimas';
 

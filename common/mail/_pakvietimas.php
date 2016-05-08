@@ -3,6 +3,11 @@
 use yii\base\Security;
 use yii\helpers\Url;
 
+$url = Url::to([
+    'site/invite',
+    'id' => $message->embed($invite_code),
+], true);
+
 ?>
 
 <center>
@@ -16,7 +21,8 @@ use yii\helpers\Url;
 
             Prisijungti prie pazintyslietuviams.co.uk puslapio pakvietė <b><?= $message->user ?></b><br>
 
-            <?= $message->content; ?>
+            Kad užsiregistuotumėte spauskite šią nuorodą:
+            <a href='<?= $url; ?>'>Spausti čia</a>
 
         </b>
 
