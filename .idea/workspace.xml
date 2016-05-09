@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/mail/_pakvietimas.php" afterPath="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" afterPath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" afterPath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="193" column="80" selection-start-line="193" selection-start-column="80" selection-end-line="193" selection-end-column="80" />
+            <state relative-caret-position="389">
+              <caret line="187" column="124" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -98,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_searchResult.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_searchResult.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="75" column="139" selection-start-line="75" selection-start-column="139" selection-end-line="75" selection-end-column="139" />
+            <state relative-caret-position="323">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <marker date="1462826308169" expanded="true" signature="3005:3044" placeholder="..." />
               </folding>
@@ -194,8 +193,8 @@
         <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
         <option value="$PROJECT_DIR$/frontend/models/City.php" />
-        <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
+        <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
       </list>
     </option>
   </component>
@@ -584,7 +583,7 @@
       <workItem from="1462808528038" duration="1159000" />
       <workItem from="1462814392831" duration="2057000" />
       <workItem from="1462817093328" duration="4123000" />
-      <workItem from="1462822039468" duration="4188000" />
+      <workItem from="1462822039468" duration="4371000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -901,11 +900,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462826118671</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Veikiantys pakvietimai">
+      <created>1462826348319</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1462826348319</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255766000" />
+    <option name="totallyTimeSpent" value="255949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -1383,14 +1389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="193" column="80" selection-start-line="193" selection-start-column="80" selection-end-line="193" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1406,11 +1404,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="75" column="139" selection-start-line="75" selection-start-column="139" selection-end-line="75" selection-end-column="139" />
+        <state relative-caret-position="323">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <marker date="1462826308169" expanded="true" signature="3005:3044" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="187" column="124" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="124" />
+          <folding />
         </state>
       </provider>
     </entry>

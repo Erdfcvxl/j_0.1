@@ -184,7 +184,10 @@ class DetailSearchP extends UserPack
             $query->andFilterWhere(['info.miestas' => $miestu_id]);
             $query->orderBy([new \yii\db\Expression('FIELD (miestas, ' . implode(',', $miestu_id) . ')')]);
 
-            $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
+            if (Yii::$app->user->identity->info->gimimoTS != 0)
+                $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
+            else
+                $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - 0) ASC')]);
 
 
             $query->andFilterWhere(['not', ['gimimoTS' => '0']]);
@@ -209,7 +212,11 @@ class DetailSearchP extends UserPack
                 $query->andFilterWhere(['info.miestas' => $miestu_id]);
                 $query->orderBy([new \yii\db\Expression('FIELD (miestas, ' . implode(',', $miestu_id) . ')')]);
 
-                $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
+                if (Yii::$app->user->identity->info->gimimoTS != 0)
+                    $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
+                else
+                    $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - 0) ASC')]);
+
                 $query->andFilterWhere(['not', ['gimimoTS' => '0']]);
             }
         }
