@@ -17,12 +17,12 @@ $url = Url::to([
 
     <p style="font-size: 20px; color:#000; font-family: OpenSans;">
 
-            Prisijungti prie pazintyslietuviams.co.uk puslapio pakvietė <b><?= $user; ?></b><br><br>
+            Prisijungti prie puslapio pakvietė <b><?= $user; ?></b><br><br>
 
             Kad užsiregistuotumėte spauskite šią nuorodą:
             <a href='<?= $url; ?>'>spausti čia</a><br><br>
 
-            Arba nusikopijuokite žemiai esančią nuorodą:<br> <?= $url; ?>
+            <small>Arba nusikopijuokite žemiai esančią nuorodą:<br> <?= $url; ?></small>
         
     </p>
 
