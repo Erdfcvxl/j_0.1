@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" afterPath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -448,7 +447,7 @@
       <workItem from="1462732299763" duration="105000" />
       <workItem from="1462733924994" duration="334000" />
       <workItem from="1462808528038" duration="1159000" />
-      <workItem from="1462814392831" duration="1901000" />
+      <workItem from="1462814392831" duration="1906000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -702,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462814730679</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Pusiau veikiantys pakvietimai">
+      <created>1462816372841</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1462816372841</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247299000" />
+    <option name="totallyTimeSpent" value="247304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
