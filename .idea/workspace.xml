@@ -57,27 +57,27 @@
       <file leaf-file-name="paieskaPagalSpinduli.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/views/member/search/includes/paieskaPagalSpinduli.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+            <state relative-caret-position="612">
+              <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
-                <marker date="1462827536935" expanded="true" signature="1279:1609" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="1680:1992" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2018:2912" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2090:2268" placeholder="{&quot;disableDefaultUI&quot;: true...}" />
-                <marker date="1462827536935" expanded="true" signature="2290:2430" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2309:2424" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2471:2901" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2581:2889" placeholder="{&quot;strokeColor&quot;: '#000'...}" />
-                <marker date="1462827536935" expanded="true" signature="2950:3006" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="2967:3002" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="3141:3792" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="3285:3752" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="3861:4133" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="4189:4355" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="4286:4353" placeholder="{...}" />
-                <marker date="1462827536935" expanded="true" signature="5375:5408" placeholder="..." />
-                <marker date="1462827536935" expanded="true" signature="5624:5644" placeholder="..." />
+                <marker date="1462827573298" expanded="true" signature="1278:1608" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="1679:1991" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2017:2911" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2089:2267" placeholder="{&quot;disableDefaultUI&quot;: true...}" />
+                <marker date="1462827573298" expanded="true" signature="2289:2429" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2308:2423" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2470:2900" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2580:2888" placeholder="{&quot;strokeColor&quot;: '#000'...}" />
+                <marker date="1462827573298" expanded="true" signature="2949:3005" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="2966:3001" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="3140:3791" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="3284:3751" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="3860:4132" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="4188:4354" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="4285:4352" placeholder="{...}" />
+                <marker date="1462827573298" expanded="true" signature="5374:5407" placeholder="..." />
+                <marker date="1462827573298" expanded="true" signature="5623:5643" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -542,7 +542,7 @@
       <workItem from="1462808528038" duration="1159000" />
       <workItem from="1462814392831" duration="2057000" />
       <workItem from="1462817093328" duration="4123000" />
-      <workItem from="1462822039468" duration="5377000" />
+      <workItem from="1462822039468" duration="5422000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -880,11 +880,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462827029079</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Veikiantys pakvietimai">
+      <created>1462827542657</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1462827542657</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256955000" />
+    <option name="totallyTimeSpent" value="257000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -1386,27 +1393,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/search/includes/paieskaPagalSpinduli.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="612">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
-            <marker date="1462827536935" expanded="true" signature="1279:1609" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="1680:1992" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2018:2912" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2090:2268" placeholder="{&quot;disableDefaultUI&quot;: true...}" />
-            <marker date="1462827536935" expanded="true" signature="2290:2430" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2309:2424" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2471:2901" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2581:2889" placeholder="{&quot;strokeColor&quot;: '#000'...}" />
-            <marker date="1462827536935" expanded="true" signature="2950:3006" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="2967:3002" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="3141:3792" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="3285:3752" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="3861:4133" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="4189:4355" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="4286:4353" placeholder="{...}" />
-            <marker date="1462827536935" expanded="true" signature="5375:5408" placeholder="..." />
-            <marker date="1462827536935" expanded="true" signature="5624:5644" placeholder="..." />
+            <marker date="1462827573298" expanded="true" signature="1278:1608" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="1679:1991" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2017:2911" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2089:2267" placeholder="{&quot;disableDefaultUI&quot;: true...}" />
+            <marker date="1462827573298" expanded="true" signature="2289:2429" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2308:2423" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2470:2900" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2580:2888" placeholder="{&quot;strokeColor&quot;: '#000'...}" />
+            <marker date="1462827573298" expanded="true" signature="2949:3005" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="2966:3001" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="3140:3791" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="3284:3751" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="3860:4132" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="4188:4354" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="4285:4352" placeholder="{...}" />
+            <marker date="1462827573298" expanded="true" signature="5374:5407" placeholder="..." />
+            <marker date="1462827573298" expanded="true" signature="5623:5643" placeholder="..." />
           </folding>
         </state>
       </provider>
