@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/mail/_pakvietimas.php" afterPath="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/layouts/includes/asdasd" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/asdasd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/web/css/member.css" afterPath="$PROJECT_DIR$/frontend/web/css/member.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,15 +57,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_pakvietimas.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_pakvietimas.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="425">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#center#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="152" column="40" selection-start-line="152" selection-start-column="40" selection-end-line="152" selection-end-column="40" />
+              <folding>
+                <element signature="e#126#3535#0#PHP" expanded="false" />
+                <element signature="e#176#3529#0#PHP" expanded="false" />
+                <element signature="e#272#848#0#PHP" expanded="false" />
+                <element signature="e#1254#1700#0#PHP" expanded="false" />
+                <element signature="e#1289#1627#0#PHP" expanded="false" />
+                <element signature="e#1327#1626#1#PHP" expanded="false" />
+                <element signature="e#1289#1669#0#PHP" expanded="false" />
+                <element signature="e#1796#2052#0#PHP" expanded="false" />
+                <element signature="e#1831#1904#0#PHP" expanded="false" />
+                <element signature="e#1831#1963#0#PHP" expanded="false" />
+                <element signature="e#2153#2257#0#PHP" expanded="false" />
+                <element signature="e#2153#2312#0#PHP" expanded="false" />
+                <element signature="e#2153#2366#0#PHP" expanded="false" />
+                <element signature="e#2153#2434#0#PHP" expanded="false" />
+                <element signature="e#2153#2568#0#PHP" expanded="false" />
+                <element signature="e#3282#3518#0#PHP" expanded="false" />
+                <element signature="e#3538#3586#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,7 +162,6 @@
         <option value="$PROJECT_DIR$/frontend/views/layouts/menubar/_date.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/models/Chat.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search.php" />
         <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search/detail.php" />
@@ -144,6 +170,7 @@
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
         <option value="$PROJECT_DIR$/frontend/web/css/member.css" />
         <option value="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
       </list>
     </option>
   </component>
@@ -527,7 +554,7 @@
       <workItem from="1462808528038" duration="1159000" />
       <workItem from="1462814392831" duration="2057000" />
       <workItem from="1462817093328" duration="4123000" />
-      <workItem from="1462822039468" duration="1565000" />
+      <workItem from="1462822039468" duration="1644000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -816,11 +843,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462822136941</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Veikiantys pakvietimai">
+      <created>1462823624898</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1462823624898</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253143000" />
+    <option name="totallyTimeSpent" value="253222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -906,13 +940,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/config/params.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1147,13 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="171" column="68" selection-start-line="171" selection-start-column="68" selection-end-line="171" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-748">
@@ -1279,14 +1299,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462694997433" expanded="true" signature="738:759" placeholder="..." />
+            <marker date="1462694997433" expanded="true" signature="911:939" placeholder="..." />
+            <marker date="1462694997433" expanded="true" signature="954:1017" placeholder="..." />
+            <marker date="1462694997433" expanded="true" signature="1804:1825" placeholder="..." />
+            <marker date="1462694997433" expanded="true" signature="1978:2006" placeholder="..." />
+            <marker date="1462694997433" expanded="true" signature="2021:2084" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        <state relative-caret-position="425">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#center#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="152" column="40" selection-start-line="152" selection-start-column="40" selection-end-line="152" selection-end-column="40" />
+          <folding>
+            <element signature="e#126#3535#0#PHP" expanded="false" />
+            <element signature="e#176#3529#0#PHP" expanded="false" />
+            <element signature="e#272#848#0#PHP" expanded="false" />
+            <element signature="e#1254#1700#0#PHP" expanded="false" />
+            <element signature="e#1289#1627#0#PHP" expanded="false" />
+            <element signature="e#1327#1626#1#PHP" expanded="false" />
+            <element signature="e#1289#1669#0#PHP" expanded="false" />
+            <element signature="e#1796#2052#0#PHP" expanded="false" />
+            <element signature="e#1831#1904#0#PHP" expanded="false" />
+            <element signature="e#1831#1963#0#PHP" expanded="false" />
+            <element signature="e#2153#2257#0#PHP" expanded="false" />
+            <element signature="e#2153#2312#0#PHP" expanded="false" />
+            <element signature="e#2153#2366#0#PHP" expanded="false" />
+            <element signature="e#2153#2434#0#PHP" expanded="false" />
+            <element signature="e#2153#2568#0#PHP" expanded="false" />
+            <element signature="e#3282#3518#0#PHP" expanded="false" />
+            <element signature="e#3538#3586#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

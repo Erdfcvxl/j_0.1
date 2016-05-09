@@ -150,7 +150,7 @@ class AjaxController extends \yii\web\Controller
 
             $mail = new \common\models\Mail;
 
-            $mail->sender = 'no-reply@pazintyslietuviams.co.uk';
+            $mail->sender = 'pakvietimai@pazintyslietuviams.co.uk';
 
             $mail->reciever = $data['reciever'];
 
