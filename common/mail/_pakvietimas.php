@@ -22,7 +22,7 @@ $url = Url::to([
             Kad užsiregistuotumėte spauskite šią nuorodą:
             <a href='<?= $url; ?>'>spausti čia</a><br><br>
 
-            Arba nusikopijuokite šalia esančią nuorodą: <?= $url; ?>
+            Arba nusikopijuokite žemiai esančią nuorodą:<br> <?= $url; ?>
         
     </p>
 
