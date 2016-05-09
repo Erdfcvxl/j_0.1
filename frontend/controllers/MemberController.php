@@ -114,15 +114,15 @@ class MemberController extends \yii\web\Controller
             'statistika'
         ];
 
-        if ($a == 'search'){
-            $info = \frontend\models\InfoClear::find()->select(['miestas','metai','menuo','diena'])->where(['u_id' => Yii::$app->user->identity->id])->one();
+        if ($a == 'search') {
+            $info = \frontend\models\InfoClear::find()->select(['miestas', 'metai', 'menuo', 'diena'])->where(['u_id' => Yii::$app->user->identity->id])->one();
 
             if ($info->miestas == null || $info->metai == null || $info->menuo == null || $info->diena == null) {
 
-            }else{
+            } else {
                 return $this->redirect(Url::to(['member/onlyvip']));
             }
-        }else{
+        } else {
             if (array_search($a, $onlyVIP) !== false) {
                 return $this->redirect(Url::to(['member/onlyvip']));
             }
@@ -2461,7 +2461,52 @@ class MemberController extends \yii\web\Controller
 
     public function actionDate()
     {
-        return $this->render('date');
+        $model = new \frontend\models\Favourites;
+
+        $psl = (isset($_GET['psl'])) ? $_GET['psl'] : "";
+
+        if ($date = $model::find()->where(['u_id' => Yii::$app->user->id])->one()) {
+            $date->new = 0;
+            $date->save();
+        }
+
+        if ($psl == 'abipusiai') {
+            return $this->abipusiaiPasimatymai();
+        } else if ($psl == 'tu') {
+            return $this->tuPakvieteiPasimatyman();
+        } else {
+            return $this->tavePakvietePasimatyman();
+        }
+
+
+    }
+
+    public function tuPakvieteiPasimatyman()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->maneMegsta();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }public function tavePakvietePasimatyman()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->maneMegsta();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function abipusiaiPasimatymai()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->manoFavourites();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionLogout()

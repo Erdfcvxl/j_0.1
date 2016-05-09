@@ -189,9 +189,10 @@ class DetailSearchP extends UserPack
             $query->andFilterWhere(['not', ['gimimoTS' => '0']]);
 
         } else {
-
+var_dump($this->miestas_temp);
             if ($this->spindulys) {
-                if ($this->miestas_temp) {
+                if ($this->miestas_temp or (string)$this->miestas_temp == '0') {
+                    var_dump('vykdau');
                     $zmogaus_miestas = \frontend\models\City::findOne($this->miestas_temp);
 
                 } else {

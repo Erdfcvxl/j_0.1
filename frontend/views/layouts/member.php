@@ -228,6 +228,8 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
                             echo $this->render('menubar/_friends.php', ['puslapis' => $puslapis]);
                         }elseif($puslapis == "favs"){
                             echo $this->render('menubar/_favs.php', ['puslapis' => $puslapis]);
+                        }elseif($puslapis == "date"){
+                            echo $this->render('menubar/_date.php', ['puslapis' => $puslapis]);
                         }elseif($puslapis == "settings" || $puslapis == "help" || $puslapis == "duk"){
                             echo $this->render('menubar/_settings.php', ['puslapis' => $puslapis]);
                         }elseif($puslapis == "user" || $puslapis == "fotos" || $puslapis == "fotosalbumview" || $puslapis == "iesko" || $puslapis == "anketa"){

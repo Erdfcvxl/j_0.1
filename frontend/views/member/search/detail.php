@@ -83,7 +83,7 @@ $form = ActiveForm::begin([
                                     'disabledPageCssClass' => 'off',
                                 ]
 
-                                ] ); 
+                                ] );
                             ?>
 
                             <script type="text/javascript">
