@@ -15,19 +15,22 @@ $url = Url::to([
     <img src="<?= $message->embed($logo); ?>" height="70" style="display: inline-block;">
 
 
-    <p style="font-size: 20px; color:#000; font-family: OpenSans;">
+    <p style="font-size: 18px; color:#000; font-family: OpenSans; margin-top: 40px;">
 
-            Prisijungti prie puslapio pakvietė <b><?= $user; ?></b><br><br>
+            Prisijungti prie puslapio pakvietė <b><?= $user; ?></b>
+    </p>
 
+    <p style="font-size: 20px; color:#000; font-family: OpenSans; margin-top: 80px; margin-bottom: 80px;">
             Kad užsiregistuotumėte spauskite šią nuorodą:
-            <a href='<?= $url; ?>'>spausti čia</a><br><br>
+            <a href='<?= $url; ?>'>spausti čia</a>
+        </p>
 
-            <small>Arba nusikopijuokite žemiai esančią nuorodą:<br> <?= $url; ?></small>
-        
+    <p style="font-size: 16px; color:#000; font-family: OpenSans;">
+            Arba nusikopijuokite žemiai esančią nuorodą:<br> <small><?= $url; ?></small>
     </p>
 
 
-    <div style="padding: 80px 0; margin-top: 80px; position: relative;">
+    <div style="padding: 80px 0; margin-top: 40px; position: relative;">
 
 
         <img src="<?= $message->embed($avatars); ?>">
