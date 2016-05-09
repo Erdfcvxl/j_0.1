@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/search.php" afterPath="$PROJECT_DIR$/frontend/views/member/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" afterPath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,122 +32,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_pakvietimas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
+      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+            <state relative-caret-position="236">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
-                <element signature="e#7#29#0#PHP" expanded="true" />
+                <element signature="e#35#43#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_reikalavimas_trukstamos_info.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="asdasd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/asdasd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-              <folding>
-                <element signature="e#126#3535#0#PHP" expanded="false" />
-                <element signature="e#176#3529#0#PHP" expanded="false" />
-                <element signature="e#272#848#0#PHP" expanded="false" />
-                <element signature="e#1254#1700#0#PHP" expanded="false" />
-                <element signature="e#1289#1627#0#PHP" expanded="false" />
-                <element signature="e#1327#1626#1#PHP" expanded="false" />
-                <element signature="e#1289#1669#0#PHP" expanded="false" />
-                <element signature="e#1796#2052#0#PHP" expanded="false" />
-                <element signature="e#1831#1904#0#PHP" expanded="false" />
-                <element signature="e#1831#1963#0#PHP" expanded="false" />
-                <element signature="e#2153#2257#0#PHP" expanded="false" />
-                <element signature="e#2153#2312#0#PHP" expanded="false" />
-                <element signature="e#2153#2366#0#PHP" expanded="false" />
-                <element signature="e#2153#2434#0#PHP" expanded="false" />
-                <element signature="e#2153#2568#0#PHP" expanded="false" />
-                <element signature="e#3282#3518#0#PHP" expanded="false" />
-                <element signature="e#3538#3586#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_pass.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/mail/_pass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="2" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="20" />
-              <folding>
-                <element signature="e#6#28#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="169" column="14" selection-start-line="169" selection-start-column="14" selection-end-line="169" selection-end-column="14" />
-              <folding>
-                <element signature="e#126#3535#0#PHP" expanded="false" />
-                <element signature="e#176#3529#0#PHP" expanded="false" />
-                <element signature="e#272#848#0#PHP" expanded="false" />
-                <element signature="e#1254#1700#0#PHP" expanded="false" />
-                <element signature="e#1289#1627#0#PHP" expanded="false" />
-                <element signature="e#1327#1626#1#PHP" expanded="false" />
-                <element signature="e#1289#1669#0#PHP" expanded="false" />
-                <element signature="e#1796#2052#0#PHP" expanded="false" />
-                <element signature="e#1831#1904#0#PHP" expanded="false" />
-                <element signature="e#1831#1963#0#PHP" expanded="false" />
-                <element signature="e#2153#2257#0#PHP" expanded="false" />
-                <element signature="e#2153#2312#0#PHP" expanded="false" />
-                <element signature="e#2153#2366#0#PHP" expanded="false" />
-                <element signature="e#2153#2434#0#PHP" expanded="false" />
-                <element signature="e#2153#2568#0#PHP" expanded="false" />
-                <element signature="e#3282#3518#0#PHP" expanded="false" />
-                <element signature="e#3538#3586#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chat.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/models/Mail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" column="31" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -172,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/views/member/index/_pakvietimai.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/index/zinutes.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/menubar/_else.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/statistika/forum.php" />
@@ -206,7 +97,6 @@
         <option value="$PROJECT_DIR$/common/models/LoginForm.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/TestController.php" />
         <option value="$PROJECT_DIR$/../.htaccess" />
-        <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
         <option value="$PROJECT_DIR$/frontend/models/City.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php" />
@@ -221,8 +111,10 @@
         <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search/detail.php" />
-        <option value="$PROJECT_DIR$/frontend/views/member/search.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php" />
+        <option value="$PROJECT_DIR$/frontend/models/InfoClear.php" />
+        <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/search.php" />
       </list>
     </option>
   </component>
@@ -556,7 +448,7 @@
       <workItem from="1462732299763" duration="105000" />
       <workItem from="1462733924994" duration="334000" />
       <workItem from="1462808528038" duration="1159000" />
-      <workItem from="1462814392831" duration="330000" />
+      <workItem from="1462814392831" duration="1901000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -803,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462814431559</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Pusiau veikiantys pakvietimai">
+      <created>1462814730679</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1462814730679</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245728000" />
+    <option name="totallyTimeSpent" value="247299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -893,13 +792,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/models/UserPackSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -975,13 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="352" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2969">
-          <caret line="330" column="11" selection-start-line="330" selection-start-column="11" selection-end-line="330" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1180,9 +1065,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/search/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
+          <folding>
+            <marker date="1462811936511" expanded="true" signature="2737:2777" placeholder="..." />
+            <marker date="1462811936511" expanded="true" signature="2803:2843" placeholder="..." />
+            <marker date="1462811936511" expanded="true" signature="2888:2947" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/InfoClear.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="533" column="39" selection-start-line="533" selection-start-column="39" selection-end-line="533" selection-end-column="39" />
+          <folding>
+            <marker date="1462716626236" expanded="true" signature="50408:50422" placeholder="..." />
+            <marker date="1462716626236" expanded="true" signature="63837:63851" placeholder="..." />
+            <marker date="1462716626236" expanded="true" signature="66115:66129" placeholder="..." />
+            <marker date="1462716626236" expanded="true" signature="68244:68258" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#7#29#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/common/mail/_pass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="34">
           <caret line="2" column="20" selection-start-line="1" selection-start-column="4" selection-end-line="2" selection-end-column="20" />
           <folding>
             <element signature="e#6#28#0#PHP" expanded="true" />
@@ -1192,7 +1143,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="858">
           <caret line="169" column="14" selection-start-line="169" selection-start-column="14" selection-end-line="169" selection-end-column="14" />
           <folding>
             <element signature="e#126#3535#0#PHP" expanded="false" />
@@ -1218,7 +1169,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
+        <state relative-caret-position="858">
           <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
           <folding />
         </state>
@@ -1226,61 +1177,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/models/Mail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
+        <state relative-caret-position="858">
           <caret line="79" column="31" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="81" column="46" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/search/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
+        <state relative-caret-position="236">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
-            <marker date="1462811936511" expanded="true" signature="2737:2777" placeholder="..." />
-            <marker date="1462811936511" expanded="true" signature="2803:2843" placeholder="..." />
-            <marker date="1462811936511" expanded="true" signature="2888:2947" placeholder="..." />
+            <element signature="e#35#43#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="544" column="20" selection-start-line="544" selection-start-column="8" selection-end-line="544" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding>
-            <element signature="e#7#29#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>

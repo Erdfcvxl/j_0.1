@@ -94,20 +94,27 @@ class DetailSearchP extends UserPack
          *1-Hetero
          *2-Homo
          */
-
-        if ($info->orentacija == 1) {
-            if ($lytis == "v") {
+        if ($info->orentacija == null) {
+            if ($info->iesko == "vm" || $info->iesko == "mm")
                 $this->moteris = 1;
-            } else {
+            else
                 $this->vyras = 1;
-            }
-        } elseif ($info->orentacija == 2) {
-            if ($lytis == "m") {
-                $this->vyras = 1;
-            } else {
-                $this->moteris = 1;
+        } else {
+            if ($info->orentacija == 1) {
+                if ($lytis == "v") {
+                    $this->moteris = 1;
+                } else {
+                    $this->vyras = 1;
+                }
+            } elseif ($info->orentacija == 2) {
+                if ($lytis == "m") {
+                    $this->vyras = 1;
+                } else {
+                    $this->moteris = 1;
+                }
             }
         }
+
     }
 
     public function leftFilters($query)
@@ -176,7 +183,7 @@ class DetailSearchP extends UserPack
 
             $query->andFilterWhere(['info.miestas' => $miestu_id]);
             $query->orderBy([new \yii\db\Expression('FIELD (miestas, ' . implode(',', $miestu_id) . ')')]);
-            $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - '. Yii::$app->user->identity->info->gimimoTS.') ASC')]);
+            $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
 
 
             $query->andFilterWhere(['not', ['gimimoTS' => '0']]);
@@ -202,7 +209,7 @@ class DetailSearchP extends UserPack
                 $query->andFilterWhere(['info.miestas' => $miestu_id]);
                 $query->orderBy([new \yii\db\Expression('FIELD (miestas, ' . implode(',', $miestu_id) . ')')]);
 
-                $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - '. Yii::$app->user->identity->info->gimimoTS.') ASC')]);
+                $query->addOrderBy([new \yii\db\Expression('abs(gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
                 $query->andFilterWhere(['not', ['gimimoTS' => '0']]);
             }
         }
