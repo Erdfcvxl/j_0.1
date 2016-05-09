@@ -30,7 +30,7 @@ $url = Url::to([
     </p>
 
 
-    <div style="padding: 80px 0; margin-top: 40px; position: relative;">
+    <div style="padding: 80px 0; margin-top: 20px; position: relative;">
 
 
         <img src="<?= $message->embed($avatars); ?>">
