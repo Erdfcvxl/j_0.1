@@ -22,7 +22,9 @@ $url = Url::to([
             Prisijungti prie pazintyslietuviams.co.uk puslapio pakvietė <b><?= $message->embed($user); ?></b><br>
 
             Kad užsiregistuotumėte spauskite šią nuorodą:
-            <a href='<?= $url; ?>'>Spausti čia</a>
+            <a href='<?= $url; ?>'>spausti čia</a>
+
+            Arba nusikopijuokite šalia esančią nuorodą: <?= $url; ?>
 
         </b>
 

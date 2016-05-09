@@ -142,17 +142,38 @@ class AjaxController extends \yii\web\Controller
             $data['reciever'] = '';
         }
 
+            //$data['gavejo_email'] = 'evaldas.alcauskis@gmail.com';
+
         if ($data['reciever'] != '')
         {
             $user = Yii::$app->user->identity;
 
             $mail = new \common\models\Mail;
+
             $mail->sender = 'no-reply@pazintyslietuviams.co.uk';
+
             $mail->reciever = $data['reciever'];
+
             $mail->subject = 'Pakvietimas';
-            //$mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username;
+
+            $url = Url::to([
+
+                'site/invite',
+
+                'id' => \frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code,
+
+            ], true);
+
+            $message = "Kad užsiregistuotumėte spauskite šią nuorodą:
+                        <a href='" . $url . "'>Spausti čia</a>";
+
+            //$mail->content = $message;
+
             $mail->vars = 'logo=>css/img/icons/logo2.jpg|,|avatars=>css/img/icons/avatarSectionEmail.jpg|,|link=>css/img/icons/link.jpg|,|user=>' . $user->username .'|,|invitecode=>' . \frontend\models\Invite::find()->select('code')->where(['sender' => Yii::$app->user->id])->orderBy('id DESC')->one()->code;
+
+
             $mail->view = '_pakvietimas';
+
             $mail->timestamp = time();
 
             if ($mail->trySend())

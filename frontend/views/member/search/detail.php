@@ -18,7 +18,7 @@ $form = ActiveForm::begin([
         ]);
 ?>
  <div class="row" style="margin-top: 5px;">
-        
+
         <div class="col-xs-3" style="background-color: #e7e7e7; min-height: 70px; padding: 0;">
             <?= $this->render('includes/leftFilters', [
                 'searchModel' => $searchModel,
@@ -47,7 +47,7 @@ $form = ActiveForm::begin([
 
                     <div class="row">
                        <div class="col-xs-6"><?= Html::submitButton('Ieškoti', ['class' => 'btn btn-reg', 'style' => 'width: 100%; padding: 0px;', 'name' => 'DetailSearchP[search]', 'value' => 1]) ?></div>
-                       <div class="col-xs-6"><a href="<?= Url::to(['member/search', 'psl' => 'detail']); ?>" class="btn btn-default" style='width: 100%; padding: 0px; font-size: 18px;'>Valyti</a></div>            
+                       <div class="col-xs-6"><a href="<?= Url::to(['member/search', 'psl' => 'detail']); ?>" class="btn btn-default" style='width: 100%; padding: 0px; font-size: 18px;'>Valyti</a></div>
                     </div>
 
                     <?php $this->registerJs("var date = '$searchModel->metai'"); ?>
@@ -59,7 +59,7 @@ $form = ActiveForm::begin([
                 <!-- Rezultatai begin-->
                 <?php if($searchModel->search): ?>
                     <div class="row" style="padding: 0px 10px;">
-                        
+
                     </div>
                     <div class="row" style="padding: 0px 5px;">
                         <?php Pjax::begin();?>
@@ -71,6 +71,7 @@ $form = ActiveForm::begin([
                                 'dataProvider' => $dataProvider,
                                 'itemView' => '//member/_searchResult',
                                 'viewParams' => [
+                                  'miestas_temp' => $searchModel->miestas_temp,
                                   'rodyti_kilometrus' => 1,
                                 ],
                                 'pager' =>[
@@ -88,7 +89,7 @@ $form = ActiveForm::begin([
                             <script type="text/javascript">
                                 $(".recentImgHolder img.cntrm").fakecrop({wrapperWidth: $('.recentImgHolder').width(),wrapperHeight: $('.recentImgHolder').width(), center: true });
                             </script>
-                            
+
                         <?php Pjax::end(); ?>
                     </div>
 
@@ -100,13 +101,13 @@ $form = ActiveForm::begin([
                 <!-- Paieska pagal rengionus begin -->
                 <?= $this->render('includes/paieskaPagalSpinduli.php', ['searchModel' => $searchModel, 'form' => $form]); ?>
                 <!-- Paieska pagal regionus end -->
-                
+
                 <div class="row">
                 <br>
                 </div>
             </div>
         </div>
-</div>   
+</div>
 
 <?= $form->field($searchModel, 'search')->hiddenInput()->label(false);?>
 
