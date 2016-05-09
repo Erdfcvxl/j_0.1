@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" afterPath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/mail/_pakvietimas.php" afterPath="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" afterPath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
@@ -48,8 +49,8 @@
       <file leaf-file-name="_pakvietimas.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state relative-caret-position="0">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
@@ -92,6 +93,33 @@
                 <element signature="e#2153#2568#0#PHP" expanded="false" />
                 <element signature="e#3282#3518#0#PHP" expanded="false" />
                 <element signature="e#3538#3586#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_searchResult.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="75" column="139" selection-start-line="75" selection-start-column="139" selection-end-line="75" selection-end-column="139" />
+              <folding>
+                <marker date="1462826308169" expanded="true" signature="3005:3044" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="2464" column="0" selection-start-line="2464" selection-start-column="0" selection-end-line="2464" selection-end-column="0" />
+              <folding>
+                <marker date="1462818901939" expanded="true" signature="50416:50430" placeholder="..." />
+                <marker date="1462818901939" expanded="true" signature="63845:63859" placeholder="..." />
+                <marker date="1462818901939" expanded="true" signature="66123:66137" placeholder="..." />
+                <marker date="1462818901939" expanded="true" signature="68252:68266" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -160,7 +188,6 @@
         <option value="$PROJECT_DIR$/frontend/models/Chat.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search/detail.php" />
-        <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/asdasd" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
         <option value="$PROJECT_DIR$/frontend/web/css/member.css" />
@@ -168,6 +195,7 @@
         <option value="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
         <option value="$PROJECT_DIR$/frontend/models/City.php" />
         <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
       </list>
     </option>
   </component>
@@ -556,7 +584,7 @@
       <workItem from="1462808528038" duration="1159000" />
       <workItem from="1462814392831" duration="2057000" />
       <workItem from="1462817093328" duration="4123000" />
-      <workItem from="1462822039468" duration="3962000" />
+      <workItem from="1462822039468" duration="4188000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -866,11 +894,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462824798750</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Veikiantys pakvietimai">
+      <created>1462826118671</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1462826118671</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255540000" />
+    <option name="totallyTimeSpent" value="255766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -1169,17 +1204,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="2464" column="0" selection-start-line="2464" selection-start-column="0" selection-end-line="2464" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Chat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-748">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#35#43#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1241,16 +1272,6 @@
             <element signature="e#2152#2567#0#PHP" expanded="false" />
             <element signature="e#3281#3517#0#PHP" expanded="false" />
             <element signature="e#3537#3585#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="79" column="77" selection-start-line="79" selection-start-column="77" selection-end-line="79" selection-end-column="77" />
-          <folding>
-            <marker date="1462820991125" expanded="true" signature="2817:2856" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1332,18 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/City.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1362,11 +1371,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="193" column="80" selection-start-line="193" selection-start-column="80" selection-end-line="193" selection-end-column="80" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="2464" column="0" selection-start-line="2464" selection-start-column="0" selection-end-line="2464" selection-end-column="0" />
+          <folding>
+            <marker date="1462818901939" expanded="true" signature="50416:50430" placeholder="..." />
+            <marker date="1462818901939" expanded="true" signature="63845:63859" placeholder="..." />
+            <marker date="1462818901939" expanded="true" signature="66123:66137" placeholder="..." />
+            <marker date="1462818901939" expanded="true" signature="68252:68266" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="75" column="139" selection-start-line="75" selection-start-column="139" selection-end-line="75" selection-end-column="139" />
+          <folding>
+            <marker date="1462826308169" expanded="true" signature="3005:3044" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

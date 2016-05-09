@@ -74,15 +74,20 @@ prie session prideda ++, kai session daugiau negu 6 uzdedi </div><div class="row
                       style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= $diff->y; ?>,
 
                     <?= ($dataInfo['miestas'] !== '') ? \frontend\models\City::findOne((int)$dataInfo['miestas'])->title : "Nenurodyta"; ?>
-                    <br>
 
                     <?php
-                    if (isset($miestas_temp) && (string)$miestas_temp != null) {
-                        echo round(\frontend\models\City::getUser_miestas_distance($miestas_temp, $model->id), 0);
-                    } else {
-                        echo round(\frontend\models\City::getDistance(Yii::$app->user->id, $model->id), 0);
+                    if (isset($rodyti_kilometrus) && $rodyti_kilometrus == 1)
+                    {
+                        echo '<br>';
+                        if (isset($miestas_temp) && (string)$miestas_temp != null) {
+                            echo round(\frontend\models\City::getUser_miestas_distance($miestas_temp, $model->id), 0);
+                        } else {
+                            echo round(\frontend\models\City::getDistance(Yii::$app->user->id, $model->id), 0);
+                        }
+                        echo ' km.';
                     }
-                    ?> km.</span>
+
+                    ?></span>
 
         </div>
     </a>
