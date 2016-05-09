@@ -4,13 +4,13 @@ use yii\helpers\Url;
 
 $psl = (isset($_GET['psl']))? $_GET['psl'] : "index";
 
-/*$info = \frontend\models\Info2::find()->select(['miestas','metai','menuo','diena'])->where(['u_id' => Yii::$app->user->identity->id])->one();
+$info = \frontend\models\Info2::find()->select(['miestas','metai','menuo','diena'])->where(['u_id' => Yii::$app->user->identity->id])->one();
 
 if ($info->miestas == null || $info->metai == null || $info->menuo == null || $info->diena == null)
 {
     $this->registerJs("$('<div class=\"curtains\" id=\"curtains\"></div>').prependTo('.wrap');");
     echo Yii::$app->controller->renderPartial('//member/search/_reikalavimas_trukstamos_info');
-}*/
+}
 
 if($psl == "index"){
     echo $this->render('search/detail.php', ['searchModel' => $searchModel, 'dataProvider' => $dataProvider]);
