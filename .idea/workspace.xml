@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" afterPath="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
     </list>
     <ignored path="Auriuiadvanced.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,91 +34,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DetailSearchP.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="187" column="124" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="124" />
+            <state relative-caret-position="-8237">
+              <caret line="270" column="57" selection-start-line="270" selection-start-column="57" selection-end-line="270" selection-end-column="57" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_pakvietimas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="City.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/City.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="152" column="40" selection-start-line="152" selection-start-column="40" selection-end-line="152" selection-end-column="40" />
-              <folding>
-                <element signature="e#126#3535#0#PHP" expanded="false" />
-                <element signature="e#176#3529#0#PHP" expanded="false" />
-                <element signature="e#272#848#0#PHP" expanded="false" />
-                <element signature="e#1254#1700#0#PHP" expanded="false" />
-                <element signature="e#1289#1627#0#PHP" expanded="false" />
-                <element signature="e#1327#1626#1#PHP" expanded="false" />
-                <element signature="e#1289#1669#0#PHP" expanded="false" />
-                <element signature="e#1796#2052#0#PHP" expanded="false" />
-                <element signature="e#1831#1904#0#PHP" expanded="false" />
-                <element signature="e#1831#1963#0#PHP" expanded="false" />
-                <element signature="e#2153#2257#0#PHP" expanded="false" />
-                <element signature="e#2153#2312#0#PHP" expanded="false" />
-                <element signature="e#2153#2366#0#PHP" expanded="false" />
-                <element signature="e#2153#2434#0#PHP" expanded="false" />
-                <element signature="e#2153#2568#0#PHP" expanded="false" />
-                <element signature="e#3282#3518#0#PHP" expanded="false" />
-                <element signature="e#3538#3586#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_searchResult.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding>
-                <marker date="1462826308169" expanded="true" signature="3005:3044" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="2464" column="0" selection-start-line="2464" selection-start-column="0" selection-end-line="2464" selection-end-column="0" />
-              <folding>
-                <marker date="1462818901939" expanded="true" signature="50416:50430" placeholder="..." />
-                <marker date="1462818901939" expanded="true" signature="63845:63859" placeholder="..." />
-                <marker date="1462818901939" expanded="true" signature="66123:66137" placeholder="..." />
-                <marker date="1462818901939" expanded="true" signature="68252:68266" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -188,13 +108,13 @@
         <option value="$PROJECT_DIR$/frontend/views/member/search.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/search/detail.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/asdasd" />
-        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
         <option value="$PROJECT_DIR$/frontend/web/css/member.css" />
         <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/common/mail/_pakvietimas.php" />
         <option value="$PROJECT_DIR$/frontend/models/City.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/models/DetailSearchP.php" />
+        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php" />
       </list>
     </option>
   </component>
@@ -583,7 +503,7 @@
       <workItem from="1462808528038" duration="1159000" />
       <workItem from="1462814392831" duration="2057000" />
       <workItem from="1462817093328" duration="4123000" />
-      <workItem from="1462822039468" duration="4371000" />
+      <workItem from="1462822039468" duration="4867000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -907,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462826348319</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Veikiantys pakvietimai">
+      <created>1462826532272</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1462826532272</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255949000" />
+    <option name="totallyTimeSpent" value="256445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -1108,14 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="207" column="52" selection-start-line="207" selection-start-column="52" selection-end-line="207" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="265" column="5" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,36 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/City.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
-          <folding>
-            <element signature="e#1832#1855#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1412,10 +1301,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/City.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/mail/_pakvietimas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#center#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/referalai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/DetailSearchP.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="187" column="124" selection-start-line="187" selection-start-column="75" selection-end-line="187" selection-end-column="124" />
+        <state relative-caret-position="287">
+          <caret line="181" column="60" selection-start-line="181" selection-start-column="60" selection-end-line="181" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8237">
+          <caret line="270" column="57" selection-start-line="270" selection-start-column="57" selection-end-line="270" selection-end-column="57" />
           <folding />
         </state>
       </provider>
