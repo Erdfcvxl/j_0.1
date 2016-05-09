@@ -264,6 +264,10 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        if (!Yii::$app->user->isGuest)
+            return $this->redirect(Url::to(['member/index']));
+
+
         $id = (isset($_GET['id']) ? $_GET['id'] : "");
         $ra = (isset($_GET['ra']) ? $_GET['ra'] : "");
         $re = (isset($_GET['re']) ? $_GET['re'] : "");
@@ -784,13 +788,16 @@ class SiteController extends Controller
 
     public function actionInvite()
     {
-        if (isset($_GET['id']) && $_GET['id'] != NULL)
-        {
-            //preg_match_all('!\d+!', $_GET['id'], $id);
-            Yii::$app->session->set('invite', $_GET['id']);
-            return $this->redirect(['/site/login', 'invite' => 1]);
+        if (Yii::$app->user->isGuest) {
+            if (isset($_GET['id']) && $_GET['id'] != NULL)
+            {
+                Yii::$app->session->set('invite', $_GET['id']);
+                return $this->redirect(['/site/login', 'invite' => 1]);
+            }
+            return $this->redirect('/site/login');
+        }else{
+            return $this->redirect(Url::to(['member/index']));
         }
-        return $this->redirect('/site/login');
     }
 
     public function actionPrivatumo_politika()
