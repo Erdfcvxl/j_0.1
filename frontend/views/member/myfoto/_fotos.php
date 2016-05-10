@@ -47,7 +47,7 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
                     <div class="menuPhoto" style="display: none;" data-trigger="<?= $name['pure'] ?>">
                         <div class="row">
                             <a href="<?= Url::to(['member/changeppic', 'n' => $fullName, 'd' => $dir]); ?>" onclick="return confirm('Ar tikrai norite naudoti šią nuotrauką kaip profilio nuotrauką?');">
-                                <div class="col-xs-6"><span class="glyphicon glyphicon-user"></span><div class="labelPhoto">Nustatyti kaip profilio nuotrauką</div></div>
+                                <div class="col-xs-6" style="<?= ($model->profile)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-user"></span><div class="labelPhoto">Nustatyti kaip profilio nuotrauką</div></div>
                             </a>
                             <a href="<?= Url::to(['member/deletephoto', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('Ar tikrai norite ištrinti nuotrauką?');">
                                 <div class="col-xs-6"><span class="glyphicon glyphicon-trash"></span><div class="labelPhoto">Trinti</div></div>
@@ -56,9 +56,14 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
 
                         <div class="row">
                             <div class="col-xs-6 less" data-trigger="<?= $name['pure'] ?>" ><span class="glyphicon glyphicon-resize-small"></span></div>
-                            <a href="<?= Url::to(['member/lock', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('<?= ($model->friendsOnly)? 'Ar tikrai norite padaryti šią nuotrauką matoma visiems?' : 'Ar tikrai norite padaryti šią nuotrauką matoma tik draugams?'; ?>');">
-                                <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-lock"></span><div class="labelPhoto">Tik draugams</div></div>
-                            </a>
+                            <?php if($model->profile):?>
+                                <a style="opacity: 0.3;" onclick="alert('Profilio nuotraukos užrakinti negalima');">
+                            <?php else: ?>
+                                <a href="<?= Url::to(['member/lock', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('<?= ($model->friendsOnly)? 'Ar tikrai norite padaryti šią nuotrauką matoma visiems?' : 'Ar tikrai norite padaryti šią nuotrauką matoma tik draugams?'; ?>');">
+                            <?php endif;?>
+
+                                    <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-lock"></span><div class="labelPhoto">Tik draugams</div></div>
+                                </a>
                         </div>
                     </div>
                 </div>

@@ -28,9 +28,6 @@ use frontend\models\UploadForm2;
 	<div class="col-xs-12">
 		<h5>Įkelti nuotrauką</h5>
 		<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
-		Pasirinkite failą
-
-			<?= $form->field($model, 'file', ['template' => '{input}<div class="new_er">{error}</div>'])->fileInput()->label(false);   ?>
 
 			<?php if(\frontend\models\Expired::prevent()): ?>
 				<div class="alert alert-warning">
@@ -41,10 +38,22 @@ use frontend\models\UploadForm2;
 				<?= $this->registerJsFile('js/preventDefault'); ?>
 			<?php else: ?>
 
-				<?php $model->friendsOnly = 1; ?>
-				<?= $form->field($model, 'friendsOnly')->checkBox(['label' => '<span id="friendsOnly"></span><span style="font-weight: normal;">Nuotrauką gali matyti tik draugai</span>', 'uncheck' => '0', 'checked' => '1']);?>
+				<div class="row">
+					<div class="col-xs-6">
+						Pasirinkite failą
+						<?= $form->field($model, 'file', ['template' => '{input}<div class="new_er">{error}</div>'])->fileInput()->label(false);   ?>
+					</div>
+
+					<div class="col-xs-6">
+						<?php $model->friendsOnly = 1; ?>
+						<?= $form->field($model, 'friendsOnly')->checkBox(['label' => '<span id="friendsOnly"></span> <span style="font-weight: normal;"><span style="font-size: 14px;" class="glyphicon glyphicon-lock"></span> Nuotrauką gali matyti tik draugai </span>', 'uncheck' => '0', 'checked' => '1']);?>
+					</div>
+				</div>
+
 
 			<?= Html::submitButton('Įkelti', ['class' => 'btn btn-reg', 'name' => 'signup-button', 'style' => 'font-size: 14px; padding: 0 20px 0 20px; margin-top:25px; font-family: OpenSansLight;text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7); border-radius: 0;']) ?>
+
+				<a href="<?= \yii\helpers\Url::to(['member/myfoto']);?>" class="btn btn-default" style="border-radius: 0; padding: 0px 10px; margin-top: 10px;">Atgal</a>
 
 			<?php endif; ?>
 		<?php ActiveForm::end(); ?>

@@ -30,7 +30,7 @@ class Photos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['u_id', 'pureName', 'friendsOnly', 'timestamp'], 'required'],
+            [['u_id', 'pureName', 'friendsOnly', 'profile', 'timestamp'], 'required'],
             [['u_id', 'friendsOnly', 'timestamp'], 'integer'],
         ];
     }
@@ -51,8 +51,11 @@ class Photos extends \yii\db\ActiveRecord
 
     public static function deleteProfileDir($id)
     {
-        BaseFileHelper::copyDirectory('uploads/'.$id.'/profile', 'uploads/'.$id);
-        BaseFileHelper::removeDirectory ('uploads/'.$id.'/profile');
+        if(is_dir('uploads/'.$id.'/profile')) {
+            BaseFileHelper::copyDirectory('uploads/' . $id . '/profile', 'uploads/' . $id);
+            BaseFileHelper::removeDirectory('uploads/' . $id . '/profile');
+            unlink('uploads/' . $id . '/profile');
+        }
     }
 
     public static function getPhoto($pureName, $id)
