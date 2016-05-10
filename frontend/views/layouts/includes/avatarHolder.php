@@ -72,10 +72,7 @@ use frontend\models\Info2;
             </div>
         </div>
 
-        <?php
-            if (Yii::$app->user->id == 2654)
-                echo $this->render('//layouts/includes/referalai'); //Pakvietimu widget
-        ?>
+        <?= $this->render('//layouts/includes/referalai'); //Pakvietimu widget ?>
 
 </div>
 
