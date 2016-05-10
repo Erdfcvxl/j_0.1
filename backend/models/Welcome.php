@@ -18,7 +18,7 @@ use frontend\models\Chatnot;
  * @property string $msg
  */
 
-const CREATED_OFFSET = 1462210061;
+const CREATED_OFFSET = 1111462210061;
 
 class Welcome extends \yii\db\ActiveRecord
 {

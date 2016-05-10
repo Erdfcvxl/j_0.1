@@ -63,7 +63,13 @@ $datepicker2 = DateRangePicker::widget([
 
 
 $gridColumns = [
-	['class' => 'yii\grid\SerialColumn'],
+    [
+        'class' => 'kartik\grid\DataColumn',
+        'label' => '#',
+        'value' => function ($model, $key, $index, $column) {
+            return $column->grid->dataProvider->totalCount - $index + 1;
+        }
+    ],
     // the name column configuration
     [
         'class' => 'kartik\grid\DataColumn',

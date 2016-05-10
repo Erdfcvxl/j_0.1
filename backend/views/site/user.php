@@ -8,6 +8,12 @@ use kartik\select2\Select2;
 
 $info = InfoClear::find()->where(['u_id' => $model->id])->one();
 
+if(!$info){
+	$info = new InfoClear;
+	$info->u_id = $model->id;
+	$info->save(false);
+}
+
 $lytis = [
 	'' => 'nenustatyta',
  	'vv' => 'vyras ieškantis vyro',
