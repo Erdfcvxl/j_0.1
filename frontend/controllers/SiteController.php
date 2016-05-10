@@ -264,6 +264,10 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        if (!Yii::$app->user->isGuest)
+            return $this->redirect(Url::to(['member/index']));
+
+
         $id = (isset($_GET['id']) ? $_GET['id'] : "");
         $ra = (isset($_GET['ra']) ? $_GET['ra'] : "");
         $re = (isset($_GET['re']) ? $_GET['re'] : "");
@@ -784,37 +788,21 @@ class SiteController extends Controller
 
     public function actionInvite()
     {
-        if ($_GET['id'] != NULL)
-        {
-            //preg_match_all('!\d+!', $_GET['id'], $id);
-            Yii::$app->session->set('invite', $_GET['id']);
+        if (Yii::$app->user->isGuest) {
+            if (isset($_GET['id']) && $_GET['id'] != NULL)
+            {
+                Yii::$app->session->set('invite', $_GET['id']);
+                return $this->redirect(['/site/login', 'invite' => 1]);
+            }
+            return $this->redirect('/site/login');
+        }else{
+            return $this->redirect(Url::to(['member/index']));
         }
-        return $this->redirect('/site/login',302);
     }
 
     public function actionPrivatumo_politika()
     {
         return $this->render('privatumas');
     }
-
-    /*
-
-                //invite kodas
-            if (Yii::$app->session->has('invite'))
-                if (\frontend\models\Invite::find()->where(['code' => Yii::$app->session->get('invite')])->andWhere(['points_added' => 0])->one())
-                {
-                    $sender = \frontend\models\Invite::find()->where(['code' => Yii::$app->session->get('invite')])->andWhere(['points_added' => 0])->one()->sender;
-
-                    $siuntejas = common\models\User::findOne($sender);
-                    $siuntejas->valiuta += 10;
-                    $siuntejas->save();
-
-                    $invitas = \frontend\models\Invite::findOne(\frontend\models\Invite::find()->where(['code' => Yii::$app->session->get('invite')])->andWhere(['points_added' => 0])->one()->id);
-                    $invitas->points_added = 1;
-                    $invitas->receiver = Yii::$app->user->id;
-                    $invitas->registered_timestamp = time();
-                    $invitas->save();
-                }
-    */
 
 }

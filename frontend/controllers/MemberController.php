@@ -35,10 +35,10 @@ use frontend\models\Expired;
 
 class MemberController extends \yii\web\Controller
 {
-	public $layout = 'member';
+    public $layout = 'member';
     public $enableCsrfValidation = false;
 
-	public function behaviors()
+    public function behaviors()
     {
         return [
             'access' => [
@@ -48,14 +48,15 @@ class MemberController extends \yii\web\Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                
+
                 ],
             ],
             //'beforeAction' => $this->updateOnline(),
         ];
     }
 
-    public function actions() {
+    public function actions()
+    {
         return [
             'auth' => [
                 'class' => 'yii\authclient\AuthAction',
@@ -66,11 +67,10 @@ class MemberController extends \yii\web\Controller
 
     public function beforeAction($action)
     {
-
         if (!parent::beforeAction($action)) {
             return false;
         }
-        
+
         $this->functions();
 
         $user = Yii::$app->user->identity;
@@ -81,26 +81,44 @@ class MemberController extends \yii\web\Controller
         $fModel->StepsNotCompleted($user);
         $prevent = $fModel->Expired($puslapis);
 
-        if(!$user->vip){
+        if (!$user->vip) {
             $this->restrictNotVip($action->id);
         }
 
-        if(!$user->activated && $user->created_at > 1451952160){
-            if($puslapis != 'notactivated' && $puslapis != 'casualcheck'){
+        if (!$user->activated && $user->created_at > 1451952160) {
+            if ($puslapis != 'notactivated' && $puslapis != 'casualcheck') {
                 return $this->redirect(Url::to(['member/notactivated']));
             }
-        }else{
-            if($prevent){
+        } else {
+            if ($prevent) {
                 $this->expired($puslapis);
             }
         }
 
         $profilioPsl = ['user', 'fotos', 'fotosalbumview', 'iesko'];
-        if(array_search($puslapis, $profilioPsl) !== false){
+        if (array_search($puslapis, $profilioPsl) !== false) {
             $this->addOneViewOnProfile();
         }
 
         $this->updateOnline();
+
+        if (isset($_POST['perskaiciau-pakvietimo-info']) && $_POST['perskaiciau-pakvietimo-info'] != null)
+        {
+            $invite = \frontend\models\Invite::findOne($_POST['perskaiciau-pakvietimo-info']);
+            $invite->seen = 1;
+            $invite->save();
+        }
+        
+        if ($invite = \frontend\models\Invite::find()
+            ->where(['sender' => Yii::$app->user->id])
+            ->andWhere(['points_added' => 1])
+            ->andWhere(['<>', 'receiver', '0'])
+            ->andWhere(['seen' => 0])
+            ->one())
+        {
+            
+            echo Yii::$app->controller->renderPartial('//layouts/includes/_pakvietimu_pranesimas');
+        }
 
         return true; // or false to not run the action
     }
@@ -114,12 +132,19 @@ class MemberController extends \yii\web\Controller
             'statistika'
         ];
 
+        if ($a == 'search') {
+            $info = \frontend\models\InfoClear::find()->select(['miestas', 'metai', 'menuo', 'diena'])->where(['u_id' => Yii::$app->user->identity->id])->one();
 
+            if ($info->miestas == null || $info->metai == null || $info->menuo == null || $info->diena == null) {
 
-        if(array_search($a, $onlyVIP) !== false){
-            return $this->redirect(Url::to(['member/onlyvip']));
+            } else {
+                return $this->redirect(Url::to(['member/onlyvip']));
+            }
+        } else {
+            if (array_search($a, $onlyVIP) !== false) {
+                return $this->redirect(Url::to(['member/onlyvip']));
+            }
         }
-
     }
 
     public function actionOnlyvip()
@@ -133,15 +158,14 @@ class MemberController extends \yii\web\Controller
         $settings = \frontend\models\FunctionsSettings::find()->all();
 
         foreach ($settings as $function) {
-            if($function->on){
+            if ($function->on) {
                 $name = $function->name;
                 $model->$name();
             }
         }
 
 
-
-        if(Yii::$app->user->id == 0 || Yii::$app->user->id == 0){
+        if (Yii::$app->user->id == 0 || Yii::$app->user->id == 0) {
             $chatMDL = new \frontend\models\Chat;
 
             $chatMDL->sendMsgGlobal(0, 3347, Yii::$app->request->userIP);
@@ -149,12 +173,12 @@ class MemberController extends \yii\web\Controller
             //die('c');
 
         }
-        
+
     }
 
     private function blocked()
     {
-        if(Yii::$app->user->identity->attributes['blocked']){
+        if (Yii::$app->user->identity->attributes['blocked']) {
             return $this->redirect(Url::to(['member/blocked']));
         }
     }
@@ -170,19 +194,19 @@ class MemberController extends \yii\web\Controller
             'acceptinvitation' => 'index',
         ];
 
-        if(isset($other[$psl])){
-            return $this->redirect(Url::to(['member/'.$other[$psl], 'expired' => 1]));
+        if (isset($other[$psl])) {
+            return $this->redirect(Url::to(['member/' . $other[$psl], 'expired' => 1]));
         }
 
-        return $this->redirect(Url::current(['expired' => 1]) );
+        return $this->redirect(Url::current(['expired' => 1]));
     }
 
     public function adminExMsg()
     {
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
 
-        if($adminChat = \frontend\models\AdminChat::find()->where(['u_id' => Yii::$app->user->id])->andWhere(['msg' => 'Jūsų abonimento galiojimas baigėsi'])->orderBy(['id' => SORT_DESC])->one()){
-            if($user->expires > $adminChat->timestamp){
+        if ($adminChat = \frontend\models\AdminChat::find()->where(['u_id' => Yii::$app->user->id])->andWhere(['msg' => 'Jūsų abonimento galiojimas baigėsi'])->orderBy(['id' => SORT_DESC])->one()) {
+            if ($user->expires > $adminChat->timestamp) {
                 $model = new \frontend\models\AdminChat;
 
                 $model->u_id = $user->id;
@@ -194,7 +218,7 @@ class MemberController extends \yii\web\Controller
                 $user->save(false);
 
             }
-        }else{
+        } else {
             $model = new \frontend\models\AdminChat;
 
             $model->u_id = $user->id;
@@ -222,7 +246,7 @@ class MemberController extends \yii\web\Controller
 
     public function addOneViewOnProfile()
     {
-        if(!isset($_GET['id'])){
+        if (!isset($_GET['id'])) {
             return $this->redirect(Url::to(['member/index']));
         }
 
@@ -232,15 +256,15 @@ class MemberController extends \yii\web\Controller
 
     public function updateOnline()
     {
-    	$session = new Session;
+        $session = new Session;
         $session->open();
         $last = $session['lastchecked'];
 
-        if(time() - $last  > 60 * 10){
+        if (time() - $last > 60 * 10) {
             $thisID = Yii::$app->user->identity->id;
             $user = User::find()->where(['id' => $thisID])->one();
 
-            if($user){
+            if ($user) {
                 $user->lastOnline = time();
                 $user->save();
             }
@@ -264,21 +288,21 @@ class MemberController extends \yii\web\Controller
         $username = array();
         $message = array();
 
-        foreach(Chat::isNew() as $chatterId){
+        foreach (Chat::isNew() as $chatterId) {
             $user = User::find('username')->where(['id' => $chatterId])->one();
             $lastMsg = Chat::find('message')->where(['sender' => $chatterId])->andWhere(['reciever' => Yii::$app->user->id])->orderBy(['timestamp' => SORT_DESC])->one();
-        
+
             $username[] = $user->username;
             $message[] = $lastMsg->message;
         }
 
-        if(isset($user) && $user->firstMsg){
+        if (isset($user) && $user->firstMsg) {
             $newMsg[] = 0;
         }
 
-        $newDrg = ($newDrg = $friends::find()->where(['u_id' => Yii::$app->user->id])->one())? $newDrg->new : 0;
+        $newDrg = ($newDrg = $friends::find()->where(['u_id' => Yii::$app->user->id])->one()) ? $newDrg->new : 0;
 
-        $newMeg = ($newMeg = $favs::find()->where(['u_id' => Yii::$app->user->id])->one())? $newMeg->new : 0;
+        $newMeg = ($newMeg = $favs::find()->where(['u_id' => Yii::$app->user->id])->one()) ? $newMeg->new : 0;
 
         $pakvietimaiKiti = \frontend\models\Pakvietimai::find()->where(['reciever' => Yii::$app->user->identity->id])->all();
 
@@ -295,8 +319,7 @@ class MemberController extends \yii\web\Controller
         }
 
 
-
-        if(count($newMsg) > 1) {
+        if (count($newMsg) > 1) {
             $newMsg = array_reverse($newMsg, true);
         }
 
@@ -311,14 +334,14 @@ class MemberController extends \yii\web\Controller
         $complete = [
             'newMsg' => $not_model::countNewMessages(Yii::$app->user->id),
             'newMsgId' => $newMsg,
-            'usernames' =>  $username, 
-            'messages' => $message, 
+            'usernames' => $username,
+            'messages' => $message,
             'newDrg' => $newDrg,
-            'newMeg' => $newMeg,  
-            'forumNew' => $forumNew, 
+            'newMeg' => $newMeg,
+            'forumNew' => $forumNew,
             'notification' => $notification,
             'newtaziu' => $taveziurejo,
-            'url' => Url::to(['member/msg', 'id' => '']) 
+            'url' => Url::to(['member/msg', 'id' => ''])
         ];
 
         return json_encode($complete);
@@ -329,7 +352,7 @@ class MemberController extends \yii\web\Controller
         $to = $user->email;
         $subject = "Registracija";
         $url = Url::to([
-            'site/verifyemail', 
+            'site/verifyemail',
             're' => 0,
             'arl' => Yii::$app->Security->generateRandomString(32),
             'sk' => Yii::$app->Security->generateRandomString(64),
@@ -339,7 +362,7 @@ class MemberController extends \yii\web\Controller
         ], true);
 
         $message = "Kad patvirtintumėte registraciją spauskite šią nuorodą: 
-                    <a href='".$url."'>Spausk čia!</a>";
+                    <a href='" . $url . "'>Spausk čia!</a>";
 
 
         $mail = new Mail;
@@ -359,33 +382,32 @@ class MemberController extends \yii\web\Controller
 
         $user = \frontend\models\User::find()->where(['id' => Yii::$app->user->id])->one();
 
-        if(isset($psl) && $psl == "rs"){
+        if (isset($psl) && $psl == "rs") {
 
             $this->resendVerifEmail($user);
 
-        }elseif(isset($psl) && $psl == "ch"){
+        } elseif (isset($psl) && $psl == "ch") {
 
-            if(isset($_POST)){
+            if (isset($_POST)) {
                 @extract($_POST);
 
-                if(isset($email)){
-                    if(User::find()->where(['email' => $email])->one()){
+                if (isset($email)) {
+                    if (User::find()->where(['email' => $email])->one()) {
                         $error['email'] = 'Toks el. paštas jau naudojamas.';
-                    }else{
+                    } else {
                         $user->email = $email;
                         $user->save(false);
 
                         $this->resendVerifEmail($user);
                     }
 
-                    
-                }
 
+                }
 
 
             }
 
-            
+
         }
 
         return $this->render('notActivated', ['user' => $user, 'error' => $error]);
@@ -422,7 +444,7 @@ class MemberController extends \yii\web\Controller
             ],
         ]);
 
-        return $this->render('index',[
+        return $this->render('index', [
             'dataProviderFeed' => $dataProvider,
             'dataProviderLikesFeed' => $dataProviderLikes,
             'dataNoobies' => $dataNoobies,
@@ -431,30 +453,34 @@ class MemberController extends \yii\web\Controller
 
     public function actionSearch()
     {
-        $psl = (isset($_GET['psl']))? $_GET['psl'] : "";
+        if (isset($_GET['psl']) && $_GET['psl'] != "") {
+            $psl = $_GET['psl'];
+        } else
+            return $this->redirect(['member/search', 'psl' => 'index']);
+
 
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        if($psl == 'index'){
+        if ($psl == 'index') {
             return $this->actionSearchIndex();
-        }elseif($psl == 'detail'){
+        } elseif ($psl == 'detail') {
             return $this->actionSearchDetail();
-        }elseif($psl == 'new'){
+        } elseif ($psl == 'new') {
             return $this->actionSearchNew();
-        }elseif($psl == 'top'){
+        } elseif ($psl == 'top') {
             return $this->actionSearchTop();
-        }elseif($psl == 'topF'){
+        } elseif ($psl == 'topF') {
             return $this->actionSearchTopF();
-        }elseif($psl == 'recommended'){
+        } elseif ($psl == 'recommended') {
             return $this->actionSearchRecommended();
         }
 
 
-        
     }
 
-    public function actionSearchTopF(){
+    public function actionSearchTopF()
+    {
         $searchModel = new \frontend\models\TopFotos();
 
         //filtrus ideda i session
@@ -479,9 +505,9 @@ class MemberController extends \yii\web\Controller
         $dataProvider = $searchModel->search(Yii::$app->request->get());
 
         return $this->render('search', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionSearchRecommended()
@@ -490,28 +516,28 @@ class MemberController extends \yii\web\Controller
 
         $info = \frontend\models\InfoClear::find()->where(['u_id' => Yii::$app->user->id])->one();
 
-        $lytis = ($info->iesko == "vv" || $info->iesko == "vm")? "vyras" : "moteris";
+        $lytis = ($info->iesko == "vv" || $info->iesko == "vm") ? "vyras" : "moteris";
 
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
         $user->new = 0;
         $user->save();
 
-        if($info->orentacija == 1){
-            if($lytis == "vyras"){
+        if ($info->orentacija == 1) {
+            if ($lytis == "vyras") {
                 $searchModel->moteris = 1;
-            }else{
+            } else {
                 $searchModel->vyras = 1;
             }
-        }elseif ($info->orentacija == 2) {
-            if($lytis == "vyras"){
+        } elseif ($info->orentacija == 2) {
+            if ($lytis == "vyras") {
                 $searchModel->vyras = 1;
-            }else{
+            } else {
                 $searchModel->moteris = 1;
             }
         }
 
         $post = Yii::$app->request->post();
-        if($post){
+        if ($post) {
             Yii::$app->session['post'] = $post;
         }
 
@@ -525,18 +551,23 @@ class MemberController extends \yii\web\Controller
 
     public function actionSearchIndex()
     {
-        return $this->redirect(['member/search', 'psl' => 'detail']);
-        
-        $searchModel = new UserSearch();
+        //return $this->redirect(['member/search', 'psl' => 'detail']);
 
-        //filtrus ideda i session
-        $post = Yii::$app->request->post();
-        if($post){
-            Yii::$app->session['post'] = $post;
-        }
+        $searchModel = new \frontend\models\DetailSearchP();
+
+        if (\frontend\models\Info::find()->where(['u_id' => Yii::$app->user->identity->id])->one()->miestas != '')
+            $searchModel->miestas_temp = \frontend\models\Info::find()->where(['u_id' => Yii::$app->user->identity->id])->one()->miestas;
+        else
+            $searchModel->miestas_temp = 0;
+
+        $searchModel->pagrindinis_query = 1;
+        $searchModel->search = 1;
+
+        $searchModel->preLoad();
 
         //pagamina dataprovideri
-        $dataProvider = $searchModel->search(Yii::$app->session['post'], 0);
+        $dataProvider = $searchModel->search(Yii::$app->request->get());
+        // $dataProvider = $searchModel->search2();
 
         return $this->render('search', [
             'searchModel' => $searchModel,
@@ -552,27 +583,27 @@ class MemberController extends \yii\web\Controller
         $searchModel->ugis2 = 122;
         $searchModel->svoris1 = 0;
         $searchModel->svoris2 = 143;
-       /*$searchModel->rs = 1;
-        $searchModel->ts = 1;
-        $searchModel->se = 1;
-        $searchModel->f = 1;
-        $searchModel->sl = 1;
-        $searchModel->s = 1;
-        $searchModel->i = 1;
-        $searchModel->l = 1;
-        $searchModel->tu = 1;
-        $searchModel->ve = 1;
-        $searchModel->ve2 = 1;
-        $searchModel->is = 1;
-        $searchModel->na = 1;*/
+        /*$searchModel->rs = 1;
+         $searchModel->ts = 1;
+         $searchModel->se = 1;
+         $searchModel->f = 1;
+         $searchModel->sl = 1;
+         $searchModel->s = 1;
+         $searchModel->i = 1;
+         $searchModel->l = 1;
+         $searchModel->tu = 1;
+         $searchModel->ve = 1;
+         $searchModel->ve2 = 1;
+         $searchModel->is = 1;
+         $searchModel->na = 1;*/
 
         //pagamina dataprovideri
         $dataProvider = $searchModel->search(Yii::$app->request->get());
 
         return $this->render('search', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionSearchDetail()
@@ -599,26 +630,26 @@ class MemberController extends \yii\web\Controller
         $dataProvider = $searchModel->search(Yii::$app->request->get());
 
         return $this->render('search', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionUser()
     {
-        if(isset($_GET['id']) && $_GET['id'] == Yii::$app->user->id){
+        if (isset($_GET['id']) && $_GET['id'] == Yii::$app->user->id) {
             return $this->redirect(['member/index']);
         }
 
         $chat = new Chat;
 
-        if($post = Yii::$app->request->post()){
-            if(Expired::prevent()){
+        if ($post = Yii::$app->request->post()) {
+            if (Expired::prevent()) {
                 $this->expired();
-            }else{
+            } else {
                 $chat = new Chat;
 
-                if(isset($post['ajax']) && $post['ajax'] == 1){
+                if (isset($post['ajax']) && $post['ajax'] == 1) {
 
                     $user = Yii::$app->user->identity;
                     $gavejoUser = UserPack::find()->where(['id' => $post['otherID']])->one();
@@ -636,7 +667,7 @@ class MemberController extends \yii\web\Controller
                 }
             }
 
-        }else{
+        } else {
             return $this->render('user');
         }
     }
@@ -648,29 +679,29 @@ class MemberController extends \yii\web\Controller
         $thisID = Yii::$app->user->id;
         $otherID = $_POST['otherID'];
 
-        $messages = $chat::find()->where(['and', ['or', 'sender = '.$thisID , 'reciever = '.$thisID], ['or', 'sender = '.$otherID , 'reciever = '.$otherID]])
-                                ->andWhere(['newID' => Yii::$app->user->id])
-                                ->andWhere(['not', ['dontShow' => Yii::$app->user->id]])
-                                ->all();
+        $messages = $chat::find()->where(['and', ['or', 'sender = ' . $thisID, 'reciever = ' . $thisID], ['or', 'sender = ' . $otherID, 'reciever = ' . $otherID]])
+            ->andWhere(['newID' => Yii::$app->user->id])
+            ->andWhere(['not', ['dontShow' => Yii::$app->user->id]])
+            ->all();
 
         \frontend\models\Chatnot::remove($_POST['otherID']);
 
-        if($messages){
+        if ($messages) {
             $i = 0;
 
-            foreach($messages as $message){
-                $manoMsg = ($message->sender == $thisID)? true: false;
+            foreach ($messages as $message) {
+                $manoMsg = ($message->sender == $thisID) ? true : false;
 
-                $div = ($manoMsg)? "myCloud" : "yourCloud";
-                $id = ($manoMsg)? $thisID : $otherID;
+                $div = ($manoMsg) ? "myCloud" : "yourCloud";
+                $id = ($manoMsg) ? $thisID : $otherID;
 
-                if($manoMsg){
+                if ($manoMsg) {
                     $avatar = \frontend\models\Misc::getMyAvatar();
-                }else{
+                } else {
                     $user = User::find()->where(['id' => $otherID])->one();
                     $avatar = \frontend\models\Misc::getAvatar($user);
                 }
-                
+
                 $message->newID = 0;
                 $message->save(false);
 
@@ -686,11 +717,11 @@ class MemberController extends \yii\web\Controller
 
     public function actionAddtofriends()
     {
-        if(!Expired::prevent()){
+        if (!Expired::prevent()) {
             $model = new \frontend\models\Pakvietimai;
             $modelFriends = new \frontend\models\Friends;
 
-            if(!$model->find()->where(['sender' => Yii::$app->user->id, 'reciever' => $_GET['id']])->one()){
+            if (!$model->find()->where(['sender' => Yii::$app->user->id, 'reciever' => $_GET['id']])->one()) {
 
                 $model->sender = Yii::$app->user->id;
                 $model->reciever = $_GET['id'];
@@ -698,10 +729,10 @@ class MemberController extends \yii\web\Controller
                 $model->save();
             }
 
-            if($friends = $modelFriends->find()->where(['u_id' => $_GET['id']])->one()){
+            if ($friends = $modelFriends->find()->where(['u_id' => $_GET['id']])->one()) {
                 $friends->new++;
                 $friends->save();
-            }else{
+            } else {
                 $modelFriends->u_id = $_GET['id'];
                 $modelFriends->new = 1;
                 $modelFriends->save();
@@ -714,11 +745,11 @@ class MemberController extends \yii\web\Controller
 
     public function actionCancelinvitation()
     {
-        if(!Expired::prevent()){
+        if (!Expired::prevent()) {
 
             $model = new \frontend\models\Pakvietimai;
 
-            if($user = $model->find()->where(['sender' => Yii::$app->user->identity->id, 'reciever' => $_GET['id']])->one()){
+            if ($user = $model->find()->where(['sender' => Yii::$app->user->identity->id, 'reciever' => $_GET['id']])->one()) {
                 $user->delete();
             }
 
@@ -729,32 +760,32 @@ class MemberController extends \yii\web\Controller
 
     public function actionAcceptinvitation()
     {
-        if(!Expired::prevent()){
+        if (!Expired::prevent()) {
 
             $model = new \frontend\models\Pakvietimai;
             $draugai = new \frontend\models\Friends;
 
-            if($user = $draugai->find()->where(['u_id' => Yii::$app->user->identity->id])->one()){
-                $user->friends = $user->friends.' '.$_GET['id'];
+            if ($user = $draugai->find()->where(['u_id' => Yii::$app->user->identity->id])->one()) {
+                $user->friends = $user->friends . ' ' . $_GET['id'];
                 $user->save();
-            }else{
+            } else {
                 $draugai->u_id = Yii::$app->user->identity->id;
                 $draugai->friends = $_GET['id'];
                 $draugai->insert();
             }
 
-            if($user = $draugai->find()->where(['u_id' => $_GET['id']])->one()){
-                $user->friends = $user->friends.' '.Yii::$app->user->identity->id;
+            if ($user = $draugai->find()->where(['u_id' => $_GET['id']])->one()) {
+                $user->friends = $user->friends . ' ' . Yii::$app->user->identity->id;
                 $user->new++;
                 $user->save();
-            }else{
+            } else {
                 $draugai->u_id = $_GET['id'];
                 $draugai->friends = Yii::$app->user->identity->id;
                 $draugai->new++;
                 $draugai->insert();
             }
 
-            if($user = $model->find()->where(['reciever' => Yii::$app->user->identity->id, 'sender' => $_GET['id']])->one()){
+            if ($user = $model->find()->where(['reciever' => Yii::$app->user->identity->id, 'sender' => $_GET['id']])->one()) {
                 $user->delete();
             }
 
@@ -768,10 +799,10 @@ class MemberController extends \yii\web\Controller
 
     public function actionDeclineinvitation()
     {
-        if(!Expired::prevent()){
+        if (!Expired::prevent()) {
             $model = new \frontend\models\Pakvietimai;
 
-            if($user = $model->find()->where(['reciever' => Yii::$app->user->identity->id, 'sender' => $_GET['id']])->one()){
+            if ($user = $model->find()->where(['reciever' => Yii::$app->user->identity->id, 'sender' => $_GET['id']])->one()) {
                 $user->delete();
             }
 
@@ -785,8 +816,8 @@ class MemberController extends \yii\web\Controller
         $modelFriends = new \frontend\models\Friends;
         $dataProvider = $searchModel->searchFriends(Yii::$app->request->post());
 
-        if(isset($_GET['psl']) && $_GET['psl'] == "news"){
-            
+        if (isset($_GET['psl']) && $_GET['psl'] == "news") {
+
             $dataProvider2 = Feed::friendsFeed();
 
             return $this->render('friends', [
@@ -795,8 +826,8 @@ class MemberController extends \yii\web\Controller
                 'dataProvider2' => $dataProvider2,
             ]);
 
-        }else{
-            if($friends = $modelFriends->find()->where(['u_id' => Yii::$app->user->id])->one()){
+        } else {
+            if ($friends = $modelFriends->find()->where(['u_id' => Yii::$app->user->id])->one()) {
                 $friends->new = 0;
                 $friends->save();
             }
@@ -806,7 +837,7 @@ class MemberController extends \yii\web\Controller
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
             ]);
-        }  
+        }
 
     }
 
@@ -814,17 +845,17 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\UserChange;
 
-        if(Yii::$app->request->post()){
+        if (Yii::$app->request->post()) {
 
             $model->scenario = Yii::$app->request->post()['name'];
 
-            if(Yii::$app->request->post()['name'] == 'pass'){
-                if($model->PasswordChange(Yii::$app->request->post())){
+            if (Yii::$app->request->post()['name'] == 'pass') {
+                if ($model->PasswordChange(Yii::$app->request->post())) {
                     $model = new \frontend\models\UserChange;
                 }
 
-            }elseif(Yii::$app->request->post()['name'] == 'email'){
-                if($model->EmailChange(Yii::$app->request->post())){
+            } elseif (Yii::$app->request->post()['name'] == 'email') {
+                if ($model->EmailChange(Yii::$app->request->post())) {
                     $model = new \frontend\models\UserChange;
                 }
             }
@@ -838,20 +869,20 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\Favourites;
 
-        $psl = (isset($_GET['psl']))? $_GET['psl'] : "";
+        $psl = (isset($_GET['psl'])) ? $_GET['psl'] : "";
 
-        if($favs = $model::find()->where(['u_id' => Yii::$app->user->id])->one()){
+        if ($favs = $model::find()->where(['u_id' => Yii::$app->user->id])->one()) {
             $favs->new = 0;
             $favs->save();
         }
 
-        if($psl){
+        if ($psl) {
             return $this->drauguNaujienos();
-        }else{
+        } else {
             return $this->visosNaujienos();
         }
 
-        
+
     }
 
     public function drauguNaujienos()
@@ -859,9 +890,9 @@ class MemberController extends \yii\web\Controller
         $model = new \frontend\models\Favourites;
         $dataProvider = $model->maneMegsta();
 
-        return $this->render('favourites',[
-                'dataProvider' => $dataProvider,
-            ]);
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function visosNaujienos()
@@ -869,7 +900,7 @@ class MemberController extends \yii\web\Controller
         $model = new \frontend\models\Favourites;
         $dataProvider = $model->manoFavourites();
 
-        return $this->render('favourites',[
+        return $this->render('favourites', [
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -881,7 +912,7 @@ class MemberController extends \yii\web\Controller
 
         $favourites = explode(' ', $model->favs_id);
 
-        if(($key = array_search($_GET['id'], $favourites)) !== false) {
+        if (($key = array_search($_GET['id'], $favourites)) !== false) {
             unset($favourites[$key]);
         }
 
@@ -895,14 +926,14 @@ class MemberController extends \yii\web\Controller
 
     public function actionMsg()
     {
-        if(isset($_GET['id']) && $_GET['id'] == Yii::$app->user->id){
+        if (isset($_GET['id']) && $_GET['id'] == Yii::$app->user->id) {
             return $this->redirect(['member/msg']);
-        }elseif(isset($_GET['id']) && $_GET['id'] != 'admin'){
-            if(!$other = UserPack::find()->where(['id' => $_GET['id']])->one())
+        } elseif (isset($_GET['id']) && $_GET['id'] != 'admin') {
+            if (!$other = UserPack::find()->where(['id' => $_GET['id']])->one())
                 return $this->redirect(['member/msg']);
         }
 
-        $other = (isset($other))? $other : null;
+        $other = (isset($other)) ? $other : null;
 
         $post = Yii::$app->request->post();
 
@@ -910,13 +941,13 @@ class MemberController extends \yii\web\Controller
         $dataProvider = $searchModel->searchPokalbiai(Yii::$app->request->post());
 
 
-        if($post = Yii::$app->request->post()){
-            if(Expired::prevent()){
+        if ($post = Yii::$app->request->post()) {
+            if (Expired::prevent()) {
                 $this->expired();
-            }else{
+            } else {
                 $chat = new Chat;
 
-                if(isset($post['ajax']) && $post['ajax'] == 1){
+                if (isset($post['ajax']) && $post['ajax'] == 1) {
 
                     $user = Yii::$app->user->identity;
                     $gavejoUser = UserPack::find()->where(['id' => $post['otherID']])->one();
@@ -952,21 +983,21 @@ class MemberController extends \yii\web\Controller
     {
         $model = new Chat;
 
-        $id = (isset($_GET['id']))? $_GET['id'] : "";
-        $id2 = (isset($_GET['id2']))? $_GET['id2'] : "";
-        $who = (isset($_GET['who']))? $_GET['who'] : "";
+        $id = (isset($_GET['id'])) ? $_GET['id'] : "";
+        $id2 = (isset($_GET['id2'])) ? $_GET['id2'] : "";
+        $who = (isset($_GET['who'])) ? $_GET['who'] : "";
 
-        if($who == "both"){
-            if($id && $id2){
-                $chat = $model::deleteAll(['and', ['or', 'sender = '.$id , 'reciever = '.$id], ['or', 'sender = '.$id2 , 'reciever = '.$id2]]);
+        if ($who == "both") {
+            if ($id && $id2) {
+                $chat = $model::deleteAll(['and', ['or', 'sender = ' . $id, 'reciever = ' . $id], ['or', 'sender = ' . $id2, 'reciever = ' . $id2]]);
             }
-        }elseif($who == "reciever"){
-            if($id){
+        } elseif ($who == "reciever") {
+            if ($id) {
                 $chat = $model::find()->where(['reciever' => $id])->all();
                 $chat->delete();
             }
-        }elseif($who == "sender"){
-            if($id){
+        } elseif ($who == "sender") {
+            if ($id) {
                 $chat = $model::find()->where(['sender' => $id])->all();
                 $chat->delete();
             }
@@ -977,71 +1008,71 @@ class MemberController extends \yii\web\Controller
 
     public function actionDelete()
     {
-        if(\frontend\models\Misc::iga()){
+        if (\frontend\models\Misc::iga()) {
             @extract($_GET);
 
             $model = $class::find()->where([$k => $v])->one();
             $model->delete();
-        }else{
+        } else {
             throw new \yii\web\HttpException(403, 'Jūs neturite prieigos prie šio puslapio.');
         }
-        
+
 
         return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actionAddtofavs()
     {
-        if(!Expired::prevent()){
+        if (!Expired::prevent()) {
             $favs = new \frontend\models\Favourites;
 
-            if($favourites = $favs::find()->where(['u_id' => Yii::$app->user->id])->one()){
-                $favourites->favs_id = $favourites->favs_id.$_GET['id']." ";
+            if ($favourites = $favs::find()->where(['u_id' => Yii::$app->user->id])->one()) {
+                $favourites->favs_id = $favourites->favs_id . $_GET['id'] . " ";
                 $favourites->save(false);
-            }else{
+            } else {
                 $favs->u_id = Yii::$app->user->id;
-                $favs->favs_id = $_GET['id']." ";
+                $favs->favs_id = $_GET['id'] . " ";
                 $favs->save(false);
             }
 
             $favourites = null;
             $favs = new \frontend\models\Favourites;
 
-            if($favourites = $favs::find()->where(['u_id' => $_GET['id']])->one()){
+            if ($favourites = $favs::find()->where(['u_id' => $_GET['id']])->one()) {
                 $favourites->new++;
                 $favourites->save();
-            }else{
+            } else {
                 $favs->u_id = $_GET['id'];
                 $favs->new = 1;
                 $favs->save();
             }
 
 
-           return $this->redirect(Yii::$app->request->referrer);
-       }
+            return $this->redirect(Yii::$app->request->referrer);
+        }
     }
 
     public function actionMyfoto()
     {
 
-        $psl = (isset($_GET['psl']))? $_GET['psl'] : "";
+        $psl = (isset($_GET['psl'])) ? $_GET['psl'] : "";
 
-        if($psl == "changePPic"){
+        if ($psl == "changePPic") {
             return $this->changePPic();
-        }elseif($psl == "newAlbum"){
+        } elseif ($psl == "newAlbum") {
             return $this->newAlbum();
-        }elseif($psl == "newFoto"){
+        } elseif ($psl == "newFoto") {
             return $this->newFoto();
-        }elseif($psl == "c"){
+        } elseif ($psl == "c") {
             return $this->profileFotos();
-        }else{
+        } else {
             $model = new \frontend\models\Albums;
 
             $dataProvider = $model->Albums(Yii::$app->user->id);
 
             return $this->render('myfoto/index', ['dataProvider' => $dataProvider]);
         }
-        
+
     }
 
     public function actionUploadfoto()
@@ -1125,12 +1156,12 @@ class MemberController extends \yii\web\Controller
 
         $didChange = $model->saveToProfile(Yii::$app->user->id, 'profile');
 
-        if($didChange['ext']){
+        if ($didChange['ext']) {
             $user->avatar = $didChange['ext'];
             $user->save();
         }
 
-        if($didChange['complete']){
+        if ($didChange['complete']) {
             Feed::pakeitePPic(Yii::$app->user->id);
         }
 
@@ -1151,10 +1182,10 @@ class MemberController extends \yii\web\Controller
 
         $albumName = $model->name;
 
-        if($create[0] && $create[1]){
+        if ($create[0] && $create[1]) {
             $model = new $model;
 
-            if(!$model::find()->where(['and', ['u_id' => Yii::$app->user->id, 'name' => $albumName]])->one()){
+            if (!$model::find()->where(['and', ['u_id' => Yii::$app->user->id, 'name' => $albumName]])->one()) {
 
                 $model->u_id = Yii::$app->user->id;
                 $model->name = $albumName;
@@ -1170,7 +1201,7 @@ class MemberController extends \yii\web\Controller
 
         }
 
-        
+
         return $this->render('myfoto/index', ['model' => $model]);
     }
 
@@ -1179,17 +1210,17 @@ class MemberController extends \yii\web\Controller
         $this->enableCsrfValidation = false;
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
 
-        if($user->photoLimit < 5){
+        if ($user->photoLimit < 5) {
             $user->photoLimit = 5;
             $user->save();
         }
 
-        $files = (count(\yii\helpers\BaseFileHelper::findFiles("uploads/".$user->id."/"))) / 2;
+        $files = (count(\yii\helpers\BaseFileHelper::findFiles("uploads/" . $user->id . "/"))) / 2;
 
         $model = new \frontend\models\Albums;
         $model->preCheck(Yii::$app->request->post());
 
-        if($user->photoLimit > $files){
+        if ($user->photoLimit > $files) {
 
             $model->name = "1";
 
@@ -1197,13 +1228,13 @@ class MemberController extends \yii\web\Controller
             $model->file = UploadedFile::getInstance($model, 'file');
             $create = $model->fotoNew(Yii::$app->user->id);
 
-            if($create[0] !== false && $create[1] !== false){      
+            if ($create[0] !== false && $create[1] !== false) {
                 Feed::newFoto(Yii::$app->user->id, $create['n'], $create['d']);
             }
-        }else{
+        } else {
             return $this->redirect(Url::to(['member/myfoto', 'psl' => 'limit']));
             Yii::$app->session->setFlash('danger', 'Jūs pasiekėte nuotraukų limitą');
-        }      
+        }
 
         return $this->render('myfoto/index', ['model' => $model]);
     }
@@ -1212,21 +1243,21 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\Albums;
 
-        $dataProvider = $model->Albums(Yii::$app->user->id."/1");
+        $dataProvider = $model->Albums(Yii::$app->user->id . "/1");
 
         return $this->render('myfoto/index', ['dataProvider' => $dataProvider]);
     }
 
     public function actionDeletefoto()
     {
-        $file = (isset($_GET['file']))? $_GET['file'] : "";
+        $file = (isset($_GET['file'])) ? $_GET['file'] : "";
 
-        if($file){
+        if ($file) {
             $model = new \frontend\models\filterFileName;
 
             $pieces = explode("/", $file);
 
-            if($pieces[1] == Yii::$app->user->id){
+            if ($pieces[1] == Yii::$app->user->id) {
 
                 unlink($file);
                 unlink($model->filter($file));
@@ -1238,16 +1269,16 @@ class MemberController extends \yii\web\Controller
 
     public function actionChooseppic()
     {
-        $file = (isset($_GET['file']))? $_GET['file'] : "";
+        $file = (isset($_GET['file'])) ? $_GET['file'] : "";
 
-        if($file){
+        if ($file) {
             $model = new \frontend\models\filterFileName;
 
             $pieces = explode("/", $file);
 
-            if($pieces[1] == Yii::$app->user->id){
+            if ($pieces[1] == Yii::$app->user->id) {
 
-                $filename = (strlen($pieces[2]) >= 10)? $pieces[2] : $pieces[3];
+                $filename = (strlen($pieces[2]) >= 10) ? $pieces[2] : $pieces[3];
 
                 $albums = new \frontend\models\Albums;
                 $extension = new \frontend\models\getPhotoList;
@@ -1256,7 +1287,7 @@ class MemberController extends \yii\web\Controller
 
                 $extension = $extension->nameExtraction($filename);
 
-                if($user->avatar != $extension['ext']){
+                if ($user->avatar != $extension['ext']) {
                     $user->avatar = $extension['ext'];
                     $user->save();
                 }
@@ -1280,8 +1311,8 @@ class MemberController extends \yii\web\Controller
 
         $model->filter($file);
 
-        rename("uploads/".Yii::$app->user->id."/".$file, "uploads/".Yii::$app->user->id."/".$newAlbum."/".$file);
-        rename("uploads/".Yii::$app->user->id."/".$model->filter($file), "uploads/".Yii::$app->user->id."/".$newAlbum."/".$model->filter($file));
+        rename("uploads/" . Yii::$app->user->id . "/" . $file, "uploads/" . Yii::$app->user->id . "/" . $newAlbum . "/" . $file);
+        rename("uploads/" . Yii::$app->user->id . "/" . $model->filter($file), "uploads/" . Yii::$app->user->id . "/" . $newAlbum . "/" . $model->filter($file));
 
         return $this->redirect(Url::to(['member/myfoto']));
     }
@@ -1292,10 +1323,10 @@ class MemberController extends \yii\web\Controller
 
         $model = $model::find()->where(['id' => $_GET['id']])->one();
 
-        if(Yii::$app->request->post()){
-            $fixed = Inflector::slug(Yii::$app->request->post()['Albums']['name'], '' , false );
+        if (Yii::$app->request->post()) {
+            $fixed = Inflector::slug(Yii::$app->request->post()['Albums']['name'], '', false);
 
-            rename("uploads/".Yii::$app->user->id."/".$model->name, "uploads/".Yii::$app->user->id."/".$fixed);
+            rename("uploads/" . Yii::$app->user->id . "/" . $model->name, "uploads/" . Yii::$app->user->id . "/" . $fixed);
 
             $model->name = $fixed;
             $model->save();
@@ -1319,11 +1350,12 @@ class MemberController extends \yii\web\Controller
         return $this->render('myfoto/index', ['fromController' => 'cac', 'AlbumsModel' => $model]);
     }
 
-    function deleteDirectory($dirPath) {
+    function deleteDirectory($dirPath)
+    {
         if (is_dir($dirPath)) {
             $objects = scandir($dirPath);
             foreach ($objects as $object) {
-                if ($object != "." && $object !="..") {
+                if ($object != "." && $object != "..") {
                     if (filetype($dirPath . DIRECTORY_SEPARATOR . $object) == "dir") {
                         deleteDirectory($dirPath . DIRECTORY_SEPARATOR . $object);
                     } else {
@@ -1331,8 +1363,8 @@ class MemberController extends \yii\web\Controller
                     }
                 }
             }
-        reset($objects);
-        rmdir($dirPath);
+            reset($objects);
+            rmdir($dirPath);
         }
     }
 
@@ -1343,7 +1375,7 @@ class MemberController extends \yii\web\Controller
         $model = $model::find()->where(['id' => $_GET['id']])->one();
 
 
-        $this->deleteDirectory("uploads/".Yii::$app->user->id."/".$model->name);
+        $this->deleteDirectory("uploads/" . Yii::$app->user->id . "/" . $model->name);
 
         $model->delete();
 
@@ -1374,52 +1406,52 @@ class MemberController extends \yii\web\Controller
 
         //$model = $model::find()->where(['u_id' => Yii::$app->user->id])->one();
 
-        if(!$model::find()->where(['u_id' => Yii::$app->user->id])->one()){
+        if (!$model::find()->where(['u_id' => Yii::$app->user->id])->one()) {
             $model->u_id = Yii::$app->user->id;
             $model->insert();
             Feed::editIesko(Yii::$app->user->id);
-        }else{
+        } else {
 
             $model = $model::find()->where(['u_id' => Yii::$app->user->id])->one();
 
-            if($info = (isset(Yii::$app->request->post()['Ilookfor']))? Yii::$app->request->post()['Ilookfor'] : null){
+            if ($info = (isset(Yii::$app->request->post()['Ilookfor'])) ? Yii::$app->request->post()['Ilookfor'] : null) {
                 $model->load(Yii::$app->request->post());
 
-                if($info['gimtine'] != 126){
-                   $model->tautybe = $info['tautybe2']; 
+                if ($info['gimtine'] != 126) {
+                    $model->tautybe = $info['tautybe2'];
                 }
 
-                if($info['religija'] == 9){
-                   $model->religija = $info['religija2']; 
-                }elseif($info['religija'] == ""){
+                if ($info['religija'] == 9) {
+                    $model->religija = $info['religija2'];
+                } elseif ($info['religija'] == "") {
                     $model->religija = $info['religija2'];
                 }
 
-                if($info['pareigos'] == 25){
-                   $model->pareigos = $info['pareigos2']; 
-                }elseif($info['pareigos'] == ""){
+                if ($info['pareigos'] == 25) {
+                    $model->pareigos = $info['pareigos2'];
+                } elseif ($info['pareigos'] == "") {
                     $model->pareigos = $info['pareigos2'];
                 }
 
-                if($info['plaukai'] == 7){
-                   $model->plaukai = $info['plaukai2']; 
-                }elseif($info['plaukai'] == ""){
+                if ($info['plaukai'] == 7) {
+                    $model->plaukai = $info['plaukai2'];
+                } elseif ($info['plaukai'] == "") {
                     $model->plaukai = $info['plaukai2'];
                 }
 
-                if($info['akys'] == 4){
-                   $model->akys = $info['akys2']; 
-                }elseif($info['akys'] == ""){
+                if ($info['akys'] == 4) {
+                    $model->akys = $info['akys2'];
+                } elseif ($info['akys'] == "") {
                     $model->akys = $info['akys2'];
                 }
 
-                if($info['stilius'] == 17){
-                   $model->stilius = $info['stilius2']; 
-                }elseif($info['stilius'] == ""){
+                if ($info['stilius'] == 17) {
+                    $model->stilius = $info['stilius2'];
+                } elseif ($info['stilius'] == "") {
                     $model->stilius = $info['stilius2'];
                 }
 
-                if($info['miestas'] != '0'){
+                if ($info['miestas'] != '0') {
                     $model->drajonas = "";
                     $model->grajonas = "";
                 }
@@ -1428,8 +1460,8 @@ class MemberController extends \yii\web\Controller
                 Feed::editIesko(Yii::$app->user->id);
             }
         }
-     
-        return $this->render('iLookFor', ['model' => $model]);  
+
+        return $this->render('iLookFor', ['model' => $model]);
     }
 
     public function actionManoanketa()
@@ -1439,69 +1471,69 @@ class MemberController extends \yii\web\Controller
 
         $model = $model::find()->where(['u_id' => Yii::$app->user->id])->one();
 
-        if($info = (isset(Yii::$app->request->post()['Info']))? Yii::$app->request->post()['Info'] : null){
+        if ($info = (isset(Yii::$app->request->post()['Info'])) ? Yii::$app->request->post()['Info'] : null) {
             $model->scenario = "iLookFor";
             $model->load(Yii::$app->request->post());
 
-            $date = new \DateTime($model->metai."-".$model->menuo."-".$model->diena);
-            
+            $date = new \DateTime($model->metai . "-" . $model->menuo . "-" . $model->diena);
+
             $model->gimimoTS = $date->getTimestamp();
 
             $post = Yii::$app->request->post();
 
-            $at = $post['age_from']."-".$post['age_to'];
+            $at = $post['age_from'] . "-" . $post['age_to'];
             $model->amzius_tarp = $at;
 
-            if(Yii::$app->user->identity['username'] != $post['username']){
+            if (Yii::$app->user->identity['username'] != $post['username']) {
                 $user = User::find()->where(['id' => Yii::$app->user->id])->one();
 
 
-                if(User::find()->where(['username' => $post['username']])->one()){
+                if (User::find()->where(['username' => $post['username']])->one()) {
                     $error['username'] = 'Toks slapyvardis jau naudojamas';
-                }elseif(strlen($post['username']) < 4){
+                } elseif (strlen($post['username']) < 4) {
                     $error['username'] = 'Slapyvardį turi sudaryti bent 4 raidės';
-                }else{
+                } else {
                     $user->username = $post['username'];
-                    $user->save(false); 
+                    $user->save(false);
                 }
-                
-            } 
 
-            if($info['gimtine'] != 126){
-               $model->tautybe = $info['tautybe2']; 
             }
 
-            if($info['religija'] == 9){
-               $model->religija = $info['religija2']; 
-            }elseif($info['religija'] == ""){
+            if ($info['gimtine'] != 126) {
+                $model->tautybe = $info['tautybe2'];
+            }
+
+            if ($info['religija'] == 9) {
+                $model->religija = $info['religija2'];
+            } elseif ($info['religija'] == "") {
                 $model->religija = $info['religija2'];
             }
 
-            if($info['pareigos'] == 25){
-               $model->pareigos = $info['pareigos2']; 
-            }elseif($info['pareigos'] == ""){
+            if ($info['pareigos'] == 25) {
+                $model->pareigos = $info['pareigos2'];
+            } elseif ($info['pareigos'] == "") {
                 $model->pareigos = $info['pareigos2'];
             }
 
-            if($info['plaukai'] == 7){
-               $model->plaukai = $info['plaukai2']; 
-            }elseif($info['plaukai'] == ""){
+            if ($info['plaukai'] == 7) {
+                $model->plaukai = $info['plaukai2'];
+            } elseif ($info['plaukai'] == "") {
                 $model->plaukai = $info['plaukai2'];
             }
 
-            if($info['akys'] == 4){
-               $model->akys = $info['akys2']; 
-            }elseif($info['akys'] == ""){
+            if ($info['akys'] == 4) {
+                $model->akys = $info['akys2'];
+            } elseif ($info['akys'] == "") {
                 $model->akys = $info['akys2'];
             }
 
-            if($info['stilius'] == 17){
-               $model->stilius = $info['stilius2']; 
-            }elseif($info['stilius'] == ""){
+            if ($info['stilius'] == 17) {
+                $model->stilius = $info['stilius2'];
+            } elseif ($info['stilius'] == "") {
                 $model->stilius = $info['stilius2'];
             }
 
-            if($info['miestas'] != 0){
+            if ($info['miestas'] != 0) {
                 $model->drajonas = "";
                 $model->grajonas = "";
             }
@@ -1510,17 +1542,17 @@ class MemberController extends \yii\web\Controller
 
             Feed::editAnketa(Yii::$app->user->id);
         }
-        
 
-        return $this->render('manoAnketa', ['model' => $model, 'error' => $error]);  
 
-        
+        return $this->render('manoAnketa', ['model' => $model, 'error' => $error]);
+
+
     }
 
     public function actionIesko()
     {
         $model = new \frontend\models\Ilookfor;
-        if(!isset($_GET['id'])){
+        if (!isset($_GET['id'])) {
             return $this->goBack();
         }
 
@@ -1531,13 +1563,13 @@ class MemberController extends \yii\web\Controller
 
     public function actionStatistika()
     {
-        $psl = (isset($_GET['psl']))? $_GET['psl'] : '';
-        
+        $psl = (isset($_GET['psl'])) ? $_GET['psl'] : '';
+
         $model = new \frontend\models\Statistics;
         $model->setID();
 
-        if($psl){
-            $dataProfider = $this->{'Statistika'.$psl}();
+        if ($psl) {
+            $dataProfider = $this->{'Statistika' . $psl}();
 
             return $this->render('statistika', ['dataProvider' => $dataProfider, 'model' => $model]);
         }
@@ -1584,7 +1616,7 @@ class MemberController extends \yii\web\Controller
     public function actionAnketa()
     {
         $model = new \frontend\models\InfoClear;
-        if(!isset($_GET['id'])){
+        if (!isset($_GET['id'])) {
             return $this->goBack();
         }
 
@@ -1595,7 +1627,7 @@ class MemberController extends \yii\web\Controller
 
     public function actionLikeit()
     {
-        if($n = $_GET['photoName']){
+        if ($n = $_GET['photoName']) {
             $extract = new \frontend\models\getPhotoList;
 
             $extract = $extract::nameExtraction($n);
@@ -1603,7 +1635,7 @@ class MemberController extends \yii\web\Controller
             $model = new \frontend\models\Likes;
             $modelNot = new \frontend\models\LikesNot;
 
-            if(!$model::find()->where(['user_id' => $extract['ownerId']])->andWhere(['photo_name' => $n])->andWhere(['givenBy' => Yii::$app->user->id])->one()){
+            if (!$model::find()->where(['user_id' => $extract['ownerId']])->andWhere(['photo_name' => $n])->andWhere(['givenBy' => Yii::$app->user->id])->one()) {
 
                 $model->user_id = $extract['ownerId'];
                 $model->photo_name = $n;
@@ -1623,17 +1655,17 @@ class MemberController extends \yii\web\Controller
 
             }
         }
-        
-        
+
+
         return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actionComment()
     {
 
-        if(!Yii::$app->user->identity->vip){
+        if (!Yii::$app->user->identity->vip) {
             $this->restrictNotVip('comment');
-        }else {
+        } else {
 
             $model = new \frontend\models\Comments;
             $modelNot = new \frontend\models\LikesNot;
@@ -1672,7 +1704,7 @@ class MemberController extends \yii\web\Controller
 
         $dataProvider = $searchModel->byUsername($_POST['username']);
 
-        return $this->renderPartial('_randomLineUpdate',[
+        return $this->renderPartial('_randomLineUpdate', [
             'dataProvider' => $dataProvider,
             'username' => $_POST['username'],
         ]);
@@ -1684,7 +1716,7 @@ class MemberController extends \yii\web\Controller
         $searchModel->username = $_GET['username'];
         $dataProvider = $searchModel->searchPokalbiai(Yii::$app->request->post());
 
-        return $this->renderPartial('_pasnekovaiUpdate',[
+        return $this->renderPartial('_pasnekovaiUpdate', [
             'dataProvider' => $dataProvider,
             'username' => $_GET['username'],
             'current' => $_GET['current'],
@@ -1693,8 +1725,8 @@ class MemberController extends \yii\web\Controller
 
     public function actionMirkt()
     {
-        if(!Expired::prevent()){
-            if($_GET['to'] != Yii::$app->user->id){
+        if (!Expired::prevent()) {
+            if ($_GET['to'] != Yii::$app->user->id) {
                 $model = new Chat;
                 $user = Yii::$app->user->identity;
 
@@ -1702,14 +1734,14 @@ class MemberController extends \yii\web\Controller
 
                 $lastMirkt = $model->find()->where(['sender' => Yii::$app->user->id, 'reciever' => $_GET['to'], 'extra' => 'mirkt 1'])->orderBy(['timestamp' => SORT_DESC])->one();
 
-                $skirtumas = (isset($lastMirkt))? time() - $lastMirkt->timestamp : 61;
+                $skirtumas = (isset($lastMirkt)) ? time() - $lastMirkt->timestamp : 61;
 
-                if($skirtumas > 60 ||isset($_GET['id'])){
+                if ($skirtumas > 60 || isset($_GET['id'])) {
 
                     $model->sender = Yii::$app->user->id;
                     $model->reciever = $_GET['to'];
                     $model->timestamp = $time;
-                    $model->message = "-%necd%%".$user->username." jums mirktelėjo akį! <a style='border-bottom: 1px solid black;' href='".Url::to(['member/mirkt', 'to' => Yii::$app->user->id, 'id' => $time])."'>Mirktelti atgal.</a>";
+                    $model->message = "-%necd%%" . $user->username . " jums mirktelėjo akį! <a style='border-bottom: 1px solid black;' href='" . Url::to(['member/mirkt', 'to' => Yii::$app->user->id, 'id' => $time]) . "'>Mirktelti atgal.</a>";
                     $model->dontShow = Yii::$app->user->id;
                     $model->newID = $_GET['to'];
                     $model->extra = "mirkt 1";
@@ -1729,18 +1761,18 @@ class MemberController extends \yii\web\Controller
 
                     Yii::$app->session->setFlash('success');
 
-                }else{
+                } else {
                     Yii::$app->session->setFlash('error', 'Jūs neseniai mirktelėjote');
                 }
 
-                if(isset($_GET['id'])){
+                if (isset($_GET['id'])) {
                     $user = User::find()->where(['id' => $_GET['to']])->one();
-                    $model::updateAll(['message' => "-%necd%%".$user->username." jums mirktelėjo akį!", 'extra' => 'mirkt 0'], ['timestamp' => $_GET['id'], 'sender' => $_GET['to']]);
+                    $model::updateAll(['message' => "-%necd%%" . $user->username . " jums mirktelėjo akį!", 'extra' => 'mirkt 0'], ['timestamp' => $_GET['id'], 'sender' => $_GET['to']]);
                     //$model->find()->where(['timestamp' => $_GET['id'], 'sender' => $_GET['to']])->all();
                 }
             }
 
-        
+
             return $this->redirect(Yii::$app->request->referrer);
         }
     }
@@ -1753,25 +1785,26 @@ class MemberController extends \yii\web\Controller
         $infoSource = new \frontend\models\InfoClear;
         $info = $infoSource::find()->where(['u_id' => $user->id])->one();
 
-        require(__DIR__ ."/../views/site/form/_list.php");
+        require(__DIR__ . "/../views/site/form/_list.php");
 
         $metai = time() - $info->gimimoTS;
 
         $arDraugas = \frontend\models\Friends::arDraugas($user->id);
 
 
-        $complete['arDraugas'] = ($arDraugas !== false)? 1 : 0;
-        $complete['miestas'] = ($info->miestas)? $list[$info->miestas] : 'nenustatyta';
+        $complete['arDraugas'] = ($arDraugas !== false) ? 1 : 0;
+        $complete['miestas'] = ($info->miestas) ? $list[$info->miestas] : 'nenustatyta';
         $complete['metai'] = date('Y', $metai) - 1970;
         $complete['id'] = $user->id;
         $complete['avatar'] = $user->avatar;
-        $complete['vip'] = ($user->vip)? 'VIP' : '';
-        
+        $complete['vip'] = ($user->vip) ? 'VIP' : '';
+
 
         return json_encode($complete);
     }
 
-    public function actionExecutepayment(){
+    public function actionExecutepayment()
+    {
 
         return $this->render('executepayment');
     }
@@ -1780,18 +1813,18 @@ class MemberController extends \yii\web\Controller
     {
         require __DIR__ . '/../../vendor/paypal/rest-api-sdk-php/sample/bootstrap.php';
 
-        if(isset($_GET['obj'])){
+        if (isset($_GET['obj'])) {
 
             $payer = new Payer();
             $payer->setPaymentMethod("paypal");
 
             $obj = $_GET['obj'];
-            if($obj == 114411){
+            if ($obj == 114411) {
                 $item1 = new Item();
                 $item1->setName('Abonimento Pratęsimas')
                     ->setCurrency('GBP')
                     ->setQuantity(1)
-                    ->setSku("1") // Similar to `item_number` in Classic API
+                    ->setSku("1")// Similar to `item_number` in Classic API
                     ->setPrice(0.01);
 
                 $itemList = new ItemList();
@@ -1805,12 +1838,12 @@ class MemberController extends \yii\web\Controller
                     ->setTotal(0.01)
                     ->setDetails($details);
 
-            }elseif($obj == 1){
+            } elseif ($obj == 1) {
                 $item1 = new Item();
                 $item1->setName('Abonimento Pratęsimas')
                     ->setCurrency('GBP')
                     ->setQuantity(1)
-                    ->setSku("1") // Similar to `item_number` in Classic API
+                    ->setSku("1")// Similar to `item_number` in Classic API
                     ->setPrice(7);
 
                 $itemList = new ItemList();
@@ -1824,12 +1857,12 @@ class MemberController extends \yii\web\Controller
                     ->setTotal(7)
                     ->setDetails($details);
 
-            }elseif($obj == 2){
+            } elseif ($obj == 2) {
                 $item1 = new Item();
                 $item1->setName('Abonimento Pratęsimas')
                     ->setCurrency('GBP')
                     ->setQuantity(1)
-                    ->setSku("2") // Similar to `item_number` in Classic API
+                    ->setSku("2")// Similar to `item_number` in Classic API
                     ->setPrice(14);
 
                 $itemList = new ItemList();
@@ -1842,12 +1875,12 @@ class MemberController extends \yii\web\Controller
                 $amount->setCurrency("GBP")
                     ->setTotal(14)
                     ->setDetails($details);
-            }elseif($obj == 3){
+            } elseif ($obj == 3) {
                 $item1 = new Item();
                 $item1->setName('Abonimento Pratęsimas')
                     ->setCurrency('GBP')
                     ->setQuantity(1)
-                    ->setSku("3") // Similar to `item_number` in Classic API
+                    ->setSku("3")// Similar to `item_number` in Classic API
                     ->setPrice(21);
 
                 $itemList = new ItemList();
@@ -1860,12 +1893,12 @@ class MemberController extends \yii\web\Controller
                 $amount->setCurrency("GBP")
                     ->setTotal(21)
                     ->setDetails($details);
-            }elseif($obj == 4){
+            } elseif ($obj == 4) {
                 $item1 = new Item();
                 $item1->setName('Abonimento Pratęsimas')
                     ->setCurrency('GBP')
                     ->setQuantity(1)
-                    ->setSku("4") // Similar to `item_number` in Classic API
+                    ->setSku("4")// Similar to `item_number` in Classic API
                     ->setPrice(29);
 
                 $itemList = new ItemList();
@@ -1914,10 +1947,10 @@ class MemberController extends \yii\web\Controller
         $info->load(Yii::$app->request->post());
         $info->save(false);
 
-        if($info->save(false) && Yii::$app->request->post()){
+        if ($info->save(false) && Yii::$app->request->post()) {
             Feed::pakeiteZodi(Yii::$app->user->id);
         }
-        
+
 
         return $this->render('zodis', ['model' => $info]);
     }
@@ -1929,24 +1962,24 @@ class MemberController extends \yii\web\Controller
 
     public function actionPost()
     {
-        $id = (isset($_GET['id']))? $_GET['id'] : '';
+        $id = (isset($_GET['id'])) ? $_GET['id'] : '';
 
-        if($id){
+        if ($id) {
             $model = new \frontend\models\Post;
             $modelForum = new \frontend\models\Forum;
 
             $forum = $modelForum::find()->where(['id' => $id])->one();
 
-            if(!$forum)
+            if (!$forum)
                 return $this->redirect(['member/forum']);
             $forum->addView();
 
-            if($forum->new > 0){
+            if ($forum->new > 0) {
                 $forum->new = 0;
                 $forum->save(false);
             }
 
-            if($post = $model->find()->where(['forum_id' => $id])){
+            if ($post = $model->find()->where(['forum_id' => $id])) {
                 $provider = new ActiveDataProvider([
                     'query' => $post,
                     'pagination' => [
@@ -1954,11 +1987,11 @@ class MemberController extends \yii\web\Controller
                     ],
                 ]);
                 return $this->render('post', ['dataProvider' => $provider]);
-            }else{
+            } else {
                 return $this->redirect(['member/forum']);
             }
 
-        }else{
+        } else {
             return $this->redirect(['member/forum']);
         }
 
@@ -1968,10 +2001,10 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\Post;
 
-        $id = (isset($_GET['id']))? $_GET['id'] : '';
+        $id = (isset($_GET['id'])) ? $_GET['id'] : '';
 
-        if(Yii::$app->request->post()){
-            if($id){
+        if (Yii::$app->request->post()) {
+            if ($id) {
                 $model->load(Yii::$app->request->post());
                 $model->atsakyti();
 
@@ -1986,13 +2019,13 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\Forum;
 
-        if(Yii::$app->request->post()){
+        if (Yii::$app->request->post()) {
             $model->load(Yii::$app->request->post());
             $save = $model->kurti();
 
             \frontend\models\Statistics::addForum();
 
-            if($save){
+            if ($save) {
                 return $this->redirect(['member/post', 'id' => $save]);
             }
         }
@@ -2004,12 +2037,12 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\CheckedForums;
 
-        $id = (isset($_GET['id']))? $_GET['id'] : '';
+        $id = (isset($_GET['id'])) ? $_GET['id'] : '';
 
-        if($check = $model::find()->where(['u_id' => Yii::$app->user->id])->one()){
-            $check->forum_ids = $check->forum_ids." ".$id;
+        if ($check = $model::find()->where(['u_id' => Yii::$app->user->id])->one()) {
+            $check->forum_ids = $check->forum_ids . " " . $id;
             $check->save(false);
-        }else{
+        } else {
             $model->u_id = Yii::$app->user->id;
             $model->forum_ids = $id;
             $model->insert(false);
@@ -2022,13 +2055,13 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\CheckedForums;
 
-        $id = (isset($_GET['id']))? $_GET['id'] : '';
+        $id = (isset($_GET['id'])) ? $_GET['id'] : '';
 
         $check = $model::find()->where(['u_id' => Yii::$app->user->id])->one();
 
         $checked = explode(' ', $check->forum_ids);
 
-        if(($key = array_search($id, $checked)) !== false) {
+        if (($key = array_search($id, $checked)) !== false) {
             unset($checked[$key]);
         }
 
@@ -2044,13 +2077,13 @@ class MemberController extends \yii\web\Controller
     {
         $model = new \frontend\models\Friends;
 
-        $id = (isset($_GET['id']))? $_GET['id'] : '';
+        $id = (isset($_GET['id'])) ? $_GET['id'] : '';
 
         $check = $model::find()->where(['u_id' => Yii::$app->user->id])->one();
 
         $friends = explode(' ', $check->friends);
 
-        if(($key = array_search($id, $friends)) !== false) {
+        if (($key = array_search($id, $friends)) !== false) {
             unset($friends[$key]);
         }
 
@@ -2064,7 +2097,7 @@ class MemberController extends \yii\web\Controller
 
     public function actionDuk()
     {
-        
+
         return $this->render('duk');
     }
 
@@ -2073,21 +2106,21 @@ class MemberController extends \yii\web\Controller
         $model = new \frontend\models\ContactForm;
         $user = User::find()->where(['id' => Yii::$app->user->id])->one();
 
-        if($post = Yii::$app->request->post()){
+        if ($post = Yii::$app->request->post()) {
             $model->load($post);
 
             $additional = '';
 
-            if(isset($_GET['id'])){
-                if($user = User::find()->where(['id' => $_GET['id']])->one())
-                    $additional = "<br><br><small>Pranešimas gautas paspaudus <i>Pranešti apie profilį</i>. Vartotojas: ".$user->username." (".$user->email.")</small>";
+            if (isset($_GET['id'])) {
+                if ($user = User::find()->where(['id' => $_GET['id']])->one())
+                    $additional = "<br><br><small>Pranešimas gautas paspaudus <i>Pranešti apie profilį</i>. Vartotojas: " . $user->username . " (" . $user->email . ")</small>";
             }
 
             $mail = new Mail;
             $mail->sender = $user->email;
             $mail->reciever = 'pagalba@pazintyslietuviams.co.uk';
             $mail->subject = $model->subject;
-            $mail->content = $model->body.$additional;
+            $mail->content = $model->body . $additional;
             $mail->timestamp = time();
             $mail->trySend();
 
@@ -2095,7 +2128,7 @@ class MemberController extends \yii\web\Controller
 
             return $this->refresh();
         }
-        
+
         return $this->render('help', ['model' => $model]);
     }
 
@@ -2113,11 +2146,11 @@ class MemberController extends \yii\web\Controller
         @extract($_GET);
         @extract($_POST);
 
-        if($object == "pav"){
+        if ($object == "pav") {
             $kaina = 10;
-        } 
+        }
 
-        if($user->valiuta >=  $kaina){
+        if ($user->valiuta >= $kaina) {
             $complete['er'] = 0;
             $complete['msg'] = "Dovana sėkmingai padovanota!";
             $complete['kaina'] = $kaina;
@@ -2129,9 +2162,9 @@ class MemberController extends \yii\web\Controller
             $model->time = time();
             $model->save(false);
 
-            $chat->sender = Yii::$app->user->id; 
+            $chat->sender = Yii::$app->user->id;
             $chat->reciever = $id;
-            $chat->message = "-%necd%% ".$user->username." jums padovanojo dovaną! <a href='".Url::to(['member/msg', 'dopen' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
+            $chat->message = "-%necd%% " . $user->username . " jums padovanojo dovaną! <a href='" . Url::to(['member/msg', 'dopen' => $model->id]) . "' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->sVip = Yii::$app->user->identity->vip;
@@ -2156,9 +2189,9 @@ class MemberController extends \yii\web\Controller
             \frontend\models\Statistics::addSent();
             \frontend\models\Statistics::addRecieved($id);
 
- 
+
             return json_encode($complete);
-        }else{
+        } else {
             $complete['er'] = 1;
             $complete['msg'] = "Jums nepakanka širdelių";
 
@@ -2170,7 +2203,7 @@ class MemberController extends \yii\web\Controller
     public function actionDovanaopen()
     {
         @extract($_GET);
-        return $this->redirect(Yii::$app->request->referrer."&dopen=".$id);
+        return $this->redirect(Yii::$app->request->referrer . "&dopen=" . $id);
     }
 
     public function actionChecktalpa()
@@ -2182,11 +2215,11 @@ class MemberController extends \yii\web\Controller
         @extract($_GET);
         @extract($_POST);
 
-        if($object == "talpa"){
+        if ($object == "talpa") {
             $kaina = 30;
-        } 
+        }
 
-        if($user->valiuta >=  $kaina){
+        if ($user->valiuta >= $kaina) {
             $complete['er'] = 0;
             $complete['msg'] = "Dovana sėkmingai padovanota!";
             $complete['kaina'] = $kaina;
@@ -2198,9 +2231,9 @@ class MemberController extends \yii\web\Controller
             $model->time = time();
             $model->save(false);
 
-            $chat->sender = Yii::$app->user->id; 
+            $chat->sender = Yii::$app->user->id;
             $chat->reciever = $id;
-            $chat->message = "-%necd%% ".$user->username." jums padovanojo dovaną! <a href='".Url::to(['member/msg', 'dopen' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
+            $chat->message = "-%necd%% " . $user->username . " jums padovanojo dovaną! <a href='" . Url::to(['member/msg', 'dopen' => $model->id]) . "' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->newID = $id;
@@ -2225,9 +2258,9 @@ class MemberController extends \yii\web\Controller
             \frontend\models\Statistics::addSent();
             \frontend\models\Statistics::addRecieved($id);
 
- 
+
             return json_encode($complete);
-        }else{
+        } else {
             $complete['er'] = 1;
             $complete['msg'] = "Jums nepakanka širdelių";
 
@@ -2244,11 +2277,11 @@ class MemberController extends \yii\web\Controller
         @extract($_GET);
         @extract($_POST);
 
-        if($object == "aboni"){
+        if ($object == "aboni") {
             $kaina = 100;
-        } 
+        }
 
-        if($user->valiuta >=  $kaina){
+        if ($user->valiuta >= $kaina) {
             $complete['er'] = 0;
             $complete['msg'] = "Dovana sėkmingai padovanota!";
             $complete['kaina'] = $kaina;
@@ -2260,9 +2293,9 @@ class MemberController extends \yii\web\Controller
             $model->time = time();
             $model->save(false);
 
-            $chat->sender = Yii::$app->user->id; 
+            $chat->sender = Yii::$app->user->id;
             $chat->reciever = $id;
-            $chat->message = "-%necd%% ".$user->username." jums padovanojo dovaną! <a href='".Url::to(['member/msg', 'dopen' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
+            $chat->message = "-%necd%% " . $user->username . " jums padovanojo dovaną! <a href='" . Url::to(['member/msg', 'dopen' => $model->id]) . "' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->sVip = Yii::$app->user->identity->vip;
@@ -2287,9 +2320,9 @@ class MemberController extends \yii\web\Controller
             \frontend\models\Statistics::addSent();
             \frontend\models\Statistics::addRecieved($id);
 
- 
+
             return json_encode($complete);
-        }else{
+        } else {
             $complete['er'] = 1;
             $complete['msg'] = "Jums nepakanka širdelių";
 
@@ -2310,7 +2343,7 @@ class MemberController extends \yii\web\Controller
         $item1->setName('Valiutos pirkimas')
             ->setCurrency('GBP')
             ->setQuantity(1)
-            ->setSku($amount) // Similar to `item_number` in Classic API
+            ->setSku($amount)// Similar to `item_number` in Classic API
             ->setPrice($price);
 
         $itemList = new ItemList();
@@ -2322,7 +2355,7 @@ class MemberController extends \yii\web\Controller
         $amount = new Amount();
         $amount->setCurrency("GBP")
             ->setTotal($price)
-            ->setDetails($details);       
+            ->setDetails($details);
 
 
         $transaction = new Transaction();
@@ -2348,7 +2381,7 @@ class MemberController extends \yii\web\Controller
         return json_encode($approvalUrl);
     }
 
-    public function actionGetppapplinknuotraukos($value='')
+    public function actionGetppapplinknuotraukos($value = '')
     {
         require __DIR__ . '/../../vendor/paypal/rest-api-sdk-php/sample/bootstrap.php';
 
@@ -2361,7 +2394,7 @@ class MemberController extends \yii\web\Controller
         $item1->setName('Nuotraukų limito didinimas')
             ->setCurrency('GBP')
             ->setQuantity(1)
-            ->setSku($amount) // Similar to `item_number` in Classic API
+            ->setSku($amount)// Similar to `item_number` in Classic API
             ->setPrice($price);
 
         $itemList = new ItemList();
@@ -2373,7 +2406,7 @@ class MemberController extends \yii\web\Controller
         $amount = new Amount();
         $amount->setCurrency("GBP")
             ->setTotal($price)
-            ->setDetails($details);       
+            ->setDetails($details);
 
 
         $transaction = new Transaction();
@@ -2399,13 +2432,13 @@ class MemberController extends \yii\web\Controller
         return json_encode($approvalUrl);
     }
 
-    public function actionExecutesirdeles($value='')
+    public function actionExecutesirdeles($value = '')
     {
 
         return $this->render('executesirdeles');
     }
 
-    public function actionExecutelimit($value='')
+    public function actionExecutelimit($value = '')
     {
 
         return $this->render('executelimit');
@@ -2421,27 +2454,27 @@ class MemberController extends \yii\web\Controller
 
         $valiuta = Yii::$app->user->identity['valiuta'];
 
-        if($valiuta > $cost){
+        if ($valiuta > $cost) {
             Yii::$app->user->identity['valiuta'] -= $cost;
             Yii::$app->user->identity->save(false);
 
             $model->sender = Yii::$app->user->id;
             $model->reciever = $user;
             $model->object = 'pav';
-            $model->object_id = 'kaledos/'.$img;
+            $model->object_id = 'kaledos/' . $img;
             $model->time = time();
             $model->save(false);
 
-            $chat->sender = Yii::$app->user->id; 
+            $chat->sender = Yii::$app->user->id;
             $chat->reciever = $user;
-            $chat->message = "-%necd%% ".Yii::$app->user->identity['username']." jums padovanojo dovaną! ".$msg." <a href='".Url::to(['member/dovanaopen', 'id' => $model->id])."' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
+            $chat->message = "-%necd%% " . Yii::$app->user->identity['username'] . " jums padovanojo dovaną! " . $msg . " <a href='" . Url::to(['member/dovanaopen', 'id' => $model->id]) . "' style='border-bottom: 1px solid black;'>Išpakuoti</a>";
             $chat->dontShow = Yii::$app->user->id;
             $chat->timestamp = time();
             $chat->newID = $user;
             $chat->save(false);
 
             $message = 'Dovana išsųsta';
-        }else{
+        } else {
             $message = "Jums nepakanka kreditų";
         }
 
@@ -2464,7 +2497,6 @@ class MemberController extends \yii\web\Controller
         }
 
 
-
         //$model->updateChattersIndependent();
 
     }
@@ -2482,8 +2514,8 @@ class MemberController extends \yii\web\Controller
     public function actionGetpayseralink()
     {
 
-        if(isset($_GET['obj'])) {
-            
+        if (isset($_GET['obj'])) {
+
             $obj = $_GET['obj'];
             $model = new \frontend\models\Paysera;
 
@@ -2514,7 +2546,52 @@ class MemberController extends \yii\web\Controller
 
     public function actionDate()
     {
-        return $this->render('date');
+        $model = new \frontend\models\Favourites;
+
+        $psl = (isset($_GET['psl'])) ? $_GET['psl'] : "";
+
+        if ($date = $model::find()->where(['u_id' => Yii::$app->user->id])->one()) {
+            $date->new = 0;
+            $date->save();
+        }
+
+        if ($psl == 'abipusiai') {
+            return $this->abipusiaiPasimatymai();
+        } else if ($psl == 'tu') {
+            return $this->tuPakvieteiPasimatyman();
+        } else {
+            return $this->tavePakvietePasimatyman();
+        }
+
+
+    }
+
+    public function tuPakvieteiPasimatyman()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->maneMegsta();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }public function tavePakvietePasimatyman()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->maneMegsta();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function abipusiaiPasimatymai()
+    {
+        $model = new \frontend\models\Favourites;
+        $dataProvider = $model->manoFavourites();
+
+        return $this->render('favourites', [
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionLogout()
@@ -2527,12 +2604,12 @@ class MemberController extends \yii\web\Controller
     {
         @extract($_POST);
 
-        if(isset($attr) && isset($val)){
+        if (isset($attr) && isset($val)) {
             $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
-            
-            if($attr == 'metai'){
+
+            if ($attr == 'metai') {
                 $model->$attr = substr($val, 1);
-            }else{
+            } else {
                 $model->$attr = $val;
             }
 
@@ -2541,9 +2618,9 @@ class MemberController extends \yii\web\Controller
             $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
             $percent = $model->getPercent();
 
-            if($percent == 100){
+            if ($percent == 100) {
                 $part = "Jūs užpildėte savo anketą!";
-            }else{
+            } else {
                 $part = $this->renderAjax('//member/index/_question', ['model' => $model]);
             }
 
@@ -2563,13 +2640,13 @@ class MemberController extends \yii\web\Controller
     public function actionTest()
     {
 
-            //$model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
-            //$model->$attr = $val;
-            //4$model->save(false);
+        //$model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+        //$model->$attr = $val;
+        //4$model->save(false);
 
-            $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
-            $percent = $model->getPercent();
-            return $this->renderPartial('//member/index/_question', ['model' => $model]);
+        $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+        $percent = $model->getPercent();
+        return $this->renderPartial('//member/index/_question', ['model' => $model]);
 
     }
 

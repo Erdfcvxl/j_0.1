@@ -96,7 +96,7 @@ $user = \frontend\models\User::find()->where(['id' => Yii::$app->user->id])->one
 
 
 					<div class="col-xs-6 vcenter" style="padding-left: 0">
-						<a class="btn btn-reg disabled" style="font-size: 14px; padding: 1px 10px; border-radius: 0; margin-top: 15px;" id="submitBuy">Prikti širdeles</a>
+						<a class="btn btn-reg disabled" style="font-size: 14px; padding: 1px 10px; border-radius: 0; margin-top: 15px;" id="submitBuy">Pirkti širdeles</a>
 					</div>
 
 					
