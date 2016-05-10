@@ -102,13 +102,11 @@ class MemberController extends \yii\web\Controller
 
         $this->updateOnline();
 
-        var_dump(Yii::$app->request->post());
-
         if (isset($_POST['perskaiciau-pakvietimo-info']) && $_POST['perskaiciau-pakvietimo-info'] != null)
         {
             $invite = \frontend\models\Invite::findOne($_POST['perskaiciau-pakvietimo-info']);
             $invite->seen = 1;
-            var_dump($invite->save());
+            $invite->save();
         }
         
         if ($invite = \frontend\models\Invite::find()
