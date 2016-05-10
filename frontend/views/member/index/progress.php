@@ -48,13 +48,15 @@ if($percent < 100):
                 dataType : 'json',
                 data : {attr : attr, val : val},
                 success: function(data){
-                    $('#questionBox').fadeOut().html(data['part']).fadeIn();
-
-                    setTimeout(function(){
+                    $('#questionBox').fadeOut(400, function(){
+                        $(this).html(data['part']);
                         $('#radP').addClass('p'+data['percent']);
                         $('#textP').text(data['percent']+"%");
-                    },500);
+                    }).fadeIn();
 
+                },
+                error: function(ts){
+                    console.log(ts.responseText);
                 }
             });
         });

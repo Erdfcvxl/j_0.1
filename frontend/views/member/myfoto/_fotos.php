@@ -2,180 +2,70 @@
 
 use yii\helpers\Url;
 use frontend\models\getPhotoList;
+use frontend\models\Photos;
 use yii\helpers\BaseFileHelper;
 
 
-$psl = (isset($_GET['psl']))? $_GET['psl'] : "";
-$id = (isset($_GET['id']))? $_GET['id'] : "";
-$extra = (isset($_GET['extra']))? $_GET['extra'] : "";
-
-if(!isset($dir)){
-	$dir = "uploads/".Yii::$app->user->id;
-}
-
-if(!file_exists($dir)){
-	BaseFileHelper::createDirectory($dir, $mode = 0777);
-}
-
-$dh  = opendir($dir);
-
-while (false !== ($filename = readdir($dh))) {
-	
-	
-    if(strlen($filename) > 2){
-
-    	$pirmostrys = substr($filename, 0, 3);
-
-    	if($pirmostrys == "BTh"){
-    		$files[] = $filename;
-		}
-	}
-}
-
-if(isset($files)):
-	sort($files);
-
-
-
-
-$i = 0;
-
-foreach($files as $file): ?>
-
-<?php 
-
-
-    $extract = getPhotoList::nameExtraction($file);
-
-	$fullname = "BFl".$extract['pure']."EFl".$extract['lastChar'];
-
-	if($psl && $id){
-		$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir, 'psl' => $psl, 'id' => $id]);
-	}elseif($psl){
-		$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir, 'psl' => $psl]);
-	}else{
-		$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir]);
-	}
+$id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
 
 ?>
-	
-	<div id="holderis" class="col-xs-4" style="padding: 0 1px; margin-bottom: 2px;">
-		<?php if($extra): ?>
-			<div class="photoHover">
-				<?php if($extra == "del"): ?><div id="cross" file="<?= $dir."/".$file; ?>" class="glyphicon glyphicon-remove remove"></div><?php endif; ?>
-				<?php if($extra == "choosePPic"): ?><a href="<?= Url::to(['member/chooseppic', 'file' => $dir."/".$file]);?>"><div id="tick" class="glyphicon glyphicon-ok"></div></a><?php endif; ?>
-			</div>
-		<?php endif; ?>
-		<div class="foto" id="cia<?= $i; ?>">
 
-			<a href="<?= $url ?>">
-				<div class="nuotraukaTh" style="overflow: hidden; padding: 0; position: relative;">
+<?php foreach ($photos as $photo): ?>
+    <?php
+        $photo = BaseFileHelper::normalizePath($photo, '/');
+        $parts = explode('/', $photo);
+        $name = $parts[count($parts)-1];
 
-					<img id="centerMe<?= $i; ?>" src="<?= '/'.$dir."/".$file ?>" style="position: relative; display: block !important;"/>
+        $name = getPhotoList::nameExtraction($name);
 
-				</div>
-			</a>
-		</div>
-	</div>
+        $fullName = 'BFl'.$name['pure'].'EFl'.$name['ownerId'].'.'.$name['ext'];
+    
+        $dir = '';
+        for($i = 0; $i < count($parts) - 1; $i++){
+            $dir .=$parts[$i].'/';
+        }
 
-	<script type="text/javascript">
+        $url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $fullName, 'd' => '/'.$dir, 'id' => $id]);
 
+        $model = Photos::getPhoto($name['pure'], $id);
 
+        if($name['pirmostrys'] == 'BTh'){
+            ?>
 
-		function fixCenterMe(id)
-		{
-			$('.nuotraukaTh').css({'height' : $('#holderis').width() + "px"});
-			$('.photoHover').css({'width' : $('#holderis').width() + "px"});
+                <div class="col-xs-4 notEmptyPhoto kvadratas" id="<?= $name['pure'] ?>">
 
-			var hBox = $('#holderis').width(),
-				wBox = hBox,
-				hImg = $('#centerMe'+id).height(),
-				wImg = $('#centerMe'+id).width(),
-				aRatio = hImg / wImg,
-				margin = Array();
+                    <a href="<?= $url ?>">
+                        <div>
+                            <img src="<?= '/'.$photo; ?>" class="cntrm" width="221px">
+                        </div>
+                    </a>
 
-		
-			if(aRatio >= 1){ //portrait
-				$('#centerMe'+id).css({"width" : 100+"%", "height" : "auto"});
+                    <div class="morePhoto" data-trigger="<?= $name['pure'] ?>">
+                        <span class="glyphicon glyphicon-resize-full"></span>
+                    </div>
 
-				hImg = $('#centerMe'+id).height();
-				wImg = $('#centerMe'+id).width();
+                    <div class="menuPhoto" style="display: none;" data-trigger="<?= $name['pure'] ?>">
+                        <div class="row">
+                            <a href="<?= Url::to(['member/changeppic', 'n' => $fullName, 'd' => $dir]); ?>" onclick="return confirm('Ar tikrai norite naudoti šią nuotrauką kaip profilio nuotrauką?');">
+                                <div class="col-xs-6"><span class="glyphicon glyphicon-user"></span><div class="labelPhoto">Nustatyti kaip profilio nuotrauką</div></div>
+                            </a>
+                            <a href="<?= Url::to(['member/deletephoto', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('Ar tikrai norite ištrinti nuotrauką?');">
+                                <div class="col-xs-6"><span class="glyphicon glyphicon-trash"></span><div class="labelPhoto">Trinti</div></div>
+                            </a>
+                        </div>
 
-			}else{ 
-				$('#centerMe'+id).css({"height" : 100+"%", "width" : "auto"});
+                        <div class="row">
+                            <div class="col-xs-6 less" data-trigger="<?= $name['pure'] ?>" ><span class="glyphicon glyphicon-resize-small"></span></div>
+                            <a href="<?= Url::to(['member/lock', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('<?= ($model->friendsOnly)? 'Ar tikrai norite padaryti šią nuotrauką matoma visiems?' : 'Ar tikrai norite padaryti šią nuotrauką matoma tik draugams?'; ?>');">
+                                <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-lock"></span><div class="labelPhoto">Tik draugams</div></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-				hImg = $('#centerMe'+id).height();
-				wImg = $('#centerMe'+id).width();
+            <?php
+        }
 
-			}
-
-			margin[0] = (wImg - wBox) / -2;
-			margin[1] = (hBox - hImg) / -2;
-
-			$('#centerMe'+id).css({"left" : margin[0] + "px", "bottom" : margin[1] + "px"});
-		}
-
-		function fixHeight(id)
-		{
-			$('#acenterMe'+id+'fixHeight').css({'height' : $('#holderis').width() + "px",'width' : $('#holderis').width() + "px"});
-		}
-
-
-		$('#centerMe<?= $i; ?>').one('load', function() {
-		  fixCenterMe(<?= $i; ?>);
-		  fixHeight(<?= $i; ?>);
-		}).each(function() {
-		  if(this.complete) $(this).load();
-		});
-
-		/*function hoverOn(id)
-		{
-			$(id+'fixHeight').css({"display" : "block"});
-		}
-
-		function hoverOff(id)
-		{
-			if(id[1] == 'a'){
-				$(id).css({"display" : "none"});
-			}
-		}
-
-		$('.foto').mouseenter(function (e){
-			console.log(e.target.id);
-			hoverOn('#a'+e.target.id);
-		});
-
-		$('#cia<?= $i ?>').mouseleave(function (e){
-			console.log(e.target.id);
-			hoverOff('#'+e.target.id);
-		});*/
-
-	</script>
-
-<?php $i++; ?>
-
+        //var_dump($name);
+    ?>
 <?php endforeach; ?>
-
-<script type="text/javascript">
-	$('.glyphicon').click(function(){
-		$('#myAlert').fadeIn();
-		$('#confirm').attr('link', "/member/deletefoto?file="+$(this).attr('file'));
-		//$('#confirm').attr('link', "member?foto="+$(this).attr('file'));
-	});
-
-	$('#confirm').click(function(){
-		window.location.href = $(this).attr('link');
-	});
-
-	$('#decline').click(function(){
-		$('#myAlert').fadeOut();
-	});
-
-	$('#xas').click(function(){
-		$('#myAlert').fadeOut();
-	});
-</script>
-
-
-
-<?php endif; ?>

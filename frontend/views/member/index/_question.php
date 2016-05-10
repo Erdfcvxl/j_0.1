@@ -33,18 +33,12 @@ $info = [
     'akys' => ['akys', 'akių spalvą', 'Kokia Jūsų akių spalva?'],
     'stilius' => ['stilius', 'stilių', 'Koks Jūsų stilius?'],
 ];
+
 ?>
 
 <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, $question)->widget(Select2::classname(), [
-        'data' => array_merge(${$info[$question][0]}),
-        'language' => 'en',
-        'options' => ['placeholder' => 'Pasirinkite '.$info[$question][1].' ...', 'id' => 'input', 'attr' => $question],
-        'pluginEvents' => [
-            //'select2-selected' => "function(e) { kitas(e, 'tautybes'); }",
-        ],
-    ])->label($info[$question][2]);?>
+    <?= $form->field($model, $question)->dropdownList(${$info[$question][0]}, ['placeholder' => 'Pasirinkite '.$info[$question][1].' ...', 'style' => 'width: 100%', 'id' => 'input', 'attr' => $question])->label($info[$question][2]);?>
 
     <a class="btn-reg" id="submitQuestions" style="font-size: 14px;padding: 2px 20px;border-radius: 0px; position: relative; top: -8px; cursor: pointer;">Kitas klausimas</a>
 

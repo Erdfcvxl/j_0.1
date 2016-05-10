@@ -73,6 +73,9 @@ $pakvietimaiKiti = \frontend\models\Pakvietimai::find()->where(['reciever' => Yi
 								foreach($pakvietimaiAs as $kvietimas){
 									$user = \frontend\models\User::find()->where(['id' => $kvietimas->reciever])->one();
 
+									if(!$user)
+										continue;
+
 									$dataInfo = \frontend\models\Info2::find()->where(['u_id' => $kvietimas->sender])->one();
 
 				                    $d1 = new DateTime($dataInfo['diena'].'.'.$dataInfo['menuo'].'.'.$dataInfo['metai']);

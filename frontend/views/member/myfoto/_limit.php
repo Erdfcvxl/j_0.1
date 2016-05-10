@@ -2,7 +2,7 @@
 use yii\helpers\Url;
 ?>
 
-<div class="boxInside container">
+<div class="boxInside container" style="width: 600px; left: 50%; margin-left: -300px; padding: 0 15px; margin-top : 150px;">
 	<a href="<?= Url::to(Url::to(['member/myfoto']), true) ?>" id="xas" style="position: absolute; right: 1px; top: -30px; color: #b7b7b7; cursor: pointer; font-size: 20px;" class="glyphicon glyphicon-remove"></a>
 
 	<div class="row">
@@ -45,7 +45,7 @@ use yii\helpers\Url;
 
 	<div class="row">
 		<div class="col-xs-12"style="padding-top: 5px; padding-bottom: 5px;px;">
-			<a class="btn btn-reg disabled" id="submitBuy" style="padding: 1px 10px; margin-bottom: 0;">Įsigyti</a>
+			<a class="btn btn-reg disabled" id="submitBuy" style="padding: 1px 10px; margin-bottom: 0;">Luktelkite...</a>
 		</div>
 	</div>
 
@@ -65,6 +65,7 @@ use yii\helpers\Url;
 		    	$('#submitBuy').removeClass('disabled');
 		    	$('#submitBuy').addClass('active');
 		    	$('#submitBuy').attr("href", data);
+				$('#submitBuy').text("Įsigyti");
 		    },
 			error:function(ts){
 				console.log(ts);

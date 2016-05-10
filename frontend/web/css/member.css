@@ -410,10 +410,25 @@ input[type="checkbox"] + #asas {
     background:url(img/icons/tick_search.png) left top no-repeat;
     cursor:pointer;
 }
-input[type="checkbox"]:checked + #asas{
+input[type="checkbox"]:checked + #asas,
+input[type="checkbox"]:checked + #friendsOnly{
     background:url(img/icons/tick_search.png) -22px top no-repeat;
 }
-.form-group > label{
+
+input[type="checkbox"] + #friendsOnly {
+	display: inline-block;
+	width: 22px;
+	height: 18px;
+	margin: -2px 4px 0 0;
+	vertical-align: middle;
+	margin-left: -20px;
+
+	background: url(img/icons/tick_search.png) left top no-repeat;
+	cursor: pointer;
+}
+
+.form-group > label,
+.checkbox > label{
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
     -khtml-user-select: none; /* webkit (konqueror) browsers */
@@ -1219,5 +1234,80 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 	text-align: left;
 }
 
-.
+.emptyPhoto {
+	border: 1px solid #ccc;
+	padding: 95px;
+	height: 222px;
+}
+
+.notEmptyPhoto{
+	position: relative;
+	border: 1px solid #ccc;
+	height: 222px;
+	margin: 0;
+	padding: 0;
+}
+
+.morePhoto{
+	position: absolute;
+	width: 111px;
+	height: 111px;
+	z-index: 10;
+	bottom: 0;
+	color: white;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+	font-size: 34px;
+	padding: 35px;
+	cursor: pointer;
+}
+
+.morePhoto:hover {
+	color: #ccc;
+}
+
+.menuPhoto {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.6);
+	width: 100%;
+	height : 222px;
+	color: white;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+	font-size: 34px;
+	cursor: pointer;
+}
+
+.menuPhoto .row{
+	margin: 0;
+}
+
+.menuPhoto .row:first-child{
+	border-bottom: 1px solid white;
+}
+
+.menuPhoto .row .col-xs-6:first-child{
+	height: 111px;
+	border-right: 1px solid white;
+}
+
+.menuPhoto .row .col-xs-6 {
+	padding: 35px 0px 28px 38px;
+}
+
+.menuPhoto .row .col-xs-6:hover {
+	color: #ccc;
+}
+
+.labelPhoto{
+	position: absolute;
+	width:100%;
+	left: 0;
+	top: 75px;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+
 

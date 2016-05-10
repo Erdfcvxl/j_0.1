@@ -23,6 +23,7 @@ function reg_ex(){
 
 	//
 
+	$('#first').velocity("fadeOut", { duration: 400 });
 	$('#off1').velocity("fadeOut", { duration: 400 });//.css({{"display" : "none"}});
 	$('#off2').velocity("fadeOut", { duration: 400 });
 	$('#off3').velocity("fadeOut", { duration: 400 });
@@ -36,7 +37,7 @@ function reg_ex(){
 	//$('#offR').velocity("fadeOut", { duration: 400 });
 
 	setTimeout(function() {
-		$('.login_box').velocity({"min-height" : "400px"}, 300);
+		$('.login_box').velocity({"min-height" : "150px"}, 300);
 
 		$('#first').velocity({"top" : "-15px"}, 300);
 

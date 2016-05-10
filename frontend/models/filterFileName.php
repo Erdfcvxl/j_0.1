@@ -2,9 +2,13 @@
 
 namespace frontend\models;
 
+use yii\helpers\BaseFileHelper;
+
 
 class filterFileName
 {
+    public $extract;
+    public $ext;
 
 	public static function filter($filename)
 	{
@@ -39,16 +43,17 @@ class filterFileName
             if(substr($n, 0, 1) == "B" && strlen($n) > 10){
 
                 $i = -5;
-                while(true){
-                    if(substr($n, $i, 2) != "Fl"){
-                        if(substr($n, $i, 2) != "th"){
-                            $i--;
-                        }else{
-                            break;
-                        }
-                    }else{
+                while(true || $i < -100){
+                    if(substr($n, $i, 2) == "Fl")
                         break;
-                    }
+
+                    if(substr($n, $i, 2) == "th")
+                        break;
+
+                    if(substr($n, $i, 2) == "Th")
+                        break;
+
+                    $i--;
                 }
                 $i = $i + 2;
 
@@ -84,6 +89,55 @@ class filterFileName
 
         return $file;
 
+    }
+
+    public function extract($pure, $id)
+    {
+        $model = Photos::getPhoto($pure, $id);
+
+        if($model->ext)
+            $this->ext = $model->ext;
+        else{
+            $dir = 'uploads/'.$id;
+            $photos = BaseFileHelper::findFiles($dir);
+
+            foreach ($photos as $photo){
+                if (strpos($photo, $pure) !== false) {
+                    $photo = BaseFileHelper::normalizePath($photo, '/');
+                    $parts = explode('/', $photo);
+                    $name = getPhotoList::nameExtraction($parts[count($parts)-1]);
+
+                    $this->extract = $name;
+
+                    break;
+                }
+            }
+
+        }
+
+
+    }
+
+    public function getFullFl()
+    {
+        $e =$this->extract;
+        $result = 'BFl'.$e['pure'].'EFl'.$e['lastChar'];
+
+        if(file_exists ('uploads/'.$e['ownerId'].'/'.$result))
+            return $result;
+
+        return null;
+    }
+
+    public function getFullTh()
+    {
+        $e =$this->extract;
+        $result = 'BTh'.$e['pure'].'ETh'.$e['lastChar'];
+
+        if(file_exists ('uploads/'.$e['ownerId'].'/'.$result))
+            return $result;
+
+        return null;
     }
 
 }

@@ -1044,6 +1044,72 @@ class MemberController extends \yii\web\Controller
         
     }
 
+    public function actionUploadfoto()
+    {
+        $this->enableCsrfValidation = false;
+        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
+
+        if($user->photoLimit < 5){
+            $user->photoLimit = 5;
+            $user->save();
+        }
+
+        $files = (count(\yii\helpers\BaseFileHelper::findFiles("uploads/".$user->id."/"))) / 2;
+
+        $model = new \frontend\models\Upload;
+
+        if($user->photoLimit > $files){
+
+            if(Yii::$app->request->post()) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+                $model->load($_POST);
+                $uploaded = $model->upload(Yii::$app->user->id);
+
+                Feed::newFoto(Yii::$app->user->id, $uploaded['n'], $uploaded['d']);
+
+                return $this->redirect(Url::to(['member/myfoto']));
+            }
+            //$create = $model->fotoNew(Yii::$app->user->id);
+
+            /*if($create[0] !== false && $create[1] !== false){
+
+            }*/
+        }else{
+            return $this->redirect(Url::to(['member/myfoto', 'psl' => 'limit']));
+            Yii::$app->session->setFlash('danger', 'Jūs pasiekėte nuotraukų limitą');
+        }
+
+        return $this->render('myfoto/newFoto', ['model' => $model]);
+    }
+
+    public function actionChangeppic()
+    {
+        $model = new \frontend\models\Upload;
+        $model->changeProfilePicture($_GET['n'], $_GET['d']);
+
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
+    public function actionLock()
+    {
+        $model = new \frontend\models\Photos();
+        if($model->lock($_GET['pureName'])){
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+
+        throw new \yii\web\HttpException(500, 'Klaida užrakinant nuotrauką. Prašome susisiekti su administracija (info@pazintyslietuviams.co.uk)');
+
+
+    }
+
+    public function actionDeletephoto()
+    {
+        $model = new \frontend\models\Photos;
+        $model->deletePhoto($_GET['pureName'], $_GET['id']);
+
+        return $this->redirect(Yii::$app->request->referrer);
+    }
+
     /*public dovanosFotos()
     {
         # code...
@@ -1126,6 +1192,7 @@ class MemberController extends \yii\web\Controller
         if($user->photoLimit > $files){
 
             $model->name = "1";
+
 
             $model->file = UploadedFile::getInstance($model, 'file');
             $create = $model->fotoNew(Yii::$app->user->id);
@@ -2489,6 +2556,8 @@ class MemberController extends \yii\web\Controller
 
 
         }
+
+        return json_encode($attr);
     }
 
     public function actionTest()

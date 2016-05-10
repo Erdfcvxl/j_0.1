@@ -12,8 +12,8 @@ for($i = 18; $i < 90; $i++){
     <h1 class="title" style="color: #111111; font-size: 26px; margin-top: 0px;"><div style="position: absolute; z-index: -1;"><img src="/css/img/gradient.png" style="position: relative; top:-100px; left: -40px; z-index: -1;" width="450px;" height="250px;"></div>SURASK ANTRĄ PUSĘ <span class="title_bold">ANGLIJOJE IR AIRIJOJE</span></h1>
 
     <div class="login_box">
-        <div style="position: relative; margin-top: -61px; top: 61px; height: 60px; display: block; padding-top: 1px;">
-            <h2 id="off1" style="margin-bottom: -5px; font-size: 25px;">REGISTRACIJA</h2>
+        <div id="off1" style="position: relative; margin-top: -61px; top: 61px; height: 60px; display: block; padding-top: 1px;">
+            <h2  style="margin-bottom: -5px; font-size: 25px;">REGISTRACIJA</h2>
             <div class="hrcustm" id="off2" style="margin-top:5px;"></div>
         </div>
 
@@ -33,39 +33,41 @@ for($i = 18; $i < 90; $i++){
             </tr>
         </table>
 
-        <div id="expand_complete" style="display:none; opacity: 0; position: relative; top: -14px; font-size: 15px; ">
+        <div id="expand_complete" style="display:none; opacity: 0; position: relative; top: 0px; font-size: 15px; padding-top: 15px; padding-bottom: 10px;">
             <table style="text-align: left;" id="second">
-                <tr>
-                    <td style="padding: 10px 5px 5px 10px">Slapyvardis:</td>
+                <tr >
+                    <td style="padding: 0px 5px 5px 10px; vertical-align: top;">Slapyvardis:</td>
                     <td style="padding-left: 8px"><?= $form->field($model2, 'username')->label(false); ?></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px 5px 5px 10px">Slaptažodis:</td>
+                    <td style="padding: 0px 5px 5px 10px; vertical-align: top;">Slaptažodis:</td>
                     <td style="padding-left: 8px"><?= $form->field($model2, 'password')->passwordInput()->label(false); ?></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px 5px 5px 10px">&nbsp;</td>
-                    <td style="padding-left: 8px"><?= $form->field($model2, 'password2')->passwordInput(['placeholder' => 'pakartokite slaptažodį'])->label(false); ?></td>
+                    <td style="padding: 0px 5px 5px 10px; vertical-align: top;">&nbsp;</td>
+                    <td style="padding-left: 8px; margin-bottom: 10px"><?= $form->field($model2, 'password2')->passwordInput(['placeholder' => 'pakartokite slaptažodį'])->label(false); ?></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px 5px 5px 10px">E-paštas:</td>
+                    <td style="padding: 0px 5px 5px 10px; vertical-align: top;">E-paštas:</td>
                     <td style="padding-left: 8px"><?= $form->field($model2, 'email')->label(false); ?></td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px 5px 5px 10px; font-size: 13px">Apie šią svetainę sužinojau:</td>
+                    <td style="padding: 0px 5px 5px 10px; vertical-align: top;">Apie šią svetainę sužinojau:</td>
                     <td style="padding-left: 8px"><?= Html::dropDownList('heard_from', $selection = '', ['Google paieškoje', 'Reklamoje Internete', 'Iš draugo', 'Spaudoje', 'Kita'], $options = ['style' => 'width: 210px; color: #353535; height: 25px; padding: 0 0 3px 5px;', 'class' => 'reg_dropbox'] ); ?></td>
                 </tr>
             </table>
 
             <div class="row" style="margin-top: 0px; font-size: 12px;">
                 <?php $model2->pilnametis = 0; ?>
-                <div class="col-xs-1" style="text-align: right; padding-right: 0; margin-left: 30%;"><?= $form->field($model2, 'pilnametis')->checkbox(['style' => 'display: inline-block; position: static; width: 20px; margin-top: -4px;','template' => '{input}<div style="position: relative; width: 200px; left: -50px; margin-top: -10px; font-size: 12px;">{error}</div>'])->label(false); ?></div>
+                <div class="col-xs-1" style="text-align: right; padding-right: 0; margin-left: 30%;"><?= $form->field($model2, 'pilnametis')->checkbox(['style' => 'display: inline-block; position: static; width: 20px; margin-top: -4px;','template' => '{input}<div style="position: relative; width: 200px; left: -50px; margin-top: 12px; font-size: 12px;">{error}</div>'])->label(false); ?></div>
                 <div class="col-xs-6" style="margin-left: 10px; padding-left: 0; text-align: left;">Man yra 18 metų, su <span style="cursor: pointer; border-bottom: 1px solid white;" id="triggerT">taisyklėmis</span> sutinku</div>
             </div>
+
+            <?= Html::submitButton('Baigti registraciją', ['class' => 'btn btn-reg', 'style' => 'display: none; opacity: 0; margin: 5px auto auto;', 'id' => 'expand_end_btn', 'name' => 'signup-button']) ?>
         </div>
 
 
-        <?= Html::submitButton('Baigti registraciją', ['class' => 'btn btn-reg', 'style' => 'display: none; opacity: 0; margin: -105px auto 30px auto; position: relative; top: 100px', 'id' => 'expand_end_btn', 'name' => 'signup-button']) ?>
+
 
         <script type="text/javascript">
             $('#triggerT').click(function(){

@@ -96,6 +96,7 @@ $notCompleteMsg = '<h4>Jūsų anketa nėra pilnai užpildyta</h4><p>Norėdami ba
 
         <?php elseif(isset($_GET['psl']) && $_GET['psl'] == "limit"): ?>
             <div class="curtains" id="curtains"></div>
+        <?= $this->render('//member/myfoto/_limit'); ?>
 
         <?php elseif(isset($_GET['pratesti']) && $_GET['pratesti'] == "1"): ?>
             <div class="curtains" id="curtains"></div>

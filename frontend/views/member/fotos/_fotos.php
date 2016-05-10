@@ -1,128 +1,55 @@
 <?php
 
 use yii\helpers\Url;
-use frontend\models\Albums;
 use frontend\models\getPhotoList;
+use frontend\models\Photos;
+use frontend\models\Friends;
 use yii\helpers\BaseFileHelper;
 
-$Aid = (isset($_GET['Aid']))? $_GET['Aid'] : "";
-$psl = (isset($_GET['psl']))? $_GET['psl'] : "";
-$id = (isset($_GET['id']))? $_GET['id'] : "";
 
-
-if(!isset($dir)){
-	$dir = "uploads/".$id;
-}
-
-if(!file_exists($dir)){
-	BaseFileHelper::createDirectory($dir, $mode = 0777);
-}
-
-$dh  = opendir($dir);
-
-
-
-while (false !== ($filename = readdir($dh))) {
-	
-	
-    if(strlen($filename) > 2){
-
-    	$pirmostrys = substr($filename, 0, 3);
-
-    	if($pirmostrys == "BTh"){
-    		$files[] = $filename;
-		}
-	}
-}
-
-if(isset($files)):
-	sort($files);
-
-
-
-
-$i = 0;
-
-foreach($files as $file): ?>
-
-<?php 
-	$extract = getPhotoList::nameExtraction($file);
-
-	$fullname = "BFl".$extract['pure']."EFl".$extract['lastChar'];
-
-	if($psl && $id){
-		$url = Url::to(['member/'.Yii::$app->controller->action->id, 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir, 'psl' => $psl, 'id' => $id, 'Aid' => $Aid]);
-	}elseif($psl){
-		$url = Url::to(['member/'.Yii::$app->controller->action->id, 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir, 'id' => $id, 'psl' => $psl]);
-	}else{
-		$url = Url::to(['member/'.Yii::$app->controller->action->id, 'ft' => 'showFoto', 'n' => $fullname, 'd' => '/'.$dir, 'id' => $id]);
-	}
+$id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
 
 ?>
-	
-	<div id="holderis" class="col-xs-4" style="padding: 0 5px; margin-bottom: 10px;">
-		<div class="foto" id="cia<?= $i; ?>">
-			<a href="<?= $url ?>">
-				<div class="nuotraukaTh" style="overflow: hidden; padding: 0; position: relative;">
 
-					<img id="centerMe<?= $i; ?>" src="<?= '/'.$dir."/".$file ?>" style="position: relative; display: block !important;"/>
+<?php foreach ($photos as $photo): ?>
+	<?php
+	$photo = BaseFileHelper::normalizePath($photo, '/');
+	$parts = explode('/', $photo);
+	$name = $parts[count($parts)-1];
 
-				</div>
-			</a>
-		</div>
-	</div>
+	$name = getPhotoList::nameExtraction($name);
 
-	<script type="text/javascript">
+	$fullName = 'BFl'.$name['pure'].'EFl'.$name['ownerId'].'.'.$name['ext'];
 
-		function fixCenterMe(id)
-		{
-			$('.nuotraukaTh').css({'height' : $('#holderis').width() + "px"});
+	$dir = '';
+	for($i = 0; $i < count($parts) - 1; $i++){
+		$dir .=$parts[$i].'/';
+	}
 
-			var hBox = $('#holderis').width(),
-				wBox = hBox,
-				hImg = $('#centerMe'+id).height(),
-				wImg = $('#centerMe'+id).width(),
-				aRatio = hImg / wImg,
-				margin = Array();
+	$url = Url::to(['member/fotos', 'ft' => 'showFoto', 'n' => $fullName, 'd' => '/'.$dir, 'id' => $id]);
 
-		
-			if(aRatio >= 1){ //portrait
-				$('#centerMe'+id).css({"width" : 100+"%", "height" : "auto"});
+	$model = Photos::getPhoto($name['pure'], $id);
 
-				hImg = $('#centerMe'+id).height();
-				wImg = $('#centerMe'+id).width();
 
-			}else{ 
-				$('#centerMe'+id).css({"height" : 100+"%", "width" : "auto"});
+	if(($model->friendsOnly && Friends::arDraugas($id)) || !$model->friendsOnly)
+		if($name['pirmostrys'] == 'BTh'){
+			?>
 
-				hImg = $('#centerMe'+id).height();
-				wImg = $('#centerMe'+id).width();
+			<div class="col-xs-4 notEmptyPhoto kvadratas" id="<?= $name['pure'] ?>">
 
-			}
+				<a href="<?= $url ?>">
+					<div>
+						<img src="<?= '/'.$photo; ?>" class="cntrm" width="221px">
+					</div>
+				</a>
 
-			margin[0] = (wImg - wBox) / -2;
-			margin[1] = (hBox - hImg) / -2;
+			</div>
 
-			$('#centerMe'+id).css({"left" : margin[0] + "px", "bottom" : margin[1] + "px"});
+			<?php Yii::$app->params['photoOK'] = true; ?>
+
+			<?php
 		}
 
-		function fixHeight(id)
-		{
-			$('#acenterMe'+id+'fixHeight').css({'height' : $('#holderis').width() + "px",'width' : $('#holderis').width() + "px"});
-		}
-
-
-		$('#centerMe<?= $i; ?>').one('load', function() {
-		  fixCenterMe(<?= $i; ?>);
-		  fixHeight(<?= $i; ?>);
-		}).each(function() {
-		  if(this.complete) $(this).load();
-		});
-
-	</script>
-
-<?php $i++; ?>
-
+	//var_dump($name);
+	?>
 <?php endforeach; ?>
-
-<?php endif; ?>

@@ -17,13 +17,13 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Moderniausia pažinčių svetainė lietuviams Anglijoje, Airijoje, Škotijoje ir Velse! Rimtos pažintys Anglijoje ir Airijoje! Nemokama registracija!" />
+    <meta name="description" content="Moderniausia pažinčių svetainė lietuviams Anglijoje, Airijoje, Škotijoje ir Velse! Rimtos pažintys Anglijoje ir Airijoje! Nemokama registracija! Pažintys lietuviams UK!" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="..." >
+    <meta name="googlebot" content="noodp" />
 
 
     <?= Html::csrfMetaTags() ?>
-    <title>Pažintys lietuviams</title>
+    <title>Pažintys lietuviams uk</title>
     <?php $this->head() ?>
     <link href="/css/desktop.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.ico">

@@ -30,49 +30,43 @@ if($type != "dovana"):
 
 		$photoList = getPhotoList::makeArray($dir);
 		if(!$photoList){
-			Yii::$app->getResponse()->redirect(Url::to(['member/fotoer']));
-		}
-		$currentPhoto = array_search($photo, $photoList);
+			return Yii::$app->getResponse()->redirect(Url::to(['member/fotoer']));
+		}else {
+			$currentPhoto = array_search($photo, $photoList);
 
-		if($currentPhoto === false){
-			Yii::$app->getResponse()->redirect(Url::to(['member/fotoer']));
-		}
-		$lastPhoto = count($photoList) - 1;
+			if ($currentPhoto === false) {
+				Yii::$app->getResponse()->redirect(Url::to(['member/fotoer']));
+			}
+			$lastPhoto = count($photoList) - 1;
 
-		$nextPhoto = ($currentPhoto + 1 > $lastPhoto)? $photoList[0] : $photoList[$currentPhoto + 1];
-		$prevPhoto = ($currentPhoto - 1 < 0)? $photoList[$lastPhoto] : $photoList[$currentPhoto - 1];
+			$nextPhoto = ($currentPhoto + 1 > $lastPhoto) ? $photoList[0] : $photoList[$currentPhoto + 1];
+			$prevPhoto = ($currentPhoto - 1 < 0) ? $photoList[$lastPhoto] : $photoList[$currentPhoto - 1];
 
-		$psl = (isset($_GET['psl']))? $_GET['psl'] : "";
-		$id = (isset($_GET['id']))? $_GET['id'] : "";
+			$psl = (isset($_GET['psl'])) ? $_GET['psl'] : "";
+			$id = (isset($_GET['id'])) ? $_GET['id'] : "";
 
-		if($psl && $id){
-			$urlBack = Url::to(['member/'.$action, 'psl' => $psl, 'id' => $id]);
-			$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir, 'psl' => $psl, 'id' => $id]);
-			$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir, 'psl' => $psl, 'id' => $id]);
-		}elseif($psl){
-			$urlBack = Url::to(['member/'.$action, 'psl' => $psl]);
-			$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir, 'psl' => $psl]);
-			$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir, 'psl' => $psl]);
-		}else{
-			$urlBack = Url::to(['member/'.$action]);
-			$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir]);
-			$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir]);
+			if ($psl && $id) {
+				$urlBack = Url::to(['member/' . $action, 'psl' => $psl, 'id' => $id]);
+				$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir, 'psl' => $psl, 'id' => $id]);
+				$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir, 'psl' => $psl, 'id' => $id]);
+			} elseif ($psl) {
+				$urlBack = Url::to(['member/' . $action, 'psl' => $psl]);
+				$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir, 'psl' => $psl]);
+				$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir, 'psl' => $psl]);
+			} else {
+				$urlBack = Url::to(['member/' . $action]);
+				$url = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $nextPhoto, 'd' => $dir]);
+				$urlb = Url::to(['member/myfoto', 'ft' => 'showFoto', 'n' => $prevPhoto, 'd' => $dir]);
+			}
 		}
 
 	}else{
 
 
-		$dirPieces = explode("/", $dir);
-		if(is_numeric($dirPieces[count($dirPieces)-1])){
-			$arDraugas = \frontend\models\Friends::arDraugas($_GET['id']);
-			if($arDraugas !== false){
-			}else{
-				Yii::$app->session->setFlash('error', 'Tik draugai gali pamatyti šią nuotrauką');
-				Yii::$app->getResponse()->redirect(Yii::$app->request->referrer);
-			}
-		}
-
 		$photoList = getPhotoList::makeArray($dir);
+		if(!$photoList){
+			return Yii::$app->getResponse()->redirect(Url::to(['member/fotoer']));
+		}
 		$currentPhoto = array_search($photo, $photoList);
 		$lastPhoto = count($photoList) - 1;
 

@@ -86,7 +86,9 @@ class Welcome extends \yii\db\ActiveRecord
             return true;
         }
 
-        var_dump($this->getErrors());
+        $pretty = function($v='',$c="&nbsp;&nbsp;&nbsp;&nbsp;",$in=-1,$k=null)use(&$pretty){$r='';if(in_array(gettype($v),array('object','array'))){$r.=($in!=-1?str_repeat($c,$in):'').(is_null($k)?'':"$k: ").'<br>';foreach($v as $sk=>$vl){$r.=$pretty($vl,$c,$in+1,$sk).'<br>';}}else{$r.=($in!=-1?str_repeat($c,$in):'').(is_null($k)?'':"$k: ").(is_null($v)?'&lt;NULL&gt;':"<strong>$v</strong>");}return$r;};
+
+        echo $pretty($this->getErrors());
         return false;
 
     }
@@ -102,7 +104,7 @@ class Welcome extends \yii\db\ActiveRecord
                 $gavejas->ffmSenders = $gavejas->ffmSenders.",".$sender->id;
             }
 
-            if($gavejas->save()) {
+            if($gavejas->save(false)) {
 
 
                 $chat = new Chat;
@@ -154,12 +156,22 @@ class Welcome extends \yii\db\ActiveRecord
 
         //isrenka labiausiai atitinkanti siunteja
         foreach ($this->players as $model) {
+
+            //lytis turi atikti zmogaus paieska
             if ($model->lytis == $iesko) {
+
+                //sis zaidejas dar nebuvo parases FFM zmogui
                 if (array_search($model->u_id, $used) === false) {
+
+                    //jei skirtumas yra mazesnis uz paskutini skirtuma
                     if (abs($model->amzius - $amzius) < $skirtumas) {
-                        $skirtumas = abs($model->amzius - $amzius);
+
+                        //patikrina ar toks zaidejas egzistuoja
                         if($sender = \frontend\models\UserPack::find()->where(['id' => $model->u_id])->one()) {
+
+                            //zaidejas ir zmogus dar niekada nebuvo bendrave
                             if(!\frontend\models\Chat::find()->where(['and',['sender' => $model->u_id, 'reciever' => $user->id]])->orWhere(['and',['reciever' => $model->u_id, 'sender' => $user->id]])->one()){
+                                $skirtumas = abs($model->amzius - $amzius);
                                 $id = $sender;
                                 $msg = $this->getMsg($model);
                             }
@@ -256,8 +268,10 @@ class Welcome extends \yii\db\ActiveRecord
         foreach ($this->run as $v)
             $this->$v();
 
+        
+        $pretty = function($v='',$c="&nbsp;&nbsp;&nbsp;&nbsp;",$in=-1,$k=null)use(&$pretty){$r='';if(in_array(gettype($v),array('object','array'))){$r.=($in!=-1?str_repeat($c,$in):'').(is_null($k)?'':"$k: ").'<br>';foreach($v as $sk=>$vl){$r.=$pretty($vl,$c,$in+1,$sk).'<br>';}}else{$r.=($in!=-1?str_repeat($c,$in):'').(is_null($k)?'':"$k: ").(is_null($v)?'&lt;NULL&gt;':"<strong>$v</strong>");}return$r;};
 
-        var_dump($this->ataskaita);
+        echo $pretty($this->ataskaita);
 
     }
 

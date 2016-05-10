@@ -72,7 +72,7 @@ if(!is_dir('uploads/'.$user->id.'/profile')){
 
 $files=\yii\helpers\FileHelper::findFiles('uploads/'.$user->id.'/profile');
 
-/*
+
 if(!empty($files)){
 
     $file = explode('\\', $files[0]);
@@ -87,8 +87,8 @@ if(!empty($files)){
     $urlToProfilePhoto = "#";
 }
 
-*/
 
+/*
 
 if(!empty($files)){
 
@@ -111,7 +111,7 @@ if(!empty($files)){
     $urlToProfilePhoto = "#";
 
 }
-
+*/
 
 
 ?>

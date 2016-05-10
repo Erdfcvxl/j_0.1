@@ -86,12 +86,13 @@ class LoginForm extends Model
         }
 
 
-
         if ($this->validate()) {
-            if (!$this->hasErrors() && $user = $this->getUser()) {
-                
+            if (!$this->hasErrors()) {
+
 
                 if($users = $this->getUsers()){
+
+
                     foreach ($users as $user) {
                         if($user->facebook){
                             if($user->password_hash != '' && Yii::$app->getSecurity()->validatePassword($this['password'], $user->password_hash)){

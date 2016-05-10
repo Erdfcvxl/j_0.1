@@ -690,145 +690,66 @@ class Albums extends \yii\db\ActiveRecord
 
     public function saveToProfile($id, $str)
     {
+
         $check[0] = false;
         $pass = false;
         $check['ext'] = "";
         $check['complete'] = "";
-        
-        if(!$str){
-            $structure = "uploads/".$id;    
-        }else{
-            $structure = "uploads/".$id."/".$str;  
-        }
 
-        if (!file_exists($structure)) {
-            BaseFileHelper::createDirectory($structure, $mode = 0777);
-        }
+        $path = "uploads/".$id;
 
         $prefix = time().md5(uniqid(mt_rand(), true));
-        $new_file_name_full = 'BFl'.$prefix.'EFl'.$id;
+        $full = 'BFl'.$prefix.'EFl'.$id . '.' . $this->file->extension;
+        $thumb = 'BTh'.$prefix.'ETh'.$id . '.' . $this->file->extension;
 
-        if ($this->file && $this->validate()) {   
-            $pass = true;
+        if ($this->file && $this->validate()) {
 
-            $this->file->saveAs($structure.'/'.$new_file_name_full.'.' . $this->file->extension);
-            // frame, rotate and save an image
-            $imagine = new \Imagine\Gd\Imagine;
-            $image = $imagine->open($structure.'/'.$new_file_name_full.'.'.$this->file->extension);
+            BaseFileHelper::createDirectory($path, 0777);
 
-            $width = $image->getSize()->getWidth();
-            $height = $image->getSize()->getHeight();
+            $this->file->saveAs($path . $full);
 
-            $aspect_ratio = $width / $height;
+            $imagine = new Imagine();
 
-            if($width == $height){
-                $image  ->resize(new Box(720, 720))
-                        ->save($structure.'/'.$new_file_name_full.'.'.$this->file->extension, ['quality' => 85]);
-            }else if($aspect_ratio > 1){
+            $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
 
-                $action = $image->getSize()->heighten(720);
+            $size = new \Imagine\Image\Box(250, 250);
+            $imagine->open($path . $full)
+                ->thumbnail($size, $mode)
+                ->save($path . $thumb);
 
-                $size = new Box($action->getWidth(), $action->getHeight());
+            $model = new Photos;
+            $model->u_id = Yii::$app->user->id;
+            $model->pureName = $prefix;
+            $model->ext = $this->file->extension;
+            $model->friendsOnly = 0;
+            $model->timestamp = time();
+            $model->save();
 
-                $image  ->resize($size)
-                        ->save($structure.'/'.$new_file_name_full.'.'.$this->file->extension, ['quality' => 85]);
-            }else{
-                $action = $image->getSize()->widen(1280);
+            $imagine = new Imagine();
 
-                $size = new Box($action->getWidth(), $action->getHeight());
-                $size2 = new Box($action->getWidth()-4, $action->getHeight()-4);
+            $profileName = '531B' . Yii::$app->user->id . 'Iav.' . $this->file->extension;
 
-                $image  ->resize($size)
-                        ->save($structure.'/'.$new_file_name_full.'.'.$this->file->extension, ['quality' => 85]);
-            }
+            $model = User::find()->where(['id' => Yii::$app->user->id])->one();
+            $model->avatar = $this->file->extension;
+            $model->save();
+
+            $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+
+            $size = new \Imagine\Image\Box(250, 250);
+            $imagine->open($path . $full)
+                ->thumbnail($size, $mode)
+                ->save('uploads/' . $profileName);
 
             $check[0] = true;
-            $check['ext'] = $this->file->extension;
-
-        }
-
-
-        $new_file_name = 'BTh'.$prefix.'Eth'.$id;
-
-        if ($pass) {
-            // frame, rotate and save an image
-            $imagine = new \Imagine\Gd\Imagine;
-            $image = $imagine->open($structure.'/'.$new_file_name_full.'.'.$this->file->extension);
-
-            $width = $image->getSize()->getWidth();
-            $height = $image->getSize()->getHeight();
-
-            $aspect_ratio = $width / $height;
-
-            if($width == $height){
-                $image  ->resize(new Box(250, 250))
-                        ->save($structure.'/'.$new_file_name.'.'.$this->file->extension, ['quality' => 85]);
-            }else if($aspect_ratio > 1){
-
-                $action = $image->getSize()->heighten(254);
-
-                $size = new Box($action->getWidth(), $action->getHeight());
-
-                $image  ->resize($size)
-                        ->save($structure.'/'.$new_file_name.'.'.$this->file->extension, ['quality' => 85]);
-            }else{
-                $action = $image->getSize()->widen(254);
-
-                $size = new Box($action->getWidth(), $action->getHeight());
-                $size2 = new Box($action->getWidth()-4, $action->getHeight()-4);
-
-                $image  ->resize($size)
-                        ->save($structure.'/'.$new_file_name.'.'.$this->file->extension, ['quality' => 85]);
-            }
-
             $check[1] = true;
-            $check['n'] = $new_file_name_full.'.'.$this->file->extension;
-            $check['d'] = $structure;
-        }
-
-        $profileName = '531B'.$id.'Iav';
-
-        if ($pass) {
-
-            // frame, rotate and save an image
-            $imagine = new \Imagine\Gd\Imagine;
-            $image = $imagine->open($structure.'/'.$new_file_name_full.'.'.$this->file->extension);
-
-            $width = $image->getSize()->getWidth();
-            $height = $image->getSize()->getHeight();
-
-            $aspect_ratio = $width / $height;
-
-            if($width == $height){
-                $image  ->resize(new Box(500, 500))
-                        ->save("uploads".'/'.$profileName.'.'.$this->file->extension, ['quality' => 85]);
-            }else if($aspect_ratio > 1){
-
-                $action = $image->getSize()->heighten(504);
-
-                $size = new Box($action->getWidth(), $action->getHeight());
-
-                $image  ->resize($size)
-                        ->save("uploads".'/'.$profileName.'.'.$this->file->extension, ['quality' => 85]);
-            }else{
-                $action = $image->getSize()->widen(504);
-
-                $size = new Box($action->getWidth(), $action->getHeight());
-                $size2 = new Box($action->getWidth()-4, $action->getHeight()-4);
-
-                $image  ->resize($size)
-                        ->save("uploads".'/'.$profileName.'.'.$this->file->extension, ['quality' => 85]);
-            }
 
             $check['ext'] = $this->file->extension;
+            $check['n'] = $new_file_name_full . '.' . $this->file->extension;
+            $check['d'] = $path;
             $check['complete'] = 1;
-        }
 
-        if($pass){
             Yii::$app->session->setFlash('success', "Nuotrauka sėkmingai įkelta!");
         }
-
-
 
         return $check;
 

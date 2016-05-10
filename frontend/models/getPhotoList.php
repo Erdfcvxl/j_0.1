@@ -3,43 +3,67 @@
 namespace frontend\models;
 
 use Yii;
+use yii\helpers\BaseFileHelper;
+use frontend\models\Photos;
 
 class getPhotoList
 {
 
     public static function makeArray($dir)
     {
-        $dir = substr($dir, 1);
 
-        $dh = opendir($dir);
+        $prideti = true;
+        $result = null;
 
-        while (false !== ($filename = readdir($dh))) {
-            
-            
-            if(strlen($filename) > 2){
+        $dirParts = explode('/', $dir);
 
-                $pirmostrys = substr($filename, 0, 3);
+        $photos = BaseFileHelper::findFiles(substr($dir, 1));
+
+        foreach ($photos as $photo){
+
+            $photo = BaseFileHelper::normalizePath($photo, '/');
+            $parts = explode('/', $photo);
+            $truename = $name = $parts[count($parts)-1];
+
+
+            if(count($parts) == 3)
+                $name = $parts[count($parts)-1];
+            else
+                $name = $parts[count($parts)-2].'/'.$parts[count($parts)-1];
+
+            if(strlen($name) > 2){
+
+                $pirmostrys = substr($truename, 0, 3);
 
                 if($pirmostrys == "BTh"){
-                    $files[] = $filename;
+
+                    $files[] = $name;
                 }
             }
         }
+
 
         if(isset($files)){
 
             sort($files);
 
-	        foreach($files as $file){
 
+
+	        foreach($files as $file){
+                $prideti = true;
 
         	    $i = -5;
                 for($ratas = 0; $ratas < 100; $ratas++){
-                    if(substr($file, $i, 2) != "th"){
-                        $i--;
-                    }else{
+                    if(substr($file, $i, 2) == "Fl")
                         break;
-                    }
+
+                    if(substr($file, $i, 2) == "th")
+                        break;
+
+                    if(substr($file, $i, 2) == "Th")
+                        break;
+
+                    $i--;
                 }
                 $i = $i + 2;
 
@@ -53,35 +77,49 @@ class getPhotoList
 	            $fullname = "BFl".$irBeGalo."EFl".$lastChar;
 
 
-	            $result[] = $fullname;
+
+                if($dirParts[2] != Yii::$app->user->id)
+                    if($model = Photos::find()->where(['pureName' => $irBeGalo])->andWhere(['u_id' => $dirParts[2]])->one())
+                        if($model->friendsOnly){
+                            if(!\frontend\models\Friends::arDraugas($dirParts[2]))
+                                $prideti = false;
+                        }
+
+
+                //
+                if($prideti)
+	                $result[] = $fullname;
 	        }
 
         }else{
-        	$result = null;
+        	$result = [];
         }
-    
+
 
         return $result;
     }
 
     public static function nameExtraction($n)
     {
+        set_time_limit (3);
+
         $pirmostrys = substr($n, 0, 3);
 
         if($pirmostrys){
             if(substr($n, 0, 1) == "B" && strlen($n) > 10){
 
                 $i = -5;
-                while(true){
-                    if(substr($n, $i, 2) != "Fl"){
-                        if(substr($n, $i, 2) != "th"){
-                            $i--;
-                        }else{
-                            break;
-                        }
-                    }else{
+                while(true || $i < -100){
+                    if(substr($n, $i, 2) == "Fl")
                         break;
-                    }
+
+                    if(substr($n, $i, 2) == "th")
+                        break;
+
+                    if(substr($n, $i, 2) == "Th")
+                        break;
+
+                    $i--;
                 }
                 $i = $i + 2;
 
@@ -97,13 +135,40 @@ class getPhotoList
 
         $ext = substr($n, -3);
 
+        $ending = substr($n, -3 - $i - 2, 2);
+
 
         $complete['pure'] = $irBeGalo;
         $complete['pirmostrys'] = $pirmostrys;
         $complete['lastChar'] = $lastChar;
+        $complete['ending'] = $ending;
         $complete['ext'] = $ext;
         $complete['ownerId'] = $ownerId;
 
         return $complete;
+
+    }
+
+    public static function fixProfileDir($id)
+    {
+
+        $trinti = false;
+
+        $photos = BaseFileHelper::findFiles("uploads/".$id."/");
+
+        foreach ($photos as $photo){
+            $photo = BaseFileHelper::normalizePath($photo, '/');
+            $parts = explode('/', $photo);
+
+            if($parts[2] == "profile"){
+                $trinti = true;
+                break;
+            }
+        }
+
+        if($trinti)
+            Photos::deleteProfileDir($id);
+
+
     }
 }
