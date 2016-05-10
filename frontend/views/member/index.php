@@ -11,7 +11,6 @@ use frontend\models\UserSearch;
 use frontend\models\Chat;
 use frontend\models\User;
 
-
 ?>
 
 

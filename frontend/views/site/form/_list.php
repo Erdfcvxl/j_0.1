@@ -1124,7 +1124,7 @@ $stilius = array(
 );
 
 for($i = date('Y')-18; $i > date('Y') - 80; $i--){
-    $year['a'.$i] = $i;
+    $year[$i] = $i;
 }
 for($i = 1; $i <= 12; $i++){
     $month[$i] = $i;

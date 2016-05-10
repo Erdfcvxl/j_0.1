@@ -59,7 +59,8 @@ class UserSearch extends User
 
         require(__DIR__ ."/../../frontend/views/site/form/_list.php");
         $query = User::find()
-            ->select('user.*, info.*')
+            ->select(['user.*', 'info.iesko', 'info.orentacija', 'info.gimimoTS'])
+            //->orderBy(['created_at' => SORT_DESC])
             ->joinWith('info2');
 
         $dataProvider = new ActiveDataProvider([
@@ -70,7 +71,7 @@ class UserSearch extends User
             'sort' => [
                 'defaultOrder' => [
                     'created_at' => SORT_DESC,
-                    'username' => SORT_ASC,
+                    //'username' => SORT_ASC,
                 ]
             ],
         ]);

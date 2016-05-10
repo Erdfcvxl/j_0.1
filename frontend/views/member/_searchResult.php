@@ -73,7 +73,7 @@ prie session prideda ++, kai session daugiau negu 6 uzdedi </div><div class="row
 	            <span class="ProfInfo"
                       style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= $diff->y; ?>,
 
-                    <?= ($dataInfo['miestas'] !== '') ? \frontend\models\City::findOne((int)$dataInfo['miestas'])->title : "Nenurodyta"; ?>
+                    <?= ($dataInfo['miestas'] != '' && $dataInfo['miestas']) ? \frontend\models\City::findOne((int)$dataInfo['miestas'])->title : "Nenurodyta"; ?>
 
                     <?php
                     if (isset($rodyti_kilometrus) && $rodyti_kilometrus == 1)

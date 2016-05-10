@@ -2608,7 +2608,7 @@ class MemberController extends \yii\web\Controller
             $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
 
             if ($attr == 'metai') {
-                $model->$attr = substr($val, 1);
+                $model->$attr = $val;
             } else {
                 $model->$attr = $val;
             }
