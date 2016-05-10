@@ -102,6 +102,26 @@ class MemberController extends \yii\web\Controller
 
         $this->updateOnline();
 
+        var_dump(Yii::$app->request->post());
+
+        if (isset($_POST['perskaiciau-pakvietimo-info']) && $_POST['perskaiciau-pakvietimo-info'] != null)
+        {
+            $invite = \frontend\models\Invite::findOne($_POST['perskaiciau-pakvietimo-info']);
+            $invite->seen = 1;
+            var_dump($invite->save());
+        }
+        
+        if ($invite = \frontend\models\Invite::find()
+            ->where(['sender' => Yii::$app->user->id])
+            ->andWhere(['points_added' => 1])
+            ->andWhere(['<>', 'receiver', '0'])
+            ->andWhere(['seen' => 0])
+            ->one())
+        {
+            
+            echo Yii::$app->controller->renderPartial('//layouts/includes/_pakvietimu_pranesimas');
+        }
+
         return true; // or false to not run the action
     }
 

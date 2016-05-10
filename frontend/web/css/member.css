@@ -1398,3 +1398,19 @@ div.iesko
     background-image: url('img/mail_green_active.png');
 }
 
+.pakvietimuInfoBox {
+    position: fixed;
+    width: 600px;
+    min-height: 300px;
+    z-index: 20;
+    top: 70px;
+    left: 50%;
+    margin-left: -300px;
+    padding: 0;
+    padding-bottom: 20px;
+    padding-top:60px;
+    text-align: center;
+    background-color: #fff;
+
+}
+
