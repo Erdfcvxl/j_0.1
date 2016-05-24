@@ -5,8 +5,13 @@ use frontend\models\Info2;
 
 <div class="col-xs-3" id="profile">
 
-        <div class="row" style="background-color: #fff;">
+        <div class="row" style="background-color: #fff; position: relative;">
             <img src="<?= \frontend\models\Misc::getAvatar($user); ?>" width="100%"/>
+
+            <div style="position: absolute; top: 15px; right: 15px; font-size: 24px; color: white;">
+                <a href="<?= Url::to(['member/newprofile']);?>"><span class="glyphicon glyphicon-pencil"></span></a>
+
+            </div>
 
             <?php if(!$user->avatar): ?>
                 <div class="uploadHint">

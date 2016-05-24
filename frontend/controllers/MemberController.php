@@ -1113,6 +1113,44 @@ class MemberController extends \yii\web\Controller
         return $this->render('myfoto/newFoto', ['model' => $model]);
     }
 
+    public function actionNewprofile()
+    {
+        $this->enableCsrfValidation = false;
+        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
+
+        if($user->photoLimit < 5){
+            $user->photoLimit = 5;
+            $user->save();
+        }
+
+        $files = (count(\yii\helpers\BaseFileHelper::findFiles("uploads/".$user->id."/"))) / 2;
+
+        $model = new \frontend\models\Upload;
+
+        if($user->photoLimit > $files){
+
+            if(Yii::$app->request->post()) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+                $model->load($_POST);
+                $uploaded = $model->upload(Yii::$app->user->id, null, true);
+
+                Feed::newFoto(Yii::$app->user->id, $uploaded['n'], $uploaded['d']);
+
+                return $this->redirect(Url::to(['member/myfoto']));
+            }
+            //$create = $model->fotoNew(Yii::$app->user->id);
+
+            /*if($create[0] !== false && $create[1] !== false){
+
+            }*/
+        }else{
+            return $this->redirect(Url::to(['member/myfoto', 'psl' => 'limit']));
+            Yii::$app->session->setFlash('danger', 'Jūs pasiekėte nuotraukų limitą');
+        }
+
+        return $this->render('myfoto/newProfile', ['model' => $model]);
+    }
+
     public function actionChangeppic()
     {
         $model = new \frontend\models\Upload;

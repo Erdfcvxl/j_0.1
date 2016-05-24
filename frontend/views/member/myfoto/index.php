@@ -30,6 +30,19 @@ $count = count($photos) / 2;
 ?>
 
 <div class="container" style="width:100%; background-color: #f9f9f9; min-height: 150px; font-size: 12px; text-align: left; padding: 15px;">
+    <?php if(!\frontend\models\Photos::find()->where(['u_id' => Yii::$app->user->id])->andWhere(['profile' => 1])->all()): ?>
+        <div class="alert alert-info">
+            <h3>Dėmesio!</h3>
+            <p>
+                Dėl techninių atnaujinimų jums reikia patvirtinti savo profilio nuotrauką. Tai galite padaryti taip:
+                <ul>
+                    <li>Spustelkite <span class="glyphicon glyphicon-resize-full"></span> apatiniame kairiajame nuotraukos kampe;</li>
+                    <li>Spustelkite <i>Nustatyti kaip profilio nuotrauką</i> viršutinimae kairiajame nuotraukos kampe.</li>
+                </ul>
+            </p>
+        </div>
+    <?php endif; ?>
+
     <?= $this->render('_fotos', ['photos' => $photos]); ?>
     <?= $this->render('_spots', ['photos' => $count]); ?>
 </div>

@@ -70,9 +70,9 @@ if(!is_dir('uploads/'.$user->id.'/profile')){
     mkdir('uploads/'.$user->id.'/profile');
 }
 
-$files=\yii\helpers\FileHelper::findFiles('uploads/'.$user->id.'/profile');
+$files=\yii\helpers\FileHelper::findFiles('uploads/'.$user->id);
 
-
+/*
 if(!empty($files)){
 
     $file = explode('\\', $files[0]);
@@ -86,9 +86,9 @@ if(!empty($files)){
 }else{
     $urlToProfilePhoto = "#";
 }
+*/
 
 
-/*
 
 if(!empty($files)){
 
@@ -98,7 +98,7 @@ if(!empty($files)){
 
     if(count($file) > 0){
 
-        $urlToProfilePhoto = Url::to(['member/fotos', 'ft' => 'showFoto', 'd' => '/uploads/'.$user->id.'/profile', 'psl' => 'p', 'id' => $user->id, 'n' => $file[3]]);
+        $urlToProfilePhoto = Url::to(['member/fotos', 'ft' => 'showFoto', 'd' => '/uploads/'.$user->id, 'psl' => 'p', 'id' => $user->id, 'n' => $file[2]]);
 
     }else{
 
@@ -111,7 +111,6 @@ if(!empty($files)){
     $urlToProfilePhoto = "#";
 
 }
-*/
 
 
 ?>

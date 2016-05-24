@@ -722,6 +722,7 @@ class Albums extends \yii\db\ActiveRecord
             $model->pureName = $prefix;
             $model->ext = $this->file->extension;
             $model->friendsOnly = 0;
+            $model->profile = 1;
             $model->timestamp = time();
             $model->save();
 
