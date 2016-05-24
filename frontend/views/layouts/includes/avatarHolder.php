@@ -78,7 +78,6 @@ use frontend\models\Info2;
         </div>
 
         <?= $this->render('//layouts/includes/pasimatymai'); //Pasimatymų widget ?>
-        <?= $this->render('//layouts/includes/profilio_perziuros'); //Profilio peržiūrų widget ?>
         <?= $this->render('//layouts/includes/referalai'); //Pakvietimu widget ?>
 
 </div>
