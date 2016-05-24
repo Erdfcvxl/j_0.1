@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/msg.php" afterPath="$PROJECT_DIR$/frontend/views/member/msg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/web/css/member.css" afterPath="$PROJECT_DIR$/frontend/web/css/member.css" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="" />
     <ignored path="Auriuiadvanced.iws" />
@@ -36,61 +32,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="avatarHolder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
+      <file leaf-file-name="member.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/member.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="40" selection-end-column="43" />
+            <state relative-caret-position="595">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <element signature="e#6#26#0#PHP" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <marker date="1464119965715" expanded="true" signature="2658:2670" placeholder="..." />
-                <marker date="1464119965715" expanded="true" signature="2954:2986" placeholder="..." />
-                <marker date="1464119965715" expanded="true" signature="3142:3174" placeholder="..." />
+                <element signature="n#style#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pasimatymai.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php">
+      <file leaf-file-name="Pasimatymai.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/models/Pasimatymai.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+            <state relative-caret-position="348">
+              <caret line="148" column="115" selection-start-line="148" selection-start-column="115" selection-end-line="148" selection-end-column="115" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
+      <file leaf-file-name="_date.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/menubar/_date.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding>
-                <element signature="e#6391#8654#0#PHP" expanded="false" />
-                <element signature="e#8660#10658#0#PHP" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoClear.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/InfoClear.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1267">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Info2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Info2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="81" column="37" selection-start-line="65" selection-start-column="5" selection-end-line="81" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/views/layouts/menubar/_else.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/statistika/forum.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/statistika/msg.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/statistika/pop.php" />
@@ -134,7 +104,6 @@
         <option value="$PROJECT_DIR$/frontend/models/UserParams.php" />
         <option value="$PROJECT_DIR$/common/models/User.php" />
         <option value="$PROJECT_DIR$/frontend/models/UserPack.php" />
-        <option value="$PROJECT_DIR$/frontend/views/layouts/member.php" />
         <option value="$PROJECT_DIR$/frontend/web/js/casual.js" />
         <option value="$PROJECT_DIR$/frontend/views/member/_views.php" />
         <option value="$PROJECT_DIR$/frontend/models/Profileview.php" />
@@ -166,6 +135,8 @@
         <option value="$PROJECT_DIR$/frontend/web/css/member.css" />
         <option value="$PROJECT_DIR$/frontend/views/member/msg.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
+        <option value="$PROJECT_DIR$/frontend/views/layouts/member.php" />
+        <option value="$PROJECT_DIR$/frontend/models/Pasimatymai.php" />
       </list>
     </option>
   </component>
@@ -322,11 +293,33 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pzntsltaa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pzntsltaa" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myfoto" />
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menubar" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,7 +440,7 @@
       <workItem from="1462881063917" duration="5000000" />
       <workItem from="1462904953025" duration="4194000" />
       <workItem from="1464092802443" duration="375000" />
-      <workItem from="1464119754959" duration="4018000" />
+      <workItem from="1464119754959" duration="4917000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -673,11 +666,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464120085615</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Pasimayt">
+      <created>1464123871307</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1464123871307</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233495000" />
+    <option name="totallyTimeSpent" value="234394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -764,30 +764,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding>
-            <element signature="e#36#64#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/pviews.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/date.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1193,38 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
           <caret line="44" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Pasimatymai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Info2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="81" column="37" selection-start-line="65" selection-start-column="5" selection-end-line="81" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/InfoClear.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1267">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/web/css/member.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="1379" column="23" selection-start-line="1379" selection-start-column="23" selection-end-line="1379" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1695,6 +1639,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/css/member.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="1379" column="23" selection-start-line="1379" selection-start-column="23" selection-end-line="1379" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#6391#8654#0#PHP" expanded="false" />
+            <element signature="e#8660#10658#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1709,22 +1680,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/InfoClear.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+        <state relative-caret-position="-1267">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/Info2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="42">
+          <caret line="81" column="37" selection-start-line="65" selection-start-column="5" selection-end-line="81" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/_Likesfeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/menubar/_date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
-            <element signature="e#6391#8654#0#PHP" expanded="false" />
-            <element signature="e#8660#10658#0#PHP" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Pasimatymai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="148" column="115" selection-start-line="148" selection-start-column="115" selection-end-line="148" selection-end-column="115" />
+          <folding />
         </state>
       </provider>
     </entry>
