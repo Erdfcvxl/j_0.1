@@ -3911,3 +3911,43 @@
 [09-05-2016 02:23:21] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
 [09-05-2016 02:23:22] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
 [09-05-2016 02:23:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:50:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:50:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[21-05-2016 02:50:16] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:50:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[21-05-2016 02:50:17] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:50:17] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:50:17] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:50:18] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:50:23] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:50:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:50:23] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:50:25] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:50:34] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:50:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:50:35] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:50:36] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:51:39] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:51:39] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:51:39] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:51:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:51:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:51:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:51:43] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:51:44] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:52:33] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:52:33] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:52:33] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:52:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:52:37] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:52:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:52:37] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:52:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 02:52:40] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 02:52:40] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 02:52:40] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 02:52:41] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-05-2016 03:20:04] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-05-2016 03:20:04] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-05-2016 03:20:05] PayPal\Core\PayPalHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[21-05-2016 03:20:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201

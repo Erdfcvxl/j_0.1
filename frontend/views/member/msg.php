@@ -69,8 +69,9 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 <div class="container-fluid" style="padding: 0; font-size: 12px; ">
 
     <div class="row" >
-        <div class="col-xs-3" style="background-color: #D1D1D1;">
-
+        <div class="col-xs-3">
+            <div class="row" style="background-color: #D1D1D1;">
+                <div class="col-xs-12">
             <a href="<?= Url::to(['member/user', 'id'=>$thisId]); ?>">
                 <div class="row" style="margin-top: -25px;">
                     <div style="position: relative;">
@@ -157,7 +158,7 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" style="margin-bottom: 60px;">
                 <div class="col-xs-12">
                     <div class="leftcorner">
                         <a href="<?= Url::to(['member/help']); ?>">Blokuoti naudotoją</a><br>
@@ -165,6 +166,12 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
                     </div>
                 </div>
             </div>
+
+            </div>
+                </div>
+
+            <?= $this->render('//layouts/includes/pasimatymai'); //Pakvietimu widget ?>
+            <?= $this->render('//layouts/includes/referalai'); //Pakvietimu widget ?>
         </div>
 
 

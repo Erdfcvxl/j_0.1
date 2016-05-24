@@ -55,6 +55,7 @@ $taveziurejo = \frontend\models\Profileview::find()->where(['ziurimasis' => $use
     <a href="<?= Url::to(['member/date'])?>" class="date_top <?php echo($puslapis == "date")? "date_top_active" : "" ?>">
         <div class="">
             Pasimatymai
+            <span class="msgCount btn btn-circle" id="megTopIndicator" style="<?= (\frontend\models\Pasimatymai::isNew() > 0)? 'display: block' : 'display: none;' ?>"><?= (\frontend\models\Pasimatymai::isNew() > 0)? \frontend\models\Pasimatymai::isNew() : "" ?></span>
         </div>
     </a>
 

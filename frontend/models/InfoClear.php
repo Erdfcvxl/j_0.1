@@ -114,8 +114,8 @@ class InfoClear extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    /*public function getUser()
+    public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'u_id']);
-    }*/
+    }
 }

@@ -337,6 +337,17 @@ body{
 	color: white;
 	background-color: #ff97a6;
 }
+.date{
+	background-color: #adc472;
+}
+.date:hover{
+	color: white;
+	background-color: #adc472;
+}
+.date_active{
+	color: white;
+	background-color: #adc472;
+}
 .search-ptop .ptop{
 	background-color: #ecebe7;
 }
@@ -1342,3 +1353,91 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 
 }
 
+#pasimatymai-ne {
+	background-color: #D2D5DA;
+}
+
+#pasimatymai-ne:hover {
+	background-color: #DA644D;
+}
+#pasimatymai-ne:active {
+    background-color: #8C1700;
+}
+
+#pasimatymai-taip {
+	background-color: #ffffff;
+}
+
+#pasimatymai-taip:hover {
+	background-color: #76D483;
+}
+
+#pasimatymai-taip:active {
+	background-color: #488E24;
+}
+
+#pasimatymai-vardas {
+	font-weight: bold;
+}
+
+#pasimatymai-miestas {
+	text-align: right;
+	font-style: italic;
+}
+
+.sidebar-pavadinimas {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 16px;
+	font-color: #00000;
+	font-weight: 600;
+}
+
+#profilio_perziuros-juosta {
+	background-color: #E3F1D0;
+	line-height: 60px;
+	border-bottom: 1px #fff;
+}
+
+#profilio_perziuros-daugiau {
+	background-color: #E3F1D0;
+	text-align: center;
+	line-height: 30px;
+}
+
+#profilio_perziuros-daugiau:hover {
+	background-color: #CDE0B3;
+}
+
+#profilio_perziuros-vardas {
+	font-weight: bold;
+}
+
+#profilio_perziuros-miestas {
+	text-align: right;
+	font-style: italic;
+}
+
+
+#profilio_perziuros-ankstesnis {
+	background-color: #ffffff;
+}
+
+#profilio_perziuros-ankstesnis:hover {
+	background-color: #D2D5DA;
+}
+#profilio_perziuros-ankstesnis:active {
+	background-color: #848484;
+}
+
+#profilio_perziuros-kitas {
+	background-color: #ffffff;
+}
+
+#profilio_perziuros-kitas:hover {
+	background-color: #D2D5DA;
+}
+
+#profilio_perziuros-kitas:active {
+	background-color: #848484;
+}

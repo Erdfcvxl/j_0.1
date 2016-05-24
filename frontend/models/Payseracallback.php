@@ -74,9 +74,11 @@ class Payseracallback extends Model
 
                             $order->done = 1;
                             $order->save();
-                        }
 
-                        echo 'OK';
+                            echo 'OK abonementas vartototojui '. Yii::$app->user->identity->username .' sėkmingai pratęstas.';
+                        }
+                        else
+                            echo 'OK abonementas vartototojui '. Yii::$app->user->identity->username .' sėkmingai pratęstas';
                     }
 
             }

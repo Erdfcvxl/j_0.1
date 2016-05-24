@@ -19,7 +19,7 @@ use frontend\models\Info2;
             <div class="col-xs-12" style="text-align: center; padding: 5px 0 2px;">
                 <span class="ProfName"><?= $user->username;?><?= \frontend\models\Misc::vip($user); ?></span><br>
 
-                <?php 
+                <?php
                     $info = Info2::find()->where(['u_id' => Yii::$app->user->identity->id])->one();
 
                     if(substr($info->metai, 0, 1) == 'a'){
@@ -67,11 +67,13 @@ use frontend\models\Info2;
 
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-12" style="font-size: 12px; color: grey; text-align: center;">
-                <?= $data; ?><br> 
+                <?= $data; ?><br>
                 <a href="<?= Url::current(['pratesti' => 1]); ?>" class="btn btn-reg" style="font-size: 14px; padding: 0 20px; border-radius: 0;">Pratęsti</a>
             </div>
         </div>
 
+        <?= $this->render('//layouts/includes/pasimatymai'); //Pasimatymų widget ?>
+        <?= $this->render('//layouts/includes/profilio_perziuros'); //Profilio peržiūrų widget ?>
         <?= $this->render('//layouts/includes/referalai'); //Pakvietimu widget ?>
 
 </div>

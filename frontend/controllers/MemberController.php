@@ -2556,10 +2556,14 @@ class MemberController extends \yii\web\Controller
         }
 
         if ($psl == 'abipusiai') {
+            //$query = \frontend\models\Pasimatymai::find()->select(['receiver'])->where(['sender' => Yii::$app->user->id])->andWhere(['going' => 1])->andWhere(['<>', 'abipusis', '1'])->orderBy('created_timestamp DESC')->all();
+            \frontend\models\Pasimatymai::updateAll(['receiver_read' => 1], 'receiver = '. Yii::$app->user->id .' AND going = 1 AND abipusis = 1');
+            //var_dump(\frontend\models\Pasimatymai::updateAll(['receiver_read' => 1], 'receiver = '. Yii::$app->user->id .' AND going = 1 AND abipusis != 1'));
             return $this->abipusiaiPasimatymai();
         } else if ($psl == 'tu') {
             return $this->tuPakvieteiPasimatyman();
         } else {
+            \frontend\models\Pasimatymai::updateAll(['receiver_read' => 1], 'receiver = '. Yii::$app->user->id .' AND going = 1 AND abipusis != 1');
             return $this->tavePakvietePasimatyman();
         }
 
@@ -2568,28 +2572,29 @@ class MemberController extends \yii\web\Controller
 
     public function tuPakvieteiPasimatyman()
     {
-        $model = new \frontend\models\Favourites;
-        $dataProvider = $model->maneMegsta();
+        $model = new \frontend\models\Pasimatymai;
+        $dataProvider = $model->tuPakvietei();
 
-        return $this->render('favourites', [
+        return $this->render('pasimatymai', [
             'dataProvider' => $dataProvider,
         ]);
-    }public function tavePakvietePasimatyman()
+    }
+    public function tavePakvietePasimatyman()
     {
-        $model = new \frontend\models\Favourites;
-        $dataProvider = $model->maneMegsta();
+        $model = new \frontend\models\Pasimatymai;
+        $dataProvider = $model->tavePakviete();
 
-        return $this->render('favourites', [
+        return $this->render('pasimatymai', [
             'dataProvider' => $dataProvider,
         ]);
     }
 
     public function abipusiaiPasimatymai()
     {
-        $model = new \frontend\models\Favourites;
-        $dataProvider = $model->manoFavourites();
+        $model = new \frontend\models\Pasimatymai;
+        $dataProvider = $model->abipusiai();
 
-        return $this->render('favourites', [
+        return $this->render('pasimatymai', [
             'dataProvider' => $dataProvider,
         ]);
     }

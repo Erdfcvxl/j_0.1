@@ -30,10 +30,10 @@ class Paysera
         try {
             $request = \frontend\components\WebToPay::buildRequest(array(
                 'projectid'     => 80318,
-                'sign_password' => '75f1898c7364e38f49dcb0382d54aeec',
+                'sign_password' => '1c6e02b62a98d8d9341a81521edd3426',
                 'orderid'       => $orderId,
                 'amount'        => $amount * 100,
-                'paytext'       => 'Abonemento pratęsimas vartotojui (' . Yii::$app->user->identity->email . ') puslapyje [site_name]',
+                'paytext'       => 'Abonemento pratęsimas vartotojui (' . Yii::$app->user->identity->username . ') puslapyje pazintyslietuviasm.co.uk',
                 'currency'      => 'GBP',
                 'country'       => 'GB',
                 'p_email'       => Yii::$app->user->identity->email,
