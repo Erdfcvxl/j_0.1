@@ -18,7 +18,7 @@ var hide_pasimatymai = 1;
 function pasimatymai(going)
 {
     $.ajax({
-       url: '". Url::to(['ajax/pasimatymai']) ."',
+       url: '" . Url::to(['ajax/pasimatymai']) . "',
        type: 'post',
        data: {
                  going: going, 
@@ -64,10 +64,10 @@ $(document).on('click', '#pasimatymai-ne', function (){
 //function profilio_perziuros()
 //{
 //    $.ajax({
-//       url: '". Url::to(['ajax/profilio_perziuros']) ."',
+//       url: '" . Url::to(['ajax/profilio_perziuros']) . "',
 //       type: 'post',
 //       data: {
-//                 _csrf : '".Yii::$app->request->getCsrfToken()."',
+//                 _csrf : '" . Yii::$app->request->getCsrfToken() . "',
 //             },
 //       success: function (data) {
 //       
@@ -104,12 +104,10 @@ $(document).on('click', '#pasimatymai-ne', function (){
             <div class="row" id="pasimatymai-foto"></div>
 
             <div class="row">
-                <div class="col-xs-6" id="pasimatymai-vardas"></div>
-                <div class="col-xs-6" id="pasimatymai-miestas"></div>
+                <div class="col-xs-12" id="pasimatymai-vardas"></div>
             </div>
             <div class="row">
-                <div class="col-xs-8"></div>
-                <div class="col-xs-4" id="pasimatymai-atstumas"></div>
+                <div class="col-xs-12" id="pasimatymai-miestas"></div>
             </div>
         </div>
 

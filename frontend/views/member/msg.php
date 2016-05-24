@@ -158,7 +158,7 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
                 </div>
             </div>
 
-            <div class="row" style="margin-bottom: 60px;">
+            <div class="row" style="margin-bottom: 20px;">
                 <div class="col-xs-12">
                     <div class="leftcorner">
                         <a href="<?= Url::to(['member/help']); ?>">Blokuoti naudotoją</a><br>

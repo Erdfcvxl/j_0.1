@@ -62,7 +62,7 @@ class AjaxController extends \yii\web\Controller
 
         $buve_pasimatymuose = array_map('strval', $buve_pasimatymuose);
 
-        $query = \frontend\models\InfoClear::find()->select(['info.u_id', 'info.miestas'])
+        $query = \frontend\models\InfoClear::find()->select(['info.u_id', 'info.miestas', 'info.metai', 'info.menuo', 'info.diena'])
             ->andWhere(['not', ['info.miestas' => null]])
             ->andWhere(['not', ['info.miestas' => '']])
             ->andwhere(['miestas' => $miestu_id])
@@ -116,15 +116,27 @@ class AjaxController extends \yii\web\Controller
 //            else
             $hide_pasimatymai = 0;
 
+            if (isset($query->gimimoTS))
+                $metai = $query->gimimoTS . ', ';
+            else
+                $metai = '';
+
+            if($query->diena != '' && $query->menuo != '' && $query->metai != ''){
+                $d1 = new \DateTime($query->diena.'.'.$query->menuo.'.'.$query->metai);
+                $d2 = new \DateTime();
+                $metai = $d2->diff($d1)->y . ', ';
+            }else{
+                $metai = '';
+            }
 
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             return [
                 'id' => $query->user->id,
                 'foto' => $foto,
                 'vardas' => $query->user->username,
-                'miestas' => $user_miestas->title,
+                'miestas' => $metai . $user_miestas->title,
                 'hide_pasimatymai' => $hide_pasimatymai,
-                'data' => $buve_pasimatymuose,
+                //'data' => $buve_pasimatymuose,
             ];
         } else {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

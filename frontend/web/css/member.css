@@ -1377,11 +1377,12 @@ gid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#
 }
 
 #pasimatymai-vardas {
+	text-align: center;
 	font-weight: bold;
 }
 
 #pasimatymai-miestas {
-	text-align: right;
+	text-align: center;
 	font-style: italic;
 }
 
