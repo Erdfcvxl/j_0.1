@@ -54,7 +54,11 @@ class Photos extends \yii\db\ActiveRecord
         if(is_dir('uploads/'.$id.'/profile')) {
             BaseFileHelper::copyDirectory('uploads/' . $id . '/profile', 'uploads/' . $id);
             BaseFileHelper::removeDirectory('uploads/' . $id . '/profile');
-            unlink('uploads/' . $id . '/profile');
+            //fixas del erroro
+            if (is_dir('uploads/' . $id . '/profile')) {
+               unlink('uploads/' . $id . '/profile');
+            }
+
         }
     }
 

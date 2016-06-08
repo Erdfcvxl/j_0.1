@@ -47,7 +47,7 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
                     <div class="menuPhoto" style="display: none;" data-trigger="<?= $name['pure'] ?>">
                         <div class="row">
                             <a href="<?= Url::to(['member/changeppic', 'n' => $fullName, 'd' => $dir]); ?>" onclick="return confirm('Ar tikrai norite naudoti šią nuotrauką kaip profilio nuotrauką?');">
-                                <div class="col-xs-6" style="<?= ($model->profile)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-user"></span><div class="labelPhoto">Nustatyti kaip profilio nuotrauką</div></div>
+                                <div class="col-xs-6" style="<?= ($model->profile) ? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-user"></span><div class="labelPhoto">Nustatyti kaip profilio nuotrauką</div></div>
                             </a>
                             <a href="<?= Url::to(['member/deletephoto', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('Ar tikrai norite ištrinti nuotrauką?');">
                                 <div class="col-xs-6"><span class="glyphicon glyphicon-trash"></span><div class="labelPhoto">Trinti</div></div>
@@ -71,6 +71,6 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
             <?php
         }
 
-        //var_dump($name);
+        var_dump($model->profile);
     ?>
 <?php endforeach; ?>
