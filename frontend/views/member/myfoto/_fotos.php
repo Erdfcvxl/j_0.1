@@ -71,6 +71,6 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
             <?php
         }
 
-        var_dump($model->profile);
+//        var_dump($model->profile);
     ?>
 <?php endforeach; ?>
