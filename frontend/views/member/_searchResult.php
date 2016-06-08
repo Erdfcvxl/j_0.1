@@ -28,11 +28,14 @@ if ($timeDiff <= 600) {
 ?>
 
 <?php
+if ($dataInfo['diena'] != NULL && $dataInfo['menuo'] != NULL && $dataInfo['metai'] != NULL)
+{
+    $d1 = new DateTime($dataInfo['diena'] . '.' . $dataInfo['menuo'] . '.' . $dataInfo['metai']);
+    $d2 = new DateTime();
 
-$d1 = new DateTime($dataInfo['diena'] . '.' . $dataInfo['menuo'] . '.' . $dataInfo['metai']);
-$d2 = new DateTime();
+    $diff = $d2->diff($d1);
+}
 
-$diff = $d2->diff($d1);
 
 if (isset(Yii::$app->params['close'])) {
     Yii::$app->params['close']++;
@@ -71,7 +74,7 @@ prie session prideda ++, kai session daugiau negu 6 uzdedi </div><div class="row
                   style="font-size: 13px;"><?= $model->username; ?><?= \frontend\models\Misc::vip($model); ?></span><br>
 
 	            <span class="ProfInfo"
-                      style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= $diff->y; ?>,
+                      style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= ($diff->y) ? $diff->y . ',' : ""; ?>
 
                     <?= ($dataInfo['miestas'] != '' && $dataInfo['miestas']) ? \frontend\models\City::findOne((int)$dataInfo['miestas'])->title : "Nenurodyta"; ?>
 

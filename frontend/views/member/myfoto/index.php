@@ -30,6 +30,7 @@ $count = count($photos) / 2;
 ?>
 
 <div class="container" style="width:100%; background-color: #f9f9f9; min-height: 150px; font-size: 12px; text-align: left; padding: 15px;">
+    <div class="alert alert-warning">Šiuo metu serverio profilaktikos darbai, todėl galimas nuotraukų atvaizdavimo vėlavimas (atlikti veiksmai gali būti uždelsti iki 30 min).</div>
     <?php if(!\frontend\models\Photos::find()->where(['u_id' => Yii::$app->user->id])->andWhere(['profile' => 1])->all()): ?>
         <div class="alert alert-info">
             <h3>Dėmesio!</h3>
