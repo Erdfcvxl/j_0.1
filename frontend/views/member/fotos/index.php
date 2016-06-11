@@ -124,7 +124,7 @@ $count = count($photos) / 2;
 
     <div class="col-xs-9" style=" min-height: 150px; font-size: 12px; text-align: left; margin-top: -1px;">
         <div class="col-xs-12" style="background-color: #f9f9f9;  padding: 15px;">
-            <div class="alert alert-warning">Šiuo metu serverio profilaktikos darbai, todėl galimas nuotraukų atvaizdavimo vėlavimas (atlikti veiksmai gali būti uždelsti iki 30 min).</div>
+            <div class="alert alert-warning">Šiuo metu serverio profilaktikos darbai, todėl galimas nuotraukų atvaizdavimo vėlavimas (atlikti veiksmai gali būti uždelsti iki 5 min).</div>
             <?= $this->render('_fotos', ['photos' => $photos]); ?>
             <?php if(!isset(Yii::$app->params['photoOK'])): ?>
                 <div class="alert alert-warning">Nuotraukų nėra arba jos skirtos tik draugams.</div>

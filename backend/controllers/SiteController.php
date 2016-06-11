@@ -628,7 +628,7 @@ class SiteController extends Controller
         $dp = $model->search(Yii::$app->request->post());
 
         foreach ($dp->getModels() as $v)
-            $result[] = $v->username;
+            $result[] = $v->email;
 
         if(isset($result))
             $result = ['gavejai' => implode(',',$result), 'count' => count($result)];

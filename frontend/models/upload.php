@@ -59,7 +59,7 @@ class upload extends Model
         $model->friendsOnly = $this->friendsOnly;
         $model->timestamp = time();
         $model->save();
-        
+
         return ['n' => $full, 'd' => $path];
 
     }

@@ -7,6 +7,7 @@ use Imagine\Image\Box;
 use Imagine\Image\Point;
 use yii\data\ActiveDataProvider;
 use yii\helpers\BaseFileHelper;
+use \Imagine\Gd\Imagine;
 
 /**
  * This is the model class for table "albums".
