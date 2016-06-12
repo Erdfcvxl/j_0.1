@@ -55,9 +55,12 @@ class Smscallback extends Model
 
                 $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
 
+                $vartotojas->vip = 1;
+
                 $menesiuNr = 1;
                 $savaite = 7 * 24 * 60 * 60;
                 $addTime = $menesiuNr * 4 * $savaite;
+
 
                 if($vartotojas->expires < time()){
                     $vartotojas->expires = time() + $addTime;
@@ -68,6 +71,7 @@ class Smscallback extends Model
                 if ($vartotojas->save())
                 {
                     echo 'OK '. $vartotojas->username .' abonementas pratestas iki: '. date ("Y-m-d H:i", $vartotojas->expires);
+
                     $order->done = 1;
                 }
                 else
@@ -85,6 +89,7 @@ class Smscallback extends Model
                 $uid = $tekstas[2];
 
                 $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
+                $vartotojas->vip = 1;
 
                 $menesiuNr = 1;
                 $savaite = 7 * 24 * 60 * 60;
