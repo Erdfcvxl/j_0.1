@@ -23,21 +23,20 @@ class upload extends Model
     public function rules()
     {
         return [
-            ['friendsOnly' , 'safe']
+            ['friendsOnly', 'safe']
         ];
     }
 
     public function upload($id, $path = null)
     {
 
-        if(!$path)
-            $path = 'uploads/'.$id.'/';
+        if (!$path)
+            $path = 'uploads/' . $id . '/';
 
 
-
-        $prefix = time().md5(uniqid(mt_rand(), true));
-        $full = 'BFl'.$prefix.'EFl'.$id . '.' . $this->file->extension;
-        $thumb = 'BTh'.$prefix.'ETh'.$id . '.' . $this->file->extension;
+        $prefix = time() . md5(uniqid(mt_rand(), true));
+        $full = 'BFl' . $prefix . 'EFl' . $id . '.' . $this->file->extension;
+        $thumb = 'BTh' . $prefix . 'ETh' . $id . '.' . $this->file->extension;
 
         BaseFileHelper::createDirectory($path, 0777);
 
@@ -45,12 +44,12 @@ class upload extends Model
 
         $imagine = new Imagine();
 
-        $mode    = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+        $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
 
-        $size    = new \Imagine\Image\Box(250, 250);
-        $imagine->open($path.$full)
+        $size = new \Imagine\Image\Box(250, 250);
+        $imagine->open($path . $full)
             ->thumbnail($size, $mode)
-            ->save($path.$thumb);
+            ->save($path . $thumb);
 
         $model = new Photos;
         $model->u_id = Yii::$app->user->id;
@@ -68,19 +67,21 @@ class upload extends Model
     {
         $imagine = new Imagine();
 
-        $ext = pathinfo($d.$n, PATHINFO_EXTENSION);
-        $profileName = '531B'.Yii::$app->user->id.'Iav.'.$ext;
+        $ext = pathinfo($d . $n, PATHINFO_EXTENSION);
+        $profileName = '531B' . Yii::$app->user->id . 'Iav.' . $ext;
 
         $model = User::find()->where(['id' => Yii::$app->user->id])->one();
         $model->avatar = $ext;
         $model->save();
 
-        $mode    = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+        $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
 
-        $size    = new \Imagine\Image\Box(250, 250);
-        $imagine->open($d.$n)
+        $size = new \Imagine\Image\Box(250, 250);
+        $imagine->open($d . $n)
             ->thumbnail($size, $mode)
-            ->save('uploads/'.$profileName);
+            ->save('uploads/' . $profileName);
+
+        // ->save('uploads/' . Yii::$app->user->id . '/profile/' . $profileName);
 
     }
 }

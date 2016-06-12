@@ -4,7 +4,7 @@
  * @$model->username
  * @$model->lastOnline
  * @$model->lastOnline
- * 
+ *
  * INFO
  * @diena
  * @menuo
@@ -74,7 +74,7 @@ prie session prideda ++, kai session daugiau negu 6 uzdedi </div><div class="row
                   style="font-size: 13px;"><?= $model->username; ?><?= \frontend\models\Misc::vip($model); ?></span><br>
 
 	            <span class="ProfInfo"
-                      style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= ($diff->y) ? $diff->y . ',' : ""; ?>
+                      style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= ($dataInfo['diena'] != NULL && $dataInfo['menuo'] != NULL && $dataInfo['metai'] != NULL) ? $diff->y . ',' : ""; ?>
 
                     <?= ($dataInfo['miestas'] != '' && $dataInfo['miestas']) ? \frontend\models\City::findOne((int)$dataInfo['miestas'])->title : "Nenurodyta"; ?>
 

@@ -13,20 +13,6 @@ use yii\widgets\Pjax;
 	<div style="position: absolute; z-index: -1; width: 100%; height: 100px; left: 0; top :0; background-color: white;"></div>
 	<div style="position: absolute; z-index: -1; width: 100%; height: 150px; left: 0; top :100px; background-image: url('/css/img/fade_vertical_white.png'); background-size: 100% 100%; "></div>
 
-
-	<?php if(isset($psl) && $psl == "expiresIn"): ?>
-		<div class="alert alert-info" style="margin-top: -10px; text-align: center ; padding-top: 0;">
-			<h2>Abonimento galiojimas greitai baigsis</h2>
-			<div style="margin-top: -10px;">Norėdami toliau naudotis pažintyslietuviams.co.uk privalote pratęsti abonimentą</div>
-		</div>
-	<?php else: ?>
-
-		<div class="alert alert-warning" style="margin-top: -10px; text-align: center ; padding-top: 0;">
-			<h2 style='color: #a94442;'>Abonimento galiojimas baigėsi</h2>
-			<div style="margin-top: -10px;">Norėdami toliau naudotis pažintyslietuviams.co.uk privalote pratęsti abonimentą</div>
-		</div>
-
-	<?php endif; ?>
 	<h3><center><span style="color: #56adfa; text-shadow: 2px 2px 2px #c5c5c5;">PASIRINK TAVE DOMINANTĮ PLANĄ</span></center></h3>
 
 	<div class="container-fluid">

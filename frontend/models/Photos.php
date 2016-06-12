@@ -98,6 +98,27 @@ class Photos extends \yii\db\ActiveRecord
         }
     }
 
+//    public function changeProfilePicture($pureName)
+//    {
+//
+//        if($model = self::find()->where(['pureName' => $pureName])->one()){
+//            if ($model->profile = 1)
+//                $model->save();
+//        }else{
+//            $this->u_id = Yii::$app->user->id;
+//            $this->pureName = $pureName;
+//            $this->profile = 1;
+//            $this->friendsOnly = 0;
+//            $this->timestamp = time();
+//            $this->save();
+//        }
+//
+//        self::updateAll(['profile' => 0], [['u_id' => Yii::$app->user->identity->id], ['!=', 'pureName', $pureName]]);
+//
+//        return true;
+//    }
+
+
     public function deletePhoto($pureName, $id)
     {
         $filter = new FilterFileName;

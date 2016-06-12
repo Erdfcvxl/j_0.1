@@ -1156,6 +1156,14 @@ class MemberController extends \yii\web\Controller
         $model = new \frontend\models\Upload;
         $model->changeProfilePicture($_GET['n'], $_GET['d']);
 
+        //
+//        if (Yii::$app->user->identity->id == 2654)
+//            if ($model = \frontend\models\Photos::find()->where(['u_id' => 2654])->all())
+//            {
+//                \frontend\models\Photos::updateAll(['profile' => 0], ['u_id' => 2654]);
+//            }
+////        else
+
         return $this->redirect(Yii::$app->request->referrer);
     }
 
@@ -2686,10 +2694,10 @@ class MemberController extends \yii\web\Controller
         //$model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
         //$model->$attr = $val;
         //4$model->save(false);
-//
-//        $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
-//        $percent = $model->getPercent();
-//        return $this->renderPartial('//member/index/_question', ['model' => $model]);
+
+        $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+        $percent = $model->getPercent();
+        return $this->renderPartial('//member/index/_question', ['model' => $model]);
 
     }
 
