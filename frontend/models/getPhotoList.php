@@ -128,12 +128,17 @@ class getPhotoList
 
         $lastChar = substr($n, $i);
         $ownerId = substr($lastChar, 0, (strlen($lastChar) - 4));
+        $ownerId = reset(explode('.', $ownerId));
 
         $bePradzios = substr($n, 3);
 
         $irBeGalo = substr($bePradzios, 0, (strlen($bePradzios) - ($i - 3) * -1));
 
-        $ext = substr($n, -3);
+//        $ext = substr(substr($n, -5), strpos($n, ".") + 1);
+
+        $ext = substr($n, -5);
+//        $ext = substr($ext, strpos($n, ".") + 1);
+        $ext = end(explode('.', $ext));
 
         $ending = substr($n, -3 - $i - 2, 2);
 

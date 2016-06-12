@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/web/uploads/65/profile/BFl14463042413ddbfd1382af77bbedbab570c022d348EFl65.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/web/uploads/65/profile/BTh14463042413ddbfd1382af77bbedbab570c022d348Eth65.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Smscallback.php" afterPath="$PROJECT_DIR$/frontend/models/Smscallback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/getPhotoList.php" afterPath="$PROJECT_DIR$/frontend/models/getPhotoList.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
     <ignored path="Auriuiadvanced.iws" />
@@ -33,11 +35,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="changePPic.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/changePPic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="929">
+              <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+              <folding>
+                <element signature="e#6#27#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
-              <caret line="1385" column="84" selection-start-line="1385" selection-start-column="82" selection-end-line="1385" selection-end-column="84" />
+              <caret line="1153" column="33" selection-start-line="1153" selection-start-column="26" selection-end-line="1153" selection-end-column="33" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
                 <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
@@ -49,22 +63,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="785" column="26" selection-start-line="785" selection-start-column="26" selection-end-line="785" selection-end-column="26" />
+            <state relative-caret-position="425">
+              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+              <folding>
+                <element signature="e#115#123#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="32" column="147" selection-start-line="32" selection-start-column="147" selection-end-line="32" selection-end-column="147" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Smscallback.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
+      <file leaf-file-name="_fotos.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+            <state relative-caret-position="340">
+              <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
+              <folding>
+                <element signature="e#7#27#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getPhotoList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/models/getPhotoList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+              <folding>
+                <marker date="1465736347772" expanded="true" signature="7736:7748" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/assets/AppAsset.php" />
         <option value="$PROJECT_DIR$/frontend/models/Misc.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_msg.php" />
         <option value="$PROJECT_DIR$/frontend/models/UserParams.php" />
@@ -104,7 +153,6 @@
         <option value="$PROJECT_DIR$/frontend/views/site/_regStep.php" />
         <option value="$PROJECT_DIR$/common/models/LoginForm.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/frontend/views/member/user.php" />
         <option value="$PROJECT_DIR$/backend/views/site/users.php" />
         <option value="$PROJECT_DIR$/backend/models/UserSearch.php" />
         <option value="$PROJECT_DIR$/backend/views/site/user.php" />
@@ -120,7 +168,6 @@
         <option value="$PROJECT_DIR$/frontend/views/layouts/member.php" />
         <option value="$PROJECT_DIR$/frontend/models/Pasimatymai.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/newFoto.php" />
-        <option value="$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/fotos/index.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/index.php" />
         <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
@@ -136,10 +183,13 @@
         <option value="$USER_HOME$/Desktop/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/models/Photos.php" />
-        <option value="$PROJECT_DIR$/frontend/models/upload.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
         <option value="$PROJECT_DIR$/frontend/models/Smscallback.php" />
+        <option value="$PROJECT_DIR$/frontend/models/upload.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/user.php" />
+        <option value="$PROJECT_DIR$/frontend/models/getPhotoList.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php" />
       </list>
     </option>
   </component>
@@ -403,7 +453,7 @@
       <workItem from="1465396195369" duration="1784000" />
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
-      <workItem from="1465721308465" duration="11139000" />
+      <workItem from="1465721308465" duration="13554000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -734,11 +784,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465733873520</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="SMS fix">
+      <created>1465734642662</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1465734642662</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256518000" />
+    <option name="totallyTimeSpent" value="258933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -783,7 +840,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="verifyemail actiono pataisymas" />
     <MESSAGE value="Masinės žinutės filtrų updeitas" />
     <MESSAGE value="Paieškos žinutėse pataisa" />
     <MESSAGE value="Masinių žinučių naujas filtras" />
@@ -808,7 +864,8 @@
     <MESSAGE value="Pataisymai: miesto paieška, metai" />
     <MESSAGE value="Pasimayt" />
     <MESSAGE value="Foto fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foto fix" />
+    <MESSAGE value="SMS fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="SMS fix" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -825,20 +882,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/pasimatymai.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/InfoClear.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1267">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Info2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -914,13 +957,6 @@
         <state relative-caret-position="340">
           <caret line="126" column="175" selection-start-line="126" selection-start-column="175" selection-end-line="126" selection-end-column="175" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1164,17 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/changePPic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding>
-            <element signature="e#6#27#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1201,16 +1226,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="e#115#123#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/_searchResult.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1225,25 +1240,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="147" selection-start-line="32" selection-start-column="147" selection-end-line="32" selection-end-column="147" />
+        <state relative-caret-position="115">
+          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="1385" column="84" selection-start-line="1385" selection-start-column="82" selection-end-line="1385" selection-end-column="84" />
-          <folding>
-            <element signature="e#40#48#0#PHP" expanded="true" />
-            <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,11 +1256,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
+        <state relative-caret-position="425">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="e#115#123#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+          <folding>
+            <marker date="1465736347772" expanded="true" signature="7736:7748" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/changePPic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="929">
+          <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+          <folding>
+            <element signature="e#6#27#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="1153" column="33" selection-start-line="1153" selection-start-column="26" selection-end-line="1153" selection-end-column="33" />
+          <folding>
+            <element signature="e#40#48#0#PHP" expanded="true" />
+            <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="147" selection-start-line="32" selection-start-column="147" selection-end-line="32" selection-end-column="147" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/getPhotoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
+          <folding>
+            <element signature="e#7#27#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
