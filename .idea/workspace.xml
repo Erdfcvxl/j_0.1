@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Albums.php" afterPath="$PROJECT_DIR$/frontend/models/Albums.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/fotos/index.php" afterPath="$PROJECT_DIR$/frontend/views/member/fotos/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/myfoto/index.php" afterPath="$PROJECT_DIR$/frontend/views/member/myfoto/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/onlyvip.php" afterPath="$PROJECT_DIR$/frontend/views/member/onlyvip.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/site/form/_form.php" afterPath="$PROJECT_DIR$/frontend/views/site/form/_form.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
@@ -37,117 +33,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Albums.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Albums.php">
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="693" column="93" selection-start-line="693" selection-start-column="93" selection-end-line="693" selection-end-column="93" />
+            <state relative-caret-position="-4290">
+              <caret line="422" column="88" selection-start-line="422" selection-start-column="88" selection-end-line="422" selection-end-column="88" />
               <folding>
-                <element signature="e#35#43#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="401" column="35" selection-start-line="401" selection-start-column="27" selection-end-line="401" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_regStep.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/site/_regStep.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_form.php">
+        <entry file="file://$USER_HOME$/Desktop/pzntsltaa/frontend/views/site/form/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="411" column="67" selection-start-line="411" selection-start-column="67" selection-end-line="411" selection-end-column="67" />
+            <state relative-caret-position="561">
+              <caret line="74" column="98" selection-start-line="74" selection-start-column="90" selection-end-line="74" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_reikalavimas_trukstamos_info.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="875">
+              <caret line="55" column="163" selection-start-line="55" selection-start-column="163" selection-end-line="55" selection-end-column="163" />
               <folding>
-                <element signature="n#style#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
+                <element signature="e#1589#1766#0#HTML" expanded="true" />
+                <element signature="e#1788#1865#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Info.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/Info.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375">
-              <caret line="199" column="18" selection-start-line="199" selection-start-column="12" selection-end-line="199" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="1153" column="33" selection-start-line="1153" selection-start-column="26" selection-end-line="1153" selection-end-column="33" />
-              <folding>
-                <element signature="e#40#48#0#PHP" expanded="true" />
-                <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
-                <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
-                <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
-                <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/fotos/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="125" column="82" selection-start-line="125" selection-start-column="82" selection-end-line="125" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="onlyvip.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/views/member/onlyvip.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getPhotoList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/models/getPhotoList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -172,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/views/member/_msg.php" />
         <option value="$PROJECT_DIR$/frontend/models/UserParams.php" />
         <option value="$PROJECT_DIR$/common/models/User.php" />
         <option value="$PROJECT_DIR$/frontend/models/UserPack.php" />
@@ -221,8 +137,9 @@
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/index.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/fotos/index.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/onlyvip.php" />
-        <option value="$PROJECT_DIR$/frontend/views/site/form/_form.php" />
         <option value="$PROJECT_DIR$/frontend/models/Albums.php" />
+        <option value="$PROJECT_DIR$/frontend/views/site/form/_form.php" />
+        <option value="$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php" />
       </list>
     </option>
   </component>
@@ -526,14 +443,7 @@
       <workItem from="1465396195369" duration="1784000" />
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
-      <workItem from="1465721308465" duration="16198000" />
-    </task>
-    <task id="LOCAL-00002" summary="Css pataisa">
-      <created>1459778744351</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1459778744351</updated>
+      <workItem from="1465721308465" duration="17588000" />
     </task>
     <task id="LOCAL-00003" summary="Dar sykį">
       <created>1459778842979</created>
@@ -871,11 +781,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465737281724</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Regstep FotoFix">
+      <created>1465743115405</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1465743115405</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261577000" />
+    <option name="totallyTimeSpent" value="262967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -920,7 +837,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Masinės žinutės filtrų updeitas" />
     <MESSAGE value="Paieškos žinutėse pataisa" />
     <MESSAGE value="Masinių žinučių naujas filtras" />
     <MESSAGE value="Automatinės žinutės. Baigta" />
@@ -945,7 +861,8 @@
     <MESSAGE value="Pasimayt" />
     <MESSAGE value="SMS fix" />
     <MESSAGE value="Foto fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foto fix" />
+    <MESSAGE value="Regstep FotoFix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Regstep FotoFix" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -962,20 +879,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/_spots.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -1276,28 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="1153" column="33" selection-start-line="1153" selection-start-column="26" selection-end-line="1153" selection-end-column="33" />
-          <folding>
-            <element signature="e#40#48#0#PHP" expanded="true" />
-            <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
-            <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/getPhotoList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/newFoto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
@@ -1316,14 +1197,6 @@
           <folding>
             <element signature="e#7#27#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="29" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,14 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="199" column="18" selection-start-line="199" selection-start-column="12" selection-end-line="199" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/site/_afterfb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-714">
@@ -1385,25 +1250,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/site/_regStep.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/Albums.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+        <state relative-caret-position="382">
+          <caret line="693" column="93" selection-start-line="693" selection-start-column="93" selection-end-line="693" selection-end-column="93" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="411" column="67" selection-start-line="411" selection-start-column="67" selection-end-line="411" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
+            <element signature="e#35#43#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1416,12 +1268,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Albums.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/Info.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="693" column="93" selection-start-line="693" selection-start-column="93" selection-end-line="693" selection-end-column="93" />
+        <state relative-caret-position="-375">
+          <caret line="199" column="18" selection-start-line="199" selection-start-column="12" selection-end-line="199" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="1153" column="33" selection-start-line="1153" selection-start-column="26" selection-end-line="1153" selection-end-column="33" />
           <folding>
-            <element signature="e#35#43#0#PHP" expanded="true" />
+            <element signature="e#40#48#0#PHP" expanded="true" />
+            <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/myfoto/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/getPhotoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/_regStep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/pzntsltaa/frontend/views/site/form/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="74" column="98" selection-start-line="74" selection-start-column="90" selection-end-line="74" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/form/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4290">
+          <caret line="422" column="88" selection-start-line="422" selection-start-column="88" selection-end-line="422" selection-end-column="88" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#9;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/member/search/_reikalavimas_trukstamos_info.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="55" column="163" selection-start-line="55" selection-start-column="163" selection-end-line="55" selection-end-column="163" />
+          <folding>
+            <element signature="e#1589#1766#0#HTML" expanded="true" />
+            <element signature="e#1788#1865#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -61,14 +61,17 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Gimtoji šalis</div>
                 <div
-                    class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'gimtine')->widget(Select2::classname(), [
-                        'data' => array_merge($gimtoji_salis),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite gimtajį miestą ...'],
-                        'pluginEvents' => [
-                            'select2-selected' => "function(e) { tautybe(e); }",
-                        ],
-                    ])->label(false); ?>
+                    class="col-xs-8 col-sm-8 vcenter top">
+<!--                    --><?//= $form->field($model_info, 'gimtine')->widget(Select2::classname(), [
+//                        'data' => array_merge($gimtoji_salis),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite gimtajį miestą ...'],
+//                        'pluginEvents' => [
+//                            'select2-selected' => "function(e) { tautybe(e); }",
+//                        ],
+//                    ])->label(false); ?>
+
+                    <?= $form->field($model_info, 'gimtine')->dropDownList($gimtoji_salis, ['prompt' => 'Pasirinkite gimtają šalį'])->label(false); ?>
                 </div>
             </div>
 
@@ -76,14 +79,17 @@ if(!$model_info) $model_info = new Info;
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Gimtoji vieta</div>
                 <div class="col-xs-8 col-sm-8 vcenter top">
                     <div id="tautybes"
-                         style="display: none"><?= $form->field($model_info, 'tautybe')->widget(Select2::classname(), [
-                            'data' => array_merge($gimtine),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite gimtąją vietovę ...'],
-                            'pluginEvents' => [
-                                'select2-selected' => "function(e) { kitas(e, 'tautybes'); }",
-                            ],
-                        ])->label(false); ?></div>
+                         style="display: none">
+                        <?= $form->field($model_info, 'tautybe')->dropDownList($gimtine, ['prompt' => 'Pasirinkite gimtąją vietovę'])->label(false); ?>
+<!--                        --><?//= $form->field($model_info, 'tautybe')->widget(Select2::classname(), [
+//                            'data' => array_merge($gimtine),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite gimtąją vietovę ...'],
+//                            'pluginEvents' => [
+//                                'select2-selected' => "function(e) { kitas(e, 'tautybes'); }",
+//                            ],
+//                        ])->label(false); ?>
+                    </div>
                     <div id="tautybes2">
                         <?= $form->field($model_info, 'tautybe2')->textInput(['placeholder' => 'Įrašykite gimtąją vietovę'])->label(false); ?>
                     </div>
@@ -93,16 +99,19 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Religija</div>
                 <div class="col-xs-8 col-sm-8 vcenter top">
-                    <div id="religijos"><?= $form->field($model_info, 'religija')->widget(Select2::classname(), [
-                            'data' => array_merge($religija),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite religiją ...'],
-                            'pluginEvents' => [
-                                "select2-open" => "function() { search_off(); }",
-                                "select2-close" => "function() { search_on(); }",
-                                'select2-selected' => "function(e) { kitas(e, 'religijos'); }",
-                            ],
-                        ])->label(false); ?> </div>
+                    <div id="religijos">
+                        <?= $form->field($model_info, 'religija')->dropDownList($religija, ['prompt' => 'Pasirinkite religiją'])->label(false); ?>
+<!--                        --><?//= $form->field($model_info, 'religija')->widget(Select2::classname(), [
+//                            'data' => array_merge($religija),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite religiją ...'],
+//                            'pluginEvents' => [
+//                                "select2-open" => "function() { search_off(); }",
+//                                "select2-close" => "function() { search_on(); }",
+//                                'select2-selected' => "function(e) { kitas(e, 'religijos'); }",
+//                            ],
+//                        ])->label(false); ?>
+                    </div>
                     <div id="religijos2" style="display: none">
                         <?= $form->field($model_info, 'religija2')->textInput(['placeholder' => 'Įrašykite gimtąją vietovę'])->label(false); ?>
                         <div class="xas" id="tautoff" parent="religijos" style="right: 20px;"></div>
@@ -113,15 +122,17 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Statusas</div>
                 <div
-                    class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'statusas')->widget(Select2::classname(), [
-                        'data' => array_merge($statusas),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite statusą ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                    class="col-xs-8 col-sm-8 vcenter top">
+                    <?= $form->field($model_info, 'statusas')->dropDownList($statusas, ['prompt' => 'Pasirinkite statusą'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'statusas')->widget(Select2::classname(), [
+//                        'data' => array_merge($statusas),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite statusą ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
@@ -132,29 +143,34 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Išsilavinimas</div>
                 <div class="col-xs-8 col-sm-8 vcenter top"
-                     style="position: relative; top: 1px;"><?= $form->field($model_info, 'issilavinimas')->widget(Select2::classname(), [
-                        'data' => array_merge($issilavinimas),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite išsilavinimą ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                     style="position: relative; top: 1px;">
+                    <?= $form->field($model_info, 'issilavinimas')->dropDownList($issilavinimas, ['prompt' => 'Pasirinkite išsilavinimą'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'issilavinimas')->widget(Select2::classname(), [
+//                        'data' => array_merge($issilavinimas),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite išsilavinimą ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Darbo sritys</div>
                 <div class="col-xs-8 col-sm-8 vcenter top">
-                    <div id="pareigoss"><?= $form->field($model_info, 'pareigos')->widget(Select2::classname(), [
-                            'data' => array_merge($pareigos),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite darbo sritį ...'],
-                            'pluginEvents' => [
-                                'select2-selected' => "function(e) { kitas(e, 'pareigoss'); }",
-                            ],
-                        ])->label(false); ?></div>
+                    <div id="pareigoss">
+                    <?= $form->field($model_info, 'pareigos')->dropDownList($pareigos, ['prompt' => 'Pasirinkite darbo sritį'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'pareigos')->widget(Select2::classname(), [
+//                            'data' => array_merge($pareigos),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite darbo sritį ...'],
+//                            'pluginEvents' => [
+//                                'select2-selected' => "function(e) { kitas(e, 'pareigoss'); }",
+//                            ],
+//                        ])->label(false); ?>
+                </div>
                     <div id="pareigoss2" style="display: none">
                         <?= $form->field($model_info, 'pareigos2')->textInput()->label(false); ?>
                         <div class="xas" id="tautoff" parent="pareigoss" style="right: 20px;"></div>
@@ -164,46 +180,51 @@ if(!$model_info) $model_info = new Info;
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Uždarbis</div>
-                <div
-                    class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'uzdarbis')->widget(Select2::classname(), [
-                        'data' => array_merge($uzdarbis),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite uždarbį ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                <div class="col-xs-8 col-sm-8 vcenter top">
+                    <?= $form->field($model_info, 'uzdarbis')->dropDownList($uzdarbis, ['prompt' => 'Pasirinkite uždarbį'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'uzdarbis')->widget(Select2::classname(), [
+//                        'data' => array_merge($uzdarbis),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite uždarbį ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Seksualinė orentacija</div>
                 <div
-                    class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'orentacija')->widget(Select2::classname(), [
-                        'data' => array_merge($orentacija),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite seksualinę orentaciją ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                    class="col-xs-8 col-sm-8 vcenter top">
+                    <?= $form->field($model_info, 'orentacija')->dropDownList($orentacija, ['prompt' => 'Pasirinkite seksualinę orentaciją'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'orentacija')->widget(Select2::classname(), [
+//                        'data' => array_merge($orentacija),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite seksualinę orentaciją ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Tikslas šiame portale</div>
                 <div
-                    class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'tikslas')->widget(Select2::classname(), [
-                        'data' => array_merge($tikslas),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite tikslą ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                    class="col-xs-8 col-sm-8 vcenter top">
+                    <?= $form->field($model_info, 'tikslas')->dropDownList($tikslas, ['prompt' => 'Pasirinkite tikslą'])->label(false); ?>
+<!--                    --><?//= $form->field($model_info, 'tikslas')->widget(Select2::classname(), [
+//                        'data' => array_merge($tikslas),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite tikslą ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
@@ -224,50 +245,63 @@ if(!$model_info) $model_info = new Info;
         <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Ūgis</div>
-                <div class="col-xs-8 vcenter top2"><?= $form->field($model_info, 'ugis')->widget(Select2::classname(), [
-                        'data' => array_merge($ugis),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite savo ugį ...'],
-                    ])->label(false); ?>
+                <div class="col-xs-8 vcenter top2">
+                    <?= $form->field($model_info, 'ugis')->dropDownList($ugis, ['prompt' => 'Pasirinkite savo ūgį'])->label(false); ?>
+
+<!--                    --><?//= $form->field($model_info, 'ugis')->widget(Select2::classname(), [
+//                        'data' => array_merge($ugis),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite savo ugį ...'],
+//                    ])->label(false); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Svoris</div>
                 <div
-                    class="col-xs-8 vcenter top2"><?= $form->field($model_info, 'svoris')->widget(Select2::classname(), [
-                        'data' => array_merge($svoris),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite savo svorį ...'],
-                    ])->label(false); ?>
+                    class="col-xs-8 vcenter top2">
+                    <?= $form->field($model_info, 'svoris')->dropDownList($svoris, ['prompt' => 'Pasirinkite savo svorį'])->label(false); ?>
+
+<!--                    --><?//= $form->field($model_info, 'svoris')->widget(Select2::classname(), [
+//                        'data' => array_merge($svoris),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite savo svorį ...'],
+//                    ])->label(false); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Kūno sudėjimas</div>
                 <div
-                    class="col-xs-8 vcenter top2"><?= $form->field($model_info, 'sudejimas')->widget(Select2::classname(), [
-                        'data' => array_merge($sudejimas),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite savo sudejimą ...'],
-                        'pluginEvents' => [
-                            "select2-open" => "function() { search_off(); }",
-                            "select2-close" => "function() { search_on(); }"
-                        ],
-                    ])->label(false); ?>
+                    class="col-xs-8 vcenter top2">
+                    <?= $form->field($model_info, 'sudejimas')->dropDownList($sudejimas, ['prompt' => 'Pasirinkite savo sudejimą'])->label(false); ?>
+
+<!--                    --><?//= $form->field($model_info, 'sudejimas')->widget(Select2::classname(), [
+//                        'data' => array_merge($sudejimas),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite savo sudejimą ...'],
+//                        'pluginEvents' => [
+//                            "select2-open" => "function() { search_off(); }",
+//                            "select2-close" => "function() { search_on(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Plaukų spalva</div>
                 <div class="col-xs-8 vcenter top2">
-                    <div id="pspalva"><?= $form->field($model_info, 'plaukai')->widget(Select2::classname(), [
-                            'data' => array_merge($plaukai),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite savo plaukų spalvą ...'],
-                            'pluginEvents' => [
-                                "select2-open" => "function() { search_off(); }",
-                                "select2-close" => "function() { search_on(); }",
-                                'select2-selected' => "function(e) { kitas(e, 'pspalva'); }",
-                            ],
-                        ])->label(false); ?></div>
+                    <div id="pspalva">
+                        <?= $form->field($model_info, 'plaukai')->dropDownList($plaukai, ['prompt' => 'Pasirinkite savo plaukų spalvą'])->label(false); ?>
+
+<!--                        --><?//= $form->field($model_info, 'plaukai')->widget(Select2::classname(), [
+//                            'data' => array_merge($plaukai),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite savo plaukų spalvą ...'],
+//                            'pluginEvents' => [
+//                                "select2-open" => "function() { search_off(); }",
+//                                "select2-close" => "function() { search_on(); }",
+//                                'select2-selected' => "function(e) { kitas(e, 'pspalva'); }",
+//                            ],
+//                        ])->label(false); ?>
+                    </div>
                     <div id="pspalva2" style="display: none;">
                         <?= $form->field($model_info, 'plaukai2')->textInput(['placeholder' => 'Įrašykite plaukų spalvą'])->label(false); ?>
                         <div class="xas" id="tautoff" parent="pspalva" style="right: 20px;"></div>
@@ -277,16 +311,20 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Akių spalva</div>
                 <div class="col-xs-8 vcenter top2">
-                    <div id="aspalva"><?= $form->field($model_info, 'akys')->widget(Select2::classname(), [
-                            'data' => array_merge($akys),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite savo akių spalvą ...'],
-                            'pluginEvents' => [
-                                "select2-open" => "function() { search_off(); }",
-                                "select2-close" => "function() { search_on(); }",
-                                'select2-selected' => "function(e) { kitas(e, 'aspalva'); }",
-                            ],
-                        ])->label(false); ?> </div>
+                    <div id="aspalva">
+                        <?= $form->field($model_info, 'akys')->dropDownList($akys, ['prompt' => 'Pasirinkite savo akių spalvą'])->label(false); ?>
+
+<!--                        --><?//= $form->field($model_info, 'akys')->widget(Select2::classname(), [
+//                            'data' => array_merge($akys),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite savo akių spalvą ...'],
+//                            'pluginEvents' => [
+//                                "select2-open" => "function() { search_off(); }",
+//                                "select2-close" => "function() { search_on(); }",
+//                                'select2-selected' => "function(e) { kitas(e, 'aspalva'); }",
+//                            ],
+//                        ])->label(false); ?><!-- -->
+                    </div>
                     <div id="aspalva2" style="display: none;">
                         <?= $form->field($model_info, 'akys2')->textInput(['placeholder' => 'Įrašykite akių spalvą'])->label(false); ?>
                         <div class="xas" id="tautoff" parent="aspalva" style="right: 20px;"></div>
@@ -296,14 +334,18 @@ if(!$model_info) $model_info = new Info;
             <div class="row">
                 <div class="col-xs-4 vcenter top2">Aprangos stilius</div>
                 <div class="col-xs-8 vcenter top2">
-                    <div id="stilius"><?= $form->field($model_info, 'stilius')->widget(Select2::classname(), [
-                            'data' => array_merge($stilius),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite savo stilių ...'],
-                            'pluginEvents' => [
-                                'select2-selected' => "function(e) { kitas(e, 'stilius'); }",
-                            ],
-                        ])->label(false); ?></div>
+                    <div id="stilius">
+                        <?= $form->field($model_info, 'stilius')->dropDownList($stilius, ['prompt' => 'Pasirinkite savo stilių'])->label(false); ?>
+
+<!--                        --><?//= $form->field($model_info, 'stilius')->widget(Select2::classname(), [
+//                            'data' => array_merge($stilius),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite savo stilių ...'],
+//                            'pluginEvents' => [
+//                                'select2-selected' => "function(e) { kitas(e, 'stilius'); }",
+//                            ],
+//                        ])->label(false); ?>
+                    </div>
                     <div id="stilius2" style="display: none;">
                         <?= $form->field($model_info, 'stilius2')->textInput(['placeholder' => 'Įrašykite stilių'])->label(false); ?>
                         <div class="xas" id="tautoff" parent="stilius" style="right: 20px;"></div>
@@ -331,15 +373,18 @@ if(!$model_info) $model_info = new Info;
         <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
             <div class="row" style="padding: 10px 0 0 0">
                 <div class="col-xs-4 vcenter">Miestas</div>
-                <div class="col-xs-8 vcenter"><?= $form->field($model_info, 'miestas')->widget(Select2::classname(), [
-                        'data' => array_merge($list),
-                        'language' => 'en',
-                        'options' => ['placeholder' => 'Pasirinkite miestą ...'],
-                        'pluginEvents' => [
-                            "change" => "function(e) { rajonas(e); console.log(e); }",
-                            "select2-removed" => "function() { close(); }"
-                        ],
-                    ])->label(false); ?>
+                <div class="col-xs-8 vcenter">
+                    <?= $form->field($model_info, 'miestas')->dropDownList($list, ['prompt' => 'Pasirinkite miestą'])->label(false); ?>
+
+<!--                    --><?//= $form->field($model_info, 'miestas')->widget(Select2::classname(), [
+//                        'data' => array_merge($list),
+//                        'language' => 'en',
+//                        'options' => ['placeholder' => 'Pasirinkite miestą ...'],
+//                        'pluginEvents' => [
+//                            "change" => "function(e) { rajonas(e); console.log(e); }",
+//                            "select2-removed" => "function() { close(); }"
+//                        ],
+//                    ])->label(false); ?>
                 </div>
             </div>
 
@@ -358,27 +403,33 @@ if(!$model_info) $model_info = new Info;
                 <div class="row" style="padding: 10px 0 0 0">
                     <div class="col-xs-4 vcenter">Gyvenamasis rajonas</div>
                     <div
-                        class="col-xs-8 vcenter"><?= $form->field($model_info, 'grajonas')->widget(Select2::classname(), [
-                            'data' => array_merge($rajonai),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite miestą ...'],
-                            'pluginEvents' => [
-                                "change" => "function(e) { rajonas(e); }"
-                            ],
-                        ])->label(false); ?>
+                        class="col-xs-8 vcenter">
+                        <?= $form->field($model_info, 'grajonas')->dropDownList($rajonai, ['prompt' => 'Pasirinkite miestą'])->label(false); ?>
+
+<!--                        --><?//= $form->field($model_info, 'grajonas')->widget(Select2::classname(), [
+//                            'data' => array_merge($rajonai),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite miestą ...'],
+//                            'pluginEvents' => [
+//                                "change" => "function(e) { rajonas(e); }"
+//                            ],
+//                        ])->label(false); ?>
                     </div>
                 </div>
                 <div class="row" style="padding: 10px 0 0 0">
                     <div class="col-xs-4 vcenter">Darbovietės rajonas</div>
                     <div
-                        class="col-xs-8 vcenter"><?= $form->field($model_info, 'drajonas')->widget(Select2::classname(), [
-                            'data' => array_merge($rajonai),
-                            'language' => 'en',
-                            'options' => ['placeholder' => 'Pasirinkite miestą ...'],
-                            'pluginEvents' => [
-                                "change" => "function(e) { rajonas(e); }"
-                            ],
-                        ])->label(false); ?>
+                        class="col-xs-8 vcenter">
+                        <?= $form->field($model_info, 'drajonas')->dropDownList($rajonai, ['prompt' => 'Pasirinkite miestą'])->label(false); ?>
+
+<!--                        --><?//= $form->field($model_info, 'drajonas')->widget(Select2::classname(), [
+//                            'data' => array_merge($rajonai),
+//                            'language' => 'en',
+//                            'options' => ['placeholder' => 'Pasirinkite miestą ...'],
+//                            'pluginEvents' => [
+//                                "change" => "function(e) { rajonas(e); }"
+//                            ],
+//                        ])->label(false); ?>
                     </div>
                 </div>
             </div>
@@ -408,10 +459,7 @@ if(!$model_info) $model_info = new Info;
                         ])->fileInput()->label(false); ?>
                     </div>
                     <img src="/css/img/icons/computer.png" style="position: absolute; left: 10px; top: 13px;"/>
-                    <div class="col-xs-9" style="margin-top: 25px;color: #414141; position: relative; z-index: 0;">
-                        <?= var_dump(Yii::$app->user->identity); ?>
-                        Ieškoti kompiuteryje
-                    </div>
+                    <div class="col-xs-9" style="margin-top: 25px;color: #414141; position: relative; z-index: 0;">Ieškoti kompiuteryje</div>
                     <div class="row" style="position: absolute; left: 15px; bottom: -40px;">
                         <input type="checkbox" id="c1" name="skip"/>
                         <label for="c1" style="font-family: OpenSans; cursor: pointer; font-weight: normal;">
