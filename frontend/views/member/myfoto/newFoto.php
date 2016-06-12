@@ -45,8 +45,8 @@ use frontend\models\UploadForm2;
 					</div>
 
 					<div class="col-xs-6">
-						<?php $model->friendsOnly = 0; ?>
-						<?= $form->field($model, 'friendsOnly')->checkBox(['label' => '<span id="friendsOnly"></span> <span style="font-weight: normal;"><span style="font-size: 14px;" class="glyphicon glyphicon-lock"></span> Noriu, kad nuotrauką galėtų matyti tik draugai? </span>', 'uncheck' => '0', 'checked' => '1']);?>
+						<?php $model->friendsOnly = 1; ?>
+						<?= $form->field($model, 'friendsOnly')->checkBox(['label' => '<span id="friendsOnly"></span> <span style="font-weight: normal;"><span style="font-size: 14px;" class="glyphicon glyphicon-lock"></span> Noriu, kad nuotrauką galėtų matyti tik draugai </span>', 'uncheck' => '0', 'checked' => '1']);?>
 					</div>
 				</div>
 
