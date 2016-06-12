@@ -195,10 +195,10 @@ class MemberController extends \yii\web\Controller
         ];
 
         if (isset($other[$psl])) {
-            return $this->redirect(Url::to(['member/' . $other[$psl], 'pratesti' => 1]));
+            return $this->redirect(Url::to(['member/' . $other[$psl], 'expired' => 1]));
         }
 
-        return $this->redirect(Url::current(['pratesti' => 1]));
+        return $this->redirect(Url::current(['expired' => 1]));
     }
 
     public function adminExMsg()
@@ -2686,10 +2686,10 @@ class MemberController extends \yii\web\Controller
         //$model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
         //$model->$attr = $val;
         //4$model->save(false);
-
-        $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
-        $percent = $model->getPercent();
-        return $this->renderPartial('//member/index/_question', ['model' => $model]);
+//
+//        $model = \frontend\models\InfoLatest::find()->where(['u_id' => Yii::$app->user->id])->one();
+//        $percent = $model->getPercent();
+//        return $this->renderPartial('//member/index/_question', ['model' => $model]);
 
     }
 

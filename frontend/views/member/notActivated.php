@@ -7,9 +7,9 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="alert alert-warning" style="text-align: left;">
-	<h3>Jūsų el. paštas<small>(<?= $user->email; ?>)</small> nėra aktivuotas. </h3>
+	<h3>Jūsų el. paštas<small>(<?= $user->email; ?>)</small> nėra aktyvuotas. </h3>
 	<p>
-		Prašome pasitikrinti savo pašto dėžutę ir aktivuoti savo paskyrą. 
+		Prašome pasitikrinti savo pašto dėžutę ir aktyvuoti savo paskyrą.
 	</p>
 
 	<br>
