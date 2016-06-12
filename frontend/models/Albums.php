@@ -731,9 +731,13 @@ class Albums extends \yii\db\ActiveRecord
 
             $profileName = '531B' . Yii::$app->user->id . 'Iav.' . $this->file->extension;
 
-            $model = User::find()->where(['id' => Yii::$app->user->id])->one();
-            $model->avatar = $this->file->extension;
-            $model->save();
+            if (isset($this->file->extension) && $this->file->extension != null)
+            {
+                $model = User::find()->where(['id' => Yii::$app->user->id])->one();
+                $model->avatar = $this->file->extension;
+                $model->save();
+            }
+            
 
             $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
 

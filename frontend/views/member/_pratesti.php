@@ -18,25 +18,25 @@ use yii\widgets\Pjax;
 		<div class="row" style="color: #393939;"><!--
     		--><div class="col-xs-3 vcenter  <?= (isset($_GET['obj']) && $_GET['obj'] == 1)? 'activePlanas' : ''; ?>" style="margin-left: 6px;">
 				<a href="<?= Url::current(['obj' => 1]); ?>">
-					<div class="topPart"><b>4 sav.</b> <span style="color: #fe0000">10£</span></div>
+					<div class="topPart"><b>4 sav.</b> <span style="color: #fe0000"><strike>10£</strike></span></div>
 					<div class="lowerPart">7 £<?= (isset($_GET['obj']) && $_GET['obj'] == 1)? '<br><img src="/css/img/icons/tick.jpg" />' : ''; ?></div>
 				</a>
 			</div><!--
     		--><div class="col-xs-3 vcenter  <?= (isset($_GET['obj']) && $_GET['obj'] == 2)? 'activePlanas' : ''; ?>">
 				<a href="<?= Url::current(['obj' => 2]); ?>">
-					<div class="topPart"><b>12 sav.</b> <span style="color: #fe0000">19£</span></div>
+					<div class="topPart"><b>12 sav.</b> <span style="color: #fe0000"><strike>19£</strike></span></div>
 					<div class="lowerPart">14 £<?= (isset($_GET['obj']) && $_GET['obj'] == 2)? '<br><img src="/css/img/icons/tick.jpg" />' : ''; ?></div>
 				</a>
 			</div><!--
     		--><div class="col-xs-3 vcenter  <?= (isset($_GET['obj']) && $_GET['obj'] == 3)? 'activePlanas' : ''; ?>">
 				<a href="<?= Url::current(['obj' => 3]); ?>">
-					<div class="topPart"><b>24 sav.</b> <span style="color: #fe0000">27£</span></div>
+					<div class="topPart"><b>24 sav.</b> <span style="color: #fe0000"><strike>27£</strike></span></div>
 					<div class="lowerPart">21 £ <?= (isset($_GET['obj']) && $_GET['obj'] == 3)? '<br><img src="/css/img/icons/tick.jpg" />' : ''; ?></div>
 				</a>
 			</div><!--
     		--><div class="col-xs-3 vcenter  <?= (isset($_GET['obj']) && $_GET['obj'] == 4)? 'activePlanas' : ''; ?>">
 				<a href="<?= Url::current(['obj' => 4]); ?>">
-					<div class="topPart"><b>48 sav.</b> <span style="color: #fe0000">38£</span></div>
+					<div class="topPart"><b>48 sav.</b> <span style="color: #fe0000"><strike>38£</strike></span></div>
 					<div class="lowerPart">29 £<?= (isset($_GET['obj']) && $_GET['obj'] == 4)? '<br><img src="/css/img/icons/tick.jpg" />' : ''; ?></div>
 				</a>
 			</div>
