@@ -73,7 +73,7 @@ use frontend\models\Info2;
         <div class="row" style="margin-top: 20px;">
             <div class="col-xs-12" style="font-size: 12px; color: grey; text-align: center;">
                 <?= $data; ?><br>
-                <a href="<?= Url::current(['pratesti' => 1]); ?>" class="btn btn-reg" style="font-size: 14px; padding: 0 20px; border-radius: 0;">Pratęsti</a>
+                <a href="<?= Url::current(['expired' => 1]); ?>" class="btn btn-reg" style="font-size: 14px; padding: 0 20px; border-radius: 0;">Pratęsti</a>
             </div>
         </div>
 
