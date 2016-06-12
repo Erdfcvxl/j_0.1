@@ -198,7 +198,7 @@ class MemberController extends \yii\web\Controller
             return $this->redirect(Url::to(['member/' . $other[$psl], 'expired' => 1]));
         }
 
-        return $this->redirect(Url::current(['expired' => 1]));
+        return $this->redirect(Url::current(['pratesti' => 1]));
     }
 
     public function adminExMsg()
