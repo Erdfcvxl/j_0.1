@@ -8,7 +8,7 @@
 ?>
 
 <div class="alert alert-warning" style="text-align: left;">
-    <h3>Vip zona</h3>
+    <h3>VIP zona</h3>
     <p>
         Tik VIP nariai gali naudotis šia funkcija
     </p>

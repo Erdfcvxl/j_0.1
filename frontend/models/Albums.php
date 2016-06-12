@@ -691,6 +691,12 @@ class Albums extends \yii\db\ActiveRecord
 
     public function saveToProfile($id, $str)
     {
+        // Checkina ar vartotojas prisijungęs ir ar yra įmanoma išgauti vartotojo id duomenis
+        if (!isset(Yii::$app->user->id)
+            || isset(Yii::$app->user->id) && Yii::$app->user->id == NULL)
+            $vartotojo_id = $id;
+        else
+            $vartotojo_id = Yii::$app->user->id;
 
         $check[0] = false;
         $pass = false;
@@ -719,7 +725,7 @@ class Albums extends \yii\db\ActiveRecord
                 ->save($path . $thumb);
 
             $model = new Photos;
-            $model->u_id = Yii::$app->user->id;
+            $model->u_id = $vartotojo_id;
             $model->pureName = $prefix;
             $model->ext = $this->file->extension;
             $model->friendsOnly = 0;
@@ -729,14 +735,11 @@ class Albums extends \yii\db\ActiveRecord
 
             $imagine = new Imagine();
 
-            $profileName = '531B' . Yii::$app->user->id . 'Iav.' . $this->file->extension;
+            $profileName = '531B' . $vartotojo_id . 'Iav.' . $this->file->extension;
 
-            if (isset($this->file->extension) && $this->file->extension != null)
-            {
-                $model = User::find()->where(['id' => Yii::$app->user->id])->one();
-                $model->avatar = $this->file->extension;
-                $model->save();
-            }
+            $model = User::find()->where(['id' => $vartotojo_id])->one();
+            $model->avatar = $this->file->extension;
+            $model->save();
             
 
             $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
@@ -760,6 +763,78 @@ class Albums extends \yii\db\ActiveRecord
         return $check;
 
     }
+
+//    public function saveToProfile($id, $str)
+//    {
+//
+//        $check[0] = false;
+//        $pass = false;
+//        $check['ext'] = "";
+//        $check['complete'] = "";
+//
+//        $path = "uploads/".$id;
+//
+//        $prefix = time().md5(uniqid(mt_rand(), true));
+//        $full = 'BFl'.$prefix.'EFl'.$id . '.' . $this->file->extension;
+//        $thumb = 'BTh'.$prefix.'ETh'.$id . '.' . $this->file->extension;
+//
+//        if ($this->file && $this->validate()) {
+//
+//            BaseFileHelper::createDirectory($path, 0777);
+//
+//            $this->file->saveAs($path . $full);
+//
+//            $imagine = new Imagine();
+//
+//            $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+//
+//            $size = new \Imagine\Image\Box(250, 250);
+//            $imagine->open($path . $full)
+//                ->thumbnail($size, $mode)
+//                ->save($path . $thumb);
+//
+//            $model = new Photos;
+//            $model->u_id = Yii::$app->user->id;
+//            $model->pureName = $prefix;
+//            $model->ext = $this->file->extension;
+//            $model->friendsOnly = 0;
+//            $model->profile = 1;
+//            $model->timestamp = time();
+//            $model->save();
+//
+//            $imagine = new Imagine();
+//
+//            $profileName = '531B' . Yii::$app->user->id . 'Iav.' . $this->file->extension;
+//
+//            if (isset($this->file->extension) && $this->file->extension != null)
+//            {
+//                $model = User::find()->where(['id' => Yii::$app->user->id])->one();
+//                $model->avatar = $this->file->extension;
+//                $model->save();
+//            }
+//
+//
+//            $mode = \Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+//
+//            $size = new \Imagine\Image\Box(250, 250);
+//            $imagine->open($path . $full)
+//                ->thumbnail($size, $mode)
+//                ->save('uploads/' . $profileName);
+//
+//            $check[0] = true;
+//            $check[1] = true;
+//
+//            $check['ext'] = $this->file->extension;
+//            $check['n'] = $new_file_name_full . '.' . $this->file->extension;
+//            $check['d'] = $path;
+//            $check['complete'] = 1;
+//
+//            Yii::$app->session->setFlash('success', "Nuotrauka sėkmingai įkelta!");
+//        }
+//
+//        return $check;
+//
+//    }
 
     public function choosePPic($id, $file, $ext)
     {
