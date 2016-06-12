@@ -83,7 +83,7 @@ $data = date('o-m-d G:i', $user->expires);
 	           		<div class="row"><span style="color: white; font-size: 16px;">Abonimentas apmokėtas iki: <?= $data; ?></span></div>
 	           	</div>
 	           	<div class="col-xs-3">
-	           		<div class="row"><a href='<?= Url::current(['expired' => 1]); ?>' class="btn btn-green btn-xs" style="padding: 0px 10px; margin:0; line-height: 1.3;">Pratęsti</a></div>
+	           		<div class="row"><a href='<?= Url::current(['pratesti' => 1]); ?>' class="btn btn-green btn-xs" style="padding: 0px 10px; margin:0; line-height: 1.3;">Pratęsti</a></div>
 	           	</div>
            	</div>
 
