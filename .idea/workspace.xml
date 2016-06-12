@@ -4,10 +4,7 @@
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/MemberController.php" afterPath="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Photos.php" afterPath="$PROJECT_DIR$/frontend/models/Photos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/upload.php" afterPath="$PROJECT_DIR$/frontend/models/upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_pratesti.php" afterPath="$PROJECT_DIR$/frontend/views/member/_pratesti.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" afterPath="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" afterPath="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
     <ignored path="Auriuiadvanced.iws" />
@@ -37,17 +34,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="1159" column="0" selection-start-line="1159" selection-start-column="2" selection-end-line="1163" selection-end-column="15" />
+            <state relative-caret-position="270">
+              <caret line="1156" column="94" selection-start-line="1156" selection-start-column="94" selection-end-line="1156" selection-end-column="94" />
               <folding>
                 <element signature="e#40#48#0#PHP" expanded="true" />
-                <marker date="1465732130249" expanded="true" signature="54753:54767" ph="..." />
-                <marker date="1465732130249" expanded="true" signature="68182:68196" ph="..." />
-                <marker date="1465732130249" expanded="true" signature="70460:70474" ph="..." />
-                <marker date="1465732130249" expanded="true" signature="72589:72603" ph="..." />
+                <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
+                <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
+                <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
+                <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avatarHolder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="8" column="84" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
+              <folding>
+                <marker date="1465733343484" expanded="true" signature="389:428" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="609:652" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="919:1107" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="2153:2313" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="2274:2313" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="2580:2673" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="2688:2700" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="2984:3016" ph="..." />
+                <marker date="1465733343484" expanded="true" signature="3172:3204" ph="..." />
               </folding>
             </state>
           </provider>
@@ -66,8 +83,8 @@
       <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="83" column="81" selection-start-line="83" selection-start-column="81" selection-end-line="83" selection-end-column="81" />
+            <state relative-caret-position="421">
+              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="e#115#123#0#PHP" expanded="true" />
               </folding>
@@ -163,7 +180,6 @@
         <option value="$PROJECT_DIR$/frontend/views/member/notActivated.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/onlyvip.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_expired.php" />
-        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/settings.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_pratesti.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/changePPic.php" />
@@ -171,9 +187,10 @@
         <option value="$PROJECT_DIR$/frontend/config/main-local.php" />
         <option value="$USER_HOME$/Desktop/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
-        <option value="$PROJECT_DIR$/frontend/models/upload.php" />
         <option value="$PROJECT_DIR$/frontend/models/Photos.php" />
+        <option value="$PROJECT_DIR$/frontend/models/upload.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
+        <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
       </list>
     </option>
   </component>
@@ -437,7 +454,7 @@
       <workItem from="1465396195369" duration="1784000" />
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
-      <workItem from="1465721308465" duration="8763000" />
+      <workItem from="1465721308465" duration="9855000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -747,11 +764,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465727754033</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Pasimayt">
+      <created>1465732251698</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1465732251698</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254142000" />
+    <option name="totallyTimeSpent" value="255234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1083,19 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="70" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <marker date="1465727734791" expanded="true" signature="2658:2670" ph="..." />
-            <marker date="1465727734791" expanded="true" signature="2954:2986" ph="..." />
-            <marker date="1465727734791" expanded="true" signature="3142:3174" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1242,8 +1253,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="83" column="81" selection-start-line="83" selection-start-column="81" selection-end-line="83" selection-end-column="81" />
+        <state relative-caret-position="421">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="e#115#123#0#PHP" expanded="true" />
           </folding>
@@ -1260,14 +1271,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="1159" column="0" selection-start-line="1159" selection-start-column="2" selection-end-line="1163" selection-end-column="15" />
+        <state relative-caret-position="270">
+          <caret line="1156" column="94" selection-start-line="1156" selection-start-column="94" selection-end-line="1156" selection-end-column="94" />
           <folding>
             <element signature="e#40#48#0#PHP" expanded="true" />
-            <marker date="1465732130249" expanded="true" signature="54753:54767" ph="..." />
-            <marker date="1465732130249" expanded="true" signature="68182:68196" ph="..." />
-            <marker date="1465732130249" expanded="true" signature="70460:70474" ph="..." />
-            <marker date="1465732130249" expanded="true" signature="72589:72603" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="54849:54863" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="68278:68292" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="70556:70570" ph="..." />
+            <marker date="1465732954212" expanded="true" signature="72685:72699" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="84" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
+          <folding>
+            <marker date="1465733343484" expanded="true" signature="389:428" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="609:652" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="919:1107" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="2153:2313" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="2274:2313" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="2580:2673" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="2688:2700" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="2984:3016" ph="..." />
+            <marker date="1465733343484" expanded="true" signature="3172:3204" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1153,6 +1153,8 @@ class MemberController extends \yii\web\Controller
 
     public function actionChangeppic()
     {
+
+        \frontend\models\Photos::updateAll(['profile' => 0], ['u_id' => Yii::$app->user->id]);
         $model = new \frontend\models\Upload;
         $model->changeProfilePicture($_GET['n'], $_GET['d']);
 
