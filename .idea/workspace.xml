@@ -4,7 +4,6 @@
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/MemberController.php" afterPath="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/member/_pratesti.php" afterPath="$PROJECT_DIR$/frontend/views/member/_pratesti.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
     <ignored path="Auriuiadvanced.iws" />
@@ -86,14 +85,24 @@
       <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="200" column="54" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
+            <state relative-caret-position="287">
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="27" />
               <folding>
-                <marker date="1465725628958" expanded="true" signature="54458:54472" ph="..." />
-                <marker date="1465725628958" expanded="true" signature="67887:67901" ph="..." />
-                <marker date="1465725628958" expanded="true" signature="70165:70179" ph="..." />
-                <marker date="1465725628958" expanded="true" signature="72294:72308" ph="..." />
+                <marker date="1465725721172" expanded="true" signature="54459:54473" ph="..." />
+                <marker date="1465725721172" expanded="true" signature="67888:67902" ph="..." />
+                <marker date="1465725721172" expanded="true" signature="70166:70180" ph="..." />
+                <marker date="1465725721172" expanded="true" signature="72295:72309" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Expired.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/models/Expired.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -436,7 +445,7 @@
       <workItem from="1465396195369" duration="1784000" />
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
-      <workItem from="1465721308465" duration="2197000" />
+      <workItem from="1465721308465" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="Susirašinėjimo pataisa">
       <created>1459778243102</created>
@@ -711,11 +720,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465724967075</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Pasimayt">
+      <created>1465725639235</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1465725639235</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247576000" />
+    <option name="totallyTimeSpent" value="247684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -802,13 +818,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/models/LoginForm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -1166,15 +1175,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Expired.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="200" column="54" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
+        <state relative-caret-position="287">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="27" />
           <folding>
-            <marker date="1465725628958" expanded="true" signature="54458:54472" ph="..." />
-            <marker date="1465725628958" expanded="true" signature="67887:67901" ph="..." />
-            <marker date="1465725628958" expanded="true" signature="70165:70179" ph="..." />
-            <marker date="1465725628958" expanded="true" signature="72294:72308" ph="..." />
+            <marker date="1465725721172" expanded="true" signature="54459:54473" ph="..." />
+            <marker date="1465725721172" expanded="true" signature="67888:67902" ph="..." />
+            <marker date="1465725721172" expanded="true" signature="70166:70180" ph="..." />
+            <marker date="1465725721172" expanded="true" signature="72295:72309" ph="..." />
           </folding>
         </state>
       </provider>

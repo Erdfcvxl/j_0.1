@@ -195,7 +195,7 @@ class MemberController extends \yii\web\Controller
         ];
 
         if (isset($other[$psl])) {
-            return $this->redirect(Url::to(['member/' . $other[$psl], 'expired' => 1]));
+            return $this->redirect(Url::to(['member/' . $other[$psl], 'pratesti' => 1]));
         }
 
         return $this->redirect(Url::current(['pratesti' => 1]));
