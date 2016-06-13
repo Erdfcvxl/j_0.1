@@ -14,7 +14,7 @@ class Paysera
         $amount = $amount.'00';
 
         $model->u_id = Yii::$app->user->id;
-        $model->action = "abonementopirkimas";
+        $model->action = "payseraabonementopirkimas";
         $model->params = $amount;
         $model->time = time();
         $model->done = 0;
@@ -41,9 +41,9 @@ class Paysera
                 'accepturl'     => Url::to(['member/succesful_payment'], true),
                 'cancelurl'     => Url::to(['member/cancelled_payment'], true),
                 'callbackurl'   => Url::to(['ajax/payseracallback'], true),
+//                'disalow_payments' => ,
 
 //                'test'          => 1,
-                //'user_id'		=> Yii::$app->user->id,
             ));
 
             $result = 'https://www.paysera.com/pay/?data='.$request['data'].'&sign='.$request['sign'];

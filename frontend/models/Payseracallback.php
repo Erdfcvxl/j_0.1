@@ -16,10 +16,7 @@ class Payseracallback extends Model
         $params = array();
         parse_str(base64_decode(strtr($_GET['data'], array('-' => '+', '_' => '/'))), $params);
 
-//        var_dump($params);
-//        echo '<br>';
-
-        if(!$order = \frontend\models\Orders::find()->where(['paysera_bankinis_id' => $params['orderid']])->one())
+        if(!$order = \frontend\models\Orders::find()->where(['id' => $params['orderid']])->one())
         {
 
             $uid = 2654;
@@ -48,7 +45,7 @@ class Payseracallback extends Model
 
             if ($vartotojas->save())
             {
-                echo 'OK '. $vartotojas->username .' abonementas pratestas iki: '. date ("Y-m-d H:i", $vartotojas->expires);
+                echo 'OK '. $vartotojas->username .' abaonementas pratestas iki: '. date ("Y-m-d H:i", $vartotojas->expires);
 
                 $order->done = 1;
             }
@@ -61,12 +58,10 @@ class Payseracallback extends Model
             $order->save();
 
         }
-        else if ($order = \frontend\models\Orders::find()->where(['paysera_bankinis_id' => $params['orderid']])->andWhere(['done' => 0])->one())
+        else if ($order = \frontend\models\Orders::find()->where(['id' => $params['orderid']])->andWhere(['done' => 0])->one())
         {
-//            var_dump($order);
-            $uid = 2654;
 
-            $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
+            $vartotojas = \common\models\User::find()->where(['id' => $order->u_id])->one();
             $vartotojas->vip = 1;
 
             $menesiuNr = 1;
