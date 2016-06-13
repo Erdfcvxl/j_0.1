@@ -2569,28 +2569,6 @@ class MemberController extends \yii\web\Controller
         return $this->render('cancelled_payment');
     }
 
-    public function actionGetpayseralink()
-    {
-
-        if (isset($_GET['obj'])) {
-
-            $obj = $_GET['obj'];
-            $model = new \frontend\models\Paysera;
-
-            if ($obj == 1)
-                $url = $model->buyCoins(7);
-            elseif ($obj == 2)
-                $url = $model->buyCoins(14);
-            elseif ($obj == 3)
-                $url = $model->buyCoins(21);
-            elseif ($obj == 4)
-                $url = $model->buyCoins(28);
-
-            if (isset($url) && $url != '')
-                echo $url;
-        }
-    }
-
     public function actionPviews()
     {
         $model = new \frontend\models\Profileview;

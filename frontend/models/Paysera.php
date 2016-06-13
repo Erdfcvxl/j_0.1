@@ -40,7 +40,7 @@ class Paysera
 
                 'accepturl'     => Url::to(['member/succesful_payment'], true),
                 'cancelurl'     => Url::to(['member/cancelled_payment'], true),
-                'callbackurl'   => Url::to(['site/payseracallback'], true),
+                'callbackurl'   => Url::to(['ajax/payseracallback'], true),
 
                 'test'          => 1,
                 //'user_id'		=> Yii::$app->user->id,

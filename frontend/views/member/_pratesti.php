@@ -42,6 +42,9 @@ use yii\widgets\Pjax;
 				</a>
 			</div>
 		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-xs-12 vcenter">*Nuolaida galioja mokant per PayPal</div>
+		</div>
 
 		<div class="row" style="margin-top: 15px;">
 			<h3 id="budu_antraste"></h3>
@@ -109,7 +112,7 @@ use yii\widgets\Pjax;
 	function getLink()
 	{
 		$.ajax({
-			url: '/member/getpayseralink',
+			url: '/ajax/getpayseralink',
 			type: "GET",
 			data: {obj : obj},
 			success: function(data){

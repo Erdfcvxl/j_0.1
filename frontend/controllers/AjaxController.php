@@ -267,4 +267,26 @@ class AjaxController extends \yii\web\Controller
         }
     }
 
+    public function actionGetpayseralink()
+    {
+
+        if (isset($_GET['obj'])) {
+
+            $obj = $_GET['obj'];
+            $model = new \frontend\models\Paysera;
+
+            if ($obj == 1)
+                $url = $model->buyCoins(9);
+            elseif ($obj == 2)
+                $url = $model->buyCoins(19);
+            elseif ($obj == 3)
+                $url = $model->buyCoins(27);
+            elseif ($obj == 4)
+                $url = $model->buyCoins(38);
+
+            if (isset($url) && $url != '')
+                echo $url;
+        }
+    }
+
 }
