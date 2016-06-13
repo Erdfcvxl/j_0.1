@@ -40,12 +40,7 @@ class upload extends Model
 
         BaseFileHelper::createDirectory($path, 0777);
 
-        var_dump($this->file);
-        die('c');
-
-        /*if (!$this->file->saveAs($path . $full))
-            return ['n' => $full, 'd' => $path];
-
+        $this->file->saveAs($path . $full);
 
         $imagine = new Imagine();
 
@@ -64,7 +59,7 @@ class upload extends Model
         $model->timestamp = time();
         $model->save();
 
-        return ['n' => $full, 'd' => $path];*/
+        return ['n' => $full, 'd' => $path];
 
     }
 

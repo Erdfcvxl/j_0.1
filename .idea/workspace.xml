@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Payseracallback.php" afterPath="$PROJECT_DIR$/frontend/models/Payseracallback.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Smscallback.php" afterPath="$PROJECT_DIR$/frontend/models/Smscallback.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/upload.php" afterPath="$PROJECT_DIR$/frontend/models/upload.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
@@ -46,13 +49,14 @@
       <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="117">
+              <caret line="1206" column="0" selection-start-line="1206" selection-start-column="0" selection-end-line="1229" selection-end-column="5" />
               <folding>
-                <marker date="1465849983119" expanded="true" signature="55222:55236" ph="..." />
-                <marker date="1465849983119" expanded="true" signature="68651:68665" ph="..." />
-                <marker date="1465849983119" expanded="true" signature="70929:70943" ph="..." />
-                <marker date="1465849983119" expanded="true" signature="73058:73072" ph="..." />
+                <element signature="e#40#48#0#PHP" expanded="true" />
+                <marker date="1465850428085" expanded="true" signature="55222:55236" ph="..." />
+                <marker date="1465850428085" expanded="true" signature="68651:68665" ph="..." />
+                <marker date="1465850428085" expanded="true" signature="70929:70943" ph="..." />
+                <marker date="1465850428085" expanded="true" signature="73058:73072" ph="..." />
               </folding>
             </state>
           </provider>
@@ -61,8 +65,8 @@
       <file leaf-file-name="Payseracallback.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/Payseracallback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="875">
+              <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
               <folding>
                 <element signature="e#35#43#0#PHP" expanded="true" />
               </folding>
@@ -70,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="323">
+              <caret line="42" column="33" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="33" />
               <folding>
                 <element signature="e#115#123#0#PHP" expanded="true" />
               </folding>
@@ -85,8 +89,30 @@
       <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="279" column="30" selection-start-line="279" selection-start-column="30" selection-end-line="279" selection-end-column="30" />
+            <state relative-caret-position="331">
+              <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#76#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Smscallback.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="776" column="0" selection-start-line="776" selection-start-column="0" selection-end-line="780" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -95,7 +121,7 @@
       <file leaf-file-name="Paysera.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/Paysera.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
+            <state relative-caret-position="467">
               <caret line="42" column="65" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="65" />
               <folding />
             </state>
@@ -122,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/views/member/_views.php" />
         <option value="$PROJECT_DIR$/frontend/models/Profileview.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/pviews.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/GmenuBar.php" />
@@ -152,7 +177,6 @@
         <option value="$USER_HOME$/Desktop/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_searchResult.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/avatarHolder.php" />
-        <option value="$PROJECT_DIR$/frontend/models/Smscallback.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/user.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/newFoto.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/fotos/index.php" />
@@ -168,11 +192,13 @@
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/index.php" />
         <option value="$PROJECT_DIR$/frontend/models/Photos.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/myfoto/_fotos.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/_pratesti.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/models/Paysera.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/MemberController.php" />
         <option value="$PROJECT_DIR$/frontend/models/upload.php" />
+        <option value="$PROJECT_DIR$/frontend/models/Smscallback.php" />
+        <option value="$PROJECT_DIR$/frontend/models/Payseracallback.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
       </list>
     </option>
   </component>
@@ -551,14 +577,7 @@
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
       <workItem from="1465721308465" duration="18946000" />
-      <workItem from="1465829340920" duration="8651000" />
-    </task>
-    <task id="LOCAL-00009" summary="Masinių žinučių naujas filtras">
-      <created>1460063892921</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1460063892921</updated>
+      <workItem from="1465829340920" duration="10638000" />
     </task>
     <task id="LOCAL-00010" summary="Automatinės žinutės. Baigta">
       <created>1460070887403</created>
@@ -896,11 +915,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465849989206</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Regstep FotoFix, Regstep fix">
+      <created>1465850259929</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1465850259929</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272976000" />
+    <option name="totallyTimeSpent" value="274963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -987,21 +1013,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/_expired.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/views/member/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="85" column="73" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/pzntsltaa/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
@@ -1097,13 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1175,18 +1179,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="401" column="35" selection-start-line="401" selection-start-column="27" selection-end-line="401" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Info.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375">
           <caret line="199" column="18" selection-start-line="199" selection-start-column="12" selection-end-line="199" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,14 +1346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="279" column="30" selection-start-line="279" selection-start-column="30" selection-end-line="279" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/member/_pratesti.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -1365,44 +1354,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/web/UploadedFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Feed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-947">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="7" />
+        <state relative-caret-position="117">
+          <caret line="1206" column="0" selection-start-line="1206" selection-start-column="0" selection-end-line="1229" selection-end-column="5" />
           <folding>
-            <marker date="1465849983119" expanded="true" signature="55222:55236" ph="..." />
-            <marker date="1465849983119" expanded="true" signature="68651:68665" ph="..." />
-            <marker date="1465849983119" expanded="true" signature="70929:70943" ph="..." />
-            <marker date="1465849983119" expanded="true" signature="73058:73072" ph="..." />
+            <element signature="e#40#48#0#PHP" expanded="true" />
+            <marker date="1465850428085" expanded="true" signature="55222:55236" ph="..." />
+            <marker date="1465850428085" expanded="true" signature="68651:68665" ph="..." />
+            <marker date="1465850428085" expanded="true" signature="70929:70943" ph="..." />
+            <marker date="1465850428085" expanded="true" signature="73058:73072" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Paysera.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
+        <state relative-caret-position="467">
           <caret line="42" column="65" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="776" column="0" selection-start-line="776" selection-start-column="0" selection-end-line="780" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="33" />
+          <folding>
+            <element signature="e#115#123#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/Payseracallback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="875">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
           <folding>
             <element signature="e#35#43#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="331">
+          <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
           <folding>
-            <element signature="e#115#123#0#PHP" expanded="true" />
+            <element signature="e#40#76#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>

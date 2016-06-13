@@ -50,7 +50,7 @@ class Smscallback extends Model
                 $order->smsid = $params['id'];
                 $order->u_id = $uid;
                 $order->params = $params['amount'];
-                $order->action = "abonementopirkimas";
+                $order->action = "smsabonementas";
                 $order->time = time();
 
                 $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();

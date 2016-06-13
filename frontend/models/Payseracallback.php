@@ -5,8 +5,6 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use yii\web\IdentityInterface;
-use Imagine\Image\Box;
-use Imagine\Image\Point;
 use yii\helpers\Url;
 use yii\helpers\BaseFileHelper;
 use frontend\models\User;
@@ -15,78 +13,94 @@ class Payseracallback extends Model
 {
     public function proceed() {
 
-            /*
-            $meta = array(
-                'time'      => date('Y-m-d H:i:s'),
-                'verified'  => 'none',
-            );*/
+        $params = array();
+        parse_str(base64_decode(strtr($_GET['data'], array('-' => '+', '_' => '/'))), $params);
 
-            try {
-                $response = \frontend\components\WebToPay::checkResponse($_GET, array(
-                    'projectid'     => 80318,
-                    'sign_password' => '75f1898c7364e38f49dcb0382d54aeec',
-                ));
+        if(!$order = \frontend\models\Order::find()->where(['paysera_bankinis_id' => $params['id']])->one())
+        {
 
-                /*if ($response['test'] !== '0') {
-                    throw new Exception('Testing, real payment was not made');
-                }*/
-                if ($response['type'] !== 'macro') {
-                    throw new Exception('Only macro payment callbacks are accepted');
-                }
+            $tekstas = explode(' ',$params['sms']);
+            $uid = $tekstas[2];
 
-                $orderId = $response['orderid'];
-                $amount = $response['amount'];
-                $currency = $response['currency'];
+            $order = new \frontend\models\Order;
+            $order->paysera_bankinis_id = $params['id'];
+            $order->u_id = $uid;
+            $order->params = $params['amount'];
+            $order->action = "payserabankinisabonementas";
+            $order->time = time();
+
+            $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
+
+            $vartotojas->vip = 1;
+
+            $menesiuNr = 1;
+            $savaite = 7 * 24 * 60 * 60;
+            $addTime = $menesiuNr * 4 * $savaite;
 
 
-                if($order = \frontend\models\Orders::find()->where(['id' => $orderId])->one())
-                    if($order->params == $amount){
-                        $user = \common\models\User::find()->where(['id' => $order->u_id])->one();
-
-                        if($order->done == 0){
-                            $savaite = 7 * 24 * 60 * 60;
-
-                            if($amount == 700){
-                                $menesiuNr = 1;
-                                $addTime = $menesiuNr * 4 * $savaite;
-                            }elseif($amount == 1400){
-                                $menesiuNr = 2;
-                                $addTime = $menesiuNr * 4 * $savaite;
-                            }elseif($amount == 2100){
-                                $menesiuNr = 3;
-                                $addTime = $menesiuNr * 4 * $savaite;
-                            }elseif($amount == 2800){
-                                $menesiuNr = 4;
-                                $addTime = $menesiuNr * 4 * $savaite;
-                            }else{
-                                $addTime = 0;
-                            }
-
-                            $user = \common\models\User::find()->where(['id' => $order->u_id])->one();
-
-                            if($user->expires < time()){
-                                $user->expires = time() + $addTime;
-                            }else{
-                                $user->expires = $user->expires + $addTime;
-                            }
-
-                            $user->save();
-
-                            $order->done = 1;
-                            $order->save();
-
-                            echo 'OK abonementas vartototojui '. Yii::$app->user->identity->username .' sėkmingai pratęstas.';
-                        }
-                        else
-                            echo 'OK abonementas vartototojui '. Yii::$app->user->identity->username .' sėkmingai pratęstas';
-                    }
-
+            if($vartotojas->expires < time()){
+                $vartotojas->expires = time() + $addTime;
+            }else{
+                $vartotojas->expires = $vartotojas->expires + $addTime;
             }
-            catch (Exception $e) {
-                $meta['status'] = get_class($e).': '.$e->getMessage();
-                echo 'FAIL ' . $meta['status'];
+
+            if ($vartotojas->save())
+            {
+                echo 'OK '. $vartotojas->username .' abonementas pratestas iki: '. date ("Y-m-d H:i", $vartotojas->expires);
+
+                $order->done = 1;
             }
+            else
+            {
+                echo 'FAIL Klaida pratesiant abonementa vartotojui'. $vartotojas->username;
+                $order->done = 0;
+            }
+
+            $order->save();
+
         }
+        else if ($order = \frontend\models\Order::find()->where(['paysera_bankinis_id' => $params['id']])->andWhere(['done' => 0])->one())
+        {
+            $tekstas = explode(' ',$params['sms']);
+            $uid = $tekstas[2];
+
+            $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
+            $vartotojas->vip = 1;
+
+            $menesiuNr = 1;
+            $savaite = 7 * 24 * 60 * 60;
+            $addTime = $menesiuNr * 4 * $savaite;
+
+            if($vartotojas->expires < time()){
+                $vartotojas->expires = time() + $addTime;
+            }else{
+                $vartotojas->expires = $vartotojas->expires + $addTime;
+            }
+
+            if ($vartotojas->save())
+            {
+                echo 'OK '. $vartotojas->username .' abonementas pratestas iki: '. date ("Y-m-d H:i", $vartotojas->expires);
+                $order->done = 1;
+            }
+            else
+            {
+                echo 'FAIL Klaida pratesiant abonementa vartotojui'. $vartotojas->username;
+                $order->done = 0;
+            }
+
+            $order->save();
+        }
+        else
+            echo 'OK Abonementas jau buvo pratestas';
+
+        //}
+        /*
+    }
+    catch (Exception $e) {
+        echo get_class($e).': '.$e->getMessage();
+    }*/
+    }
+
 }
 
 ?>
