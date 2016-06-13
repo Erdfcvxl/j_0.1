@@ -109,13 +109,13 @@ class Photos extends \yii\db\ActiveRecord
 
             $imagine->open($fulllink)
                 ->rotate(90)
-                ->save($fulllink);
+                ->save($fulllink, ['quality' => 100]);
 
             $fulllink = 'uploads/' . Yii::$app->user->id . '/BTh' . $model->pureName . 'ETh' . Yii::$app->user->id . '.' . $model->ext;
 
             $imagine->open($fulllink)
                 ->rotate(90)
-                ->save($fulllink);
+                ->save($fulllink, ['quality' => 100]);
 
             return true;
         }
