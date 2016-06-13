@@ -50,8 +50,8 @@ $count = count($photos) / 2;
 <script type="text/javascript">
     $(".cntrm").fakecrop({wrapperWidth: 222.5,wrapperHeight: 222, center: true });
 
-    $('.morePhoto').click(function(){
-        $(this).css({'display' : 'none'});
+    $('.padidinti').click(function(){
+        $('.morePhoto[data-trigger="'+$(this).attr('data-trigger')+'"]').css({'display' : 'none'});
         $('.menuPhoto[data-trigger="'+$(this).attr('data-trigger')+'"]').css({'display' : 'block'});
     });
 

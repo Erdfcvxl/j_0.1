@@ -40,8 +40,24 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
                         </div>
                     </a>
 
-                    <div class="morePhoto" data-trigger="<?= $name['pure'] ?>">
-                        <span class="glyphicon glyphicon-resize-full"></span>
+                    <div class="morePhoto padidinti" data-trigger="<?= $name['pure'] ?>">
+                        <div class="row">
+                            <div class="col-xs-6"></div>
+                            <div class="col-xs-6"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6" id="padidinti-profilio-foto" data-trigger="<?= $name['pure'] ?>">
+                                <span class="glyphicon glyphicon-resize-full"></span>
+                            </div>
+                            <?php if($model->profile):?>
+                            <a style="opacity: 0.3;" onclick="alert('Profilio nuotraukos užrakinti negalima');">
+                            <?php else: ?>
+                                <a href="<?= Url::to(['member/lock', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('<?= ($model->friendsOnly)? 'Ar tikrai norite padaryti šią nuotrauką matoma visiems?' : 'Ar tikrai norite padaryti šią nuotrauką matoma tik draugams?'; ?>');">
+                             <?php endif;?>
+                                <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-lock"></span><div class="labelPhoto">Tik draugams</div></div>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="menuPhoto" style="display: none;" data-trigger="<?= $name['pure'] ?>">
@@ -56,14 +72,9 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
 
                         <div class="row">
                             <div class="col-xs-6 less" data-trigger="<?= $name['pure'] ?>" ><span class="glyphicon glyphicon-resize-small"></span></div>
-                            <?php if($model->profile):?>
-                                <a style="opacity: 0.3;" onclick="alert('Profilio nuotraukos užrakinti negalima');">
-                            <?php else: ?>
-                                <a href="<?= Url::to(['member/lock', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('<?= ($model->friendsOnly)? 'Ar tikrai norite padaryti šią nuotrauką matoma visiems?' : 'Ar tikrai norite padaryti šią nuotrauką matoma tik draugams?'; ?>');">
-                            <?php endif;?>
-
-                                    <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-lock"></span><div class="labelPhoto">Tik draugams</div></div>
-                                </a>
+                            <a href="<?= Url::to(['member/rotate', 'pureName' => $name['pure'], 'id' => $id]); ?>" onclick="return confirm('Ar tikrai norite pasukti šią nuotrauką į dešinę?');">
+                                <div class="col-xs-6" style="<?= ($model->friendsOnly)? 'color: #95c501;' : ''; ?>"><span class="glyphicon glyphicon-repeat"></span><div class="labelPhoto">Pasukti nuotrauką</div></div>
+                            </a>
                         </div>
                     </div>
                 </div>

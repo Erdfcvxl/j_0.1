@@ -1181,6 +1181,16 @@ class MemberController extends \yii\web\Controller
 
     }
 
+    public function actionRotate()
+    {
+        $model = new \frontend\models\Photos();
+        if($model->rotate($_GET['pureName'])){
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+
+        throw new \yii\web\HttpException(500, 'Klaida bandant pasukti nuotrauką. Prašome susisiekti su administracija (info@pazintyslietuviams.co.uk)');
+    }
+
     public function actionDeletephoto()
     {
         $model = new \frontend\models\Photos;
