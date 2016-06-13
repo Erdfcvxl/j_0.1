@@ -128,7 +128,8 @@ class getPhotoList
 
         $lastChar = substr($n, $i);
         $ownerId = substr($lastChar, 0, (strlen($lastChar) - 4));
-        $ownerId = reset(explode('.', $ownerId));
+        $ownerId = explode('.', $ownerId);
+        $ownerId = reset($ownerId);
 
         $bePradzios = substr($n, 3);
 
@@ -138,7 +139,8 @@ class getPhotoList
 
         $ext = substr($n, -5);
 //        $ext = substr($ext, strpos($n, ".") + 1);
-        $ext = end(explode('.', $ext));
+        $ext = explode('.', $ext);
+        $ext = end($ext);
 
         $ending = substr($n, -3 - $i - 2, 2);
 
