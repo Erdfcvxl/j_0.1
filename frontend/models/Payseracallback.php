@@ -16,14 +16,16 @@ class Payseracallback extends Model
         $params = array();
         parse_str(base64_decode(strtr($_GET['data'], array('-' => '+', '_' => '/'))), $params);
 
-        if(!$order = \frontend\models\Order::find()->where(['paysera_bankinis_id' => $params['id']])->one())
+//        var_dump($params);
+//        echo '<br>';
+
+        if(!$order = \frontend\models\Orders::find()->where(['paysera_bankinis_id' => $params['orderid']])->one())
         {
 
-            $tekstas = explode(' ',$params['sms']);
-            $uid = $tekstas[2];
+            $uid = 2654;
 
-            $order = new \frontend\models\Order;
-            $order->paysera_bankinis_id = $params['id'];
+            $order = new \frontend\models\Orders;
+            $order->paysera_bankinis_id = $params['orderid'];
             $order->u_id = $uid;
             $order->params = $params['amount'];
             $order->action = "payserabankinisabonementas";
@@ -59,10 +61,10 @@ class Payseracallback extends Model
             $order->save();
 
         }
-        else if ($order = \frontend\models\Order::find()->where(['paysera_bankinis_id' => $params['id']])->andWhere(['done' => 0])->one())
+        else if ($order = \frontend\models\Orders::find()->where(['paysera_bankinis_id' => $params['orderid']])->andWhere(['done' => 0])->one())
         {
-            $tekstas = explode(' ',$params['sms']);
-            $uid = $tekstas[2];
+//            var_dump($order);
+            $uid = 2654;
 
             $vartotojas = \common\models\User::find()->where(['id' => $uid])->one();
             $vartotojas->vip = 1;
