@@ -36,7 +36,7 @@ $id = isset($_GET['id'])? $_GET['id'] : Yii::$app->user->id;
 
                     <a href="<?= $url ?>">
                         <div>
-                            <img src="<?= '/'.$photo; ?>" class="cntrm" width="221px">
+                            <img src="<?= '/'.$photo; ?><?php echo '?un=' . time(); ?>" class="cntrm" width="221px">
                         </div>
                     </a>
 

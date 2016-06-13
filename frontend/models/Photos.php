@@ -102,7 +102,6 @@ class Photos extends \yii\db\ActiveRecord
     public function rotate($pureName)
     {
         if($model = self::find()->where(['pureName' => $pureName])->one()) {
-            echo "dirba na";
 
             $imagine = new Imagine();
 
