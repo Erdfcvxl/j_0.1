@@ -148,7 +148,7 @@ class RecommendedSearch extends User
             'query' => $query,
             'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
             'pagination' => [
-                'pageSize' => 100,
+                'pageSize' => 1000,
             ],
         ]);
 
