@@ -4,9 +4,7 @@
     <list default="true" id="3c7d6a09-2c61-4a37-85b2-884692e9e110" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Payseracallback.php" afterPath="$PROJECT_DIR$/frontend/models/Payseracallback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/Smscallback.php" afterPath="$PROJECT_DIR$/frontend/models/Smscallback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/models/upload.php" afterPath="$PROJECT_DIR$/frontend/models/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
     </list>
     <list id="518a7ba4-7185-4e9f-a678-73ca027ef359" name="PhpStorm Stuff" comment="PhpStorm Stuff" />
     <ignored path="Auriuiadvanced.iws" />
@@ -86,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+            <state relative-caret-position="416">
+              <caret line="296" column="5" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
               <folding>
                 <element signature="e#40#76#0#PHP" expanded="true" />
               </folding>
@@ -98,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Smscallback.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Smscallback.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="204">
+              <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -111,8 +109,8 @@
       <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="776" column="0" selection-start-line="776" selection-start-column="0" selection-end-line="780" selection-end-column="5" />
+            <state relative-caret-position="324">
+              <caret line="774" column="5" selection-start-line="774" selection-start-column="5" selection-end-line="774" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -148,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/models/Profileview.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/pviews.php" />
         <option value="$PROJECT_DIR$/frontend/views/layouts/includes/GmenuBar.php" />
         <option value="$PROJECT_DIR$/frontend/views/member/date.php" />
@@ -198,6 +195,7 @@
         <option value="$PROJECT_DIR$/frontend/models/upload.php" />
         <option value="$PROJECT_DIR$/frontend/models/Smscallback.php" />
         <option value="$PROJECT_DIR$/frontend/models/Payseracallback.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/AjaxController.php" />
       </list>
     </option>
@@ -577,14 +575,7 @@
       <workItem from="1465504152905" duration="1583000" />
       <workItem from="1465675631205" duration="1058000" />
       <workItem from="1465721308465" duration="18946000" />
-      <workItem from="1465829340920" duration="10638000" />
-    </task>
-    <task id="LOCAL-00010" summary="Automatinės žinutės. Baigta">
-      <created>1460070887403</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1460070887403</updated>
+      <workItem from="1465829340920" duration="10765000" />
     </task>
     <task id="LOCAL-00011" summary="Minorinis auto msg interfeiso pataisymas">
       <created>1460071092077</created>
@@ -922,11 +913,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465850259929</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Regstep FotoFix, Regstep fix">
+      <created>1465852255749</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1465852255749</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274963000" />
+    <option name="totallyTimeSpent" value="275090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1392,14 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="776" column="0" selection-start-line="776" selection-start-column="0" selection-end-line="780" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/models/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1407,6 +1397,22 @@
           <folding>
             <element signature="e#115#123#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="774" column="5" selection-start-line="774" selection-start-column="5" selection-end-line="774" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,19 +1428,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+        <state relative-caret-position="416">
+          <caret line="296" column="5" selection-start-line="296" selection-start-column="5" selection-end-line="296" selection-end-column="5" />
           <folding>
             <element signature="e#40#76#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/models/Smscallback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>

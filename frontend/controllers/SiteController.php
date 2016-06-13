@@ -774,18 +774,6 @@ class SiteController extends Controller
         }
     }
 
-    public function actionPayseracallback()
-    {
-        $model = new \frontend\models\Payseracallback;
-        $model->proceed();
-    }
-
-    public function actionSmscallback()
-    {
-        $model = new \frontend\models\Smscallback;
-        $model->proceed();
-    }
-
     public function actionInvite()
     {
         if (Yii::$app->user->isGuest) {

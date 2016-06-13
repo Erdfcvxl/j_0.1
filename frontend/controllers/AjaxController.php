@@ -290,6 +290,12 @@ class AjaxController extends \yii\web\Controller
         }
     }
 
+    public function actionSmscallback()
+    {
+        $model = new \frontend\models\Smscallback;
+        $model->proceed();
+    }
+
     public function actionPayseracallback()
     {
         $model = new \frontend\models\Payseracallback;
