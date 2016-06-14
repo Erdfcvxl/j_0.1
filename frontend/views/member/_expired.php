@@ -98,26 +98,23 @@ use yii\widgets\Pjax;
                 $('#budu_antraste').html("<center><span id=''budu_antraste' style='color: #56adfa; text-shadow: 2px 2px 2px #c5c5c5;''>PASIRINK MOKĖJIMO BŪDĄ</span></center>");
                 $('#paypal').html("<a class='btn btn-success' href='"+data+"'>PayPal</a>");
                 $('#paypal').css({"display" : "inline-block"});
-                <?php
-                if (Yii::$app->user->id == 2654)
-                { ?>
                 $('#bankiniu').html("<a class='btn btn-success' onclick='getLink()''>Bankiniu pavedimu</a>");
                 $('#bankiniu').css({"display" : "inline-block"});
-                <?php }
-                if (isset($_GET["obj"]) && $_GET["obj"] == 1) { ?>
-                $('#sms').html("<a class='btn btn-success' onclick='getSMStext()'>SMS (GB)</a>");
-                $('#sms').css({"display" : "inline-block"});
-                <?php } ?>
 
-            },
-            error:function(ts){
-                console.log(ts.responseText);
-            },
-            complete: function (data) {
+                <?php if (isset($_GET["obj"]) && $_GET["obj"] == 1) { ?>
+                    $('#sms').html("<a class='btn btn-success' onclick='getSMStext()'>SMS (GB)</a>");
+                    $('#sms').css({"display" : "inline-block"});
+                    <?php } ?>
 
-            }
+                },
+                error:function(ts){
+                    console.log(ts.responseText);
+                },
+                complete: function (data) {
 
-        });
+                }
+
+            });
     }
 
     function getLink()

@@ -21,7 +21,7 @@ for($i = 18; $i < 90; $i++){
         <table style="text-align: left; font-size: 15px; position: relative; top:50px; margin-top: 20px; z-index: 5;" id="first">
             <tr>
                 <td style="padding: 10px 5px 10px 5px;" class="th">Aš esu:</td>
-                <td style="padding: 10px 10px 10px 10px;" class="td"><?= Html::dropDownList('gender', $selection = 'mv', ['vm' => 'Vyras ieškantis moters', 'mv' => 'Moteris ieškanti vyro' , 'vv' => 'Vyras ieškantis vyro' , 'mm' => 'Moteris ieškanti moters' ], $options = ['style' => 'width: 210px; color: #353535; height: 25px; padding: 0 0 3px 5px; font-size: 15px', 'class' => 'reg_dropbox', 'id' => 'change_color0'] ); ?></td>
+                <td style="padding: 10px 10px 10px 10px;" class="td"><?= Html::dropDownList('gender', $selection = 'vm', ['vm' => 'Vyras ieškantis moters', 'mv' => 'Moteris ieškanti vyro' , 'vv' => 'Vyras ieškantis vyro' , 'mm' => 'Moteris ieškanti moters' ], $options = ['style' => 'width: 210px; color: #353535; height: 25px; padding: 0 0 3px 5px; font-size: 15px', 'class' => 'reg_dropbox', 'id' => 'change_color0'] ); ?></td>
             </tr>
             <tr id="2tr">
                 <td style="padding: 10px 5px 20px 5px;" class="th">Amžius tarp:</td>

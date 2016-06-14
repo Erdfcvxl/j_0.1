@@ -30,7 +30,7 @@ function pasimatymai(going)
             {
                 pasimatymu_vartotojo_id = data.id;
                 $('#pasimatymai-foto').html('<img src=\'' + data.foto + '\' style=\'width: 100%;\'/>');
-                $('#pasimatymai-vardas').html(data.vardas);
+                $('#pasimatymai-vardas').html('<a href=\'/member/user?id='+ data.id +'\'>' + data.vardas + '</a>');
                 $('#pasimatymai-miestas').html(data.miestas);
                 //$('#pasimatymai-miestas').html(data.atstumas);
 //                $('#profilio_perziuros').css('display', 'none');

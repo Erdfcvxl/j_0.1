@@ -264,7 +264,7 @@ if(!empty($user->info->amzius_tarp))
 		        </div>
 
 		        <div class="row">
-		            <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Uždarbis</div>
+		            <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Mėnesinės pajamos</div>
 		            <div class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model, 'uzdarbis')->widget(Select2::classname(), [
 		                                                                                          'data' => array_merge($uzdarbis),
 		                                                                                          'language' => 'en',

@@ -171,7 +171,7 @@ if(!$model_info) $model_info = new Info;
             </div>
 
             <div class="row">
-                <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Uždarbis</div>
+                <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Mėnesinės pajamos</div>
                 <div class="col-xs-8 col-sm-8 vcenter top">
                     <?= $form->field($model_info, 'uzdarbis')->dropDownList($uzdarbis, ['prompt' => 'Pasirinkite uždarbį'])->label(false); ?>
 <!--                    --><?//= $form->field($model_info, 'uzdarbis')->widget(Select2::classname(), [

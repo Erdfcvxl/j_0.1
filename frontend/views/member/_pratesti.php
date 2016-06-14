@@ -54,7 +54,6 @@ use yii\widgets\Pjax;
 		<div class="row" style="margin-top: 15px; text-align: center; ">
 			<!-- <div class="col-xs-2 col-xs-offset-3"><a class="btn btn-success disabled">SMS</a></div> -->
 			<div id="paypal"></div>
-			<?php
 			<div id="bankiniu"></div>
 			<div id="sms"></div>
 			<!-- <div class="col-xs-2"><a class="btn btn-success disabled">Kortele</a></div> -->
@@ -85,13 +84,10 @@ use yii\widgets\Pjax;
 				$('#budu_antraste').html("<center><span id=''budu_antraste' style='color: #56adfa; text-shadow: 2px 2px 2px #c5c5c5;''>PASIRINK MOKĖJIMO BŪDĄ</span></center>");
 				$('#paypal').html("<a class='btn btn-success' href='"+data+"'>PayPal</a>");
 				$('#paypal').css({"display" : "inline-block"});
-				<?php
-				if (Yii::$app->user->id == 2654)
-				{ ?>
 				$('#bankiniu').html("<a class='btn btn-success' onclick='getLink()''>Bankiniu pavedimu</a>");
 				$('#bankiniu').css({"display" : "inline-block"});
-				<?php }
-				if (isset($_GET["obj"]) && $_GET["obj"] == 1) { ?>
+
+				<?php if (isset($_GET["obj"]) && $_GET["obj"] == 1) { ?>
 				$('#sms').html("<a class='btn btn-success' onclick='getSMStext()'>SMS (GB)</a>");
 				$('#sms').css({"display" : "inline-block"});
 				<?php } ?>
