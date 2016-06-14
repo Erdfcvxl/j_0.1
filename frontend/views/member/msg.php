@@ -110,7 +110,16 @@ $opacity = ($thisId == 'admin')? 1 : 0.7;
 
                                 require(__DIR__ ."/../site/form/_list.php");
                         ?>
-                            <span class="ProfInfo2" style="color: #5b5b5b; position: relative; top: -3px;"><?= $diff->y; ?> metai, <?= ($Info2->miestas)? $list[$Info2->miestas] : ''; ?></span>
+                            <span class="ProfInfo2" style="color: #5b5b5b; position: relative; top: -3px;">
+                                <?php
+                                if ($diff->y != NULL && isset($Info2->miestas) && $Info2->miestas != NULL)
+                                    echo $diff->y . ' m., ' . $list[$Info2->miestas];
+                                else if ($diff->y != NULL && isset($Info2->miestas) && $Info2->miestas == NULL
+                                    || $diff->y != NULL && !isset($Info2->miestas))
+                                    echo $diff->y . ' m.';
+                                else if ($diff->y == NULL && isset($Info2->miestas) && $Info2->miestas != NULL)
+                                echo $list[$Info2->miestas]; ?>
+                            </span>
                         <?php else: ?>
                             <span class="ProfInfo2" style="color: #5b5b5b; position: relative; top: -3px;">26, London</span>
                         <?php endif; ?>

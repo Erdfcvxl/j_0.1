@@ -15,7 +15,7 @@ $color = (isset($_GET['color']))? $_GET['color'] : '#90C3D4';
 if($user->avatar){
     $avataras = "/uploads/531B".$user->id."Iav.".$user->avatar;
 }else{
-    $avataras = "/css/img/icons/no_avatar.png";
+    $avataras = "/css/img/v.jpg";
 }
 
 
