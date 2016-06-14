@@ -56,6 +56,9 @@ use yii\widgets\Pjax;
                 </a>
             </div>
         </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-xs-12 vcenter">*Nuolaida galioja mokant per PayPal</div>
+        </div>
 
         <div class="row" style="margin-top: 15px;">
             <h3 id="budu_antraste"></h3>
@@ -123,7 +126,7 @@ use yii\widgets\Pjax;
     function getLink()
     {
         $.ajax({
-            url: '/member/getpayseralink',
+            url: '/ajax/getpayseralink',
             type: "GET",
             data: {obj : obj},
             success: function(data){
@@ -140,21 +143,9 @@ use yii\widgets\Pjax;
 
     function getSMStext()
     {
-        $.ajax({
-            url: '/member/getpayseralink',
-            type: "GET",
-            data: {obj : obj},
-            success: function(data){
-                //console.log(data);
-                <?php
-                echo '$(\'#sms_antraste\').html("<h5>SMS‘u galite apmokėti tik jeigu naudojatės <b>Didžiosios Britanijos</b> ryšio operatoriais: <br><b>O2, Vodafone, Orange, Tmobile, Virgin</b>.</h5> Siųsk SMS numeriu <b>79910</b>, žinutės laukelyje įrašęs: <b>PIP draugauk '. Yii::$app->user->id .'</b><br><small>Žinutės kaina: 10 GBP.</small>");';
-                ?>
-
-            },
-            error: function(e){
-                console.log(e.responseText);
-            }
-        });
+        <?php
+        echo '$(\'#sms_antraste\').html("<h5>SMS‘u galite apmokėti tik jeigu naudojatės <b>Didžiosios Britanijos</b> ryšio operatoriais: <br><b>O2, Vodafone, Orange, Tmobile, Virgin</b>.</h5> Siųsk SMS numeriu <b>79910</b>, žinutės laukelyje įrašęs: <b>PIP draugauk '. Yii::$app->user->id .'</b><br><small>Žinutės kaina: 10 GBP.</small>");';
+        ?>
     }
 
     $(function(){

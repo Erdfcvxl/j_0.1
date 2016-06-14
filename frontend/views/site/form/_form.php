@@ -60,36 +60,28 @@ if(!$model_info) $model_info = new Info;
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Gimtoji šalis</div>
-                <div
-                    class="col-xs-8 col-sm-8 vcenter top">
-<!--                    --><?//= $form->field($model_info, 'gimtine')->widget(Select2::classname(), [
-//                        'data' => array_merge($gimtoji_salis),
-//                        'language' => 'en',
-//                        'options' => ['placeholder' => 'Pasirinkite gimtajį miestą ...'],
-//                        'pluginEvents' => [
-//                            'select2-selected' => "function(e) { tautybe(e); }",
-//                        ],
-//                    ])->label(false); ?>
-
-                    <?= $form->field($model_info, 'gimtine')->dropDownList($gimtoji_salis, ['prompt' => 'Pasirinkite gimtają šalį'])->label(false); ?>
+                <div class="col-xs-8 col-sm-8 vcenter top"><?= $form->field($model_info, 'gimtine')->widget(Select2::classname(), [
+                        'data' => array_merge($gimtoji_salis),
+                        'language' => 'en',
+                        'options' => ['placeholder' => 'Pasirinkite gimtajį miestą ...'],
+                        'pluginEvents' => [
+                            'select2-selected' => "function(e) { tautybe(e); }",
+                        ],
+                    ])->label(false);?>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-xs-4 col-sm-4 vcenter top" style="padding-right: 0px;">Gimtoji vieta</div>
                 <div class="col-xs-8 col-sm-8 vcenter top">
-                    <div id="tautybes"
-                         style="display: none">
-                        <?= $form->field($model_info, 'tautybe')->dropDownList($gimtine, ['prompt' => 'Pasirinkite gimtąją vietovę'])->label(false); ?>
-<!--                        --><?//= $form->field($model_info, 'tautybe')->widget(Select2::classname(), [
-//                            'data' => array_merge($gimtine),
-//                            'language' => 'en',
-//                            'options' => ['placeholder' => 'Pasirinkite gimtąją vietovę ...'],
-//                            'pluginEvents' => [
-//                                'select2-selected' => "function(e) { kitas(e, 'tautybes'); }",
-//                            ],
-//                        ])->label(false); ?>
-                    </div>
+                    <div id="tautybes" style="display: none"><?= $form->field($model_info, 'tautybe')->widget(Select2::classname(), [
+                            'data' => array_merge($gimtine),
+                            'language' => 'en',
+                            'options' => ['placeholder' => 'Pasirinkite gimtąją vietovę ...'],
+                            'pluginEvents' => [
+                                'select2-selected' => "function(e) { kitas(e, 'tautybes'); }",
+                            ],
+                        ])->label(false);?></div>
                     <div id="tautybes2">
                         <?= $form->field($model_info, 'tautybe2')->textInput(['placeholder' => 'Įrašykite gimtąją vietovę'])->label(false); ?>
                     </div>
