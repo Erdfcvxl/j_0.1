@@ -55,9 +55,7 @@ use yii\widgets\Pjax;
 			<!-- <div class="col-xs-2 col-xs-offset-3"><a class="btn btn-success disabled">SMS</a></div> -->
 			<div id="paypal"></div>
 			<?php
-			if (Yii::$app->user->id == 2654)
-				echo '<div id="bankiniu"></div>';
-			?>
+			<div id="bankiniu"></div>
 			<div id="sms"></div>
 			<!-- <div class="col-xs-2"><a class="btn btn-success disabled">Kortele</a></div> -->
 		</div>
