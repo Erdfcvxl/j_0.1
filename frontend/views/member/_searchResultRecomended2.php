@@ -1,16 +1,25 @@
 <?php
-	//var_dump($model);
-?>
-<?php
 
 use yii\db\Query;
 use yii\helpers\Url;
 
+//var_dump($model['lastOnline']);
+
+include('../views/site/form/_list.php');
+
+if ($model->info['diena'] != NULL && $model->info['menuo'] != NULL && $model->info['metai'] != NULL)
+{
+    $d1 = new DateTime($model->info['diena'] . '.' . $model->info['menuo'] . '.' . $model->info['metai']);
+    $d2 = new DateTime();
+
+    $diff = $d2->diff($d1);
+}
+
 ?>
 
 <div class="col-xs-3" style="padding: 5px 5px;">
-    <span class="ProfName" style="font-size: 20px; color: #93c501;"><?= $model['vardas']; ?><?= \frontend\models\Misc::vip($model, '5A7900'); ?></span><br>
-    <span class="ProfInfo" style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= $model['metai']; ?> metai, <?= $model['miestas']; ?></span>
+    <span class="ProfName" style="font-size: 20px; color: #93c501;"><?= $model['username']; ?><?= \frontend\models\Misc::vip($model, '5A7900'); ?></span><br>
+    <span class="ProfInfo" style="color: #5b5b5b; font-size: 11px; position: relative; top: -3px;"><?= ($model->info['diena'] != NULL && $model->info['menuo'] != NULL && $model->info['metai'] != NULL) ? $diff->y . ' m., ' : ""; ?><?= ($model->info->miestas != NULL)? $list[$model->info->miestas] : "nenurodyta"; ?></span>
 
 	<div id="holder" style="width:100%;">
 	    <a href="<?= Url::to(['member/user', 'id' => $model['id']])?>" >
@@ -33,10 +42,12 @@ use yii\helpers\Url;
 	</div>
 
     <div style="background-color: #e1e1e1; padding: 14px 12px; margin-top: -12px;">
-        <?php 
-            foreach($model['aititikimai'] as $atitikmuo){
-                echo $atitikmuo."<br>";
-            }
+        <?php
+        echo $statusas[$model->info->statusas] . "<br>";
+        echo 'Tikslas: ' . $tikslas[$model->info->tikslas] . "<br>";
+//            foreach($model['aititikimai'] as $atitikmuo){
+//                echo $atitikmuo."<br>";
+//            }
         ?>
         <?php //var_dump($atitikimai->main($model)); ?>
     </div>

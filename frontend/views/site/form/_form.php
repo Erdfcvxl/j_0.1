@@ -466,6 +466,7 @@ if(!$model_info) $model_info = new Info;
                         </div>
                     </div>
                 </div>
+                <small>Jeigu nuotrauką matote pasuktą šonu, nepergyvenkite, ją galėsite pasukti vėliau (nuotraukų albume).</small>
             </div>
         </div>
 

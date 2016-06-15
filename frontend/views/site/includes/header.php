@@ -100,7 +100,7 @@ use yii\bootstrap\ActiveForm;
                     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
                     <div class="row" style="padding-top: 10px;">
                         <div class="col-xs-1" style="padding-right: 0; text-align: right;"></div>
-                        <div class="col-xs-4 col-sm-3 styled_inp"><?= $form->field($modelis, 'username')->textInput(['placeholder' => 'Vardas'])->label(false); ?></div>
+                        <div class="col-xs-4 col-sm-3 styled_inp"><?= $form->field($modelis, 'username')->textInput(['placeholder' => 'Vardas arba el.paštas'])->label(false); ?></div>
                         <div class="col-xs-4 col-sm-3 styled_inp"><?= $form->field($modelis, 'password')->passwordInput(['placeholder' => 'Slaptažodis'])->label(false); ?></div>
                         <div class="col-xs-3 col-sm-3"><?= Html::submitButton('Prisijungti', ['class' => 'btn btn-reg btn-prisijungti', 'id' => 'login_btn', 'name' => 'signup-button2']) ?></div>
                     </div>

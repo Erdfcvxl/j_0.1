@@ -45,7 +45,7 @@ require(__DIR__ ."/../site/form/_list.php");
 
 
 	<div class="row">
-			<div style="height : 120px; float: left; padding-left: 15px;">
+			<div style="height : 120px; width: 120px; float: left; padding-left: 15px;">
 			<img src="/uploads/531B<?= $sender->id; ?>Iav.jpg" height="100%" id="avatar">
 		</div>
 		

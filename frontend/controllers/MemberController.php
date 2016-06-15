@@ -120,6 +120,10 @@ class MemberController extends \yii\web\Controller
             echo Yii::$app->controller->renderPartial('//layouts/includes/_pakvietimu_pranesimas');
         }
 
+        if($dovana = \frontend\models\Dovanos::find()->where(['reciever' => Yii::$app->user->id])->andWhere(['opened' => 0])->one()){
+            return $this->redirect(Url::to(['member/msg', 'dopen' => $dovana->id]));
+        }
+
         return true; // or false to not run the action
     }
 
@@ -512,36 +516,13 @@ class MemberController extends \yii\web\Controller
 
     public function actionSearchRecommended()
     {
-        $searchModel = new RecommendedSearch();
+        $searchModel = new \frontend\models\RecommendedSearch();
 
-        $info = \frontend\models\InfoClear::find()->where(['u_id' => Yii::$app->user->id])->one();
+        $searchModel->preLoad();
 
-        $lytis = ($info->iesko == "vv" || $info->iesko == "vm") ? "vyras" : "moteris";
-
-        $user = User::find()->where(['id' => Yii::$app->user->id])->one();
-        $user->new = 0;
-        $user->save();
-
-        if ($info->orentacija == 1) {
-            if ($lytis == "vyras") {
-                $searchModel->moteris = 1;
-            } else {
-                $searchModel->vyras = 1;
-            }
-        } elseif ($info->orentacija == 2) {
-            if ($lytis == "vyras") {
-                $searchModel->vyras = 1;
-            } else {
-                $searchModel->moteris = 1;
-            }
-        }
-
-        $post = Yii::$app->request->post();
-        if ($post) {
-            Yii::$app->session['post'] = $post;
-        }
-
-        $dataProvider = $searchModel->search(Yii::$app->session['post']);
+        //pagamina dataprovideri
+        $dataProvider = $searchModel->search(Yii::$app->request->get());
+        // $dataProvider = $searchModel->search2();
 
         return $this->render('search', [
             'searchModel' => $searchModel,

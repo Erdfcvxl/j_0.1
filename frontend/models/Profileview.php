@@ -37,7 +37,7 @@ class Profileview extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp', 'firstTimestamp'], 'safe'],
+            [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp', 'firstTimestamp', 'vip'], 'safe'],
             [['ziuretojas', 'ziurimasis', 'kartas', 'timestamp'], 'integer']
         ];
     }

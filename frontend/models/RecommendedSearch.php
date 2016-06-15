@@ -16,6 +16,10 @@ class RecommendedSearch extends User
     /**
      * @inheritdoc
      */
+    public $is;
+    public $na;
+    public $vip;
+
     public $username;
     public $vyras;
     public $moteris;
@@ -42,7 +46,7 @@ class RecommendedSearch extends User
     {
         return [
             [['id', 'role', 'status', 'activated', 'created_at', 'updated_at'], 'integer'],
-            [['tu','ve','ve2','se','f','sl','i', 'l', 'rs', 'ts', 's', 'miestas', 'svoris1', 'svoris2', 'amzius1', 'amzius2', 'ugis1', 'ugis2', 'moteris', 'vyras', 'username', 'auth_key', 'password_hash', 'password_reset_token', 'vyras', 'moteris', 'email', 'reg_step', 'avatar', 'lastOnline'], 'safe'],
+            [['vip', 'tu','ve','ve2','se','f','sl','i', 'l', 'rs', 'ts', 's', 'miestas', 'svoris1', 'svoris2', 'amzius1', 'amzius2', 'ugis1', 'ugis2', 'moteris', 'vyras', 'username', 'auth_key', 'password_hash', 'password_reset_token', 'vyras', 'moteris', 'email', 'reg_step', 'avatar', 'lastOnline'], 'safe'],
         ];
     }
 
@@ -63,182 +67,125 @@ class RecommendedSearch extends User
      * @return ActiveDataProvider
      */
 
-    public function infosearch($select, $where, $value, $additional)
+    public function preLoad()
     {
-        $queryInfo = InfoClear::find();
+        $this->avatar = 1;
 
-        $complete = array();
+        $user = Yii::$app->user->identity;
+        $info = $user->info;
+        $lytis = substr($info->iesko, 0, 1);
 
-        if(isset($additional[1])){
-            $queryInfo->select($select)
-                  ->andFilterWhere([$additional[0], $where, $value, $additional[1]]);
-        }elseif($additional){
-            $queryInfo->select($select)
-                  ->andFilterWhere($additional, [$where => $value]);
-        }else{
-            $queryInfo->select($select)
-                    ->andFilterWhere([$where => 0])
-                    ->andWhere(['<>', $where, '']);
-        }
-
-        $command = $queryInfo->createCommand();
-        $dataInfo = $command->queryAll();
-        foreach ($dataInfo as $key) {
-            foreach ($key as $stringValue) {
-                $complete[] = $stringValue;
+        /*
+         *Orentacija
+         *0-Bi
+         *1-Hetero
+         *2-Homo
+         */
+        if ($info->orentacija == null) {
+            if ($info->iesko == "vm" || $info->iesko == "mm")
+                $this->moteris = 1;
+            else
+                $this->vyras = 1;
+        } else {
+            if ($info->orentacija == 0) {
+                if ($info->iesko == "vm" || $info->iesko == "mm")
+                    $this->moteris = 1;
+                else
+                    $this->vyras = 1;
+            }
+            elseif ($info->orentacija == 1) {
+                if ($lytis == "v") {
+                    $this->moteris = 1;
+                } else {
+                    $this->vyras = 1;
+                }
+            } elseif ($info->orentacija == 2) {
+                if ($lytis == "m") {
+                    $this->moteris = 1;
+                } else {
+                    $this->vyras = 1;
+                }
             }
         }
 
-        $complete = ($complete)? $complete : "nera";
-
-        return $complete;
     }
 
-    public function infosearchamzius($y, $y2)
+
+    public function visokiefiltrai($query)
     {
-        $queryInfo = InfoClear::find();
-
-        $complete = array();
-
-        $queryInfo->select('u_id')
-                  ->andFilterWhere(['<=', 'gimimoTS', $y])
-                  ->andFilterWhere(['>=', 'gimimoTS', $y2]);
-        $command = $queryInfo->createCommand();
-        $dataInfo = $command->queryAll();
-
-       foreach ($dataInfo as $key) {
-            foreach ($key as $stringValue) {
-                $complete[] = $stringValue;
-            }
-        }
-
-        $complete = ($complete)? $complete : "nera";
-        return $complete;
-    }
-
-    public function infosearchtwo($select, $from, $what, $what2)
-    {
-        $queryInfo = InfoClear::find();
-
-        $complete = array();
-
-        $what = (int)$what;
-        $what2 = (int)$what2;
-
-        $queryInfo->select($select)
-                  ->andFilterWhere(['between', $from, $what, $what2]);
-        $command = $queryInfo->createCommand();
-        $dataInfo = $command->queryAll();
-
-        foreach ($dataInfo as $key) {
-            foreach ($key as $stringValue) {
-                $complete[] = $stringValue;
-            }
-        }
-        $complete = ($complete)? $complete : "nera";
-        return $complete;
-    }
-
-    public function search($params)
-    {
-
-        $query = User::find();
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
-            'pagination' => [
-                'pageSize' => 1000,
-            ],
-        ]);
-
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to any records when validation fails
-            // $query->where('0=1');
-            return $dataProvider;
-        }
-
-        if($this->miestas != 0){
-            $miestas = $this->infosearch('u_id', 'miestas', $this->miestas-1, '');
-            $query->andFilterWhere(['id' => $miestas]);
+        if($this->miestas != NULL){
+            $query->andFilterWhere(['info.miestas' => $this->miestas-1]);
         }
 
         if($this->vyras == 1){
-            $vyras = $this->infosearch('u_id', 'iesko', ['vv', 'vm'], '');
-            $query->orFilterWhere(['id' => $vyras]);
+            $query->orFilterWhere(['IN', 'info.iesko', ['vv', 'vm']]);
         }
 
         if($this->moteris == 1){
-            $moteris = $this->infosearch('u_id', 'iesko', ['mm', 'mv'], '');
-            $query->orFilterWhere(['id' => $moteris]);
+            $query->orFilterWhere(['IN', 'info.iesko', ['mm', 'mv']]);
         }
 
-        if($this->amzius1 && is_numeric($this->amzius1)){
-            $minMetai = time() - ($this->amzius1 * 31556952);
+        ///////////////////////////////////////////////////////////
 
-            if($this->amzius2 && is_numeric($this->amzius2)){
-                $maxMetai = time() - $this->amzius2 * 31556952 - 31556951;
+        if (Yii::$app->user->identity->info->gimimoTS != 0)
+            $query->OrderBy([new \yii\db\Expression('abs(info.gimimoTS - ' . Yii::$app->user->identity->info->gimimoTS . ') ASC')]);
+        else
+            $query->OrderBy([new \yii\db\Expression('abs(info.gimimoTS - 0) ASC')]);
 
-                if($this->amzius1 < $this->amzius2){
-                    $values = $this->infosearchamzius($minMetai, $maxMetai);
-                    $query->andFilterWhere(['id'=> $values]);
-                }elseif($this->amzius1 == $this->amzius2){
-                    $values = $this->infosearchamzius($minMetai, $maxMetai);
-                    $query->andFilterWhere(['id'=> $values]);
-                }else{
-                    $values = $this->infosearchamzius($maxMetai, $minMetai);
-                    $query->andFilterWhere(['id'=> $values]);
-                }
+        $query->andFilterWhere(['not', ['info.gimimoTS' => '0']]);
 
 
-            }else{
-                $values = $this->infosearchamzius($minMetai, '0');
-                $query->andFilterWhere(['id'=> $values]);
-            }
-        }elseif($this->amzius2 && is_numeric ($this->amzius2)){
-            $maxMetai = time() - $this->amzius2 * 31556952 - 31556951;
 
-            $values = $this->infosearchamzius(time(), $maxMetai);
-            $query->andFilterWhere(['id'=> $values]);
+        if (\frontend\models\Info::find()->where(['u_id' => Yii::$app->user->identity->id])->one()->miestas != '')
+            $zmogaus_miesto_id = \frontend\models\Info::find()->where(['u_id' => Yii::$app->user->identity->id])->one()->miestas;
+        else
+            $zmogaus_miesto_id = 0;
+
+        $spindulys = 200;
+
+        $zmogaus_miestas = \frontend\models\City::findOne($zmogaus_miesto_id);
+        $miestu_query = yii\helpers\ArrayHelper::getColumn(\frontend\models\City::find()
+            ->select(['id', '(6371 * 2 * ASIN(SQRT( POWER(SIN((' . $zmogaus_miestas->latitude . ' - [[latitude]]) * pi()/180 / 2), 2) + COS(' . $zmogaus_miestas->latitude . ' * pi()/180) * COS([[latitude]] * pi()/180) *POWER(SIN((' . $zmogaus_miestas->longitude . ' - [[longitude]]) * pi()/180 / 2), 2) ))) AS distance'])
+            ->having('distance <= ' . $spindulys . '')
+            ->orderBy('distance ASC')
+            ->all(), 'id');
+
+        $miestu_id = array_map('strval', $miestu_query);
+
+        $query->andFilterWhere(['info.miestas' => $miestu_id]);
+        $query->addorderBy([new \yii\db\Expression('FIELD (info.miestas, ' . implode(',', $miestu_id) . ')')]);
+
+
+
+        $statusas = array();
+        if($this->l){
+            $statusas[] = 0;
+        }
+        if($this->tu){
+            $statusas[] = 1;
+        }
+        if($this->i){
+            $statusas[] = 2;
+        }
+        if($this->ve){
+            $statusas[] = 3;
+        }
+        if($this->ve2){
+            $statusas[] = 4;
         }
 
-        if($this->ugis1 || $this->ugis1 == '0'){
-            if($this->ugis2 || $this->ugis2 == '0'){
-                if($this->ugis1 < $this->ugis2){
-                    $values = $this->infosearchtwo('u_id', 'ugis', $this->ugis1, $this->ugis2);
-                    $query->andFilterWhere(['id'=> $values]);
-                }else{
-                    $values = $this->infosearchtwo('u_id', 'ugis', $this->ugis2, $this->ugis1);
-                    $query->andFilterWhere(['id'=> $values]);
-                }
-            }else{
-                $values = $this->infosearchtwo('u_id', 'ugis', $this->ugis1, 300);
-                $query->andFilterWhere(['id'=> $values]);
-            }
-        }elseif($this->ugis2 || $this->ugis2 == '0'){
-            $values = $this->infosearchtwo('u_id', 'ugis', 0, $this->ugis1);
-            $query->andFilterWhere(['id'=> $values]);
+        if($statusas) {
+//            $query->andFilterWhere(['IN', 'info.statusas', $statusas]);
+
+            $statusu_id = array_map('strval', $statusas);
+
+            $query->andFilterWhere(['info.statusas' => $statusu_id]);
+            $query->addOrderBy([new \yii\db\Expression('FIELD (info.statusas, ' . implode(',', $statusu_id) . ')')]);
+
         }
 
-        if($this->svoris1 || $this->svoris1 == '0'){
-            if($this->svoris2 || $this->svoris2 == '0'){
-                if($this->svoris1 < $this->svoris2){
-                    $values = $this->infosearchtwo('u_id', 'svoris', $this->svoris1, $this->svoris2);
-                    $query->andFilterWhere(['id'=> $values]);
-                }else{
-                    $values = $this->infosearchtwo('u_id', 'svoris', $this->svoris2, $this->svoris1);
-                    $query->andFilterWhere(['id'=> $values]);
-                }
-            }else{
-                $values = $this->infosearchtwo('u_id', 'svoris', $this->svoris1, 300);
-                $query->andFilterWhere(['id'=> $values]);
-            }
-        }elseif($this->svoris2 || $this->svoris2 == '0'){
-            $values = $this->infosearchtwo('u_id', 'svoris', 0, $this->svoris2);
-            $query->andFilterWhere(['id'=> $values]);
-        }
+        ////////////////////////////////////////////////////////////////
+
 
         $tikslas = array();
 
@@ -260,49 +207,59 @@ class RecommendedSearch extends User
         if($this->s){
             $tikslas[] = 5;
         }
-        if($tikslas){
-            $values = $this->infosearch('u_id', 'tikslas', $tikslas, '');
-            $query->andFilterWhere(['id'=> $values]);
+
+        $tikslas[] = 6;
+
+        if($tikslas) {
+//            $query->andFilterWhere(['IN', 'info.tikslas', $tikslas]);
+
+            $tikslu_id = array_map('strval', $tikslas);
+
+            $query->andFilterWhere(['info.tikslas' => $tikslu_id]);
+            $query->addOrderBy([new \yii\db\Expression('FIELD (info.tikslas, ' . implode(',', $tikslu_id) . ')')]);
+
         }
 
 
-        $statusas = array();
-
-        if($this->l){
-            $statusas[] = 0;
-        }
-        if($this->tu){
-            $statusas[] = 1;
-        }
-        if($this->i){
-            $statusas[] = 2;
-        }
-        if($this->ve){
-            $statusas[] = 3;
-        }
-        if($this->ve2){
-            $statusas[] = 4;
-        }
-        if($statusas){
-            $values = $this->infosearch('u_id', 'statusas', $statusas, '');
-            $query->andFilterWhere(['id'=> $values]);
-        }
-        
         if($this->avatar == 1){
-            $query->andFilterWhere(['avatar'=>['jpg','png','gif']]);
-        }        
-        
+        $query->andFilterWhere(['user.avatar'=>['jpg','png','gif']]);
+    }
+
         if($this->lastOnline == 1){
-            $query->andFilterWhere(['>', 'lastOnline', time() - (15 * 60)]);
+            $query->andFilterWhere(['>', 'user.lastOnline', time() - (15 * 60)]);
         }
 
-        
+        if($this->vip == 1){
+            $query->andFilterWhere(['user.vip'=> 1]);
+        }
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-              ->andFilterWhere(['not',['id' => Yii::$app->user->identity->id]]);
+
+        $query->andFilterWhere(['not', ['user.id' => Yii::$app->user->id]]);
+
+        return $query;
+
+    }
+
+    public function search($params)
+    {
+        $this->load($params);
+
+        $query = UserPack::find()->joinWith(['info']);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
+            'pagination' => [
+                'pageSize' => 8,
+            ],
+        ]);
+
+        $this->visokiefiltrai($query);
 
 
         return $dataProvider;
+
     }
+
 
 }
